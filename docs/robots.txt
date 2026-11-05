@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sheepman90s.github.io/sheepbox-releases/sitemap.xml

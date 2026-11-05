@@ -31,6 +31,7 @@
 | 🗓️ | **TV guide** | A 6-hour program grid with Now / Next, built from public guide sources |
 | 🎬 | **On Demand** | Free movies and shows from Pluto TV, Roku, Xumo, Tubi and the Internet Archive |
 | 📚 | **Every season & episode** | One show screen with the description, all seasons and all episodes, for every provider |
+| ⏺️ | **Recording** | Record live channels until the program ends or for a set time; watch while recording; Recordings screen to play, stop and delete |
 | 🏛️ | **24/7 channels** | Always-on classic TV and cartoon channels from the Internet Archive |
 | 🔎 | **Search everything** | One search across all channels and titles, plus search inside each provider |
 | ⭐ | **Favorites & Continue Watching** | Hold OK to favorite; pick up where you left off; auto-play next episode |
@@ -96,6 +97,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
 
 | | |
 |:-:|---|
+| 🌐 | [SheepBox website](https://sheepman90s.github.io/sheepbox-releases/) |
 | 📦 | [All releases & downloads](https://github.com/sheepman90s/sheepbox-releases/releases) |
 | 📝 | Release notes: open any release on the [Releases](https://github.com/sheepman90s/sheepbox-releases/releases) page |
 
