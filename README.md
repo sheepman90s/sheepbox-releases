@@ -31,7 +31,7 @@
 | 🗓️ | **TV guide** | A 6-hour program grid with Now / Next, built from public guide sources |
 | 🎬 | **On Demand** | Free movies and shows from Pluto TV, Roku, Xumo, Tubi and the Internet Archive |
 | 📚 | **Every season & episode** | One show screen with the description, all seasons and all episodes, for every provider |
-| ⏺️ | **Recording & DVR** | Record now or schedule from the TV guide, record whole series, watch while recording, save to the box or a USB drive |
+| ⏺️ | **Recording & DVR** | Record now or schedule from the TV guide, record whole series (skip repeats, keep the last few), resume where you left off, save to the box or a USB drive |
 | 🏛️ | **24/7 channels** | Always-on classic TV and cartoon channels from the Internet Archive |
 | 🔎 | **Search everything** | One search across all channels and titles, plus search inside each provider |
 | ⭐ | **Favorites & Continue Watching** | Hold OK for the quick menu (info, record, favorites); pick up where you left off; auto-play next episode |
