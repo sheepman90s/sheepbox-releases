@@ -34,7 +34,7 @@
 | ⏺️ | **Recording & DVR** | Record now or schedule from the TV guide, record whole series, watch while recording, save to the box or a USB drive |
 | 🏛️ | **24/7 channels** | Always-on classic TV and cartoon channels from the Internet Archive |
 | 🔎 | **Search everything** | One search across all channels and titles, plus search inside each provider |
-| ⭐ | **Favorites & Continue Watching** | Hold OK to favorite; pick up where you left off; auto-play next episode |
+| ⭐ | **Favorites & Continue Watching** | Hold OK for the quick menu (info, record, favorites); pick up where you left off; auto-play next episode |
 | 🎮 | **Made for the remote** | One clear yellow focus border, labelled icons, ±15 s skip with hold-to-seek |
 | 🔄 | **Automatic updates** | Checks for new versions at startup and installs them with your OK |
 
