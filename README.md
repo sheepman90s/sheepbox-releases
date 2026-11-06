@@ -27,7 +27,7 @@
 
 | | Feature | What you get |
 |:-:|---|---|
-| 📺 | **Live TV** | Live TV Simple is a grid of channel logos for the popular channels (News, Local, Entertainment, Sports); Live TV Complete has IPTV-org channels by country and genre, plus Pluto TV, Samsung TV Plus, Plex, Roku, Tubi and Xumo line-ups |
+| 📺 | **Live TV** | Live TV Simple is a grid of channel logos for the popular channels (News, Local, Entertainment, Sports); Live TV Complete has IPTV-org channels by country and genre, plus Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku, Tubi and Xumo line-ups |
 | 🗓️ | **TV guide** | A 6-hour program grid with Now / Next, built from public guide sources (optional guides for other countries) |
 | 🎬 | **On Demand** | Free movies and shows from Pluto TV, Roku, Xumo, Tubi and the Internet Archive |
 | 📚 | **Every season & episode** | One show screen with the description, all seasons and all episodes, for every provider |
@@ -47,7 +47,7 @@ legitimate:
 
 | | |
 |:-:|---|
-| ✅ | Plays only **free, ad-supported** streams that the services themselves make publicly available (Pluto TV, Roku Channel, Xumo, Tubi, Samsung TV Plus, Plex) plus **public-domain and Creative Commons** films from the Internet Archive and IPTV-org's public list of free-to-air channels |
+| ✅ | Plays only **free, ad-supported** streams that the services themselves make publicly available (Pluto TV, Roku Channel, Xumo, Tubi, Samsung TV Plus, LG Channels, Plex) plus **public-domain and Creative Commons** films from the Internet Archive and IPTV-org's public list of free-to-air channels |
 | 🚫 | **No pirated movies or shows**, no torrents, no "premium" or pay-TV channels, no sports or PPV piracy |
 | 🔒 | **No subscription or DRM bypass**: protected streams are played only through Android's standard DRM, never decrypted or stripped |
 | 📺 | **Ads stay in**: the services' own ads play as intended, which is how these free services are paid for |
@@ -105,7 +105,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
 
 <div align="center">
 
-SheepBox is an independent project and is not affiliated with Pluto TV, Roku, Xumo, Tubi, Samsung, Plex,
+SheepBox is an independent project and is not affiliated with Pluto TV, Roku, Xumo, Tubi, Samsung, LG, Plex,
 IPTV-org or the Internet Archive. It plays only legal, free content those services make publicly available,
 with their ads; it hosts no content and contains no pirated material. Availability varies by region.
 
