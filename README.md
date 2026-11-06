@@ -27,8 +27,8 @@
 
 | | Feature | What you get |
 |:-:|---|---|
-| 📺 | **Live TV** | IPTV-org channels by country and genre, plus Pluto TV, Samsung TV Plus, Plex, Roku, Tubi and Xumo line-ups |
-| 🗓️ | **TV guide** | A 6-hour program grid with Now / Next, built from public guide sources |
+| 📺 | **Live TV** | Live TV Simple groups the popular channels (News, Local, Entertainment, Sports); Live TV Complete has IPTV-org channels by country and genre, plus Pluto TV, Samsung TV Plus, Plex, Roku, Tubi and Xumo line-ups |
+| 🗓️ | **TV guide** | A 6-hour program grid with Now / Next, built from public guide sources (optional guides for other countries) |
 | 🎬 | **On Demand** | Free movies and shows from Pluto TV, Roku, Xumo, Tubi and the Internet Archive |
 | 📚 | **Every season & episode** | One show screen with the description, all seasons and all episodes, for every provider |
 | ⏺️ | **Recording & DVR** | Record now or schedule from the TV guide, record whole series (skip repeats, keep the last few), resume where you left off, save to the box or a USB drive |
