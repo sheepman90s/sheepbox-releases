@@ -8,17 +8,17 @@
 <meta name="keywords" content="SheepBox, SheepBox TV, Android TV app, Google TV app, free live TV, free movies, FAST channels, Pluto TV, Tubi, Xumo, Roku Channel, Samsung TV Plus, LG Channels, Plex, Internet Archive, IPTV-org, TV guide, DVR, recording, APK, vSeeBox, legal streaming">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sheepman90s.github.io/sheepbox-releases/">
-<link rel="icon" type="image/png" href="icon.png">
+<link rel="icon" type="image/png" href="icon.png?v=1.1.0-rc4">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SheepBox TV and VOD">
 <meta property="og:title" content="SheepBox TV and VOD – Free Live TV &amp; Movies for Android TV">
 <meta property="og:description" content="Legal free live TV and free movies &amp; shows in one Android TV app: TV guide, search, recording and automatic updates. No pirated content.">
 <meta property="og:url" content="https://sheepman90s.github.io/sheepbox-releases/">
-<meta property="og:image" content="https://sheepman90s.github.io/sheepbox-releases/banner.png">
+<meta property="og:image" content="https://sheepman90s.github.io/sheepbox-releases/banner.png?v=1.1.0-rc4">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SheepBox TV and VOD – Free Live TV &amp; Movies for Android TV">
 <meta name="twitter:description" content="Legal free live TV and free movies &amp; shows in one Android TV app.">
-<meta name="twitter:image" content="https://sheepman90s.github.io/sheepbox-releases/banner.png">
+<meta name="twitter:image" content="https://sheepman90s.github.io/sheepbox-releases/banner.png?v=1.1.0-rc4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,8 +29,8 @@
   "description": "Free Android TV app for legal free live TV channels and free movies and shows from official free, ad-supported services, with a TV guide, search, recording and automatic updates.",
   "url": "https://sheepman90s.github.io/sheepbox-releases/",
   "downloadUrl": "https://github.com/sheepman90s/sheepbox-releases/releases/latest",
-  "image": "https://sheepman90s.github.io/sheepbox-releases/banner.png",
-  "screenshot": ["https://sheepman90s.github.io/sheepbox-releases/screenshot-home.jpg", "https://sheepman90s.github.io/sheepbox-releases/screenshot-on-demand.jpg"],
+  "image": "https://sheepman90s.github.io/sheepbox-releases/banner.png?v=1.1.0-rc4",
+  "screenshot": ["https://sheepman90s.github.io/sheepbox-releases/screenshot-home.jpg?v=1.1.0-rc4", "https://sheepman90s.github.io/sheepbox-releases/screenshot-on-demand.jpg?v=1.1.0-rc4"],
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
   "author": {"@type": "Person", "name": "sheepman90s", "url": "https://github.com/sheepman90s"}
 }
@@ -41,7 +41,7 @@
 body{background:var(--night);color:#f5f3ff;font-family:"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
 a{color:var(--lamp)}
 header{background:linear-gradient(180deg,#3b1764,#1b0f2e 70%,var(--night));text-align:center;padding:56px 20px 40px;border-bottom:4px solid var(--lamp)}
-header img.logo{width:150px;height:150px;border-radius:28px;border:5px solid var(--lamp);box-shadow:0 0 40px rgba(250,204,21,.35)}
+header img.brand-art{display:block;width:min(100%,640px);height:auto;margin:0 auto;border-radius:18px;border:2px solid var(--lamp);box-shadow:0 0 40px rgba(250,204,21,.2)}
 h1{font-size:2.6rem;margin:18px 0 6px}
 .tag{font-size:1.25rem;color:var(--lav)}
 .legal{display:inline-block;margin-top:14px;padding:6px 14px;border:1px solid #22c55e;border-radius:999px;color:#86efac;font-weight:600}
@@ -49,7 +49,9 @@ h1{font-size:2.6rem;margin:18px 0 6px}
 .btn.alt{background:transparent;color:var(--lamp);border:2px solid var(--lamp)}
 main{max-width:1100px;margin:0 auto;padding:30px 20px 60px}
 .shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0 30px}
-.shots img{width:100%;border-radius:10px;border:1px solid #4c365e}
+.shots img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #4c365e}
+.shots figcaption{margin-top:8px;color:var(--lav);font-size:.9rem}
+.capture-note{color:var(--lav);margin-bottom:16px}
 h2{font-size:1.7rem;margin:34px 0 14px;color:#fff}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .card{background:var(--plum);border:1px solid #4c365e;border-radius:12px;padding:16px}
@@ -61,7 +63,7 @@ footer{text-align:center;color:#b8a6c9;font-size:.9rem;padding:24px;border-top:1
 </head>
 <body>
 <header>
-  <img class="logo" src="icon.png" alt="SheepBox TV and VOD app icon">
+  <img class="brand-art" src="banner.png?v=1.1.0-rc4" alt="SheepBox TV and VOD ? purple curtains and the popcorn sheep mascot" width="640" height="360">
   <h1>SheepBox TV and VOD</h1>
   <p class="tag">Free live TV and free movies &amp; shows for Android TV. One app, one remote.</p>
   <p class="legal">✅ Legal free streams only: no piracy, no paid channels, no subscription bypass</p><br>
@@ -69,9 +71,17 @@ footer{text-align:center;color:#b8a6c9;font-size:.9rem;padding:24px;border-top:1
   <a class="btn alt" href="https://github.com/sheepman90s/sheepbox-releases">View on GitHub</a>
 </header>
 <main>
+  <h2>Inside SheepBox</h2>
+  <p class="capture-note">Actual Home and On Demand screens from version 1.1.0 - RC4. Select a screenshot to view it full size.</p>
   <div class="shots">
-    <img src="screenshot-home.jpg" alt="SheepBox home screen with Live TV Simple, Live TV Complete and On Demand on Android TV">
-    <img src="screenshot-on-demand.jpg" alt="SheepBox On Demand providers: Pluto TV, Roku, Xumo, Tubi, Internet Archive">
+    <figure>
+      <a href="screenshot-home.jpg?v=1.1.0-rc4"><img src="screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox RC4 home screen with purple curtains, the popcorn sheep mascot, Live TV Complete, Live TV Simple and On Demand" width="1920" height="1080" loading="lazy"></a>
+      <figcaption>Home ? choose Live TV Complete, Live TV Simple or On Demand.</figcaption>
+    </figure>
+    <figure>
+      <a href="screenshot-on-demand.jpg?v=1.1.0-rc4"><img src="screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox RC4 On Demand screen with the purple-curtain artwork and Pluto, Roku, Xumo, Tubi and Internet Archive providers" width="1920" height="1080" loading="lazy"></a>
+      <figcaption>On Demand ? browse free movies and shows by provider.</figcaption>
+    </figure>
   </div>
 
   <h2>What SheepBox does</h2>

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/sheepbox-logo.png" alt="SheepBox logo" width="180" />
+<img src="assets/sheepbox-banner.png" alt="SheepBox TV and VOD ? current purple-curtain artwork and popcorn sheep mascot" width="640" />
 
 # SheepBox TV and VOD
 
@@ -17,9 +17,11 @@
 </div>
 
 <p align="center">
-  <img src="assets/screenshot-home.jpg" alt="SheepBox home screen" width="49%" />
-  <img src="assets/screenshot-on-demand.jpg" alt="SheepBox On Demand" width="49%" />
+  <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen" width="49%" />
+  <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand" width="49%" />
 </p>
+
+<p align="center"><em>Home and On Demand screens captured from SheepBox 1.1.0 - RC4.</em></p>
 
 ---
 
