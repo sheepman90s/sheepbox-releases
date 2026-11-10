@@ -1,0 +1,50 @@
+name: Verify published RC6 website
+on:
+  push:
+    branches: ['verify/website-rc6']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deployed website and public documentation
+        run: |
+          python3 - <<'PY'
+          import urllib.request, json, re, time
+          from html.parser import HTMLParser
+          def get(url):
+              with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'SheepBox-website-verification'}), timeout=30) as r:
+                  assert r.status == 200
+                  return r.read(500000).decode('utf-8')
+          base='https://sheepman90s.github.io/sheepbox-releases/'
+          page=get(base+'?verify=rc6')
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.ids=[]; self.links=[]; self.rows=0; self.in_providers=False
+              def handle_starttag(self,tag,attrs):
+                  a=dict(attrs)
+                  if 'id' in a: self.ids.append(a['id'])
+                  if tag=='h2' and a.get('id')=='providers': self.in_providers=True
+                  if tag=='h2' and a.get('id')=='roadmap': self.in_providers=False
+                  if tag=='tr' and self.in_providers: self.rows+=1
+                  if tag=='a': self.links.append(a.get('href',''))
+          p=Page();p.feed(page)
+          assert len(p.ids)==len(set(p.ids))
+          assert p.rows==16, p.rows
+          assert all(x in p.ids for x in ['features','providers','roadmap'])
+          assert all(x[1:] in p.ids for x in p.links if x.startswith('#'))
+          schema=json.loads(re.search(r'<script type="application/ld\\+json">([\\s\\S]*?)</script>',page).group(1))
+          assert schema['softwareVersion']=='1.2.0 - RC6'
+          assert schema['downloadUrl'].endswith('v1.2.0-RC6')
+          assert 'FilmRise' in page and 'VOD-only' in page
+          assert 'Plex VOD is not implemented' in page
+          raw='https://raw.githubusercontent.com/sheepman90s/sheepbox-releases/main/'
+          roadmap=get(raw+'ROADMAP.md');providers=get(raw+'PROVIDERS.md');readme=get(raw+'README.md')
+          for title in ['Closed Captioning','Split Screen','Additional Providers']:
+              assert title in page and title in roadmap and title in readme
+          assert '93 categories' in providers
+          assert '1.2.0 - RC6' in readme
+          print('Published website HTTP 200; 15 providers; 3 roadmap features; section links and RC6 structured metadata verified.')
+          print('Public README, PROVIDERS.md and ROADMAP.md fetched successfully and matched current release.')
+          PY
