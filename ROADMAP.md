@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Planned work after stable [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0). The current test cycle is 1.3.0; the latest test release is RC5. These are future features, with no committed release dates.
+Planned work after stable [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0). The current test cycle is 1.3.0; the latest test release is RC6. These are future features, with no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|
@@ -21,7 +21,7 @@ Added November 10, 2026. [Official site](https://famelack.com/) and [official pu
 | Area | Findings | Status |
 |---|---|---|
 | Live TV | Primarily IPTV-org. Of 6,910 TV records, 5,518 match SheepBox's IPTV-org stream URLs and another 249 match names; 1,143 are unmatched candidates, with possible overlap in other providers. | Research; no additional TV feeds implemented |
-| Web Cams | 3,915 cameras in 93 countries, including 1,483 in the US; 20 thematic categories. All current entries use YouTube embeds rather than direct stream URLs. | [1.3.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC5); country-first browsing, local category counts, offline directory fallback and in-app YouTube playback |
+| Web Cams | 3,915 cameras in 93 countries, including 1,483 in the US; 20 thematic categories. All current entries use YouTube embeds rather than direct stream URLs. | [1.3.0-RC6 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC6); country-first browsing, local category counts, offline directory fallback and in-app YouTube playback |
 | Radio | Independent curated radio directory. | Research only |
 
 World View is the fifth Home choice in RC3, with a native interactive Earth globe, remote controls, country search and existing Live TV / Web Cams playback routes. Home menu items are smaller to fit five choices. RC3 also appends confidently matched HTTPS HLS backups to existing direct-stream channels; primaries, favorites, guide mappings and regional feed IDs are preserved. Names alone never establish a match, and ambiguous/session-provider matches are skipped. This feature is not in stable 1.2.0. Webcam playback and TV remote operation need device validation. Counts are a dataset snapshot, not verified new playable channels. The Famelack MIT license must be retained when reusing its data.
@@ -60,3 +60,5 @@ See [supported providers](PROVIDERS.md) for the current Live TV / On Demand matr
 RC4 refines World View with automatic country zoom and highlighted outlines, direct camera lists, vertical webcam country navigation, and square button styling throughout the app, including On Demand. A limited touch-mode focus fix prevents repeated unsolicited playback controls. Roku VOD playback was confirmed working by the user.
 
 RC5 adds on-demand NASA country-detail terrain with saved fallback and makes the globe display-only. The country picker controls its position, toolbar buttons control zoom, and pill-shaped toolbar buttons have matching yellow focus outlines. Home icons are smaller and closer together. Reported AMC/Bosnia streams were reviewed; no verified replacements were found for the failing upstream sources.
+
+RC6 adds “Loading GIS Data for World View…” as the final startup step, with download progress, persistent terrain files and a Continue option. Saved countries are reused and missing downloads resume next startup. World View pills now use one yellow focus border; the rest of the app keeps its existing buttons while this preview is tested. Mainland outlines and labels are corrected for Australia, Brazil, France and Kazakhstan.
