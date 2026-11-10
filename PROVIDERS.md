@@ -29,3 +29,7 @@ Plex VOD remains unimplemented because the investigated guest authorization path
 FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categories, including all 251 True Crime movie titles. Three categories remain provider-limited and use + counts; the overall movie count is a lower bound. Initial-load batches use alternate sort orders to retrieve additional free titles and resume completed work; All New Arrivals returned 3,231 distinct free movies. The app cannot claim a complete FilmRise catalog. Fresh primary movie/episode manifests and ad schedules passed. These are a service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
 
 See the [roadmap](ROADMAP.md) for future work.
+
+## Web Cams: 1.3.0-RC1 test release
+
+The optional [1.3.0-RC1 test build](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC1) adds Famelack Web Cams as a fourth Home category. Native browsing supports countries, categories, search and favorites; playback uses YouTube's official player inside SheepBox. The investigated directory contains 3,915 cameras across 93 countries, with 20 thematic categories. These are YouTube embeds, not additional IPTV-org TV channels. Cameras may be offline or disallow embedding. Physical-TV testing is still needed. Stable 1.2.0 does not include this preview. See the [research chart](ROADMAP.md#famelack--tvgarden).

@@ -21,10 +21,10 @@ Added November 10, 2026. [Official site](https://famelack.com/) and [official pu
 | Area | Findings | Status |
 |---|---|---|
 | Live TV | Primarily IPTV-org. Of 6,910 TV records, 5,518 match SheepBox's IPTV-org stream URLs and another 249 match names; 1,143 are unmatched candidates, with possible overlap in other providers. | Research; no additional TV feeds implemented |
-| Web Cams | 3,915 cameras in 93 countries, including 1,483 in the US; 20 thematic categories. All current entries use YouTube embeds rather than direct stream URLs. | 1.3.0-RC1 preview in development; native browsing and in-app YouTube playback approved by the user |
+| Web Cams | 3,915 cameras in 93 countries, including 1,483 in the US; 20 thematic categories. All current entries use YouTube embeds rather than direct stream URLs. | [1.3.0-RC1 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC1); native browsing and in-app YouTube playback |
 | Radio | Independent curated radio directory. | Research only |
 
-Web Cams will be the fourth Home choice, with smaller menu items in a 2-by-2 layout. This feature is not in stable 1.2.0. Webcam playback and TV remote operation need device validation. Counts are a dataset snapshot, not verified new playable channels. The Famelack MIT license must be retained when reusing its data.
+Web Cams is the fourth Home choice in the test release, with smaller menu items in a 2-by-2 layout. This feature is not in stable 1.2.0. Webcam playback and TV remote operation need device validation. Counts are a dataset snapshot, not verified new playable channels. The Famelack MIT license must be retained when reusing its data.
 
 ## Already delivered in 1.2.0
 
