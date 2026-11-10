@@ -34,7 +34,7 @@ jobs:
           assert p.rows==16, p.rows
           assert all(x in p.ids for x in ['features','providers','roadmap'])
           assert all(x[1:] in p.ids for x in p.links if x.startswith('#'))
-          schema=json.loads(re.search(r'<script type="application/ld\\+json">([\\s\\S]*?)</script>',page).group(1))
+          schema=json.loads(re.search(r'<script type="application/ld\+json">([\s\S]*?)</script>',page).group(1))
           assert schema['softwareVersion']=='1.2.0 - RC6'
           assert schema['downloadUrl'].endswith('v1.2.0-RC6')
           assert 'FilmRise' in page and 'VOD-only' in page
