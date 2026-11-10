@@ -26,6 +26,12 @@ Added November 10, 2026. [Official site](https://famelack.com/) and [official pu
 
 Web Cams is the fourth Home choice in the test release, with smaller menu items in a 2-by-2 layout. This feature is not in stable 1.2.0. Webcam playback and TV remote operation need device validation. Counts are a dataset snapshot, not verified new playable channels. The Famelack MIT license must be retained when reusing its data.
 
+### Jamaica follow-up
+
+The current Famelack dataset has **6 TV entries, 22 radio stations and 8 webcams** for Jamaica. Five TV stream URLs match SheepBox's IPTV-org input; the additional TV entry is **Sydenham S.D.A Church**, via YouTube. All 22 radio stations returned audio or HLS data in bounded service checks. The eight webcam listings are already in the 1.3.0-RC1 camera browser. No additional TV or radio feeds were implemented in this review.
+
+Worldwide, comparing the 1,143 IPTV-unmatched TV records against eleven other provider playlist/cache inputs identified 301 further overlaps. **842 candidates remain** (339 with direct streams, 506 with YouTube, three with both), with Sling and manual identity/playback checks still outstanding. These are research candidates, not a verified new-channel count.
+
 ## Already delivered in 1.2.0
 
 - FilmRise Movies & Shows, following STIRR and Local Now.
