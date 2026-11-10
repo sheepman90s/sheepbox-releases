@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Planned work after stable [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0). The current test cycle is 1.3.0; the latest test release is RC2. These are future features, with no committed release dates.
+Planned work after stable [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0). The current test cycle is 1.3.0; the latest test release is RC3. These are future features, with no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|
@@ -21,10 +21,10 @@ Added November 10, 2026. [Official site](https://famelack.com/) and [official pu
 | Area | Findings | Status |
 |---|---|---|
 | Live TV | Primarily IPTV-org. Of 6,910 TV records, 5,518 match SheepBox's IPTV-org stream URLs and another 249 match names; 1,143 are unmatched candidates, with possible overlap in other providers. | Research; no additional TV feeds implemented |
-| Web Cams | 3,915 cameras in 93 countries, including 1,483 in the US; 20 thematic categories. All current entries use YouTube embeds rather than direct stream URLs. | [1.3.0-RC2 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC2); native browsing, country-based category counts and in-app YouTube playback |
+| Web Cams | 3,915 cameras in 93 countries, including 1,483 in the US; 20 thematic categories. All current entries use YouTube embeds rather than direct stream URLs. | [1.3.0-RC3 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC3); country-first browsing, local category counts, offline directory fallback and in-app YouTube playback |
 | Radio | Independent curated radio directory. | Research only |
 
-Web Cams is the fourth Home choice in the test release, with smaller menu items in a 2-by-2 layout. This feature is not in stable 1.2.0. Webcam playback and TV remote operation need device validation. Counts are a dataset snapshot, not verified new playable channels. The Famelack MIT license must be retained when reusing its data.
+World View is the fifth Home choice in RC3, with a native interactive Earth globe, remote controls, country search and existing Live TV / Web Cams playback routes. Home menu items are smaller to fit five choices. RC3 also appends confidently matched HTTPS HLS backups to existing direct-stream channels; primaries, favorites, guide mappings and regional feed IDs are preserved. Names alone never establish a match, and ambiguous/session-provider matches are skipped. This feature is not in stable 1.2.0. Webcam playback and TV remote operation need device validation. Counts are a dataset snapshot, not verified new playable channels. The Famelack MIT license must be retained when reusing its data.
 
 ### Jamaica follow-up
 

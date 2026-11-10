@@ -12,7 +12,7 @@
 
 **Current stable release: [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0), version code 139.** Promotes the tested RC8 functionality to the regular update channel, including resumable initial-load batches for large FilmRise categories. Three provider-limited categories retain + counts. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Latest test release: [1.3.0 - RC2](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC2), code 141.** Adds Web Cams as a fourth Home choice in a smaller 2-by-2 layout, with native country/category browsing, search, favorites and YouTube playback inside SheepBox. RC2 adds category counts that follow the selected country. Enable **Settings > App updates > Include test versions > Check now > Update now** to try it. Stable 1.2.0 remains the regular release.
+**Latest test release: [1.3.0 - RC3](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC3), code 142.** Fixes Web Cams with country-first browsing and local category counts, adds a native World View globe as the fifth Home choice, and appends confidently matched backup streams to existing channels. Camera search, favorites and YouTube playback stay inside SheepBox. Enable **Settings > App updates > Include test versions > Check now > Update now** to try it. Stable 1.2.0 remains the regular release.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
@@ -72,3 +72,5 @@ SheepBox plays providers' free, ad-supported streams, IPTV-org free-to-air chann
 SheepBox is independent and is not affiliated with these providers. Availability varies by region and device; unofficial integrations can change. Report problems through [GitHub issues](https://github.com/sheepman90s/sheepbox-releases/issues).
 
 © 2026 [sheepman90s](https://github.com/sheepman90s)
+
+Roku on-demand in RC3 also uses Roku's new canonical API hostname, fixing playback requests that previously redirected to an HTML response instead of JSON.
