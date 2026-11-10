@@ -10,14 +10,14 @@
 
 </div>
 
-**Current test release: [1.2.0 - RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC8), version code 138.** Expands large FilmRise categories with initial-load batches and resumable progress, without requiring a separate client. Expanded results include 4,579 movies and 818 shows in the current service check; three provider-limited categories show + counts instead of false totals. Retains RC6's new provider, title counts and United States flag fix. To receive RC8 in the app, enable **Settings > App updates > Include test versions**, then **Check now > Update now**. The regular release channel is unchanged.
+**Current stable release: [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0), version code 139.** Promotes the tested RC8 functionality to the regular update channel, including resumable initial-load batches for large FilmRise categories. Three provider-limited categories retain + counts. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.2.0 - RC8**.
+Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.2.0**.
 
 ## Features
 
@@ -55,11 +55,11 @@ These are planned features, without committed dates. See [ROADMAP.md](ROADMAP.md
 ## Install and update
 
 1. Allow installs from your chosen downloader or file manager in the TV's Android settings.
-2. Download the APK from [RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC8), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+2. Download the APK from [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. It checks the connection and loads live channels; each On Demand catalog builds when first opened.
 
-For in-app test updates: **Settings > App updates > Include test versions > Check now > Update now**. Downloads are checked for the same package, a newer version and the established signing key before Android's installer opens. Keep the existing app installed to retain settings and favorites.
+For in-app updates: **Settings > App updates > Check now > Update now**. Test versions are optional. Downloads are checked for the same package, a newer version and the established signing key before Android's installer opens. Keep the existing app installed to retain settings and favorites.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 

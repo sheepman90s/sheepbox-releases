@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Planned work after [1.2.0 - RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC7). These are future features, with no committed release dates.
+Planned work after stable [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0). The next test cycle starts at 1.3.0-RC1. These are future features, with no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|
@@ -14,9 +14,10 @@ The reconstructed research queue is **Zeam**, **Shout! TV's free guest subset**,
 
 Each candidate needs a working guest catalog and playback path, normal regional availability, provider advertising support and device validation. We will not bypass accounts, subscriptions or DRM. Plex VOD remains blocked by its unavailable investigated guest authorization path. Google-account Freeplay and Prime/Freevee are excluded from the current plan.
 
-## Already delivered in RC6
+## Already delivered in 1.2.0
 
 - FilmRise Movies & Shows, following STIRR and Local Now.
+- Bounded, resumable initial FilmRise category batches; unverified coverage retains + counts.
 - Unique title totals beside On Demand categories.
 - Restored IPTV-org United States flag after provider merges.
 
