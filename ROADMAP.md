@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Planned work after [1.2.0 - RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC6). These are future features, with no committed release dates.
+Planned work after [1.2.0 - RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC7). These are future features, with no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|

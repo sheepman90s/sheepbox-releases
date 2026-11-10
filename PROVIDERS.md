@@ -1,6 +1,6 @@
 # Supported providers
 
-Available in **SheepBox 1.2.0 - RC6** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC6)). Availability, catalogs and playback vary by region and device.
+Available in **SheepBox 1.2.0 - RC7** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC7)). Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -22,10 +22,10 @@ Available in **SheepBox 1.2.0 - RC6** ([release and APK](https://github.com/shee
 
 “Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
 
-All On Demand providers use shared title cards, Play/Episodes and Favorite actions, category totals, search and cached browsing. Movies and shows are counted separately, with duplicate titles removed within each total. Catalogs load when opened, rather than at app startup.
+All On Demand providers use shared title cards, Play/Episodes and Favorite actions, category counts, search and cached browsing. Movies and shows are counted separately, with duplicate titles removed within each count. FilmRise counts with + are lower bounds because its guest service has returned only part of those categories. Catalogs load when opened, rather than at app startup.
 
 Plex VOD remains unimplemented because the investigated guest authorization path is unavailable. FilmRise is VOD-only; no standalone live lineup has been verified. Account-requiring Google Freeplay and Prime/Freevee are outside the current provider plan.
 
-FilmRise's current service check verified 1,829 movies, 818 shows and 93 categories, plus fresh primary movie/episode manifests and ad schedules. These are a dated service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
+FilmRise's RC7 service check verified 4,341 movies, 818 shows and 93 categories, including all 251 True Crime movie titles. Three categories remain provider-limited and use + counts; the overall movie count is a lower bound. The app expands results beyond the misleading 100-title count but cannot claim a complete FilmRise catalog. Fresh primary movie/episode manifests and ad schedules passed. These are a service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
 
 See the [roadmap](ROADMAP.md) for future work.
