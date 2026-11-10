@@ -10,14 +10,14 @@
 
 </div>
 
-**Current test release: [1.2.0 - RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC7), version code 137.** Fixes FilmRise categories truncated by misleading 100-title counts. Expanded results include 4,341 movies and 818 shows in the current service check; three provider-limited categories show + counts instead of false totals. Retains RC6's new provider, title counts and United States flag fix. To receive RC7 in the app, enable **Settings > App updates > Include test versions**, then **Check now > Update now**. The regular release channel is unchanged.
+**Current test release: [1.2.0 - RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC8), version code 138.** Expands large FilmRise categories with initial-load batches and resumable progress, without requiring a separate client. Expanded results include 4,579 movies and 818 shows in the current service check; three provider-limited categories show + counts instead of false totals. Retains RC6's new provider, title counts and United States flag fix. To receive RC8 in the app, enable **Settings > App updates > Include test versions**, then **Check now > Update now**. The regular release channel is unchanged.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.2.0 - RC7**.
+Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.2.0 - RC8**.
 
 ## Features
 
@@ -34,7 +34,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.2.0 - RC7
 | TV remote controls | Clear yellow focus, labelled icons, 15-second skip and hold-to-seek |
 | Automatic updates | Startup checks, optional test versions, verified downloads and Android installation confirmation |
 
-VOD catalogs load when opened and use local metadata caches. Reload refreshes them; providers and regions can change what is available. FilmRise expands category results beyond the provider's misleading count of 100 and rebuilds the old catalog cache automatically. True Crime now has all 251 movie titles. Some largest guest categories remain incomplete and show lower-bound + counts; Reload can retry. FilmRise service checks passed for catalog discovery, movie/episode primary HLS manifests and ad schedules; physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.
+VOD catalogs load when opened and use local metadata caches. Reload refreshes them; providers and regions can change what is available. FilmRise uses bounded initial-load batches and alternate sort orders to retrieve more titles, deduplicates stable IDs, and resumes interrupted loads from completed batches. True Crime now has all 251 movie titles. Some largest guest categories remain incomplete and show lower-bound + counts; Reload can retry. FilmRise service checks passed for catalog discovery, movie/episode primary HLS manifests and ad schedules; physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.
 
 ## Providers
 
@@ -55,7 +55,7 @@ These are planned features, without committed dates. See [ROADMAP.md](ROADMAP.md
 ## Install and update
 
 1. Allow installs from your chosen downloader or file manager in the TV's Android settings.
-2. Download the APK from [RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC7), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+2. Download the APK from [RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC8), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. It checks the connection and loads live channels; each On Demand catalog builds when first opened.
 
