@@ -12,7 +12,7 @@
 
 **Current stable release: [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0), version code 139.** Promotes the tested RC8 functionality to the regular update channel, including resumable initial-load batches for large FilmRise categories. Three provider-limited categories retain + counts. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Latest test release: [1.3.0 - RC4](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC4), code 143.** Adds automatic country zoom with detailed outlines, direct camera lists in World View, a vertical webcam country list, and square buttons throughout the app. Includes a limited fix for controls appearing without input on touch devices; retains matched backup streams and the confirmed Roku VOD fix. Enable **Settings > App updates > Include test versions > Check now > Update now** to try it. Stable 1.2.0 remains the regular release.
+**Latest test release: [1.3.0 - RC5](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC5), code 144.** Adds higher-resolution NASA country terrain, a display-only globe that cannot trap remote focus, pill-shaped World View toolbar buttons with matching yellow focus rings, and a tighter Home icon layout. Keeps direct webcam lists and existing channel backups. Enable **Settings > App updates > Include test versions > Check now > Update now** to try it. Stable 1.2.0 remains the regular release.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
@@ -76,3 +76,5 @@ SheepBox is independent and is not affiliated with these providers. Availability
 Roku on-demand in RC3 also uses Roku's new canonical API hostname, fixing playback requests that previously redirected to an HTML response instead of JSON.
 
 RC4 refines World View with automatic country zoom and highlighted outlines, direct camera lists, vertical webcam country navigation, and square button styling throughout the app, including On Demand. A limited touch-mode focus fix prevents repeated unsolicited playback controls. Roku VOD playback was confirmed working by the user.
+
+RC5 adds on-demand NASA country-detail terrain with saved fallback and makes the globe display-only. The country picker controls its position, toolbar buttons control zoom, and pill-shaped toolbar buttons have matching yellow focus outlines. Home icons are smaller and closer together. Reported AMC/Bosnia streams were reviewed; no verified replacements were found for the failing upstream sources.
