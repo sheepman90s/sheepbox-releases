@@ -30,6 +30,6 @@ FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categorie
 
 See the [roadmap](ROADMAP.md) for future work.
 
-## Web Cams: 1.3.0-RC1 test release
+## Web Cams: 1.3.0-RC2 test release
 
-The optional [1.3.0-RC1 test build](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC1) adds Famelack Web Cams as a fourth Home category. Native browsing supports countries, categories, search and favorites; playback uses YouTube's official player inside SheepBox. The investigated directory contains 3,915 cameras across 93 countries, with 20 thematic categories. These are YouTube embeds, not additional IPTV-org TV channels. Cameras may be offline or disallow embedding. Physical-TV testing is still needed. Stable 1.2.0 does not include this preview. See the [research chart](ROADMAP.md#famelack--tvgarden).
+The optional [1.3.0-RC2 test build](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC2) adds Famelack Web Cams as a fourth Home category. Native browsing supports countries, categories, country-based category counts, search and favorites; playback uses YouTube's official player inside SheepBox. The investigated directory contains 3,915 cameras across 93 countries, with 20 thematic categories. These are YouTube embeds, not additional IPTV-org TV channels. Cameras may be offline or disallow embedding. Physical-TV testing is still needed. Stable 1.2.0 does not include this preview. See the [research chart](ROADMAP.md#famelack--tvgarden).
