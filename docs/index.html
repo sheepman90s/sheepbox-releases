@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SheepBox TV and VOD – Free Live TV &amp; Free Movies App for Android TV</title>
-<meta name="description" content="SheepBox TV and VOD is a free Android TV app for legal free live TV channels and free movies and shows from Pluto TV, Roku Channel, Xumo, Tubi, Samsung TV Plus, LG Channels, Plex and the Internet Archive. TV guide, search, recording and automatic updates. No piracy.">
-<meta name="keywords" content="SheepBox, SheepBox TV, Android TV app, Google TV app, free live TV, free movies, FAST channels, Pluto TV, Tubi, Xumo, Roku Channel, Samsung TV Plus, LG Channels, Plex, Internet Archive, IPTV-org, TV guide, DVR, recording, APK, vSeeBox, legal streaming">
+<meta name="description" content="SheepBox TV and VOD is a free Android TV app for legal free live TV channels and free movies and shows from Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise and more. TV guide, search, recording and automatic updates. No piracy.">
+<meta name="keywords" content="SheepBox, SheepBox TV, Android TV app, Google TV app, free live TV, free movies, FAST channels, Pluto TV, Tubi, Xumo, Roku Channel, Samsung TV Plus, LG Channels, Plex, Sling Freestream, YuppTV, Fawesome, Local Now, STIRR, FilmRise, Internet Archive, IPTV-org, TV guide, DVR, recording, APK, vSeeBox, legal streaming">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sheepman90s.github.io/sheepbox-releases/">
 <link rel="icon" type="image/png" href="icon.png?v=1.1.0-rc4">
@@ -26,9 +26,10 @@
   "name": "SheepBox TV and VOD",
   "operatingSystem": "Android TV, Google TV (Android 6.0+)",
   "applicationCategory": "EntertainmentApplication",
+  "softwareVersion": "1.2.0 - RC6",
   "description": "Free Android TV app for legal free live TV channels and free movies and shows from official free, ad-supported services, with a TV guide, search, recording and automatic updates.",
   "url": "https://sheepman90s.github.io/sheepbox-releases/",
-  "downloadUrl": "https://github.com/sheepman90s/sheepbox-releases/releases/latest",
+  "downloadUrl": "https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC6",
   "image": "https://sheepman90s.github.io/sheepbox-releases/banner.png?v=1.1.0-rc4",
   "screenshot": ["https://sheepman90s.github.io/sheepbox-releases/screenshot-home.jpg?v=1.1.0-rc4", "https://sheepman90s.github.io/sheepbox-releases/screenshot-on-demand.jpg?v=1.1.0-rc4"],
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -59,6 +60,14 @@ h2{font-size:1.7rem;margin:34px 0 14px;color:#fff}
 ol li,ul li{margin:8px 0 8px 22px}
 footer{text-align:center;color:#b8a6c9;font-size:.9rem;padding:24px;border-top:1px solid #2a1745}
 @media(max-width:700px){.shots{grid-template-columns:1fr}h1{font-size:2rem}}
+
+.release-note{max-width:760px;margin:18px auto 0;color:var(--lav)}
+.site-links{margin-top:18px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 22px}
+.provider-table{overflow-x:auto;margin-top:14px}
+table{width:100%;border-collapse:collapse;min-width:480px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #4c365e}
+th{color:var(--lav)}
+.notice{color:var(--lav);margin-top:14px}
 </style>
 </head>
 <body>
@@ -67,8 +76,11 @@ footer{text-align:center;color:#b8a6c9;font-size:.9rem;padding:24px;border-top:1
   <h1>SheepBox TV and VOD</h1>
   <p class="tag">Free live TV and free movies &amp; shows for Android TV. One app, one remote.</p>
   <p class="legal">✅ Legal free streams only: no piracy, no paid channels, no subscription bypass</p><br>
-  <a class="btn" href="https://github.com/sheepman90s/sheepbox-releases/releases/latest">⬇ Download the latest APK</a>
+  <a class="btn" href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC6">⬇ Download RC6 test release</a>
   <a class="btn alt" href="https://github.com/sheepman90s/sheepbox-releases">View on GitHub</a>
+  <p class="release-note"><strong>Current test release: 1.2.0 - RC6.</strong> FilmRise Movies &amp; Shows, title totals beside every VOD category, and the restored IPTV-org United States flag.</p>
+  <p class="release-note">In-app update: Settings &gt; App updates &gt; Include test versions &gt; Check now &gt; Update now. The regular release channel is unchanged.</p>
+  <nav class="site-links" aria-label="Page sections"><a href="#features">Features</a><a href="#providers">Providers</a><a href="#roadmap">Roadmap</a><a href="https://github.com/sheepman90s/sheepbox-releases/releases/latest">Regular release</a></nav>
 </header>
 <main>
   <h2>Inside SheepBox</h2>
@@ -87,17 +99,51 @@ footer{text-align:center;color:#b8a6c9;font-size:.9rem;padding:24px;border-top:1
   <h2>What SheepBox does</h2>
   <p>SheepBox brings free, ad-supported live TV channels and free movies and TV shows together in one Android TV and Google TV app, built for the TV remote. Instead of opening a different app for every free service, you choose <b>Live TV Simple</b>, <b>Live TV Complete</b> or <b>On Demand</b> and browse everything with the same menus, guide, search, favorites and player.</p>
 
-  <h2>Features</h2>
+  <h2 id="features">Features</h2>
   <div class="grid">
-    <div class="card"><b>📺 Free live TV</b>IPTV-org free-to-air channels by country and genre, plus Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi and Xumo line-ups.</div>
+    <div class="card"><b>📺 Free live TV</b>IPTV-org free-to-air channels by country and genre, plus Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now and STIRR line-ups.</div>
     <div class="card"><b>🗓️ TV guide</b>A 6-hour program grid with Now / Next from public guide sources.</div>
-    <div class="card"><b>🎬 Free movies &amp; shows</b>On Demand from Pluto TV, Roku Channel, Xumo, Tubi and the Internet Archive, with every season and episode.</div>
-    <div class="card"><b>⏺️ Recording &amp; DVR</b>Record live channels now or schedule from the TV guide, record whole series, watch while recording, save to the box or a USB drive.</div>
+    <div class="card"><b>🎬 Free movies &amp; shows</b>On Demand from Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise and the Internet Archive, with shared seasons and episode browsing.</div>
+    <div class="card"><b>⏺️ Recording &amp; DVR</b>Record supported live streams now or schedule from the TV guide, record whole series, watch while recording, and save to the box or a USB drive. DRM and unsupported ad-managed sources cannot be recorded.</div>
     <div class="card"><b>🏛️ 24/7 classic channels</b>Always-on classic TV and cartoon channels from public-domain collections.</div>
-    <div class="card"><b>🔎 Search &amp; favorites</b>One search across channels and titles, favorites, Continue Watching and auto-play next episode.</div>
+    <div class="card"><b>🔎 Search &amp; favorites</b>One search across channels and titles, Play/Episodes and Favorite actions on title cards, Continue Watching and auto-play next episode.</div>
     <div class="card"><b>🎮 Made for the remote</b>Clear focus, labelled icons, ±15 s skip with hold-to-seek.</div>
+    <div class="card"><b>📚 Consistent VOD browsing</b>Unique title totals beside categories, A–Z ordering, shared cards and first-open catalog progress. Catalogs load when opened and use local metadata caches.</div>
     <div class="card"><b>🔄 Automatic updates</b>New versions are offered at startup and installed with your OK.</div>
   </div>
+
+
+  <h2 id="providers">Supported providers in RC6</h2>
+  <p>Live TV and On Demand support are listed separately. Catalogs and availability vary by region and device.</p>
+  <div class="provider-table"><table>
+    <thead><tr><th scope="col">Provider</th><th scope="col">Live TV</th><th scope="col">On Demand</th></tr></thead>
+    <tbody><tr><th scope="row">IPTV-org</th><td>Free-to-air channel lists by country and genre</td><td>—</td></tr>
+<tr><th scope="row">Pluto TV</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">Samsung TV Plus</th><td>Yes</td><td>—</td></tr>
+<tr><th scope="row">LG Channels</th><td>Yes</td><td>—</td></tr>
+<tr><th scope="row">Plex</th><td>Yes</td><td>Not implemented</td></tr>
+<tr><th scope="row">Roku Channel</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">Tubi</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">Xumo</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">Sling Freestream</th><td>Yes</td><td>Free movies &amp; shows</td></tr>
+<tr><th scope="row">YuppTV Free</th><td>Free lineup</td><td>—</td></tr>
+<tr><th scope="row">Fawesome</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">Local Now</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">STIRR</th><td>Yes</td><td>Movies &amp; shows</td></tr>
+<tr><th scope="row">FilmRise</th><td>Not implemented</td><td>Movies &amp; shows; added in RC6</td></tr>
+<tr><th scope="row">Internet Archive</th><td>SheepBox-created 24/7 collection channels</td><td>Public-domain / Creative Commons films, classic TV &amp; shorts</td></tr></tbody>
+  </table></div>
+  <p class="notice">FilmRise is VOD-only; Plex VOD is not implemented. Internet Archive 24/7 channels are assembled from its collections. <a href="https://github.com/sheepman90s/sheepbox-releases/blob/main/PROVIDERS.md">Full provider notes</a>.</p>
+  <p class="notice">FilmRise service checks passed for catalog discovery, movie/episode primary HLS manifests and ad schedules. Physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.</p>
+
+  <h2 id="roadmap">Roadmap</h2>
+  <p>Planned work, with no committed release dates.</p>
+  <div class="grid">
+    <div class="card"><b>Closed Captioning</b>Consistent Live TV and On Demand caption controls, language/track selection and saved preferences where supported.</div>
+    <div class="card"><b>Split Screen</b>Explore multiple supported streams, remote-friendly pane selection, layout controls and a choice of which stream supplies audio.</div>
+    <div class="card"><b>Additional Providers</b>Continue researching free, account-free Live TV and VOD services. Next candidates include Zeam and Shout! TV's free guest subset.</div>
+  </div>
+  <p class="notice"><a href="https://github.com/sheepman90s/sheepbox-releases/blob/main/ROADMAP.md">View the GitHub roadmap and provider research queue</a>. These features are planned, rather than available in RC6.</p>
 
   <h2>Legal free streams only</h2>
   <ul>
@@ -110,13 +156,13 @@ footer{text-align:center;color:#b8a6c9;font-size:.9rem;padding:24px;border-top:1
   <h2>How to install on Android TV / Google TV</h2>
   <ol>
     <li>On the TV box, allow installing apps from unknown sources for the app you'll install with (for example Downloader or a file manager).</li>
-    <li>Download the newest <code>.apk</code> from the <a href="https://github.com/sheepman90s/sheepbox-releases/releases/latest">latest release</a>.</li>
+    <li>Download the <code>.apk</code> from the <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0-RC6">RC6 test release</a>.</li>
     <li>Open it and choose <b>Install</b>. If Play Protect asks to scan, you can choose <b>Install without scanning</b>.</li>
     <li>Start SheepBox. Future updates are offered inside the app.</li>
   </ol>
 </main>
 <footer>
-  SheepBox is an independent project, not affiliated with Pluto TV, Roku, Xumo, Tubi, Samsung, LG, Plex, IPTV-org or the Internet Archive.<br>
+  SheepBox is an independent project, not affiliated with its listed providers.<br>
   © 2026 <a href="https://github.com/sheepman90s">sheepman90s</a> · <a href="https://github.com/sheepman90s/sheepbox-releases/releases">All releases</a>
 </footer>
 </body>
