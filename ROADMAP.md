@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Planned work after stable [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0). The current test cycle is 1.3.0; the latest test release is RC7. These are future features, with no committed release dates.
+Planned work after stable [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0). The next test version is 1.4.0 RC1. These features have no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|

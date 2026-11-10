@@ -10,16 +10,16 @@
 
 </div>
 
-**Current stable release: [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0), version code 139.** Promotes the tested RC8 functionality to the regular update channel, including resumable initial-load batches for large FilmRise categories. Three provider-limited categories retain + counts. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
+**Current stable release: [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0), version code 148.** World View loads terrain when opened and keeps it cached. Web Cams uses compact country rows with counts. Pill buttons have one yellow focus border. Update in **Settings > App updates > Check now**.
 
-**Latest test release: [1.3.0 - RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC8), code 147.** Web Cams country rows now match the compact World View list. Enable Include test versions in App updates.
+**Next test version:** 1.4.0 RC1.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.2.0**.
+Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.3.0**.
 
 ## Features
 

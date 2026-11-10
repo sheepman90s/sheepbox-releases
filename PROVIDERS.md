@@ -1,6 +1,6 @@
 # Supported providers
 
-Available in **SheepBox 1.2.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0)). Availability, catalogs and playback vary by region and device.
+Available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -30,9 +30,9 @@ FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categorie
 
 See the [roadmap](ROADMAP.md) for future work.
 
-## Web Cams: 1.3.0-RC7 test release
+## Web Cams and World View
 
-The optional [1.3.0-RC7 test build](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC7) includes country-first Famelack Web Cams and a native World View globe as the fifth Home choice. Native browsing supports local categories and counts, search and favorites; playback uses YouTube's official player inside SheepBox. The investigated directory contains 3,915 cameras across 93 countries, with 20 thematic categories. These are YouTube embeds, not additional IPTV-org TV channels. Cameras may be offline or disallow embedding. Physical-TV testing is still needed. The test build also appends supported HLS backups to existing direct-stream channels using exact original-URL and country matches, preserving primaries and guide mappings. Ambiguous matches and native session providers are excluded. Stable 1.2.0 does not include these previews. See the [research chart](ROADMAP.md#famelack--tvgarden).
+SheepBox 1.3.0 includes country-first Famelack Web Cams and a native World View globe as the fifth Home choice. Native browsing supports local categories and counts, search and favorites; playback uses YouTube's official player inside SheepBox. The investigated directory contains 3,915 cameras across 93 countries, with 20 thematic categories. These are YouTube embeds, not additional IPTV-org TV channels. Cameras may be offline or disallow embedding. Physical-TV testing is still needed. The test build also appends supported HLS backups to existing direct-stream channels using exact original-URL and country matches, preserving primaries and guide mappings. Ambiguous matches and native session providers are excluded. See the [research chart](ROADMAP.md#famelack--tvgarden).
 
 Roku on-demand in RC3 also uses Roku's new canonical API hostname, fixing playback requests that previously redirected to an HTML response instead of JSON.
 
