@@ -12,7 +12,7 @@
 
 **Current stable release: [1.2.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.2.0), version code 139.** Promotes the tested RC8 functionality to the regular update channel, including resumable initial-load batches for large FilmRise categories. Three provider-limited categories retain + counts. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Latest test release: [1.3.0 - RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC7), code 146.** RC7 moves terrain preparation to opening World View, with progress, persistent cache reuse and Continue/Home options. Normal app startup no longer downloads terrain. The approved pill style now covers navigation, catalog actions, dialogs, Home icons and native playback controls, using a single yellow focus border. Web Cams country rows are narrower and retain their alphabetical order and counts. Enable **Settings > App updates > Include test versions > Check now > Update now**. Stable 1.2.0 remains the regular release.
+**Latest test release: [1.3.0 - RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0-RC8), code 147.** Web Cams country rows now match the compact World View list. Enable Include test versions in App updates.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
