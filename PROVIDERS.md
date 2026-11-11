@@ -1,6 +1,6 @@
 # Supported providers
 
-Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC3 test release**. Availability, catalogs and playback vary by region and device.
+Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC4 test release**. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -17,7 +17,7 @@ Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://
 | Fawesome | Yes | Movies & shows |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
-| Zeam (1.4.0 RC3 test release) | Guest stations and guide; native Media3/IMA player | Featured publisher videos; native playback, Play/Favorite, search and resume |
+| Zeam (1.4.0 RC4 test release) | Guest stations and guide; native Media3/IMA player | Featured publisher videos; native playback, Play/Favorite, search and resume |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
@@ -31,11 +31,13 @@ FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categorie
 
 See the [roadmap](ROADMAP.md) for future work.
 
-## Zeam in 1.4.0 RC3
+## Zeam in 1.4.0 RC4
+
+RC4 fixes D-pad focus moving from native Zeam playback to the navigation buttons and removes the duplicate All Channels category. Press Up to reach the toolbar and Down to return to playback. Local News and Nearby groupings remain available; all stations remain in the single All Channels list.
 
 Zeam guest live stations and programme guides use SheepBox's shared native Live TV player. Featured-publisher On Demand videos use native Media3 playback with Play/Favorite, search, loaded title counts, seeking, resume and watch history. Provider ads use IMA with prerolls and scheduled VOD breaks. Native content/ad playback and player cleanup passed on Android 10 and Android 14 emulators. Physical-TV picture, audio and D-pad navigation still need user verification. Recording is unavailable. Provider show/episode discovery, autoplay and saved caption preferences remain future work.
 
-The [RC3 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC3), version code 151, replaces Zeam's website player. Zeam uses SheepBox's own User-Agent with the provider's required API headers. Catalogs and availability change with the service.
+The [RC4 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC4), version code 152, replaces Zeam's website player. Zeam uses SheepBox's own User-Agent with the provider's required API headers. Catalogs and availability change with the service.
 
 ## Web Cams and World View
 

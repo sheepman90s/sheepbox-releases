@@ -12,7 +12,7 @@
 
 **Current stable release: [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0), version code 148.** World View loads terrain when opened and keeps it cached. Web Cams uses compact country rows with counts. Pill buttons have one yellow focus border. Update in **Settings > App updates > Check now**.
 
-**Current test release:** [1.4.0 RC3](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC3), version code 151. Adds Zeam Live TV and On Demand, and fixes the World View country list disappearing on Android 10. Enable **Include test versions** in App updates to install it.
+**Current test release:** [1.4.0 RC4](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC4), version code 152. Adds Zeam Live TV and On Demand, and fixes the World View country list disappearing on Android 10. Enable **Include test versions** in App updates to install it.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
@@ -38,7 +38,9 @@ Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.3.0**.
 
 VOD catalogs load when opened and use local metadata caches. Reload refreshes them; providers and regions can change what is available. FilmRise uses bounded initial-load batches and alternate sort orders to retrieve more titles, deduplicates stable IDs, and resumes interrupted loads from completed batches. True Crime now has all 251 movie titles. Some largest guest categories remain incomplete and show lower-bound + counts; Reload can retry. FilmRise service checks passed for catalog discovery, movie/episode primary HLS manifests and ad schedules; physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.
 
-## Zeam in 1.4.0 RC3
+## Zeam in 1.4.0 RC4
+
+RC4 fixes D-pad focus moving from native Zeam playback to the navigation buttons and removes the duplicate All Channels category. Press Up to reach the toolbar and Down to return to playback. Local News and Nearby groupings remain available; all stations remain in the single All Channels list.
 
 Zeam guest live stations and programme guides use SheepBox's shared native Live TV player. Featured-publisher On Demand videos use native Media3 playback with Play/Favorite, search, loaded title counts, seeking, resume and watch history. Provider ads use IMA with prerolls and scheduled VOD breaks. Native content/ad playback and player cleanup passed on Android 10 and Android 14 emulators. Physical-TV picture, audio and D-pad navigation still need user verification. Recording is unavailable. Provider show/episode discovery, autoplay and saved caption preferences remain future work.
 
