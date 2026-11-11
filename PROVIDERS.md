@@ -1,6 +1,6 @@
 # Supported providers
 
-Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC1 test release**. Availability, catalogs and playback vary by region and device.
+Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC2 test release**. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -17,7 +17,7 @@ Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://
 | Fawesome | Yes | Movies & shows |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
-| Zeam (1.4.0 RC1 test release) | Guest stations and guide; official in-app player | Featured publisher videos with Play/Favorite and search; official in-app player |
+| Zeam (1.4.0 RC2 test release) | Guest stations and guide; official in-app player | Featured publisher videos with Play/Favorite and search; official in-app player |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
@@ -31,11 +31,13 @@ FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categorie
 
 See the [roadmap](ROADMAP.md) for future work.
 
-## Zeam in 1.4.0 RC1
+## Zeam in 1.4.0 RC2
 
-The [1.4.0 RC1 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC1) adds Zeam guest stations and per-channel guides to Live TV, search and favorites. On Demand discovers featured publishers and loads their guest video lists. The current guest catalog check returned 409 stations, with availability applied by Zeam's official player. Counts change with the service.
+The [1.4.0 RC2 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC2) adds Zeam guest stations and per-channel guides to Live TV, search and favorites. On Demand discovers featured publishers and loads their guest video lists. The current guest catalog check returned 409 stations, with availability applied by Zeam's official player. Counts change with the service.
 
 Playback runs the official Zeam page inside SheepBox for provider authorization, ads and regional checks. Native resume/history, autoplay and caption settings remain pending. Recording is unavailable. Physical-TV picture, audio, ads, fullscreen and D-pad behavior need device testing.
+
+RC2 keeps the official player in view and provides a native Play button. Zeam's current scripts require a Chromium-based WebView engine of version 80 or newer. Older components show an update explanation and system-settings shortcut. Device playback still needs user verification.
 
 ## Web Cams and World View
 

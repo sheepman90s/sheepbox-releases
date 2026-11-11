@@ -1,12 +1,18 @@
 # SheepBox roadmap
 
-Planned work after stable [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0). The current test release is [1.4.0 RC1](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC1). These features have no committed release dates.
+Planned work after stable [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0). The current test release is [1.4.0 RC2](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC2). These features have no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|
 | Closed Captioning | Planned | Consistent caption controls across Live TV and On Demand, language/track selection, and saved preferences where providers supply supported captions. Existing provider subtitle support will be extended into a consistent experience. |
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
+
+## Zeam correction in 1.4.0 RC2
+
+- Desktop watch layout, player anchoring and a native Play button for remotes.
+- Clear update instructions for WebView engines that cannot run Zeam's current scripts.
+- Hardware playback verification remains ongoing. Native resume/autoplay/caption integration remains pending.
 
 ## Delivered in 1.4.0 RC1
 
