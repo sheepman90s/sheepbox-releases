@@ -1,6 +1,6 @@
 # Supported providers
 
-Available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). Availability, catalogs and playback vary by region and device.
+Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC1 test release**. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -17,6 +17,7 @@ Available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90
 | Fawesome | Yes | Movies & shows |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
+| Zeam (1.4.0 RC1 test release) | Guest stations and guide; official in-app player | Featured publisher videos with Play/Favorite and search; official in-app player |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
@@ -29,6 +30,12 @@ Plex VOD remains unimplemented because the investigated guest authorization path
 FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categories, including all 251 True Crime movie titles. Three categories remain provider-limited and use + counts; the overall movie count is a lower bound. Initial-load batches use alternate sort orders to retrieve additional free titles and resume completed work; All New Arrivals returned 3,231 distinct free movies. The app cannot claim a complete FilmRise catalog. Fresh primary movie/episode manifests and ad schedules passed. These are a service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
 
 See the [roadmap](ROADMAP.md) for future work.
+
+## Zeam in 1.4.0 RC1
+
+The [1.4.0 RC1 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC1) adds Zeam guest stations and per-channel guides to Live TV, search and favorites. On Demand discovers featured publishers and loads their guest video lists. The current guest catalog check returned 409 stations, with availability applied by Zeam's official player. Counts change with the service.
+
+Playback runs the official Zeam page inside SheepBox for provider authorization, ads and regional checks. Native resume/history, autoplay and caption settings remain pending. Recording is unavailable. Physical-TV picture, audio, ads, fullscreen and D-pad behavior need device testing.
 
 ## Web Cams and World View
 
