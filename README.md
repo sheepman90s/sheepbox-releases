@@ -12,7 +12,7 @@
 
 **Current stable release: [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0), version code 155.** Zeam Live TV and On Demand use native playback, with categories, Play/Favorite cards, cached browsing, episodes, resume and provider ads. World View GIS loading shows a clear yellow percentage and reuses saved terrain. Update in **Settings > App updates > Check now > Update now**.
 
-**Current test release: [1.5.0-RC1](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0-RC1), version code 156.** Adds Shout! TV guest live channels, movies and series. Enable **Include test versions** in App updates. Some provider streams may return 504; partial catalog counts show +. Physical-TV testing is in progress.
+**Current test release: [1.5.0-RC2](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0-RC2), version code 157.** Adds provider refresh menus in Live TV and On Demand, separate Shout Movies/Shows categories, and clearer Shout playback errors. Enable **Include test versions** in App updates. Some Shout streams, including A Christmas Carol (2000), remain unavailable at the provider; partial catalog counts show +. Physical-TV testing is in progress.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
