@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Planned work after stable [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0). The current test release is [1.4.0 RC5](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC5). These features have no committed release dates.
+Planned work after stable [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0). These features have no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|
@@ -8,7 +8,11 @@ Planned work after stable [1.3.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
-## Delivered in 1.4.0 RC5
+## Delivered in 1.4.0 stable
+
+- User-confirmed RC6 promoted to stable, including the World View GIS loading percentage.
+
+### Included from RC5
 
 - Zeam All Videos cards with Play/Favorite, real provider categories, unique counts and persistent metadata caching.
 - Hosted show/season episode discovery alongside legacy VOD recordings, with stable-ID deduplication.
@@ -24,8 +28,8 @@ Planned work after stable [1.3.0](https://github.com/sheepman90s/sheepbox-releas
 
 - Native Media3 playback for Zeam live TV and featured-publisher VOD.
 - Provider IMA advertising, VOD ad schedules, seeking, resume and watch history.
-- Native content/ad playback and lifecycle checks passed on Android 10 and 14 emulators. Physical-TV verification remains pending.
-- Zeam show/episode discovery, autoplay and saved caption preferences remain future work.
+- Native content/ad playback and lifecycle checks passed on Android 10 and 14 emulators. RC6 was subsequently confirmed by the user before the stable release.
+- Show/episode discovery was delivered in RC5; dedicated season navigation, autoplay and saved caption preferences remain future work.
 
 ## Delivered in 1.4.0 RC1
 

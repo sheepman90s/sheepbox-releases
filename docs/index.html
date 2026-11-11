@@ -26,10 +26,10 @@
   "name": "SheepBox TV and VOD",
   "operatingSystem": "Android TV, Google TV (Android 6.0+)",
   "applicationCategory": "EntertainmentApplication",
-  "softwareVersion": "1.3.0",
+  "softwareVersion": "1.4.0",
   "description": "Free Android TV app for legal free live TV channels and free movies and shows from official free, ad-supported services, with a TV guide, search, recording and automatic updates.",
   "url": "https://sheepman90s.github.io/sheepbox-releases/",
-  "downloadUrl": "https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0",
+  "downloadUrl": "https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0",
   "image": "https://sheepman90s.github.io/sheepbox-releases/banner.png?v=1.1.0-rc4",
   "screenshot": ["https://sheepman90s.github.io/sheepbox-releases/screenshot-home.jpg?v=1.1.0-rc4", "https://sheepman90s.github.io/sheepbox-releases/screenshot-on-demand.jpg?v=1.1.0-rc4"],
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -76,11 +76,11 @@ th{color:var(--lav)}
   <h1>SheepBox TV and VOD</h1>
   <p class="tag">Free live TV and free movies &amp; shows for Android TV. One app, one remote.</p>
   <p class="legal">✅ Legal free streams only: no piracy, no paid channels, no subscription bypass</p><br>
-  <a class="btn" href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0">⬇ Download 1.3.0 stable release</a>
+  <a class="btn" href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0">⬇ Download 1.4.0 stable release</a>
   <a class="btn alt" href="https://github.com/sheepman90s/sheepbox-releases">View on GitHub</a>
-  <p class="release-note"><strong>Current stable release: 1.3.0.</strong> World View loads terrain when opened and keeps it cached. Web Cams uses compact country rows with counts. Pill buttons have one yellow focus border.</p>
-  <p class="release-note"><strong>Test release 1.4.0 RC5.</strong> Fixes empty Zeam On Demand folders with playable video cards, provider categories/counts and cached browsing. Includes native episode playback, provider ads and resume. Includes the confirmed Android 10 World View country list fix. <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC5">Download the test release</a>. In App updates, enable Include test versions.</p>
-  <p class="release-note">In-app update: Settings &gt; App updates &gt; Check now &gt; Update now. Version 1.3.0 is available on the regular update channel.</p>
+  <p class="release-note"><strong>Current stable release: 1.4.0.</strong> Zeam Live TV and On Demand use native playback, with categories, Play/Favorite cards, cached browsing, episodes, resume and provider ads. World View GIS loading shows a clear yellow percentage and reuses saved terrain.</p>
+  <p class="release-note">1.4.0 stable includes the user-confirmed RC6 changes. Test versions are not required for this update.</p>
+  <p class="release-note">In-app update: Settings &gt; App updates &gt; Check now &gt; Update now. Version 1.4.0 is available on the regular update channel.</p>
   <nav class="site-links" aria-label="Page sections"><a href="#features">Features</a><a href="#providers">Providers</a><a href="#roadmap">Roadmap</a><a href="https://github.com/sheepman90s/sheepbox-releases/releases/latest">Regular release</a></nav>
 </header>
 <main>
@@ -131,12 +131,12 @@ th{color:var(--lav)}
 <tr><th scope="row">Fawesome</th><td>Yes</td><td>Movies &amp; shows</td></tr>
 <tr><th scope="row">Local Now</th><td>Yes</td><td>Movies &amp; shows</td></tr>
 <tr><th scope="row">STIRR</th><td>Yes</td><td>Movies &amp; shows</td></tr>
-<tr><th scope="row">Zeam (1.4.0 RC5 test)</th><td>Guest stations and guide</td><td>Featured publisher videos</td></tr>
+<tr><th scope="row">Zeam</th><td>Guest stations and guide</td><td>Featured publisher videos</td></tr>
 <tr><th scope="row">FilmRise</th><td>Not implemented</td><td>Movies &amp; shows; added in RC6</td></tr>
 <tr><th scope="row">Internet Archive</th><td>SheepBox-created 24/7 collection channels</td><td>Public-domain / Creative Commons films, classic TV &amp; shorts</td></tr></tbody>
   </table></div>
   <p class="notice">FilmRise is VOD-only; Plex VOD is not implemented. Internet Archive 24/7 channels are assembled from its collections. <a href="https://github.com/sheepman90s/sheepbox-releases/blob/main/PROVIDERS.md">Full provider notes</a>.</p>
-  <p class="notice">Zeam is available in 1.4.0 RC5. On Demand opens to playable video cards with Play/Favorite actions, categories and counts. Hosted show episodes and VOD recordings use native playback with provider ads and resume. The first visit builds a local catalog cache. Physical-TV confirmation of the new VOD browsing and episode path remains pending.</p>
+  <p class="notice">Zeam is available in 1.4.0 stable. On Demand opens to playable video cards with Play/Favorite actions, categories and counts. Hosted show episodes and VOD recordings use native playback with provider ads and resume. The first visit builds a local catalog cache. RC6 was confirmed by the user before promotion to stable.</p>
   <p class="notice">FilmRise initial batches retrieved 3,231 free movies in All New Arrivals and 4,579 movies and 818 shows in the 1.2.0 service check; True Crime includes all 251 movie titles. Three provider-limited categories show + counts, so the overall movie count is a lower bound. Movie/episode primary HLS manifests and ad schedules passed service checks. Physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.</p>
 
   <h2 id="roadmap">Roadmap</h2>
@@ -159,7 +159,7 @@ th{color:var(--lav)}
   <h2>How to install on Android TV / Google TV</h2>
   <ol>
     <li>On the TV box, allow installing apps from unknown sources for the app you'll install with (for example Downloader or a file manager).</li>
-    <li>Download the <code>.apk</code> from the <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0">1.3.0 stable release</a>.</li>
+    <li>Download the <code>.apk</code> from the <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0">1.4.0 stable release</a>.</li>
     <li>Open it and choose <b>Install</b>. If Play Protect asks to scan, you can choose <b>Install without scanning</b>.</li>
     <li>Start SheepBox. Future updates are offered inside the app.</li>
   </ol>

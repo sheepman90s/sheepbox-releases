@@ -10,16 +10,16 @@
 
 </div>
 
-**Current stable release: [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0), version code 148.** World View loads terrain when opened and keeps it cached. Web Cams uses compact country rows with counts. Pill buttons have one yellow focus border. Update in **Settings > App updates > Check now**.
+**Current stable release: [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0), version code 155.** Zeam Live TV and On Demand use native playback, with categories, Play/Favorite cards, cached browsing, episodes, resume and provider ads. World View GIS loading shows a clear yellow percentage and reuses saved terrain. Update in **Settings > App updates > Check now > Update now**.
 
-**Current test release:** [1.4.0 RC5](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC5), version code 153. Fixes empty Zeam On Demand folders with a cached playable catalog, real categories/counts and Play/Favorite cards. Enable **Include test versions** in App updates to install it.
+**1.4.0 stable includes the tested RC6 changes.** Test versions are not required for this update.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.3.0**.
+Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.4.0**.
 
 ## Features
 
@@ -38,13 +38,13 @@ Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.3.0**.
 
 VOD catalogs load when opened and use local metadata caches. Reload refreshes them; providers and regions can change what is available. FilmRise uses bounded initial-load batches and alternate sort orders to retrieve more titles, deduplicates stable IDs, and resumes interrupted loads from completed batches. True Crime now has all 251 movie titles. Some largest guest categories remain incomplete and show lower-bound + counts; Reload can retry. FilmRise service checks passed for catalog discovery, movie/episode primary HLS manifests and ad schedules; physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.
 
-## Zeam in 1.4.0 RC5
+## Zeam in 1.4.0
 
 Zeam On Demand opens to an All Videos grid with Play/Favorite cards, search and unique category counts. It loads hosted episodes from show/season collections as well as legacy VOD recordings. Categories come from Zeam's featured-publisher collections, including Comedy, Entertainment, Sports, True Crime and Destinations. Publisher filtering is optional and excludes sources with no supported videos.
 
 The first opening builds a local metadata cache with progress; later visits open from that cache. Reload refreshes the directory and retries failed sources. Repeated featured shows are deduplicated by stable content identity. Broadcasts display their station and air date, and episodes use their own artwork where available. Partial loads retain completed work and mark loaded counts with +.
 
-Native playback, provider ads, seeking, resume and history are included. Physical-TV confirmation of the new VOD browsing and episode path remains pending. Dedicated season navigation, autoplay and saved caption preferences remain future work.
+Native playback, provider ads, seeking, resume and history are included. RC6 was confirmed by the user before promotion to stable. Dedicated season navigation, autoplay and saved caption preferences remain future work.
 
 ## Providers
 
@@ -65,7 +65,7 @@ These are planned features, without committed dates. See [ROADMAP.md](ROADMAP.md
 ## Install and update
 
 1. Allow installs from your chosen downloader or file manager in the TV's Android settings.
-2. Download the APK from [1.3.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+2. Download the APK from [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. It checks the connection and loads live channels; each On Demand catalog builds when first opened.
 

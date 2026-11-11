@@ -1,6 +1,6 @@
 # Supported providers
 
-Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC5 test release**. Availability, catalogs and playback vary by region and device.
+Providers are available in **SheepBox 1.4.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0)). Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -17,7 +17,7 @@ Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://
 | Fawesome | Yes | Movies & shows |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
-| Zeam (1.4.0 RC5 test release) | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
+| Zeam | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
@@ -31,7 +31,7 @@ FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categorie
 
 See the [roadmap](ROADMAP.md) for future work.
 
-## Zeam in 1.4.0 RC5
+## Zeam in 1.4.0
 
 Zeam On Demand opens to an All Videos grid with Play/Favorite cards, search and unique category counts. It loads hosted episodes from show/season collections as well as legacy VOD recordings. Categories come from Zeam's featured-publisher collections, including Comedy, Entertainment, Sports, True Crime and Destinations. Publisher filtering is optional and excludes sources with no supported videos.
 
@@ -39,7 +39,7 @@ The first opening builds a local metadata cache with progress; later visits open
 
 Native playback supports seeking, resume and watch history. Hosted episodes use provider IMA prerolls and midrolls after eight minutes of watched content; pauses, ads and large seek jumps do not advance that clock. The catalog covers hosted content discovered through the featured publisher directory, not every video format or page on Zeam. Dedicated season navigation, autoplay and saved caption preferences remain future work. Recording remains unavailable.
 
-The [RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC5) uses version code 153. Catalogs, ads and availability vary by region and device. New VOD browsing and episode playback still need confirmation on the user's physical TV.
+The [1.4.0 stable release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0) uses version code 155 and includes the user-confirmed RC6 changes. Catalogs, ads and availability vary by region and device.
 
 ## Web Cams and World View
 
