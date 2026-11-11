@@ -10,16 +10,16 @@
 
 </div>
 
-**Current stable release: [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0), version code 155.** Zeam Live TV and On Demand use native playback, with categories, Play/Favorite cards, cached browsing, episodes, resume and provider ads. World View GIS loading shows a clear yellow percentage and reuses saved terrain. Update in **Settings > App updates > Check now > Update now**.
+**Current stable release: [1.5.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0), version code 162.** Includes Shout! TV and TCLtv+ integration, TCLtv+ playback fixes, alphabetically ordered Live TV providers, catalog recovery and movie category cleanup. Update in **Settings > App updates > Check now > Update now**.
 
-**Current test release: [1.5.0-RC4](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0-RC4), version code 159.** Improves TCLtv+ live catalog loading and refresh recovery, and merges duplicate movie categories. Enable **Include test versions** in App updates. Some Shout streams, including A Christmas Carol (2000), remain unavailable at the provider; partial catalog counts show +. Physical-TV testing is in progress.
+1.5.0 promotes the user-tested RC6 to stable. Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.4.0**.
+Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.5.0**.
 
 ## Features
 
@@ -27,7 +27,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below reflects **1.4.0**.
 |---|---|
 | Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
 | TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
-| On Demand | Movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise and the Internet Archive |
+| On Demand | Movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+ and the Internet Archive |
 | Consistent browsing | Shared cards, Play/Episodes and Favorite actions, unique title counts beside categories (+ means incomplete), search, A–Z ordering and first-open catalog progress |
 | Seasons & episodes | Shared show screen with descriptions, seasons, episodes and optional autoplay |
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
@@ -48,9 +48,9 @@ Native playback, provider ads, seeking, resume and history are included. RC6 was
 
 ## Providers
 
-**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now and STIRR.
+**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV and TCLtv+.
 
-**On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise and the Internet Archive.
+**On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+ and the Internet Archive.
 
 FilmRise is **VOD-only**. Plex VOD is not implemented. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
 
@@ -65,7 +65,7 @@ These are planned features, without committed dates. See [ROADMAP.md](ROADMAP.md
 ## Install and update
 
 1. Allow installs from your chosen downloader or file manager in the TV's Android settings.
-2. Download the APK from [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+2. Download the APK from [1.5.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. It checks the connection and loads live channels; each On Demand catalog builds when first opened.
 

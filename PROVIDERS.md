@@ -1,6 +1,6 @@
 # Supported providers
 
-Providers are available in **SheepBox 1.4.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0)). Availability, catalogs and playback vary by region and device.
+Providers are available in **SheepBox 1.5.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0)). Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -18,6 +18,8 @@ Providers are available in **SheepBox 1.4.0** ([release and APK](https://github.
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
 | Zeam | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
+| Shout! TV | Free guest lineup | Free guest movies and shows; availability varies |
+| TCLtv+ | Free guest lineup and guide | Movies by category |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 

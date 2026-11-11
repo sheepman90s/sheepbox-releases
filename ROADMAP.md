@@ -1,12 +1,18 @@
 # SheepBox roadmap
 
-Planned work after stable [1.4.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0). These features have no committed release dates.
+Planned work after stable [1.5.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0). These features have no committed release dates.
 
 | Feature | Status | Scope |
 |---|---|---|
 | Closed Captioning | Planned | Consistent caption controls across Live TV and On Demand, language/track selection, and saved preferences where providers supply supported captions. Existing provider subtitle support will be extended into a consistent experience. |
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
+
+## Delivered in 1.5.0 stable
+
+- User-tested RC6 promoted to 1.5.0, version code 162.
+- Shout! TV and TCLtv+ integrations, TCLtv+ stream URL fixes, alphabetical Live TV providers, catalog recovery and duplicate movie-category cleanup.
+- Regional and guest-access restrictions apply; full advertising-pod validation remains pending.
 
 ## Delivered in 1.4.0 stable
 
@@ -40,7 +46,7 @@ Planned work after stable [1.4.0](https://github.com/sheepman90s/sheepbox-releas
 
 ## Additional provider candidates
 
-Shout! TV is user-tested in 1.5.0-RC2, and TCLtv+ Live TV and On Demand Movies are available for testing in 1.5.0-RC3. The next research candidates are **wedotv**, **Cineverse**, and **Famelack / TV.Garden** (additional TV feeds and webcams). **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. This is a research shortlist, not a list of supported integrations or guaranteed additions.
+Shout! TV and TCLtv+ Live TV and On Demand Movies are included in 1.5.0 stable. The next research candidates are **wedotv**, **Cineverse**, and **Famelack / TV.Garden** (additional TV feeds and webcams). **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. This is a research shortlist, not a list of supported integrations or guaranteed additions.
 
 Each candidate needs a working guest catalog and playback path, normal regional availability, provider advertising support and device validation. We will not bypass accounts, subscriptions or DRM. Plex VOD remains blocked by its unavailable investigated guest authorization path. Google-account Freeplay and Prime/Freevee are excluded from the current plan.
 
