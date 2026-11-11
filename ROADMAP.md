@@ -40,7 +40,7 @@ Planned work after stable [1.4.0](https://github.com/sheepman90s/sheepbox-releas
 
 ## Additional provider candidates
 
-The reconstructed research queue is **Shout! TV's free guest subset**, **TCLtv+**, **wedotv** **Cineverse**, and **Famelack / TV.Garden** (additional TV feeds and webcams). **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. This is a research shortlist, not a list of supported integrations or guaranteed additions.
+Shout! TV is user-tested in 1.5.0-RC2, and TCLtv+ Live TV and On Demand Movies are available for testing in 1.5.0-RC3. The next research candidates are **wedotv**, **Cineverse**, and **Famelack / TV.Garden** (additional TV feeds and webcams). **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. This is a research shortlist, not a list of supported integrations or guaranteed additions.
 
 Each candidate needs a working guest catalog and playback path, normal regional availability, provider advertising support and device validation. We will not bypass accounts, subscriptions or DRM. Plex VOD remains blocked by its unavailable investigated guest authorization path. Google-account Freeplay and Prime/Freevee are excluded from the current plan.
 
