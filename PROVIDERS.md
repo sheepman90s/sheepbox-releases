@@ -1,6 +1,6 @@
 # Supported providers
 
-Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC4 test release**. Availability, catalogs and playback vary by region and device.
+Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.3.0)). The Zeam row describes the **1.4.0 RC5 test release**. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -17,7 +17,7 @@ Stable providers are available in **SheepBox 1.3.0** ([release and APK](https://
 | Fawesome | Yes | Movies & shows |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
-| Zeam (1.4.0 RC4 test release) | Guest stations and guide; native Media3/IMA player | Featured publisher videos; native playback, Play/Favorite, search and resume |
+| Zeam (1.4.0 RC5 test release) | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
@@ -31,13 +31,15 @@ FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categorie
 
 See the [roadmap](ROADMAP.md) for future work.
 
-## Zeam in 1.4.0 RC4
+## Zeam in 1.4.0 RC5
 
-RC4 fixes D-pad focus moving from native Zeam playback to the navigation buttons and removes the duplicate All Channels category. Press Up to reach the toolbar and Down to return to playback. Local News and Nearby groupings remain available; all stations remain in the single All Channels list.
+Zeam On Demand opens to an All Videos grid with Play/Favorite cards, search and unique category counts. It loads hosted episodes from show/season collections as well as legacy VOD recordings. Categories come from Zeam's featured-publisher collections, including Comedy, Entertainment, Sports, True Crime and Destinations. Publisher filtering is optional and excludes sources with no supported videos.
 
-Zeam guest live stations and programme guides use SheepBox's shared native Live TV player. Featured-publisher On Demand videos use native Media3 playback with Play/Favorite, search, loaded title counts, seeking, resume and watch history. Provider ads use IMA with prerolls and scheduled VOD breaks. Native content/ad playback and player cleanup passed on Android 10 and Android 14 emulators. Physical-TV picture, audio and D-pad navigation still need user verification. Recording is unavailable. Provider show/episode discovery, autoplay and saved caption preferences remain future work.
+The first opening builds a local metadata cache with progress; later visits open from that cache. Reload refreshes the directory and retries failed sources. Repeated featured shows are deduplicated by stable content identity. Broadcasts display their station and air date, and episodes use their own artwork where available. Partial loads retain completed work and mark loaded counts with +.
 
-The [RC4 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC4), version code 152, replaces Zeam's website player. Zeam uses SheepBox's own User-Agent with the provider's required API headers. Catalogs and availability change with the service.
+Native playback supports seeking, resume and watch history. Hosted episodes use provider IMA prerolls and midrolls after eight minutes of watched content; pauses, ads and large seek jumps do not advance that clock. The catalog covers hosted content discovered through the featured publisher directory, not every video format or page on Zeam. Dedicated season navigation, autoplay and saved caption preferences remain future work. Recording remains unavailable.
+
+The [RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0-RC5) uses version code 153. Catalogs, ads and availability vary by region and device. New VOD browsing and episode playback still need confirmation on the user's physical TV.
 
 ## Web Cams and World View
 
