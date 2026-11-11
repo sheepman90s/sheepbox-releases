@@ -10,6 +10,8 @@
 
 </div>
 
+**Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
+
 **Current stable release: [1.5.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0), version code 162.** Includes Shout! TV and TCLtv+ integration, TCLtv+ playback fixes, alphabetically ordered Live TV providers, catalog recovery and movie category cleanup. Update in **Settings > App updates > Check now > Update now**.
 
 1.5.0 promotes the user-tested RC6 to stable. Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
