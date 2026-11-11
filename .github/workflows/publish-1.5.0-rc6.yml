@@ -1,0 +1,75 @@
+name: Publish signed SheepBox 1.5.0-RC6
+on:
+  push:
+    branches: [release-upload/1.5.0-rc6]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore exact signed APK
+        run: |
+          python3 -m pip install bsdiff4==1.2.6
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, urllib.request, bsdiff4
+          url = 'https://github.com/sheepman90s/sheepbox-releases/releases/download/v1.5.0-RC4/sheepbox-tv-vod-1.5.0-RC4-release.apk'
+          base = urllib.request.urlopen(url).read()
+          assert hashlib.sha256(base).hexdigest() == 'e76fb5a5312777599f3a8df45607a4d1b92418c1de5ba0f3051fb1b418819f3a'
+          parts = sorted(Path('.release-upload').glob('patch-*'))
+          assert len(parts) == 15
+          patch = b''.join(p.read_bytes() for p in parts)
+          assert len(patch) == 3870114
+          data = bsdiff4.patch(base, patch)
+          digest = hashlib.sha256(data).hexdigest()
+          assert len(data) == 18085288
+          assert digest == '9e3093b7fc329c2ea15628aa581a3218086ab82ffbd619e60db26c22c3823e64'
+          out = Path('release-dist'); out.mkdir()
+          name = 'sheepbox-tv-vod-1.5.0-RC6-release.apk'
+          (out/name).write_bytes(data)
+          (out/(name+'.sha256')).write_text(digest+'  '+name+'\n')
+          PY
+      - name: Verify signature and version
+        run: |
+          SIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -1)
+          "$SIGNER" verify --verbose --print-certs release-dist/*.apk > certificate.txt
+          grep -F 'Number of signers: 1' certificate.txt
+          grep -F 'certificate SHA-256 digest: a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff' certificate.txt
+          AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -1)
+          "$AAPT" dump badging release-dist/*.apk | head -1 > package.txt
+          grep -F "name='com.sheepbox.tvandvodbox'" package.txt
+          grep -F "versionCode='161'" package.txt
+          grep -F "versionName='1.5.0-RC6'" package.txt
+      - name: Publish test release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v1.5.0-RC6 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo '1.5.0-RC6 already exists; refusing replacement'
+            exit 1
+          fi
+          gh release create v1.5.0-RC6 release-dist/*.apk release-dist/*.sha256 --repo "$GITHUB_REPOSITORY" --target a80754e5301f1cfdb6e118431967481c43a97554 --title '1.5.0-RC6' --notes-file .release-upload/notes.md --draft
+          test "$(gh release view v1.5.0-RC6 --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets | length')" = 2
+          gh release edit v1.5.0-RC6 --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=true --latest=false
+      - name: Verify public download and stable channel
+        run: |
+          curl --fail --location --retry 6 --retry-all-errors --retry-delay 5 'https://github.com/sheepman90s/sheepbox-releases/releases/download/v1.5.0-RC6/sheepbox-tv-vod-1.5.0-RC6-release.apk' --output public-download.apk
+          echo '9e3093b7fc329c2ea15628aa581a3218086ab82ffbd619e60db26c22c3823e64  public-download.apk' | sha256sum --check -
+          python3 - <<'PY'
+          import json, urllib.request
+          base='https://api.github.com/repos/sheepman90s/sheepbox-releases/releases'
+          release=json.load(urllib.request.urlopen(base+'/tags/v1.5.0-RC6'))
+          assert not release['draft'] and release['prerelease']
+          assert len(release['assets']) == 2
+          assert next(a for a in release['assets'] if a['name'].endswith('.apk'))['size'] == 18085288
+          assert json.load(urllib.request.urlopen(base+'/latest'))['tag_name'] == 'v1.4.0'
+          print('PUBLIC_RC6_VERIFIED code161 testChannel=true stable=v1.4.0')
+          PY
+      - name: Remove temporary publishing branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/release-upload/1.5.0-rc6"
