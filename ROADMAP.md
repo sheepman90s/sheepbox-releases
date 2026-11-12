@@ -12,7 +12,7 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 
 - NFB Films & Collections: free regional films and eligible collections/series, genre/language browsing, metadata caching, search/favorites, episodes, resume/autoplay and native HLS/manifest captions. VOD only; regional availability applies.
 - Includes NewsON Live TV and Recent Newscasts & Clips from RC1. Enable Include test versions in App updates to try [RC2](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC2).
-- 450 local regression tests, zero-error lint, signed assembly and four Android37 native checks passed. GitHub CI jobs could not start because of an account billing/spending-limit restriction; CI is not claimed green.
+- 450 regression tests, zero-error lint, signed assembly, four Android37 native checks and all three GitHub CI workflows passed. NFB also received positive user device feedback.
 
 ## Delivered in 1.5.0 stable
 
