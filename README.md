@@ -14,7 +14,7 @@
 
 **Current stable release: [1.7.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0), version code 175.** Includes native Plex and Filmzie Movies & Shows, The CW and Free Live Sports Live TV/guide and Movies & Shows, categorized caching, shared browsing/history and pink sheep artwork. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Next test development: 1.8.0-RC1.** The next test branch is being prepared; no 1.8.0 APK is published yet. The user-tested 1.7.0-RC6 is now included in stable 1.7.0.
+**Test release: [1.8.0-RC1](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC1), version code 176.** Adds NewsON Live TV and a Recent Newscasts & Clips browser with state/station navigation, cached browsing, search/favorites, history/resume and native playback with provider ad schedules. Enable **Include test versions** in App updates to try it. Ad fill/completion remains unverified.
 
 1.7.0 promotes the user-tested RC6 improvements to stable and retains the Cineverse/wedotv updates. Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
 
@@ -31,7 +31,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below includes **1.7.0 stabl
 |---|---|
 | Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
 | TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
-| On Demand | Movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse and the Internet Archive; Plex, Filmzie, The CW and Free Live Sports |
+| On Demand | NewsON recent newscasts/clips in 1.8.0-RC1 test releases; movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse and the Internet Archive; Plex, Filmzie, The CW and Free Live Sports |
 | Consistent browsing | Shared cards, Play/Episodes and Favorite actions, unique title counts beside categories (+ means incomplete), search, A–Z ordering and first-open catalog progress |
 | Seasons & episodes | Shared show screen with descriptions, seasons, episodes and optional autoplay |
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
@@ -52,7 +52,7 @@ Native playback, provider ads, seeking, resume and history are included. RC6 was
 
 ## Providers
 
-**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv and Cineverse, The CW and Free Live Sports.
+**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv and Cineverse, The CW and Free Live Sports; NewsON in 1.8.0-RC1 test releases.
 
 **On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+ and the Internet Archive.
 
