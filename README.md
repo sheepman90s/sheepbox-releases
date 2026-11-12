@@ -14,7 +14,7 @@
 
 **Current stable release: [1.6.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.6.0), version code 168.** Includes wedotv and Cineverse Live TV/Movies & Shows, Cineverse All Channels, and guest series/cache fixes. Update in **Settings > App updates > Check now > Update now**.
 
-**Test release: [1.7.0-RC4](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0-RC4), version code 172.** Adds account-free Plex and Filmzie Movies & Shows, full categorized catalog caching, clearer Plex/Tubi first-load guidance, and pink-only sheep nose/inner-ear accents including the shelf toy. Enable **Include test versions** in App updates to try it. Filmzie is VOD-only.
+**Test release: [1.7.0-RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0-RC6), version code 174.** Adds The CW and Free Live Sports Live TV/guide and Movies & Shows, native playback with provider advertising, categories, shared search/favorites, seasons, history/resume and autoplay. Retains Plex, Filmzie, catalog-loading guidance and the pink sheep artwork. Enable **Include test versions** in App updates to try it. Filmzie is VOD-only.
 
 1.6.0 promotes the user-tested Cineverse/wedotv updates to stable. Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
 
@@ -23,7 +23,7 @@
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below includes **1.6.0 stable and 1.7.0-RC4 test features**.
+Screenshots show **1.1.0 - RC4**; the provider list below includes **1.6.0 stable and 1.7.0-RC6 test features**.
 
 ## Features
 
@@ -31,7 +31,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below includes **1.6.0 stabl
 |---|---|
 | Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
 | TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
-| On Demand | Movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse and the Internet Archive; Plex and Filmzie in test releases |
+| On Demand | Movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse and the Internet Archive; Plex, Filmzie, The CW and Free Live Sports in test releases |
 | Consistent browsing | Shared cards, Play/Episodes and Favorite actions, unique title counts beside categories (+ means incomplete), search, A–Z ordering and first-open catalog progress |
 | Seasons & episodes | Shared show screen with descriptions, seasons, episodes and optional autoplay |
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
@@ -52,11 +52,11 @@ Native playback, provider ads, seeking, resume and history are included. RC6 was
 
 ## Providers
 
-**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv and Cineverse.
+**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv and Cineverse; The CW and Free Live Sports in 1.7.0-RC6 test releases.
 
 **On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+ and the Internet Archive.
 
-FilmRise and Filmzie are **VOD-only**. Plex Movies & Shows are available in the 1.7.0 test releases. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
+FilmRise and Filmzie are **VOD-only**. Plex and Filmzie Movies & Shows are available in the 1.7.0 test releases. The CW and Free Live Sports add both Live TV and Movies & Shows in 1.7.0-RC6. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
 
 ## Roadmap
 
