@@ -1,6 +1,6 @@
 # Supported providers
 
-The stable release is **SheepBox 1.6.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.6.0)). Plex and Filmzie VOD require the **1.7.0 test releases**; The CW and Free Live Sports Live TV/VOD are included in **1.7.0-RC6/code174**; enable Include test versions in App updates. Availability, catalogs and playback vary by region and device.
+The stable release is **SheepBox 1.7.0/code175** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0)). Includes Plex and Filmzie Movies & Shows plus The CW and Free Live Sports Live TV and Movies & Shows. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -8,7 +8,7 @@ The stable release is **SheepBox 1.6.0** ([release and APK](https://github.com/s
 | Pluto TV | Yes | Movies & shows |
 | Samsung TV Plus | Yes | — |
 | LG Channels | Yes | — |
-| Plex | Yes | Movies & shows in 1.7.0 test releases |
+| Plex | Yes | Movies & shows in 1.7.0 stable |
 | Roku Channel | Yes | Movies & shows |
 | Tubi | Yes | Movies & shows |
 | Xumo | Yes | Movies & shows |
@@ -22,9 +22,9 @@ The stable release is **SheepBox 1.6.0** ([release and APK](https://github.com/s
 | TCLtv+ | Free guest lineup and guide | Movies by category |
 | wedotv | Free guest lineup | Movies & shows |
 | Cineverse | All Channels A-Z | Movies & shows |
-| Filmzie | — | Guest movies & shows in 1.7.0 test releases |
-| The CW | Guest lineup and guide in 1.7.0-RC6 | Guest Movies & Shows with native Widevine/IMA in 1.7.0-RC6 |
-| Free Live Sports | Guest sports lineup and guide in 1.7.0-RC6 | Guest Movies & Shows with native HLS/IMA in 1.7.0-RC6 |
+| Filmzie | — | Guest movies & shows in 1.7.0 stable |
+| The CW | Guest lineup and guide in 1.7.0 stable | Guest Movies & Shows with native Widevine/IMA in 1.7.0 stable |
+| Free Live Sports | Guest sports lineup and guide in 1.7.0 stable | Guest Movies & Shows with native HLS/IMA in 1.7.0 stable |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
