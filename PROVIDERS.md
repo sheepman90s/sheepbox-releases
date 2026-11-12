@@ -1,6 +1,6 @@
 # Supported providers
 
-Providers are available in **SheepBox 1.5.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.5.0)). Availability, catalogs and playback vary by region and device.
+The stable release is **SheepBox 1.6.0** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.6.0)). Plex and Filmzie VOD require the **1.7.0 test releases**; enable Include test versions in App updates. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -8,7 +8,7 @@ Providers are available in **SheepBox 1.5.0** ([release and APK](https://github.
 | Pluto TV | Yes | Movies & shows |
 | Samsung TV Plus | Yes | — |
 | LG Channels | Yes | — |
-| Plex | Yes | Not implemented |
+| Plex | Yes | Movies & shows in 1.7.0 test releases |
 | Roku Channel | Yes | Movies & shows |
 | Tubi | Yes | Movies & shows |
 | Xumo | Yes | Movies & shows |
@@ -20,6 +20,9 @@ Providers are available in **SheepBox 1.5.0** ([release and APK](https://github.
 | Zeam | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
 | Shout! TV | Free guest lineup | Free guest movies and shows; availability varies |
 | TCLtv+ | Free guest lineup and guide | Movies by category |
+| wedotv | Free guest lineup | Movies & shows |
+| Cineverse | All Channels A-Z | Movies & shows |
+| Filmzie | — | Guest movies & shows in 1.7.0 test releases |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
@@ -27,7 +30,7 @@ Providers are available in **SheepBox 1.5.0** ([release and APK](https://github.
 
 All On Demand providers use shared title cards, Play/Episodes and Favorite actions, category counts, search and cached browsing. Movies and shows are counted separately, with duplicate titles removed within each count. FilmRise counts with + are lower bounds because its guest service has returned only part of those categories. Catalogs load when opened, rather than at app startup.
 
-Plex VOD remains unimplemented because the investigated guest authorization path is unavailable. FilmRise is VOD-only; no standalone live lineup has been verified. Account-requiring Google Freeplay and Prime/Freevee are outside the current provider plan.
+Plex Movies & Shows use a fresh anonymous guest session, categorized catalog caching, native IMA and standard Android Widevine. Filmzie Movies & Shows use the public guest catalog, native HLS and unchanged IMA schedules; no Filmzie Live TV catalog is integrated. FilmRise is VOD-only; no standalone live lineup has been verified. Account-requiring Google Freeplay and Prime/Freevee are outside the current provider plan.
 
 FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categories, including all 251 True Crime movie titles. Three categories remain provider-limited and use + counts; the overall movie count is a lower bound. Initial-load batches use alternate sort orders to retrieve additional free titles and resume completed work; All New Arrivals returned 3,231 distinct free movies. The app cannot claim a complete FilmRise catalog. Fresh primary movie/episode manifests and ad schedules passed. These are a service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
 
