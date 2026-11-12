@@ -1,0 +1,47 @@
+name: Verify published SheepBox RC4
+on:
+  push:
+    branches: [verify/1.6.0-rc4]
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify anonymous public APK
+        run: |
+          curl --fail --location --retry 8 --retry-all-errors --retry-delay 5 'https://github.com/sheepman90s/sheepbox-releases/releases/download/v1.6.0-RC4/sheepbox-tv-vod-1.6.0-RC4-release.apk' --output public-download.apk
+          echo '442e1a5ac4923d12d894f486543be8c1c4ccac6d0a4b6076193da08e0468262c  public-download.apk' | sha256sum --check -
+      - name: Verify release feed and stable Latest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error, os
+          base="https://api.github.com/repos/sheepman90s/sheepbox-releases"
+          mode="anonymous"
+          def fetch(path):
+              global mode
+              req=urllib.request.Request(base+path,headers={"User-Agent":"SheepBox-release-verification"})
+              try:
+                  return json.load(urllib.request.urlopen(req,timeout=30))
+              except urllib.error.HTTPError as e:
+                  if e.code not in (403,429):raise
+                  mode="authenticated-after-runner-rate-limit"
+                  req.add_header("Authorization","Bearer "+os.environ["GH_TOKEN"])
+                  return json.load(urllib.request.urlopen(req,timeout=30))
+          releases=fetch("/releases?per_page=30")
+          r=next(x for x in releases if x["tag_name"]=="v1.6.0-RC4")
+          assert not r["draft"] and r["prerelease"]
+          apk=next(a for a in r["assets"] if a["name"]=="sheepbox-tv-vod-1.6.0-RC4-release.apk")
+          assert apk["size"]==18167388
+          assert apk["browser_download_url"].endswith("/v1.6.0-RC4/sheepbox-tv-vod-1.6.0-RC4-release.apk")
+          checksum_url=next(a["browser_download_url"] for a in r["assets"] if a["name"].endswith(".sha256"))
+          assert urllib.request.urlopen(checksum_url,timeout=30).read().decode().split()[0]=="442e1a5ac4923d12d894f486543be8c1c4ccac6d0a4b6076193da08e0468262c"
+          assert fetch("/releases/latest")["tag_name"]=="v1.5.0"
+          print("PUBLIC_UPDATE_VERIFIED versionCode=166 testChannel=true api_mode="+mode)
+          PY
+      - name: Remove completed APK transfer branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/release-upload/1.6.0-rc4"
