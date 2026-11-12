@@ -26,6 +26,7 @@ The stable release is **SheepBox 1.7.0/code175** ([release and APK](https://gith
 | The CW | Guest lineup and guide in 1.7.0 stable | Guest Movies & Shows with native Widevine/IMA in 1.7.0 stable |
 | Free Live Sports | Guest sports lineup and guide in 1.7.0 stable | Guest Movies & Shows with native HLS/IMA in 1.7.0 stable |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
+| NewsON | Guest live/AlwaysON stations and current programme metadata in 1.8.0-RC1 test releases | Recent newscasts and clips by state/station in 1.8.0-RC1 test releases |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
 “Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
