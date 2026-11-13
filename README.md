@@ -14,7 +14,7 @@
 
 **Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.9.0-RC1](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC1), version code 185.** Adds NASA+ Videos & Series and its continuous live channel. Current catalog snapshot:279 standalone videos and39 series/328 episode posts. Includes categories/languages, saved browsing, search/favorites, seasons, autoplay, history/resume and native HLS/captions. Enable **Include test versions** in App updates. 547 regression tests, zero-error lint, signed assembly, six Android23/35 native checks and all four CI workflows passed.
+**Test release: [1.9.0-RC2](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC2), version code 186.** Changes the default update channel to stable releases. Users must enable Include test versions to receive RC builds; explicit saved choices remain intact. RC names require opt-in even if GitHub marks them regular releases. Pending test offers are dismissed when opting out. Includes NASA+ and all RC1 features. 552 regression tests, zero-error lint, signed assembly and all three CI workflows passed.
 
 Four NASA-provided video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.
 
