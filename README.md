@@ -14,7 +14,7 @@
 
 **Current stable release: [1.7.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0), version code 175.** Includes native Plex and Filmzie Movies & Shows, The CW and Free Live Sports Live TV/guide and Movies & Shows, categorized caching, shared browsing/history and pink sheep artwork. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.8.0-RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC7), version code 182.** Improves RetroCrush artwork with landscape images, alternate-image fallback, and retries when Reload is selected. Older saved artwork refreshes automatically on first opening. Includes DOCUMENTARY+, FlixHouse, RetroCrush, Canela.TV, NFB and NewsON. Enable **Include test versions** in App updates. 528 regression tests, zero-error lint, signed assembly, three Android35 artwork checks and all four CI workflows passed.
+**Test release: [1.8.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC8), version code 183.** Fixes missing DOCUMENTARY+ artwork, including Arctic Alchemy. Retains working title images and alternatives, refreshes older saved artwork automatically, and improves show/episode pictures. Includes the RC7 RetroCrush artwork improvements and all earlier 1.8.0 providers. Enable **Include test versions** in App updates. 532 regression tests, zero-error lint, signed assembly, two Android35 artwork checks and all four CI workflows passed.
 
 DOCUMENTARY+ can still return intermittent provider HTTP500/504 errors, as disclosed with [RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC6).
 

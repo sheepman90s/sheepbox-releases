@@ -8,6 +8,12 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.8.0-RC8
+
+- Fixes missing DOCUMENTARY+ title artwork, including Arctic Alchemy, and improves show/episode pictures. Older saved artwork refreshes automatically; supplied alternatives and Reload recover failed images.
+- 532 regression tests, zero-error lint, signed assembly, two Android35 artwork checks and all four CI workflows passed.
+- Enable Include test versions in App updates to try [RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC8). Includes all earlier 1.8.0 providers and RetroCrush artwork improvements; the disclosed DOCUMENTARY+ provider HTTP500/504 issue remains.
+
 ## Available in 1.8.0-RC7
 
 - RetroCrush artwork recovery: landscape images, alternate images after failed requests, retries on Reload, and automatic refresh of older saved artwork.

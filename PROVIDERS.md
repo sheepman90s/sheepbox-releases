@@ -31,7 +31,7 @@ The stable release is **SheepBox 1.7.0/code175** ([release and APK](https://gith
 | Canela.TV | Guest regional lineup/guide with native playback and session renewal in 1.8.0-RC3 test releases | Free Movies & Shows, cached browsing, full episodes, search/favorites, resume/autoplay and provider advertising in 1.8.0-RC3 test releases |
 | RetroCrush | No | Free guest movie and eligible show episodes, categorized caching and native ad-supported playback from 1.8.0-RC4; artwork fallback and refresh recovery improved in RC7 |
 | FlixHouse | 11 native guest channels in All Channels A–Z, provider guide where supplied, in 1.8.0-RC5 test releases | 2,078 guest movies and 14 shows/168 eligible episodes, categorized caching and native ad-supported playback in 1.8.0-RC5 test releases |
-| DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in1.8.0-RC6 |270 movies,38 shows/291 free episodes, categorized caching and native ad-supported playback in1.8.0-RC6; intermittent upstream HTTP500/504 errors observed |
+| DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in1.8.0-RC6 |270 movies,38 shows/291 free episodes, categorized caching and native ad-supported playback from1.8.0-RC6; missing artwork, including Arctic Alchemy, corrected in RC8. Intermittent upstream HTTP500/504 errors observed |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
 “Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
