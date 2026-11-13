@@ -8,6 +8,12 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.8.0-RC4
+
+- RetroCrush On Demand: free guest episodes within mixed-access shows, categorized caching, search/favorites, history/resume/autoplay and native playback with provider advertising. VOD only; Premium/account-only offers remain excluded.
+- Includes Canela.TV, NFB and NewsON. Enable Include test versions to try [RC4](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC4).
+- All 482 regression tests, zero-error lint, signed/instrumentation assembly and three Android35 native checks passed. Physical-TV feedback and ad fill/completion remain unverified.
+
 ## Available in 1.8.0-RC3
 
 - Canela.TV Live TV/guide and Movies & Shows: free regional titles, cached category browsing, search/favorites, full seasons/episodes, resume/autoplay and native playback with provider advertising and required guest-session renewal.
