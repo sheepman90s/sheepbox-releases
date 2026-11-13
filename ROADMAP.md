@@ -8,6 +8,13 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.8.0-RC5
+
+- FlixHouse Movies & Shows and Live TV/guide: current US guest catalog has 2,078 movies, 14 shows/168 eligible episodes, and 11 native live channels in All Channels A–Z.
+- Categorized metadata caching, search/favorites, history/resume/autoplay, captions and native playback with provider ads. The first catalog load may take several minutes.
+- Includes RetroCrush, Canela.TV, NFB and NewsON. Enable Include test versions to try [RC5](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC5).
+- All 501 regression tests, zero-error lint, signed/instrumentation builds and six Android native checks passed. Actual ads completed before decoded movie, episode and live content; physical-TV feedback remains pending.
+
 ## Available in 1.8.0-RC4
 
 - RetroCrush On Demand: free guest episodes within mixed-access shows, categorized caching, search/favorites, history/resume/autoplay and native playback with provider advertising. VOD only; Premium/account-only offers remain excluded.
@@ -64,7 +71,7 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 
 ## Additional provider candidates
 
-Shout! TV and TCLtv+ are included in 1.5.0 stable; wedotv and Cineverse in 1.6.0 stable; Plex Movies & Shows, Filmzie, The CW and Free Live Sports in 1.7.0 stable. NewsON, NFB and Canela.TV are included in the 1.8.0 test releases. Further provider research includes the guest-free RetroCrush subset and additional Famelack / TV.Garden feeds. **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. Remaining research candidates are not guaranteed additions.
+Shout! TV and TCLtv+ are included in 1.5.0 stable; wedotv and Cineverse in 1.6.0 stable; Plex Movies & Shows, Filmzie, The CW and Free Live Sports in 1.7.0 stable. NewsON, NFB, Canela.TV, RetroCrush and FlixHouse are included in the 1.8.0 test releases. Further provider research includes additional Famelack / TV.Garden feeds. **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. Remaining research candidates are not guaranteed additions.
 
 Each candidate needs a working guest catalog and playback path, normal regional availability, provider advertising support and device validation. We will not bypass accounts, subscriptions or DRM. Google-account Freeplay and Prime/Freevee are excluded from the current plan.
 
