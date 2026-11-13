@@ -12,20 +12,20 @@
 
 **Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
 
-**Current stable release: [1.7.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0), version code 175.** Includes native Plex and Filmzie Movies & Shows, The CW and Free Live Sports Live TV/guide and Movies & Shows, categorized caching, shared browsing/history and pink sheep artwork. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
+**Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.8.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC8), version code 183.** Fixes missing DOCUMENTARY+ artwork, including Arctic Alchemy. Retains working title images and alternatives, refreshes older saved artwork automatically, and improves show/episode pictures. Includes the RC7 RetroCrush artwork improvements and all earlier 1.8.0 providers. Enable **Include test versions** in App updates. 532 regression tests, zero-error lint, signed assembly, two Android35 artwork checks and all four CI workflows passed.
+Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically on first opening. 532 regression tests, zero-error lint, signed assembly and all three stable CI workflows passed. RC8 Android artwork verification and user acceptance carry forward; online device tests were not rerun for this version-only promotion.
 
 DOCUMENTARY+ can still return intermittent provider HTTP500/504 errors, as disclosed with [RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC6).
 
-1.7.0 promotes the user-tested RC6 improvements to stable and retains the Cineverse/wedotv updates. Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
+Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below includes **1.7.0 stable features**.
+Screenshots show **1.1.0 - RC4**; the provider list below includes **1.8.0 stable features**.
 
 ## Features
 
@@ -33,7 +33,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below includes **1.7.0 stabl
 |---|---|
 | Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
 | TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
-| On Demand | DOCUMENTARY+ Movies & Shows in1.8.0-RC6; FlixHouse Movies & Shows in 1.8.0-RC5 and RetroCrush On Demand from RC4; Canela.TV Movies & Shows in 1.8.0-RC3; NFB Films & Collections from RC2; NewsON recent newscasts/clips from RC1; movies and shows from Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse and the Internet Archive; Plex, Filmzie, The CW and Free Live Sports |
+| On Demand | NewsON recent newscasts/clips; NFB Films & Collections; Movies & Shows from Canela.TV, RetroCrush, FlixHouse, DOCUMENTARY+, Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports and the Internet Archive |
 | Consistent browsing | Shared cards, Play/Episodes and Favorite actions, unique title counts beside categories (+ means incomplete), search, A–Z ordering and first-open catalog progress |
 | Seasons & episodes | Shared show screen with descriptions, seasons, episodes and optional autoplay |
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
@@ -54,11 +54,11 @@ Native playback, provider ads, seeking, resume and history are included. RC6 was
 
 ## Providers
 
-**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv and Cineverse, The CW and Free Live Sports; NewsON from 1.8.0-RC1, Canela.TV from RC3 FlixHouse from RC5 and DOCUMENTARY+ from RC6 test releases.
+**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv, Cineverse, The CW, Free Live Sports, NewsON, Canela.TV, FlixHouse and DOCUMENTARY+.
 
-**On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports and the Internet Archive; NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ in the 1.8.0 test releases.
+**On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports, the Internet Archive, NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+.
 
-FilmRise and Filmzie are **VOD-only**. Plex and Filmzie Movies & Shows and The CW/Free Live Sports Live TV and Movies & Shows are included in stable 1.7.0. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
+FilmRise, Filmzie, NFB and RetroCrush are **VOD-only**. All providers listed above are included in stable 1.8.0. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
 
 ## Roadmap
 
@@ -71,7 +71,7 @@ These are planned features, without committed dates. See [ROADMAP.md](ROADMAP.md
 ## Install and update
 
 1. Allow installs from your chosen downloader or file manager in the TV's Android settings.
-2. Download the APK from [1.7.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+2. Download the APK from [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. It checks the connection and loads live channels; each On Demand catalog builds when first opened.
 

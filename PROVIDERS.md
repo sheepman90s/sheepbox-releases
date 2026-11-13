@@ -1,6 +1,6 @@
 # Supported providers
 
-The stable release is **SheepBox 1.7.0/code175** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.7.0)). Includes Plex and Filmzie Movies & Shows plus The CW and Free Live Sports Live TV and Movies & Shows. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
+The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -26,12 +26,12 @@ The stable release is **SheepBox 1.7.0/code175** ([release and APK](https://gith
 | The CW | Guest lineup and guide in 1.7.0 stable | Guest Movies & Shows with native Widevine/IMA in 1.7.0 stable |
 | Free Live Sports | Guest sports lineup and guide in 1.7.0 stable | Guest Movies & Shows with native HLS/IMA in 1.7.0 stable |
 | FilmRise | Not implemented | Movies & shows; added in RC6 |
-| NewsON | Guest live/AlwaysON stations and current programme metadata in 1.8.0-RC1 test releases | Recent newscasts and clips by state/station in 1.8.0-RC1 test releases |
-| NFB | No | Free regional Films & Collections, cached genre/language browsing, native HLS/captions, episodes and resume/autoplay in 1.8.0-RC2 test releases |
-| Canela.TV | Guest regional lineup/guide with native playback and session renewal in 1.8.0-RC3 test releases | Free Movies & Shows, cached browsing, full episodes, search/favorites, resume/autoplay and provider advertising in 1.8.0-RC3 test releases |
-| RetroCrush | No | Free guest movie and eligible show episodes, categorized caching and native ad-supported playback from 1.8.0-RC4; artwork fallback and refresh recovery improved in RC7 |
-| FlixHouse | 11 native guest channels in All Channels A–Z, provider guide where supplied, in 1.8.0-RC5 test releases | 2,078 guest movies and 14 shows/168 eligible episodes, categorized caching and native ad-supported playback in 1.8.0-RC5 test releases |
-| DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in1.8.0-RC6 |270 movies,38 shows/291 free episodes, categorized caching and native ad-supported playback from1.8.0-RC6; missing artwork, including Arctic Alchemy, corrected in RC8. Intermittent upstream HTTP500/504 errors observed |
+| NewsON | Guest live/AlwaysON stations and current programme metadata in 1.8.0 stable | Recent newscasts and clips by state/station in 1.8.0 stable |
+| NFB | No | Free regional Films & Collections, cached genre/language browsing, native HLS/captions, episodes and resume/autoplay in 1.8.0 stable |
+| Canela.TV | Guest regional lineup/guide, native playback and session renewal in 1.8.0 stable | Free Movies & Shows, cached browsing, full episodes, search/favorites, resume/autoplay and provider advertising in 1.8.0 stable |
+| RetroCrush | No | Free guest movies and eligible show episodes, categorized caching, native ad-supported playback and artwork recovery in 1.8.0 stable |
+| FlixHouse | 11 guest live channels and guide in All Channels A–Z in 1.8.0 stable | Current US snapshot: 2,078 guest movies and 14 shows/168 eligible episodes, categorized caching and native ad-supported playback in 1.8.0 stable |
+| DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in 1.8.0 stable | Current snapshot: 270 movies, 38 shows/291 free episodes, categorized caching, native ad-supported playback and artwork corrections including Arctic Alchemy. Intermittent upstream HTTP500/504 errors observed |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
 “Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
