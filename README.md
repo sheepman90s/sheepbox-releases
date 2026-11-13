@@ -14,7 +14,9 @@
 
 **Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.9.0-RC2](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC2), version code 186.** Changes the default update channel to stable releases. Users must enable Include test versions to receive RC builds; explicit saved choices remain intact. RC names require opt-in even if GitHub marks them regular releases. Pending test offers are dismissed when opting out. Includes NASA+ and all RC1 features. 552 regression tests, zero-error lint, signed assembly and all three CI workflows passed.
+**Test release: [1.9.0-RC3](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC3), version code 187.** Adds Red Bull TV Videos & Series, sports replays and continuous live channels with the provider guide. Includes categorized caching, artwork, seasons and Extras, search/favorites, resume/autoplay and native playback with publisher advertising. Includes NASA+ and RC2's stable-only update default; enable Include test versions to receive RC builds. 577 regression tests, zero-error lint, signed assembly, seven Android 6/15 native cases and three CI build workflows passed. GitHub blocked follow-up jobs because of account billing/spending limits; application source is identical to the passing runs.
+
+Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
 
 Four NASA-provided video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.
 

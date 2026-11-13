@@ -8,6 +8,14 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC3
+
+- Adds Red Bull TV Videos & Series, sports replays and continuous live channels with the provider guide. Includes categorized caching, artwork, seasons and Extras, search/favorites, resume/autoplay and native playback with publisher advertising. Includes NASA+ and RC2's stable-only update default; enable Include test versions to receive RC builds.
+- Current regional snapshot: 598 videos and 281 series (879 catalog images decoded); nine continuous channels. Skate Tales: six seasons plus Extras, 30 unique episodes with decoded artwork.
+- 577 regression tests, zero-error lint, signed assembly, seven Android 6/15 native cases and three CI build workflows passed. GitHub blocked follow-up jobs because of account billing/spending limits; application source is identical to the passing runs.
+- Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
+- Try [1.9.0-RC3](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC3) with Include test versions enabled. Latest stable remains1.8.0.
+
 ## Available in 1.9.0-RC2
 
 - Changes the default update channel to stable releases. Users must enable Include test versions to receive RC builds; explicit saved choices remain intact. RC names require opt-in even if GitHub marks them regular releases. Pending test offers are dismissed when opting out.
