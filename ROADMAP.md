@@ -8,6 +8,12 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in1.8.0-RC6
+
+- Adds DOCUMENTARY+ Movies & Shows and four live channels with guide in All Channels A–Z. Current guest snapshot:270 movies,38 shows/291 eligible episodes. Includes categorized caching, search/favorites, resume/autoplay and native playback with provider ads. Includes FlixHouse, RetroCrush, Canela.TV, NFB and NewsON.
+- 522 regression tests, zero-error lint, signed/instrumentation builds and standard CI passed. Android23 passed; each of two Android35 runs passed6/7 with intermittent provider HTTP500/504 errors. All tested playback paths succeeded across runs, but neither full native run was green.
+- Enable Include test versions to try [RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC6). Provider server errors may require Retry.
+
 ## Available in 1.8.0-RC5
 
 - FlixHouse Movies & Shows and Live TV/guide: current US guest catalog has 2,078 movies, 14 shows/168 eligible episodes, and 11 native live channels in All Channels A–Z.

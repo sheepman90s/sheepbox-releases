@@ -31,6 +31,7 @@ The stable release is **SheepBox 1.7.0/code175** ([release and APK](https://gith
 | Canela.TV | Guest regional lineup/guide with native playback and session renewal in 1.8.0-RC3 test releases | Free Movies & Shows, cached browsing, full episodes, search/favorites, resume/autoplay and provider advertising in 1.8.0-RC3 test releases |
 | RetroCrush | No | Free guest movie and eligible show episodes, categorized caching and native ad-supported playback in 1.8.0-RC4 test releases |
 | FlixHouse | 11 native guest channels in All Channels A–Z, provider guide where supplied, in 1.8.0-RC5 test releases | 2,078 guest movies and 14 shows/168 eligible episodes, categorized caching and native ad-supported playback in 1.8.0-RC5 test releases |
+| DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in1.8.0-RC6 |270 movies,38 shows/291 free episodes, categorized caching and native ad-supported playback in1.8.0-RC6; intermittent upstream HTTP500/504 errors observed |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
 “Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
@@ -41,7 +42,7 @@ Plex Movies & Shows use a fresh anonymous guest session, categorized catalog cac
 
 FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categories, including all 251 True Crime movie titles. Three categories remain provider-limited and use + counts; the overall movie count is a lower bound. Initial-load batches use alternate sort orders to retrieve additional free titles and resume completed work; All New Arrivals returned 3,231 distinct free movies. The app cannot claim a complete FilmRise catalog. Fresh primary movie/episode manifests and ad schedules passed. These are a service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
 
-FlixHouse counts are a current US guest-catalog snapshot, not its full Premium or advertised live lineup. Movie, episode and shared live playback were verified after actual provider ad completion on an Android emulator; physical-TV feedback is pending. Its first full catalog load can take several minutes; later browsing uses the saved cache.
+FlixHouse counts are a current US guest-catalog snapshot, not its full Premium or advertised live lineup. Movie, episode and shared live playback were verified after actual provider ad completion on an Android emulator; the user reported RC5 checks out good (device/scenarios unspecified). Its first full catalog load can take several minutes; later browsing uses the saved cache.
 
 See the [roadmap](ROADMAP.md) for future work.
 
