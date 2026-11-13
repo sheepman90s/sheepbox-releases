@@ -8,6 +8,12 @@ Planned work after stable [1.7.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.8.0-RC7
+
+- RetroCrush artwork recovery: landscape images, alternate images after failed requests, retries on Reload, and automatic refresh of older saved artwork.
+- 528 regression tests, zero-error lint, signed assembly, three Android35 artwork checks and all four CI workflows passed.
+- Enable Include test versions in App updates to try [RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC7). Includes all RC6 providers; the disclosed DOCUMENTARY+ provider HTTP500/504 issue remains.
+
 ## Available in1.8.0-RC6
 
 - Adds DOCUMENTARY+ Movies & Shows and four live channels with guide in All Channels A–Z. Current guest snapshot:270 movies,38 shows/291 eligible episodes. Includes categorized caching, search/favorites, resume/autoplay and native playback with provider ads. Includes FlixHouse, RetroCrush, Canela.TV, NFB and NewsON.
