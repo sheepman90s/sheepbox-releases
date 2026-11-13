@@ -14,6 +14,10 @@
 
 **Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
+**Test release: [1.9.0-RC1](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC1), version code 185.** Adds NASA+ Videos & Series and its continuous live channel. Current catalog snapshot:279 standalone videos and39 series/328 episode posts. Includes categories/languages, saved browsing, search/favorites, seasons, autoplay, history/resume and native HLS/captions. Enable **Include test versions** in App updates. 547 regression tests, zero-error lint, signed assembly, six Android23/35 native checks and all four CI workflows passed.
+
+Four NASA-provided video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.
+
 Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically on first opening. 532 regression tests, zero-error lint, signed assembly and all three stable CI workflows passed. RC8 Android artwork verification and user acceptance carry forward; online device tests were not rerun for this version-only promotion.
 
 DOCUMENTARY+ can still return intermittent provider HTTP500/504 errors, as disclosed with [RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC6).

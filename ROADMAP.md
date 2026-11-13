@@ -8,6 +8,14 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC1
+
+- NASA+ Videos & Series and its continuous live channel: current public snapshot279 standalone videos,39 series/328 episode posts.
+- Categorized saved browsing, language labels, search/favorites, shared seasons/episodes/autoplay, native HLS/captions and history/resume.
+- 547 regression tests, zero-error lint, signed assembly, six Android23/35 native checks and all four CI workflows passed.
+- Four NASA sources return404 in both the API and official web player; those videos currently remain unavailable. No programme schedule is invented for the continuous channel.
+- Enable Include test versions in App updates to try [1.9.0-RC1](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC1). Stable Latest remains1.8.0.
+
 ## Delivered in 1.8.0 stable
 
 - Promotes the user-tested RC8 as 1.8.0/code184, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+.
