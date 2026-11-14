@@ -2,6 +2,8 @@
 
 The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
+[1.9.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5) carries forward all RC4 providers and adds local hide/report controls across channels and titles. Restore hidden entries without losing favorites/history. Email reports are prepared for aj@mindcrash.com; users send them from their email app or phone.
+
 | Provider | Live TV | On Demand |
 |---|---|---|
 | IPTV-org | Free-to-air channel lists by country and genre | — |
