@@ -15,6 +15,7 @@ The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://gith
 | Sling Freestream | Yes | Free movies & shows |
 | YuppTV Free | Free lineup | — |
 | Fawesome | Yes | Movies & shows |
+| Popcornflix | No standalone lineup verified | Guest Movies & Shows in 1.9.0-RC4 test releases: categorized caching, shared seasons/episodes, artwork, search/favorites/history/resume/autoplay, captions and native playback with publisher advertising. Current US website snapshot: 580 movies and 166 shows; 746 catalog images decoded. |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
 | Zeam | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |

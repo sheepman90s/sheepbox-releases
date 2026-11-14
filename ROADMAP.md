@@ -119,6 +119,8 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 
 ## Additional provider candidates
 
+NASA+ and Red Bull TV are available in 1.9.0 test releases. [Popcornflix 1.9.0-RC4](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC4) adds guest Movies & Shows with categorized caching, shared seasons, native playback and publisher advertising. Five Android 6/15 emulator cases passed; physical-TV acceptance and delivered-ad completion remain pending.
+
 Shout! TV and TCLtv+ are included in 1.5.0 stable; wedotv and Cineverse in 1.6.0 stable; Plex Movies & Shows, Filmzie, The CW and Free Live Sports in 1.7.0 stable. NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ are included in 1.8.0 stable. Further provider research includes additional Famelack / TV.Garden feeds. **DistroTV** remains on hold pending verification of a working replacement for its legacy endpoint. Remaining research candidates are not guaranteed additions.
 
 Each candidate needs a working guest catalog and playback path, normal regional availability, provider advertising support and device validation. We will not bypass accounts, subscriptions or DRM. Google-account Freeplay and Prime/Freevee are excluded from the current plan.
