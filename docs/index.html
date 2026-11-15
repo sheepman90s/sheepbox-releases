@@ -79,7 +79,7 @@ th{color:var(--lav)}
   <a class="btn" href="https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk">⬇ Download 1.8.0 stable release</a>
   <a class="btn alt" href="https://github.com/sheepman90s/sheepbox-releases">View on GitHub</a>
   <p class="release-note"><strong>Current stable release: <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0">1.8.0</a>.</strong> Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Version code 184.</p>
-  <p class="release-note"><strong>Test release: <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC11">1.9.0-RC11</a>.</strong> Version code 195. Adds a separate Kids icon on Home with PBS KIDS, rated Runtime Family movies/shows and kids live channels grouped by provider. Runtime adds guest Movies &amp; Shows, live TV and its programme guide; PBS KIDS adds current full episodes, movies, clips and shows. Includes FreeCast guide-only mapping and optional vSeeBox playback optimization. Passed 715 local unit tests, zero-error lint, eight unique Android 6 checks across runs and signed RC10 upgrade/startup verification. Partial catalogues show +. Publisher ad requests returned no fill; delivered ad pods and physical-TV acceptance remain unverified. Enable Include test versions to update. Latest stable remains 1.8.0.</p>
+  <p class="release-note"><strong>Test release: <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC12">1.9.0-RC12</a>.</strong> Version code 196. Removes the separate Kids section: PBS KIDS stays under On Demand, Runtime family titles stay in Runtime, and kids live channels stay with their providers. Home choices move left to keep the sheep visible. PBS KIDS and Runtime open loaded titles during downloads, retry temporary failures and recover interrupted catalogues. PBS skips removed show pages; Runtime explains its provider total mismatch and retains + counts. Passed 720 local unit tests, zero-error lint, eight unique Android 6 checks across runs and signed RC10 upgrade/startup verification. One Runtime resume stall passed on rerun. Physical-TV acceptance and delivered ad pods remain unverified. Enable Include test versions to update. Stable remains 1.8.0.</p>
   <p class="release-note">Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.</p>
   <p class="release-note">Four NASA video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.</p>
   <p class="release-note">Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically on first opening. 532 regression tests, zero-error lint, signed assembly and all three stable CI workflows passed. RC8 Android artwork verification and user acceptance carry forward; online device tests were not rerun for this version-only promotion.</p>
@@ -90,15 +90,15 @@ th{color:var(--lav)}
 </header>
 <main>
   <h2>Inside SheepBox</h2>
-  <p class="capture-note">Actual Home and On Demand screens from version 1.1.0 - RC4. Select a screenshot to view it full size.</p>
+  <p class="capture-note">Actual Home and PBS KIDS screens from the 1.9.0-RC12 test build. Select a screenshot to view it full size.</p>
   <div class="shots">
     <figure>
-      <a href="screenshot-home.jpg?v=1.1.0-rc4"><img src="screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox RC4 home screen with purple curtains, the popcorn sheep mascot, Live TV Complete, Live TV Simple and On Demand" width="1920" height="1080" loading="lazy"></a>
-      <figcaption>Home ? choose Live TV Complete, Live TV Simple or On Demand.</figcaption>
+      <a href="screenshot-home-rc12.png"><img src="screenshot-home-rc12.png" alt="RC12 Home: five choices on the left keep the sheep visible" width="1920" height="1080" loading="lazy"></a>
+      <figcaption>RC12 test: Home choices on the left; separate Kids section removed.</figcaption>
     </figure>
     <figure>
-      <a href="screenshot-on-demand.jpg?v=1.1.0-rc4"><img src="screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox RC4 On Demand screen with the purple-curtain artwork and Pluto, Roku, Xumo, Tubi and Internet Archive providers" width="1920" height="1080" loading="lazy"></a>
-      <figcaption>On Demand ? browse free movies and shows by provider.</figcaption>
+      <a href="screenshot-pbskids-rc12.png"><img src="screenshot-pbskids-rc12.png" alt="RC12 PBS KIDS: current videos and shows in the regular On Demand catalogue" width="1920" height="1080" loading="lazy"></a>
+      <figcaption>RC12 test: PBS KIDS stays under On Demand with catalogue loading recovery.</figcaption>
     </figure>
   </div>
 
@@ -114,8 +114,8 @@ th{color:var(--lav)}
     <div class="card"><b>🏛️ 24/7 classic channels</b>Always-on classic TV and cartoon channels from public-domain collections.</div>
     <div class="card"><b>🔎 Search &amp; favorites</b>One search across channels and titles, Play/Episodes and Favorite actions on title cards, Continue Watching and auto-play next episode.</div>
     <div class="card"><b>Hide/report (RC8 test)</b>Hide locally or report playback problems, missing guide data or incorrect guide data directly to private SheepBox support. Restore hidden entries from Hidden items.</div>
-    <div class="card"><b>Kids (RC11 test)</b>A separate Home icon opens PBS KIDS, Runtime Family filtered by publisher category and G/PG or TV-Y/Y7/G/PG ratings, and kids live channels grouped by provider.</div>
-    <div class="card"><b>Runtime and PBS KIDS (RC11 test)</b>Runtime guest movies, series, live TV and EPG; PBS KIDS current full episodes, movies, clips and shows. Native playback retains publisher advertising; partial catalogues show +.</div>
+    <div class="card"><b>Kids providers (RC12 test)</b>PBS KIDS stays under On Demand, family titles stay in Runtime, and kids live channels stay with their regular providers. The separate Kids section is removed; Home choices sit on the left to keep the sheep visible.</div>
+    <div class="card"><b>Runtime and PBS KIDS (RC12 test)</b>Browse loaded titles during downloads, retry temporary failures and recover unfinished catalogues. PBS skips removed show pages; Runtime explains provider total differences and retains + counts. Native playback retains publisher advertising.</div>
     <div class="card"><b>Device optimization and guides (RC11 test)</b>Optional vSeeBox playback profile and verified FreeCast guide-only mappings. No standalone FreeCast playback is included.</div>
     <div class="card"><b>Settings (RC8 test)</b>Nine sections open separate pages, with Back navigation and restored section focus.</div>
     <div class="card"><b>Additional guides (RC8 test)</b>Verified schedules for five 30A channels and US AFTV (Access Framingham TV), refreshed while the app is open. Some channels still lack a verified schedule.</div>
@@ -141,8 +141,8 @@ th{color:var(--lav)}
 <tr><th scope="row">Xumo</th><td>Yes</td><td>Movies &amp; shows</td></tr>
 <tr><th scope="row">Sling Freestream</th><td>Yes</td><td>Free movies &amp; shows</td></tr>
 <tr><th scope="row">YuppTV Free</th><td>Free lineup</td><td>—</td></tr>
-<tr><th scope="row">Runtime (RC11 test)</th><td>Guest live channels and provider EPG</td><td>Movies, series/seasons and episodes; rated Family entry in Kids</td></tr>
-<tr><th scope="row">PBS KIDS (RC11 test)</th><td>Not implemented</td><td>Current full episodes, movies, clips and shows</td></tr>
+<tr><th scope="row">Runtime (RC12 test)</th><td>Guest live channels and provider EPG</td><td>Movies, series/seasons and episodes; family titles stay in Runtime</td></tr>
+<tr><th scope="row">PBS KIDS (RC12 test)</th><td>Not implemented</td><td>Current full episodes, movies, clips and shows</td></tr>
 <tr><th scope="row">Fawesome</th><td>Yes</td><td>Movies &amp; shows</td></tr>
 <tr><th scope="row">Local Now</th><td>Yes</td><td>Movies &amp; shows</td></tr>
 <tr><th scope="row">STIRR</th><td>Yes</td><td>Movies &amp; shows</td></tr>

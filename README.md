@@ -14,7 +14,7 @@
 
 **Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.9.0-RC11](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC11), version code 195.** Adds a separate Kids icon on Home with PBS KIDS, rated Runtime Family movies/shows and kids live channels grouped by provider. Runtime adds guest Movies & Shows, live TV and its programme guide; PBS KIDS adds current full episodes, movies, clips and shows. Includes FreeCast guide-only mapping and optional vSeeBox playback optimization. Passed 715 local unit tests, zero-error lint, eight unique Android 6 checks across runs and signed RC10 upgrade/startup verification. Partial catalogues show +. Publisher ad requests returned no fill; delivered ad pods and physical-TV acceptance remain unverified. Enable Include test versions to update. Latest stable remains 1.8.0.
+**Test release: [1.9.0-RC12](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC12), version code 196.** Removes the separate Kids section: PBS KIDS stays under On Demand, Runtime family titles stay in Runtime, and kids live channels stay with their providers. Home choices move left to keep the sheep visible. PBS KIDS and Runtime open loaded titles during downloads, retry temporary failures and recover interrupted catalogues. PBS skips removed show pages; Runtime explains its provider total mismatch and retains + counts. Passed 720 local unit tests, zero-error lint, eight unique Android 6 checks across runs and signed RC10 upgrade/startup verification. One Runtime resume stall passed on rerun. Physical-TV acceptance and delivered ad pods remain unverified. Enable Include test versions to update. Stable remains 1.8.0.
 
 Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
 
@@ -27,11 +27,11 @@ DOCUMENTARY+ can still return intermittent provider HTTP500/504 errors, as discl
 Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
 
 <p align="center">
-  <img src="assets/screenshot-home-rc11.png" alt="RC11 test build: Kids icon on Home" width="49%" />
-  <img src="assets/screenshot-kids-rc11.png" alt="RC11 test build: Kids provider directory" width="49%" />
+  <img src="docs/screenshot-home-rc12.png" alt="RC12 test build: Home choices on the left with the sheep visible" width="49%" />
+  <img src="docs/screenshot-pbskids-rc12.png" alt="RC12 test build: PBS KIDS in its regular On Demand catalogue" width="49%" />
 </p>
 
-**Kids previews above are from the RC11 test build.**
+**Home and PBS KIDS previews above are from the RC12 test build.**
 
 <p align="center">
   <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
@@ -44,7 +44,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below includes **1.8.0 stabl
 
 | Feature | What you get |
 |---|---|
-| Kids (RC11 test) | Separate Home icon, PBS KIDS, Runtime Family filtered to G/PG and TV-Y/Y7/G/PG, and kids live channels grouped by provider |
+| Kids providers (RC12 test) | PBS KIDS under On Demand, family titles within Runtime, and kids live channels with their regular providers; separate Kids section removed |
 | Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
 | TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
 | On Demand | NewsON recent newscasts/clips; NFB Films & Collections; Movies & Shows from Canela.TV, RetroCrush, FlixHouse, DOCUMENTARY+, Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports and the Internet Archive |

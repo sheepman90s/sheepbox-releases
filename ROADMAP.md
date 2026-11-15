@@ -8,6 +8,14 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC12
+
+- Separate Kids section removed; PBS KIDS stays under On Demand, Runtime family titles stay in Runtime, and kids live channels stay with their providers.
+- Home choices use two columns on the left to keep the sheep visible.
+- PBS KIDS and Runtime allow browsing during downloads, recover interrupted catalogues and retry temporary failures. PBS skips removed show pages; Runtime explains provider total differences and retains + counts.
+- 720 unit tests, zero-error lint and eight unique Android 6 checks passed across runs. One Runtime resume stall passed on rerun. Signed RC10 upgrade and installed-byte equality verified; physical-TV acceptance and delivered ad pods remain unverified.
+- Try [1.9.0-RC12](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC12) with Include test versions enabled. Stable remains 1.8.0.
+
 ## Available in 1.9.0-RC11
 
 - Separate Kids icon on Home: PBS KIDS, rated Runtime Family and kids live channels grouped by provider.
