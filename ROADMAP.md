@@ -8,6 +8,13 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC6
+
+- Direct in-app broken-stream reports with optional details, private support tickets, reference numbers and grouped repeat reports. Users need no email app or GitHub account.
+- Hide locally, report, or do both. Hidden-item restoration retains favorites and history.
+- Verified with 616 local unit tests, zero-error lint, 21 relay checks and six Android 6 device cases, including a live report and retry without double-counting.
+- Try [1.9.0-RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC6) with Include test versions enabled. Latest stable remains 1.8.0. Physical-TV acceptance and notification-email delivery remain for user verification.
+
 ## Available in 1.9.0-RC5
 
 - Hide on this device, prepare a broken-stream email report, or do both, from a channel/title menu. Exclusions persist across refreshes/restarts, retain favorites/history, and can be restored through Hidden items.

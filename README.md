@@ -14,7 +14,7 @@
 
 **Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.9.0-RC5](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5), version code 189.** Adds Hide on this device, Report broken stream by email, and Hide and report by email. Hold OK on a channel/title or use its options menu. Restore exclusions from Hidden items; favorites and history are retained. Reports prepare an email to aj@mindcrash.com using an email app or a phone QR code; users press Send themselves. Includes the accepted Popcornflix integration and all earlier providers. All 604 local regression tests, zero-error lint and signed assembly passed. Four new device UI cases are compiled but unrun because the emulator could not boot with the available disk space. TV/remote acceptance and actual email delivery remain unverified. Enable Include test versions to receive RC builds. Stable Latest remains 1.8.0.
+**Test release: [1.9.0-RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC6), version code 190.** Report broken streams directly inside SheepBox: choose a problem, optionally add details, and press Send report. Reports go to the private support tracker and return a reference number. No email app or GitHub account is needed. Hide locally, report, or do both; restore hidden items without losing favorites/history. Includes the accepted Popcornflix integration and all earlier providers. All 616 local unit tests, zero-error lint, 21 relay checks and six Android 6 device cases passed, including a real cloud submission and retry without double-counting. Physical-TV acceptance and notification-email delivery remain for user verification. Enable Include test versions to receive RC builds. Stable Latest remains 1.8.0.
 
 Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
 
@@ -45,7 +45,7 @@ Screenshots show **1.1.0 - RC4**; the provider list below includes **1.8.0 stabl
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
 | Archive 24/7 | Always-on collection channels assembled from public-domain / Creative Commons films and classic TV |
 | Search & favorites | Global and provider search, favorites, Continue Watching and resume |
-| Hide/report (RC5 test) | Hide a channel/title locally, prepare a broken-stream email, or do both; restore entries through Hidden items |
+| Hide/report (RC6 test) | Hide a channel/title locally, submit a broken-stream report inside the app, or do both; restore entries through Hidden items |
 | TV remote controls | Clear yellow focus, labelled icons, 15-second skip and hold-to-seek |
 | Automatic updates | Startup checks, optional test versions, verified downloads and Android installation confirmation |
 
