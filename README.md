@@ -14,7 +14,7 @@
 
 **Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.9.0-RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC7), version code 191.** Back up and restore settings, favorites, viewing history/resume positions and hidden streams using a file or an encrypted seven-day restore code. Scan the code QR with a phone to download a permanent file. Live TV starts with a provider chooser; guide matching and fair retention improve coverage, with some gaps remaining. Optional exit support screen shows Venmo and PayPal QR codes and a persistent Don't show again choice. Includes direct private broken-stream reports and all RC6 providers. All 652 local app tests, zero-error lint, 31 service checks and ten Android 6 device cases passed, including live backup and reporting round trips. Physical-TV/phone acceptance remains pending. Enable Include test versions to receive RC builds. Stable Latest remains 1.8.0.
+**Test release: [1.9.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC8), version code 192.** Settings now opens with nine sections and separate pages. Report missing or incorrect guide data from live channel options or the existing report form. Verified schedules cover five 30A channels and US AFTV (Access Framingham TV), with foreground refresh. Includes RC7 personal backups, support QR codes and all existing providers. Some guide gaps remain; FreeCast playback is not included. Passed 678 local unit tests, zero-error lint, 24 reporting-service checks and 14 Android 6 feature checks, plus signed RC7 upgrade/startup verification. Physical TV/phone acceptance remains pending. Enable Include test versions to update. Latest stable remains 1.8.0.
 
 Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
 
@@ -45,7 +45,9 @@ Screenshots show **1.1.0 - RC4**; the provider list below includes **1.8.0 stabl
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
 | Archive 24/7 | Always-on collection channels assembled from public-domain / Creative Commons films and classic TV |
 | Search & favorites | Global and provider search, favorites, Continue Watching and resume |
-| Hide/report (RC7 test) | Hide locally, submit an in-app private report, or do both; restore hidden items |
+| Hide/report (RC8 test) | Hide locally or submit a private playback, missing guide or incorrect guide report; restore hidden items |
+| Settings (RC8 test) | Nine sections with separate pages and Back navigation |
+| Additional guides (RC8 test) | Verified schedules for five 30A channels and US AFTV; other coverage gaps remain |
 | Personal backups (RC7 test) | Save/restore a file or use encrypted seven-day codes; phone QR downloads a permanent file; merge or replace lists |
 | Optional support (RC7 test) | Venmo/PayPal QR codes on exit, with Close, Keep watching and Don't show again |
 | TV remote controls | Clear yellow focus, labelled icons, 15-second skip and hold-to-seek |

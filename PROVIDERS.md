@@ -2,7 +2,7 @@
 
 The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
-[1.9.0-RC7 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC7) includes all RC6 providers, direct in-app private reports, personal file/code backups, optional support QR codes and guide matching/retention improvements. Live TV opens with a provider chooser. Some IPTV-org channels still lack matching guide data.
+[1.9.0-RC8 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC8) includes all RC7 providers and features, sectioned Settings pages, missing/incorrect guide reports, and verified guides for five 30A channels and US AFTV (Access Framingham TV). Other IPTV-org coverage gaps remain. Airy supplies these five verified 30A schedules; no new Airy or FreeCast playback provider is included.
 
 [1.9.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5) carries forward all RC4 providers and adds local hide/report controls across channels and titles. Restore hidden entries without losing favorites/history. Email reports are prepared for aj@mindcrash.com; users send them from their email app or phone.
 

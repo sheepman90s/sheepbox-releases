@@ -8,6 +8,15 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC8
+
+- Settings split into nine sections with separate pages, Back navigation and restored focus.
+- Missing and incorrect guide reports in live channel options and the existing report form.
+- Verified schedules for five 30A channels and US AFTV (Access Framingham TV), with foreground refresh. Other channels and publisher schedule gaps remain uncovered.
+- 678 local unit tests, zero-error lint, 24 reporting-service checks and 14 Android 6 feature checks passed. Exact signed RC7 upgrade/startup verified; physical TV/phone acceptance remains pending.
+- FreeCast investigated; playback integration and unverified guide mappings are not included.
+- Try [1.9.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC8) with Include test versions enabled. Latest stable remains 1.8.0.
+
 ## Available in 1.9.0-RC7
 
 - Personal file backups and encrypted seven-day restore codes for settings, favorites, history/resume and hidden items. Phone QR downloads a permanent file; preview and merge/replace controls before restore.
