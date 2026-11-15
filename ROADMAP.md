@@ -8,6 +8,14 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC7
+
+- Personal file backups and encrypted seven-day restore codes for settings, favorites, history/resume and hidden items. Phone QR downloads a permanent file; preview and merge/replace controls before restore.
+- Live TV provider chooser, improved IPTV-org aliases/station matching and fair guide retention. All 22 preset sources were healthy; 121 additional channels matched in the public snapshot, including 30 US channels. Guide gaps remain.
+- Optional exit support screen with Venmo/PayPal QR codes and persistent Don't show again.
+- 652 local app tests, zero-error lint, 31 service checks and ten Android6 cases passed, including live encrypted backup and private report round trips. Physical-TV/phone acceptance remains pending.
+- Try [1.9.0-RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC7) with Include test versions enabled. Latest stable remains 1.8.0.
+
 ## Available in 1.9.0-RC6
 
 - Direct in-app broken-stream reports with optional details, private support tickets, reference numbers and grouped repeat reports. Users need no email app or GitHub account.
