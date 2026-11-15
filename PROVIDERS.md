@@ -2,7 +2,7 @@
 
 The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
-[1.9.0-RC8 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC8) includes all RC7 providers and features, sectioned Settings pages, missing/incorrect guide reports, and verified guides for five 30A channels and US AFTV (Access Framingham TV). Other IPTV-org coverage gaps remain. Airy supplies these five verified 30A schedules; no new Airy or FreeCast playback provider is included.
+[1.9.0-RC11 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC11) adds a Kids area, Runtime guest VOD/live TV/EPG and PBS KIDS current videos/shows. Includes optional vSeeBox optimization and FreeCast as a guide-only source; no standalone FreeCast playback is included. Kids uses publisher categories/ratings and is a browsing area, not a PIN lock. Partial catalogues use + counts; region, availability and advertising vary.
 
 [1.9.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5) carries forward all RC4 providers and adds local hide/report controls across channels and titles. Restore hidden entries without losing favorites/history. Email reports are prepared for aj@mindcrash.com; users send them from their email app or phone.
 
@@ -19,6 +19,8 @@ The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://gith
 | Sling Freestream | Yes | Free movies & shows |
 | YuppTV Free | Free lineup | — |
 | Fawesome | Yes | Movies & shows |
+| Runtime | 13 guest regional channels and provider EPG in RC11 test | Movies, series/seasons/episodes, cached browsing and native publisher-ad-supported playback; Kids links to its rated Family collection |
+| PBS KIDS | Not implemented | Currently listed full episodes, movies, clips and 57 shows in RC11 test; native HLS with publisher underwriting requests |
 | Popcornflix | No standalone lineup verified | Guest Movies & Shows in 1.9.0-RC4 test releases: categorized caching, shared seasons/episodes, artwork, search/favorites/history/resume/autoplay, captions and native playback with publisher advertising. Current US website snapshot: 580 movies and 166 shows; 746 catalog images decoded. |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
