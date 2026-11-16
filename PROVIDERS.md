@@ -2,6 +2,8 @@
 
 The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
+[1.9.0-RC14 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC14) restores full first-load catalogue progress for AsianCrush, Midnight Pulp and Haystack News before browsing, followed by cached reopening. Haystack completes its current selection, not its full archive. PBS KIDS and Runtime retain their existing progressive loading behavior. No providers are added in RC14.
+
 [1.9.0-RC13 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC13) adds AsianCrush and Midnight Pulp free guest Movies & Shows and Haystack News current clips under the regular On Demand menus. Knight Rider artwork is repaired, with shared image retry/fallback across provider catalogues and episode screens. The separate Kids section remains removed; PBS KIDS stays under On Demand and family titles stay in Runtime. HappyKids and Very Local are excluded. No new live lineup is added. Region, availability and advertising vary.
 
 [1.9.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5) carries forward all RC4 providers and adds local hide/report controls across channels and titles. Restore hidden entries without losing favorites/history. Email reports are prepared for aj@mindcrash.com; users send them from their email app or phone.

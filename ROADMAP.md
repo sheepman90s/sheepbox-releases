@@ -8,6 +8,13 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC14
+
+- AsianCrush, Midnight Pulp and Haystack News finish their first catalogue refresh and save it before opening browsing. Later visits open immediately from a completed cache; interrupted first loads retain saved progress and offer Retry/Back.
+- Haystack finishes its current eight-category selection rather than its entire archive. PBS KIDS and Runtime keep their existing loading behavior. RC13 providers and artwork recovery remain included.
+- 766 unit tests, zero-error lint and three Android 15 provider checks passed. Fresh first loads, completed-cache reopening and incomplete-cache recovery were checked for all three providers. Signed RC13/code198-to-RC14/code199 upgrade and installed bytes passed. Physical-TV acceptance is pending.
+- Try [RC14/code199](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC14) with Include test versions enabled. Stable remains 1.8.0.
+
 ## Available in 1.9.0-RC13
 
 - AsianCrush and Midnight Pulp free guest Movies & Shows in the regular On Demand menus, with categories, search/favorites, seasons/episodes, native playback and publisher advertising.

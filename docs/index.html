@@ -79,7 +79,7 @@ th{color:var(--lav)}
   <a class="btn" href="https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk">⬇ Download 1.8.0 stable release</a>
   <a class="btn alt" href="https://github.com/sheepman90s/sheepbox-releases">View on GitHub</a>
   <p class="release-note"><strong>Current stable release: <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0">1.8.0</a>.</strong> Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Version code 184.</p>
-  <p class="release-note"><strong>Test release: <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC13">1.9.0-RC13</a>.</strong> Version code 198. Adds AsianCrush and Midnight Pulp free guest Movies &amp; Shows, plus Haystack News current clips in the regular On Demand menus. Fixes Knight Rider artwork and improves shared artwork recovery across providers. Haystack videos use its own player inside SheepBox; native Haystack history/resume is not included. Passed 763 unit tests, zero-error lint, Android 6/15 artwork checks and signed upgrade verification. Physical-TV acceptance remains outstanding. Enable Include test versions to update from RC12 or older. Earlier RC13 test installs need the direct APK download. Stable remains 1.8.0.</p>
+  <p class="release-note"><strong>Test release: <a href="https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC14">1.9.0-RC14</a>.</strong> Version code 199. AsianCrush, Midnight Pulp and Haystack News finish their first catalogue load before browsing, then open from the saved cache on later visits. Interrupted first loads keep saved progress and offer Retry. PBS KIDS and Runtime retain their existing loading behavior. Includes RC13 providers and artwork recovery. Passed 766 unit tests, zero-error lint, three Android 15 provider checks and signed RC13-to-RC14 upgrade verification. Physical-TV acceptance remains outstanding. Enable Include test versions to update. Stable remains 1.8.0.</p>
   <p class="release-note">Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.</p>
   <p class="release-note">Four NASA video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.</p>
   <p class="release-note">Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically on first opening. 532 regression tests, zero-error lint, signed assembly and all three stable CI workflows passed. RC8 Android artwork verification and user acceptance carry forward; online device tests were not rerun for this version-only promotion.</p>
@@ -90,15 +90,15 @@ th{color:var(--lav)}
 </header>
 <main>
   <h2>Inside SheepBox</h2>
-  <p class="capture-note">Actual AsianCrush catalogue and Knight Rider episode screens from RC13 test builds. Select a screenshot to view it full size.</p>
+  <p class="capture-note">Actual first-load progress and completed AsianCrush catalogue from the RC14 test build. Select a screenshot to view it full size.</p>
   <div class="shots">
     <figure>
-      <a href="screenshot-asiancrush-rc13.png"><img src="screenshot-asiancrush-rc13.png" alt="RC13 AsianCrush: categorized guest movies with Play and Favorite actions" width="1920" height="1080" loading="lazy"></a>
-      <figcaption>RC13 test: AsianCrush in the regular On Demand menus.</figcaption>
+      <a href="screenshot-first-load-rc14.png"><img src="screenshot-first-load-rc14.png" alt="RC14 AsianCrush: first-load progress remains visible before browsing" width="1920" height="1080" loading="lazy"></a>
+      <figcaption>RC14 test: finish the first catalogue load before browsing.</figcaption>
     </figure>
     <figure>
-      <a href="screenshot-knight-rider-rc13.png"><img src="screenshot-knight-rider-rc13.png" alt="RC13 code198: Knight Rider with current Roku artwork and seasons" width="1920" height="1080" loading="lazy"></a>
-      <figcaption>RC13 code198: Knight Rider artwork repair, checked on Android 6 and 15.</figcaption>
+      <a href="screenshot-catalogue-rc14.png"><img src="screenshot-catalogue-rc14.png" alt="RC14 AsianCrush: completed catalogue with categories and artwork" width="1920" height="1080" loading="lazy"></a>
+      <figcaption>RC14 test: completed catalogue saved for later visits.</figcaption>
     </figure>
   </div>
 
@@ -107,6 +107,7 @@ th{color:var(--lav)}
 
   <h2 id="features">Features</h2>
   <div class="grid">
+    <div class="card"><b>First-load caching (RC14 test)</b>AsianCrush, Midnight Pulp and Haystack News finish their first catalogue load before browsing, then use the completed cache. Interrupted first loads retain progress and offer Retry. PBS KIDS and Runtime keep their existing loading behavior.</div>
     <div class="card"><b>New providers and artwork (RC13 test)</b>AsianCrush and Midnight Pulp guest Movies &amp; Shows; Haystack News current clips in its own player inside SheepBox. Knight Rider artwork repair and shared artwork retry/fallback across provider catalogues and episode screens.</div>
     <div class="card"><b>📺 Free live TV</b>IPTV-org free-to-air channels by country and genre, plus Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV and TCLtv+ line-ups.</div>
     <div class="card"><b>🗓️ TV guide</b>A 6-hour program grid with Now / Next from public guide sources.</div>
