@@ -1,12 +1,6 @@
 # Supported providers
 
-The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
-
-[1.9.0-RC14 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC14) restores full first-load catalogue progress for AsianCrush, Midnight Pulp and Haystack News before browsing, followed by cached reopening. Haystack completes its current selection, not its full archive. PBS KIDS and Runtime retain their existing progressive loading behavior. No providers are added in RC14.
-
-[1.9.0-RC13 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC13) adds AsianCrush and Midnight Pulp free guest Movies & Shows and Haystack News current clips under the regular On Demand menus. Knight Rider artwork is repaired, with shared image retry/fallback across provider catalogues and episode screens. The separate Kids section remains removed; PBS KIDS stays under On Demand and family titles stay in Runtime. HappyKids and Very Local are excluded. No new live lineup is added. Region, availability and advertising vary.
-
-[1.9.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5) carries forward all RC4 providers and adds local hide/report controls across channels and titles. Restore hidden entries without losing favorites/history. Email reports are prepared for aj@mindcrash.com; users send them from their email app or phone.
+**Current stable release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0), version code 200.** Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -21,12 +15,12 @@ The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://gith
 | Sling Freestream | Yes | Free movies & shows |
 | YuppTV Free | Free lineup | — |
 | Fawesome | Yes | Movies & shows |
-| AsianCrush (RC13 test) | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
-| Midnight Pulp (RC13 test) | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
-| Haystack News (RC13 test) | Not integrated | Current news clip selections, categories, search and favorites; official player inside SheepBox retains publisher advertising/captions. Not a full archive; no native history/resume/autoplay |
-| Runtime | 13 guest regional channels and provider EPG in RC12 test | Movies, series/seasons/episodes, cached browsing and native publisher-ad-supported playback; family titles stay in Runtime; provider total mismatch keeps + counts |
-| PBS KIDS | Not implemented | Currently listed full episodes, movies, clips and 57 shows in RC12 test; native HLS with publisher underwriting requests; browsing opens during download and removed show pages no longer block completion |
-| Popcornflix | No standalone lineup verified | Guest Movies & Shows in 1.9.0-RC4 test releases: categorized caching, shared seasons/episodes, artwork, search/favorites/history/resume/autoplay, captions and native playback with publisher advertising. Current US website snapshot: 580 movies and 166 shows; 746 catalog images decoded. |
+| AsianCrush | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
+| Midnight Pulp | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
+| Haystack News | Not integrated | Current news clip selections, categories, search and favorites; official player inside SheepBox retains publisher advertising/captions. Not a full archive; no native history/resume/autoplay |
+| Runtime | 13 guest regional channels and provider EPG in 1.9.0 stable | Movies, series/seasons/episodes, cached browsing and native publisher-ad-supported playback; family titles stay in Runtime; provider total mismatch keeps + counts |
+| PBS KIDS | Not implemented | Currently listed full episodes, movies, clips and 57 shows in 1.9.0 stable; native HLS with publisher underwriting requests; browsing opens during download and removed show pages no longer block completion |
+| Popcornflix | No standalone lineup verified | Guest Movies & Shows in 1.9.0 stable: categorized caching, shared seasons/episodes, artwork, search/favorites/history/resume/autoplay, captions and native playback with publisher advertising. Current US website snapshot: 580 movies and 166 shows; 746 catalog images decoded. |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
 | Zeam | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
@@ -44,13 +38,15 @@ The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://gith
 | RetroCrush | No | Free guest movies and eligible show episodes, categorized caching, native ad-supported playback and artwork recovery in 1.8.0 stable |
 | FlixHouse | 11 guest live channels and guide in All Channels A–Z in 1.8.0 stable | Current US snapshot: 2,078 guest movies and 14 shows/168 eligible episodes, categorized caching and native ad-supported playback in 1.8.0 stable |
 | DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in 1.8.0 stable | Current snapshot: 270 movies, 38 shows/291 free episodes, categorized caching, native ad-supported playback and artwork corrections including Arctic Alchemy. Intermittent upstream HTTP500/504 errors observed |
-| Red Bull TV | Nine continuous sports channels and the actual provider guide in 1.9.0-RC3 test releases; current live events when offered | Films, replays, clips and series, seasons/Extras, categorized cache, shared search/favorites/resume/autoplay and native publisher-ad-supported playback. Current regional snapshot: 598 videos and 281 series (879 catalog images decoded); nine continuous channels. Skate Tales: six seasons plus Extras, 30 unique episodes with decoded artwork. |
-| NASA+ | Continuous NASA+ channel in 1.9.0-RC1 test releases; no mapped programme schedule |279 standalone videos and39 series/328 episode posts in the current public catalog; categorized cache, native HLS/captions, history/resume/autoplay. Four upstream source URLs currently return404 |
+| Red Bull TV | Nine continuous sports channels and the actual provider guide in 1.9.0 stable; current live events when offered | Films, replays, clips and series, seasons/Extras, categorized cache, shared search/favorites/resume/autoplay and native publisher-ad-supported playback. Current regional snapshot: 598 videos and 281 series (879 catalog images decoded); nine continuous channels. Skate Tales: six seasons plus Extras, 30 unique episodes with decoded artwork. |
+| NASA+ | Continuous NASA+ channel in 1.9.0 stable; no mapped programme schedule |279 standalone videos and39 series/328 episode posts in the current public catalog; categorized cache, native HLS/captions, history/resume/autoplay. Four upstream source URLs currently return404 |
 | Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
 
 “Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
 
-All On Demand providers use shared title cards, Play/Episodes and Favorite actions, category counts, search and cached browsing. Movies and shows are counted separately, with duplicate titles removed within each count. FilmRise counts with + are lower bounds because its guest service has returned only part of those categories. Catalogs load when opened, rather than at app startup.
+On Demand providers use shared title cards, Play/Episodes and Favorite actions, category counts, search and cached browsing. Movies and shows are counted separately, with duplicate titles removed within each count. FilmRise counts with + are lower bounds because its guest service has returned only part of those categories. Catalogs load when opened, rather than at app startup.
+
+Haystack uses its official web player without native history/resume/autoplay. Nova, Vesper, HappyKids and Very Local remain excluded. Android6 delivered-ad evidence remains unresolved for the newest movie providers.
 
 Plex Movies & Shows use a fresh anonymous guest session, categorized catalog caching, native IMA and standard Android Widevine. Filmzie Movies & Shows use the public guest catalog, native HLS and unchanged IMA schedules; no Filmzie Live TV catalog is integrated. FilmRise is VOD-only; no standalone live lineup has been verified. Account-requiring Google Freeplay and Prime/Freevee are outside the current provider plan.
 

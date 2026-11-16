@@ -12,15 +12,15 @@
 
 **Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
 
-**Current stable release: [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), version code 184.** Promotes the user-tested RC8, including NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+, plus artwork corrections including Arctic Alchemy. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
+**Current stable release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0), version code 200.** Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
-**Test release: [1.9.0-RC14](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC14), version code 199.** AsianCrush, Midnight Pulp and Haystack News finish their first catalogue load before browsing, then open from the saved cache on later visits. Interrupted first loads keep saved progress and offer Retry. PBS KIDS and Runtime retain their existing loading behavior. Includes RC13 providers and artwork recovery. Passed 766 unit tests, zero-error lint, three Android 15 provider checks and signed RC13-to-RC14 upgrade verification. Physical-TV acceptance remains outstanding. Enable Include test versions to update. Stable remains 1.8.0.
+**Release verification:** 766 unit tests and zero-error lint passed for code200. The existing signing certificate and package/version were verified. RC14 provider/device evidence carries forward; online playback checks were not repeated for this promotion.
 
 Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
 
 Four NASA-provided video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.
 
-Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically on first opening. 532 regression tests, zero-error lint, signed assembly and all three stable CI workflows passed. RC8 Android artwork verification and user acceptance carry forward; online device tests were not rerun for this version-only promotion.
+Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically. Earlier artwork/device evidence and provider advertising limitations carry forward.
 
 DOCUMENTARY+ can still return intermittent provider HTTP500/504 errors, as disclosed with [RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC6).
 
@@ -38,28 +38,28 @@ Some provider streams remain unavailable through guest access; partial catalog c
   <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
 </p>
 
-Screenshots show **1.1.0 - RC4**; the provider list below includes **1.8.0 stable features**.
+Screenshots show **1.1.0 - RC4**; the provider list below includes **1.9.0 stable features**.
 
 ## Features
 
 | Feature | What you get |
 |---|---|
-| First-load caching (RC14 test) | AsianCrush, Midnight Pulp and Haystack News finish loading before first-time browsing, then use the completed cache; Retry for interrupted first loads |
-| New providers and artwork (RC13 test) | AsianCrush and Midnight Pulp free guest Movies & Shows; Haystack News current clips using its own player inside SheepBox; Knight Rider artwork repair and shared image recovery |
-| Kids providers (RC12 test) | PBS KIDS under On Demand, family titles within Runtime, and kids live channels with their regular providers; separate Kids section removed |
+| First-load caching | AsianCrush, Midnight Pulp and Haystack News finish loading before first-time browsing, then use the completed cache; Retry for interrupted first loads |
+| New providers and artwork | AsianCrush and Midnight Pulp free guest Movies & Shows; Haystack News current clips using its own player inside SheepBox; Knight Rider artwork repair and shared image recovery |
+| Kids providers | PBS KIDS under On Demand, family titles within Runtime, and kids live channels with their regular providers; separate Kids section removed |
 | Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
 | TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
-| On Demand | NewsON recent newscasts/clips; NFB Films & Collections; Movies & Shows from Canela.TV, RetroCrush, FlixHouse, DOCUMENTARY+, Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports and the Internet Archive |
+| On Demand | AsianCrush, Midnight Pulp, Haystack News, Runtime, PBS KIDS, NASA+, Red Bull TV, Popcornflix, NewsON recent newscasts/clips; NFB Films & Collections; Movies & Shows from Canela.TV, RetroCrush, FlixHouse, DOCUMENTARY+, Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports and the Internet Archive |
 | Consistent browsing | Shared cards, Play/Episodes and Favorite actions, unique title counts beside categories (+ means incomplete), search, A–Z ordering and first-open catalog progress |
 | Seasons & episodes | Shared show screen with descriptions, seasons, episodes and optional autoplay |
 | Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
 | Archive 24/7 | Always-on collection channels assembled from public-domain / Creative Commons films and classic TV |
 | Search & favorites | Global and provider search, favorites, Continue Watching and resume |
-| Hide/report (RC8 test) | Hide locally or submit a private playback, missing guide or incorrect guide report; restore hidden items |
-| Settings (RC8 test) | Nine sections with separate pages and Back navigation |
-| Additional guides (RC8 test) | Verified schedules for five 30A channels and US AFTV; other coverage gaps remain |
-| Personal backups (RC7 test) | Save/restore a file or use encrypted seven-day codes; phone QR downloads a permanent file; merge or replace lists |
-| Optional support (RC7 test) | Venmo/PayPal QR codes on exit, with Close, Keep watching and Don't show again |
+| Hide/report | Hide locally or submit a private playback, missing guide or incorrect guide report; restore hidden items |
+| Settings | Nine sections with separate pages and Back navigation |
+| Additional guides | Verified schedules for five 30A channels and US AFTV; other coverage gaps remain |
+| Personal backups | Save/restore a file or use encrypted seven-day codes; phone QR downloads a permanent file; merge or replace lists |
+| Optional support | Venmo/PayPal QR codes on exit, with Close, Keep watching and Don't show again |
 | TV remote controls | Clear yellow focus, labelled icons, 15-second skip and hold-to-seek |
 | Automatic updates | Startup checks, optional test versions, verified downloads and Android installation confirmation |
 
@@ -75,11 +75,11 @@ Native playback, provider ads, seeking, resume and history are included. RC6 was
 
 ## Providers
 
-**Live TV:** IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv, Cineverse, The CW, Free Live Sports, NewsON, Canela.TV, FlixHouse and DOCUMENTARY+.
+**Live TV:** Runtime, NASA+, Red Bull TV, IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv, Cineverse, The CW, Free Live Sports, NewsON, Canela.TV, FlixHouse and DOCUMENTARY+.
 
-**On Demand:** Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports, the Internet Archive, NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+.
+**On Demand:** AsianCrush, Midnight Pulp, Haystack News, Runtime, PBS KIDS, NASA+, Red Bull TV, Popcornflix, Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports, the Internet Archive, NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+.
 
-FilmRise, Filmzie, NFB and RetroCrush are **VOD-only**. All providers listed above are included in stable 1.8.0. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
+FilmRise, Filmzie, NFB and RetroCrush are **VOD-only**. All providers listed above are included in stable 1.9.0. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
 
 ## Roadmap
 

@@ -1,12 +1,20 @@
 # SheepBox roadmap
 
-Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0). These features have no committed release dates.
+Planned work after stable [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0). These features have no committed dates.
 
 | Feature | Status | Scope |
 |---|---|---|
 | Closed Captioning | Planned | Consistent caption controls across Live TV and On Demand, language/track selection, and saved preferences where providers supply supported captions. Existing provider subtitle support will be extended into a consistent experience. |
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
+
+## Delivered in 1.9.0 stable
+
+Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches.
+
+- 766 unit tests and zero-error lint passed for code200. The existing signing certificate and package/version were verified. RC14 provider/device evidence carries forward; online playback checks were not repeated for this promotion.
+- The separate Kids section remains removed. Nova, Vesper, HappyKids and Very Local remain excluded. Caption consistency and split screen remain planned.
+- [Stable release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0). Regular updates do not require test-version opt-in.
 
 ## Available in 1.9.0-RC14
 
