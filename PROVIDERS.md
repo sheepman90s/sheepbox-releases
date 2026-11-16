@@ -2,7 +2,7 @@
 
 The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0)). Includes NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+ alongside the existing providers, with the user-tested artwork improvements. Test versions do not need to be enabled. Availability, catalogs and playback vary by region and device.
 
-[1.9.0-RC12 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC12) keeps Runtime guest VOD/live TV/EPG and PBS KIDS current videos/shows in the regular provider menus and removes the separate Kids section. Both catalogues allow browsing during downloads and retry temporary failures. PBS skips removed show pages; Runtime retains + counts when its reported total differs. Includes optional vSeeBox optimization and FreeCast guide-only mapping; no standalone FreeCast playback is included. Region, availability and advertising vary.
+[1.9.0-RC13 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC13) adds AsianCrush and Midnight Pulp free guest Movies & Shows and Haystack News current clips under the regular On Demand menus. Knight Rider artwork is repaired, with shared image retry/fallback across provider catalogues and episode screens. The separate Kids section remains removed; PBS KIDS stays under On Demand and family titles stay in Runtime. HappyKids and Very Local are excluded. No new live lineup is added. Region, availability and advertising vary.
 
 [1.9.0-RC5 test release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC5) carries forward all RC4 providers and adds local hide/report controls across channels and titles. Restore hidden entries without losing favorites/history. Email reports are prepared for aj@mindcrash.com; users send them from their email app or phone.
 
@@ -19,6 +19,9 @@ The stable release is **SheepBox 1.8.0/code184** ([release and APK](https://gith
 | Sling Freestream | Yes | Free movies & shows |
 | YuppTV Free | Free lineup | — |
 | Fawesome | Yes | Movies & shows |
+| AsianCrush (RC13 test) | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
+| Midnight Pulp (RC13 test) | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
+| Haystack News (RC13 test) | Not integrated | Current news clip selections, categories, search and favorites; official player inside SheepBox retains publisher advertising/captions. Not a full archive; no native history/resume/autoplay |
 | Runtime | 13 guest regional channels and provider EPG in RC12 test | Movies, series/seasons/episodes, cached browsing and native publisher-ad-supported playback; family titles stay in Runtime; provider total mismatch keeps + counts |
 | PBS KIDS | Not implemented | Currently listed full episodes, movies, clips and 57 shows in RC12 test; native HLS with publisher underwriting requests; browsing opens during download and removed show pages no longer block completion |
 | Popcornflix | No standalone lineup verified | Guest Movies & Shows in 1.9.0-RC4 test releases: categorized caching, shared seasons/episodes, artwork, search/favorites/history/resume/autoplay, captions and native playback with publisher advertising. Current US website snapshot: 580 movies and 166 shows; 746 catalog images decoded. |

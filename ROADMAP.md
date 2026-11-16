@@ -8,6 +8,15 @@ Planned work after stable [1.8.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 1.9.0-RC13
+
+- AsianCrush and Midnight Pulp free guest Movies & Shows in the regular On Demand menus, with categories, search/favorites, seasons/episodes, native playback and publisher advertising.
+- Haystack News current clip selections, categories, search and favorites. Its official player runs inside SheepBox, retaining publisher advertising/captions. No native Haystack history/resume/autoplay or new live lineup.
+- Knight Rider artwork repair and shared image retry/fallback across provider catalogue and episode screens. No fabricated artwork when a provider supplies none.
+- HappyKids and Very Local excluded as requested. Kids providers stay in their regular menus; Home layout and PBS KIDS/Runtime recovery from RC12 remain included.
+- 763 unit tests and zero-error lint passed. Two Android 6 and five Android 15 artwork checks passed; actual Knight Rider images were inspected on both. Exact signed code197-to-code198 upgrade/startup and installed bytes verified. Physical-TV acceptance and Android 6 delivered ads for the new movie providers remain unverified.
+- Try [RC13/code198](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0-RC13) with Include test versions enabled from RC12 or older. Earlier RC13 test installs need the direct APK download. Stable remains 1.8.0.
+
 ## Available in 1.9.0-RC12
 
 - Separate Kids section removed; PBS KIDS stays under On Demand, Runtime family titles stay in Runtime, and kids live channels stay with their providers.
