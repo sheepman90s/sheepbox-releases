@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "99f2ab9bcafc",
+  "revision": "0c6d17f70deb",
   "catalogGeneratedAt": "2026-11-17T02:18:04.247Z",
   "titles": 6980,
   "live": 7,
@@ -31,7 +31,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "43c940ebc075d3369981e699b074e4fa16d100218b153f34524f4c9e3db06fa7"
+      "sha256": "a5a2e180d847ace629a3b1dbcde35a569f740ef3ca4194bc74de9704fe394cb9"
     },
     {
       "path": "manifest.webmanifest",
@@ -67,7 +67,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "2c0dc594f675bb80e0537db2c9cb529ecc56a9439d0f87a806437b1da71541aa"
+      "sha256": "3fc0fa3be02bec6cd00b51fc20848cd4ba6082ee8632992b445f92c88f3beaa1"
     },
     {
       "path": "vendor/APACHE-2.0.txt",

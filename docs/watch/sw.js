@@ -1,4 +1,4 @@
-const CACHE='sheepbox-web-99f2ab9bcafc';
+const CACHE='sheepbox-web-0c6d17f70deb';
 const SHELL=['./','./index.html','./styles.css','./manifest.webmanifest','./src/app.mjs','./src/core.mjs','./src/storage.mjs','./src/providers.mjs','./src/sources.mjs','./src/player.mjs','./data/catalog.json','./assets/icon.png','./assets/mascot.png','./assets/home.png','./vendor/hls-1.7.4.min.js'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('sheepbox-web-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
