@@ -1,0 +1,9 @@
+World View map credits
+
+Earth texture: NASA Blue Marble (land surface, ocean color and sea ice), NASA Goddard Space Flight Center; Reto Stoeckli and Robert Simmon. Public domain NASA imagery. Retrieved unchanged at 2048x1024 from Wikimedia Commons, File:Land_ocean_ice_2048.jpg. Original publication: https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/
+
+Country outlines and labels: Natural Earth, ne_10m_admin_0_countries, public domain. https://www.naturalearthdata.com/about/terms-of-use/ . Geometry simplified for TV rendering. Small-territory label positions are approximate.
+
+Webcam directory: Famelack, MIT License. See Famelack data license in Web Cams. Map positions are for browsing, not stream geolocation authorization.
+
+Country-detail terrain: NASA GIBS, BlueMarble_ShadedRelief_Bathymetry (static Blue Marble). Public NASA imagery, not live satellite coverage. https://nasa-gibs.github.io/gibs-api-docs/access-basics/ . Country images load on demand and cache locally.

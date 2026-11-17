@@ -14,7 +14,7 @@ const rows=[
  ['yupptv','YuppTV Free','https://www.yupptv.com/fast/','Free international channels.','International','live','website'],
  ['fawesome','Fawesome','https://fawesome.tv/','Free films and entertainment.','Films & shows','both','website'],
  ['runtime','Runtime','https://www.runtime.tv/','Regional live channels, films and series.','Films & shows','both','website'],
- ['pbskids','PBS KIDS','https://pbskids.org/videos/','Stories, learning and familiar PBS KIDS characters.','Family','vod','website'],
+ ['pbskids','PBS KIDS','https://pbskids.org/videos/','Publisher-approved PBS KIDS videos and episodes in the official PBS player.','Family','vod','embed'],
  ['popcornflix','Popcornflix','https://popcornflix.com/','Free guest films and series.','Films & shows','vod','website'],
  ['localnow','Local Now','https://localnow.com/','Local news, channels, films and shows.','News & local','both','website'],
  ['stirr','STIRR','https://stirr.com/','Live channels and free on-demand entertainment.','Entertainment','both','website'],
@@ -34,8 +34,9 @@ const rows=[
  ['cw','The CW','https://www.cwtv.com/','Free guest shows, films and live channels.','Films & shows','both','website'],
  ['fls','Free Live Sports','https://www.freelivesports.tv/','Live sports, replays and sports films.','Sports & adventure','both','website'],
  ['filmzie','Filmzie','https://filmzie.com/','Independent films and series.','Films & shows','vod','website'],
- ['docplus','DOCUMENTARY+','https://www.documentaryplus.com/','Documentary films, series and channels.','Films & documentaries','both','website'],
+ ['docplus','DOCUMENTARY+','https://docplus.com/','Documentary films, series and channels.','Films & documentaries','both','website'],
  ['flixhouse','FlixHouse','https://flixhouse.com/','Independent films, series and live channels.','Films & shows','both','website'],
+ ['webcams','Web Cams','https://famelack.com/','Explore webcams by country on the same Earth map as the Android app.','Places & webcams','live','embed'],
  ['iptv-org','IPTV-org','https://iptv-org.github.io/','Browse the community’s public channel directory.','Channel directory','live','website']
 ];
 export const providers=rows.map(([id,name,url,description,category,content,playback],index)=>({id,name,url,description,category,content,playback,palette:index%8}));

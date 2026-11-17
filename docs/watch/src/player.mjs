@@ -1,4 +1,5 @@
 import {safeUrl} from './core.mjs';
+import {publisherEmbedUrl} from './publishers.mjs';
 let hlsLibrary;
 async function loadHls(){
   if(globalThis.Hls)return globalThis.Hls;
@@ -19,7 +20,7 @@ export class WebPlayer {
   async open(offer,{position=0,captions=false,title='Video'}={}){
     this.stop();const generation=this.generation;
     if(offer.kind==='embed'){
-      const url=safeUrl(offer.url,['www.nfb.ca']);if(!url)throw Error('Unsupported publisher player.');
+      const url=publisherEmbedUrl(offer.url);if(!url)throw Error('Unsupported publisher player.');
       const frame=document.createElement('iframe');frame.src=url;frame.title=`${title} — publisher player`;frame.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';
       frame.setAttribute('sandbox','allow-scripts allow-same-origin allow-presentation allow-popups allow-forms allow-popups-to-escape-sandbox');
       this.container.append(frame);this.onStatus('Use the publisher’s player controls.');return;

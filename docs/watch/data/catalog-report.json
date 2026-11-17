@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T02:18:04.247Z",
+  "generatedAt": "2026-11-17T03:44:37.732Z",
   "sources": {
     "nasaplus": {
       "titles": 607,
@@ -16,6 +16,16 @@
     "nfb": {
       "titles": 6236,
       "scope": "Free public film entries at build time; the official embedded player enforces current access and region."
+    },
+    "pbskids": {
+      "scope": "Current PBS KIDS homepage editorial selection, only publisher-enabled viral embeds; not the entire PBS KIDS library.",
+      "completeSelection": true,
+      "totalHomepageVideos": 123,
+      "approved": 60,
+      "declined": 62,
+      "missingLegacyId": 1,
+      "errors": [],
+      "embedPermission": "Official viral player config allow_embed=true AND is_playable=true, with generated Embed UI confirmed on example3103689019."
     }
   }
 }

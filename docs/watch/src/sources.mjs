@@ -1,4 +1,5 @@
 import {safeUrl,archiveLicense,parseNasaVideo,archiveSchedule} from './core.mjs';
+import {parseWebcams,publisherEmbedUrl} from './publishers.mjs';
 export async function fetchJson(url,{signal,timeout=25000}={}) {
   const controller=new AbortController();const abort=()=>controller.abort();
   if(signal?.aborted)controller.abort();signal?.addEventListener('abort',abort,{once:true});
@@ -13,7 +14,8 @@ export async function fetchJson(url,{signal,timeout=25000}={}) {
 export async function loadCatalog(signal) {
   const {data}=await fetchJson(new URL('../data/catalog.json',import.meta.url),{signal});
   if(data.schema!==1||!Array.isArray(data.items)||!Array.isArray(data.live))throw Error('The SheepBox library could not be loaded.');
-  return data;
+  const cameras=await fetchJson(new URL('../data/webcams.json',import.meta.url),{signal});
+  return {...data,cameras:parseWebcams(cameras.data)};
 }
 export async function refreshNasa(previous,{signal,onProgress=()=>{}}={}) {
   const terms={};
@@ -48,6 +50,13 @@ export function availableArchiveFiles(data){
   return (data.files??[]).map(archiveFile).filter(Boolean).sort((a,b)=>a.rank-b.rank);
 }
 export async function resolvePlayback(item,catalog,{signal}={}) {
+  if(['pbs','youtube'].includes(item.mode)) {
+    let url='';
+    if(item.mode==='pbs'&&item.embedAllowed===true)url=`https://player.pbs.org/viralplayer/${item.sourceId}/`;
+    if(item.mode==='youtube')url=`https://www.youtube-nocookie.com/embed/${item.sourceId}`;
+    if(!publisherEmbedUrl(url))throw Error('The publisher has not supplied a supported embedded player for this title.');
+    return {kind:'embed',url,official:item.official};
+  }
   if(item.mode==='nfb'){
     if(!/^[A-Za-z0-9][A-Za-z0-9_-]{0,199}$/.test(item.slug))throw Error('This film has an invalid publisher address.');
     return {kind:'embed',url:`https://www.nfb.ca/film/${item.slug}/embed/player/`,official:item.official};

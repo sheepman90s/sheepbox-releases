@@ -1,13 +1,21 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "0c6d17f70deb",
-  "catalogGeneratedAt": "2026-11-17T02:18:04.247Z",
-  "titles": 6980,
+  "revision": "9fae97a25eb7",
+  "catalogGeneratedAt": "2026-11-17T03:44:37.732Z",
+  "titles": 7040,
   "live": 7,
   "files": [
     {
       "path": ".nojekyll",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "app-home.css",
+      "sha256": "5cee3490f09dab00bc7a6e93c128cc9c7ed450bd142f9dd119d4a33a3901c617"
+    },
+    {
+      "path": "assets/browse.jpg",
+      "sha256": "3bccc6f3bccfe8b21b9e9db6d01a1cde4ecd2b2b9b8496ca571aef43417b33a5"
     },
     {
       "path": "assets/home.png",
@@ -22,16 +30,36 @@
       "sha256": "2489b468f2d425c1f711827b5aa5cf2ca1fdd4b009c02c85c524655a1bf85e11"
     },
     {
+      "path": "assets/world-earth.jpg",
+      "sha256": "d4dc80a6ef571939d0abe04a9bed3d3d1e6cd63e59514be1c5e43a6b069e6f1e"
+    },
+    {
       "path": "data/catalog-report.json",
-      "sha256": "fb4f6af80fc073acc60e83a4db2f756de9135967cc0716670a3ae2eb54ea074d"
+      "sha256": "91dca6635e0027f3d9725377e04c68b303048dc26a257c18e2a2d427d66a7907"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "da2bcbb146f09c8b8e71ae295f163c16ac2ce2a706ef9175830f7702cd174e97"
+      "sha256": "da8cb09632b93763a610f84cb865a7c56c8eb6e9b19f9f6a36b633ac1a2cc353"
+    },
+    {
+      "path": "data/FAMELACK-LICENSE.txt",
+      "sha256": "dfc34af32be9a99fab09f7f6ab40bcb0bf0fef561fd2276b3e4b981755e46a1c"
+    },
+    {
+      "path": "data/webcams.json",
+      "sha256": "4841de16b2981bb192c233b067b3f9d0b1edd8824bf2a781f76b06e1dffedb2b"
+    },
+    {
+      "path": "data/world-countries.json",
+      "sha256": "4ac79f971a55de85c78ea0175ef17f14a7c4f258317b6cf87c4cec6b15f4a322"
+    },
+    {
+      "path": "data/world-view-sources.txt",
+      "sha256": "96215221f4736aa57a94dd5d7cfd9fd5dbb4e650c40f219936a45f0d9b78856f"
     },
     {
       "path": "index.html",
-      "sha256": "a5a2e180d847ace629a3b1dbcde35a569f740ef3ca4194bc74de9704fe394cb9"
+      "sha256": "0d432c118b26c14a4dd7276cb32ffe7b0f21e25edc15220fb00491d002905b85"
     },
     {
       "path": "manifest.webmanifest",
@@ -39,27 +67,43 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "c0cbf55fc929ae3bdc2289089fec65092191415907cf89e0f9e9b5dd7f1d689d"
+      "sha256": "045d6a382fbcfe21406cb586533a219c3326cea48c0f9f894d71a4d9886b8480"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "ecab344358428ad7b2b39259cba840f0b4d4245111289b264813c0ee796a9c14"
+      "sha256": "33c0f1692fbcbc0d8932e012f95122b3beaed8450c5107324867f65fb57d6806"
+    },
+    {
+      "path": "src/globe.mjs",
+      "sha256": "53b22d36c0472851c4e47a0e392ccf390ef8f68dd526c283e8a393b6e8fff6be"
     },
     {
       "path": "src/player.mjs",
-      "sha256": "106783f94f55634e7b07569a59052f6facfa7a947abe8f96739b502bdd8d4ac8"
+      "sha256": "6ed367556eb734e6c54263e7bdadf465b00490fe94878ba298e4efa574503b68"
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "6502a3e8789c21b6bbf0d08cc8588d7d1d07c7d53baa80655a6985d5f9e9dfe7"
+      "sha256": "f9ac0dd1b9e6d49b8b99716ba0498e939a62d0f40d35c1dc56264de44fbbe444"
+    },
+    {
+      "path": "src/publishers.mjs",
+      "sha256": "6dcc93b8ff3783672ffe9ec8c24bf1c8cc3a7882e4880bfe905172db3c055f0c"
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "da4f6bb819a87b09e05b65c728d5650e2432097127aa0d6c759ef6df9d32588a"
+      "sha256": "12ec8b361aff3e9e8e539de1d0bde36982c3bc0f820e4d57d588c0854b7d7179"
     },
     {
       "path": "src/storage.mjs",
       "sha256": "ab1e9fc4a3913322e009d0ae166654881ba424e6aa7df347f931b2e5256cf9a0"
+    },
+    {
+      "path": "src/world-geometry.mjs",
+      "sha256": "762be99322f01f57a1d3228cc7cd29aa8371e0ded541d5a4c4485a0772a4082c"
+    },
+    {
+      "path": "src/world-view.mjs",
+      "sha256": "3e61019c3276de513abfc8912b5d2d9333ecb91d4b0b10e298a966147dc19dbb"
     },
     {
       "path": "styles.css",
@@ -67,7 +111,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "3fc0fa3be02bec6cd00b51fc20848cd4ba6082ee8632992b445f92c88f3beaa1"
+      "sha256": "f0ab3c665ca3ae43790a88526f7f24db1538e6d2018d86d86ba095ac8169c9c6"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
@@ -80,6 +124,10 @@
     {
       "path": "vendor/HLS-LICENSE.txt",
       "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+    },
+    {
+      "path": "world.css",
+      "sha256": "fef3e3e2cf49f692baaac04bbe825037007d5478a9f951e070c71eebe4ea7271"
     }
   ]
 }

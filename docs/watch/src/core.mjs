@@ -37,7 +37,7 @@ export function filterItems(items,{query='',provider='',category='',kind=''}={})
     words.every(word=>fold([item.title,item.description,item.providerName,...(item.categories??[])].join(' ')).includes(word)));
 }
 export function parseRoute(hash) {
-  try {const [name='home',...parts]=hash.replace(/^#\/?/,'').split('/');return ['home','live','ondemand','favorites','providers','settings','watch','provider','series','search','history'].includes(name)?{name,id:decodeURIComponent(parts.join('/'))}:{name:'home',id:''};}
+  try {const [name='home',...parts]=hash.replace(/^#\/?/,'').split('/');return ['home','live','simple','world','webcams','ondemand','favorites','providers','settings','watch','provider','series','search','history'].includes(name)?{name,id:decodeURIComponent(parts.join('/'))}:{name:'home',id:''};}
   catch {return {name:'home',id:''};}
 }
 export function parseNasaVideo(row,terms={}) {
