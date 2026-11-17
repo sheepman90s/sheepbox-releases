@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T03:44:37.732Z",
+  "generatedAt": "2026-11-17T09:50:51.542Z",
   "sources": {
     "nasaplus": {
       "titles": 607,
@@ -26,6 +26,28 @@
       "missingLegacyId": 1,
       "errors": [],
       "embedPermission": "Official viral player config allow_embed=true AND is_playable=true, with generated Embed UI confirmed on example3103689019."
+    },
+    "newson": {
+      "source": "NewsON current public website API",
+      "country": "us",
+      "stationDirectoryComplete": true,
+      "stations": 279,
+      "live": 210,
+      "latestNewscasts": 269,
+      "latestStationsChecked": 279,
+      "latestDirectoryComplete": true,
+      "withoutNewscast": 10,
+      "unsupportedOffers": 0,
+      "failedStationIds": [],
+      "selection": "Complete advertised live directory plus fresh-resolving latest-newscast cards only where a current supported guest offer was confirmed. No expiring clip or playback URL is persisted."
+    },
+    "xumo": {
+      "source": "Xumo current public website regional live directory",
+      "country": "us",
+      "complete": true,
+      "live": 454,
+      "onDemandIncluded": false,
+      "advertising": "Fresh publisher SSAI offers and full ad query parameters retained; no client VMAP or tracking URL is supplied by the current live offer."
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "91714264c96e",
-  "catalogGeneratedAt": "2026-11-17T03:44:37.732Z",
-  "titles": 7040,
-  "live": 7,
+  "revision": "39a922c42fdc",
+  "catalogGeneratedAt": "2026-11-17T09:50:51.542Z",
+  "titles": 7309,
+  "live": 671,
   "files": [
     {
       "path": ".nojekyll",
@@ -11,7 +11,7 @@
     },
     {
       "path": "app-home.css",
-      "sha256": "5cee3490f09dab00bc7a6e93c128cc9c7ed450bd142f9dd119d4a33a3901c617"
+      "sha256": "91f4389e4e7f22765b182a97935c2b76f0a9b8ce4e7ec407c04caea74e1f9496"
     },
     {
       "path": "assets/browse.jpg",
@@ -35,11 +35,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "91dca6635e0027f3d9725377e04c68b303048dc26a257c18e2a2d427d66a7907"
+      "sha256": "767387871681c3dd6be8e7c171e735a9e53f29af43b7724ff754d18e309573cd"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "da8cb09632b93763a610f84cb865a7c56c8eb6e9b19f9f6a36b633ac1a2cc353"
+      "sha256": "a1716e5edb77359c2903ec62c3edb2ab5d73d8855642efc880f0a3d074aa8985"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -59,15 +59,23 @@
     },
     {
       "path": "index.html",
-      "sha256": "0d432c118b26c14a4dd7276cb32ffe7b0f21e25edc15220fb00491d002905b85"
+      "sha256": "4d920a456e0bb7706523fb4280e7be324f07e697d98be0e9f1227355f06d89a1"
     },
     {
       "path": "manifest.webmanifest",
       "sha256": "cee92bdae83eedb99d17d1b32c1fd7003f76fe7e09ab1893460064c6d11ad12c"
     },
     {
+      "path": "player-ads.css",
+      "sha256": "f77526aea8048e607588d3931ed9dcdd64d5d616bafb66afeb06f691713ffee0"
+    },
+    {
+      "path": "src/ads.mjs",
+      "sha256": "209b9dda95387dbc4d3bccbd36b81499f0c39cd38a75ef6b81ea223861ec450d"
+    },
+    {
       "path": "src/app.mjs",
-      "sha256": "045d6a382fbcfe21406cb586533a219c3326cea48c0f9f894d71a4d9886b8480"
+      "sha256": "1fa2b4def79e773630484007f6ef7b37d2ebb110670a4377fa6b32e4b0920c4b"
     },
     {
       "path": "src/core.mjs",
@@ -78,12 +86,16 @@
       "sha256": "d3eb03ac7f604d04be79cc17b5d350fc8600660e0cf093dc9c150107771522b2"
     },
     {
+      "path": "src/newson.mjs",
+      "sha256": "4c4b809665601336999224674b331291dce931a079717857e02516a894d37351"
+    },
+    {
       "path": "src/player.mjs",
-      "sha256": "6ed367556eb734e6c54263e7bdadf465b00490fe94878ba298e4efa574503b68"
+      "sha256": "44f07f00537867d636445e4653900c7877773262a61b29d9c4c567365454b27b"
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "f9ac0dd1b9e6d49b8b99716ba0498e939a62d0f40d35c1dc56264de44fbbe444"
+      "sha256": "840a3cc8ac7adcfac97c8adf65e3c5903f62662c133e5894804d740096c8c64f"
     },
     {
       "path": "src/publishers.mjs",
@@ -91,7 +103,7 @@
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "12ec8b361aff3e9e8e539de1d0bde36982c3bc0f820e4d57d588c0854b7d7179"
+      "sha256": "913ac882606fe56b37f71ba39e373bc75e41112aa1ac824e4e60739bf19605b2"
     },
     {
       "path": "src/storage.mjs",
@@ -106,12 +118,16 @@
       "sha256": "140e6a35e0bc8f1d0302e9327f141300687828c13b5237c08cf1ab824c4a6e6b"
     },
     {
+      "path": "src/xumo.mjs",
+      "sha256": "7412f94833822080b37b53cbcc9f740c71fc9efc9141892c98fa4e4751b1c11b"
+    },
+    {
       "path": "styles.css",
       "sha256": "ab87ff135b58891897f017bb8ba1f16b300fdb8d41084b25723ff507d778a85f"
     },
     {
       "path": "sw.js",
-      "sha256": "f24b7c5986b477d1d29d24de703838734bc40ce114e6f22bf14d7bf6544c6548"
+      "sha256": "a7f596c5c7424e5251b69ccf37d770fc14df6a9debbd06146bb0c9cd72ef4100"
     },
     {
       "path": "vendor/APACHE-2.0.txt",

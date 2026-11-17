@@ -1,5 +1,6 @@
 import {safeUrl} from './core.mjs';
 import {publisherEmbedUrl} from './publishers.mjs';
+import {loadAdvertising,PublisherAds} from './ads.mjs';
 let hlsLibrary;
 async function loadHls(){
   if(globalThis.Hls)return globalThis.Hls;
@@ -12,6 +13,7 @@ export class WebPlayer {
   }
   stop(){
     this.generation++;
+    this.ads?.destroy();this.ads=null;
     this.trackController?.abort();this.trackController=null;
     for(const url of this.trackUrls??[])URL.revokeObjectURL(url);this.trackUrls=[];
     if(this.video){this.onProgress(this.video.currentTime,this.video.duration);this.video.pause();this.video.removeAttribute('src');this.video.load();}
@@ -26,23 +28,32 @@ export class WebPlayer {
       this.container.append(frame);this.onStatus('Use the publisher’s player controls.');return;
     }
     if(!safeUrl(offer.url))throw Error('Unsupported video address.');
-    const video=document.createElement('video');this.video=video;this.preferCaptions=captions;video.controls=true;video.playsInline=true;video.preload='metadata';if(offer.kind==='hls')video.crossOrigin='anonymous';video.setAttribute('aria-label',title);
+    const video=document.createElement('video');this.video=video;this.preferCaptions=captions;video.controls=!offer.adTag;video.playsInline=true;video.preload='metadata';if(offer.kind==='hls')video.crossOrigin='anonymous';video.setAttribute('aria-label',title);
     this.container.append(video);
     let failed=false;const failure=()=>{if(!failed&&generation===this.generation){failed=true;this.onStatus('This video could not start. Retry, or open the publisher’s website.','error');}};
     video.addEventListener('error',failure);
-    video.addEventListener('waiting',()=>this.onStatus('Buffering…'));
-    video.addEventListener('playing',()=>this.onStatus(offer.live?'Live now':'Playing'));
-    video.addEventListener('pause',()=>{if(!video.ended&&video.readyState)this.onStatus('Paused');});
+    video.addEventListener('waiting',()=>{if(!this.ads?.blocking)this.onStatus('Buffering…');});
+    video.addEventListener('playing',()=>{if(!this.ads?.blocking)this.onStatus(offer.live?'Live now':'Playing');});
+    video.addEventListener('pause',()=>{if(!this.ads?.blocking&&!video.ended&&video.readyState)this.onStatus('Paused');});
+    video.textTracks.addEventListener('addtrack',()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(video.textTracks.length>0||!!this.hls?.subtitleTracks.length);}});
     video.addEventListener('loadedmetadata',()=>{
       const offset=Number(offer.offset)||position;
       if(offset>0&&Number.isFinite(video.duration))video.currentTime=Math.min(offset,Math.max(0,video.duration-1));
-      this.onStatus('Ready — press Play to watch.');
+      if(!this.ads?.started)this.onStatus('Ready — press Play to watch.');
       this.captions(this.preferCaptions);
       this.onCaptions(video.textTracks.length>0);
     });
     let stamp=0;
-    video.addEventListener('timeupdate',()=>{if(Date.now()-stamp>5000){stamp=Date.now();this.onProgress(video.currentTime,video.duration);}});
-    video.addEventListener('ended',()=>this.onEnded());
+    video.addEventListener('timeupdate',()=>{if(!this.ads?.blocking&&Date.now()-stamp>5000){stamp=Date.now();this.onProgress(video.currentTime,video.duration);}});
+    video.addEventListener('ended',()=>{if(this.ads)this.ads.ended();else this.onEnded();});
+    if(offer.adTag){
+      video.disablePictureInPicture=true;video.controlsList?.add('nofullscreen');
+      const ima=await loadAdvertising();if(generation!==this.generation)return;
+      this.ads=new PublisherAds(ima,{container:this.container,video,adTag:offer.adTag,onStatus:this.onStatus,onComplete:offer.onAdComplete,onEnded:this.onEnded});
+      const play=document.createElement('button');play.type='button';play.className='button publisher-start';play.textContent='▶ Play';play.setAttribute('aria-label','Play video');
+      play.addEventListener('click',()=>{if(generation!==this.generation)return;try{this.ads.start();play.remove();}catch{this.onStatus('The publisher player could not start. Retry, or open its website.','error');}});this.container.append(play);
+      video.addEventListener('play',()=>{if(this.ads&&!this.ads.started)video.pause();});
+    }
     if(offer.tracks?.length){
       const controller=new AbortController();this.trackController=controller;const timer=setTimeout(()=>controller.abort(),15000);
       Promise.allSettled(offer.tracks.map(async supplied=>{
@@ -58,13 +69,21 @@ export class WebPlayer {
       if(Hls?.isSupported()){
         const hls=new Hls({maxBufferLength:30,backBufferLength:30,enableWorker:true});this.hls=hls;
         hls.on(Hls.Events.ERROR,(_,data)=>{if(data.fatal)failure();});
-        hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED,()=>{this.onCaptions(hls.subtitleTracks.length>0);if(this.preferCaptions&&hls.subtitleTracks.length)hls.subtitleTrack=0;});
+        hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED,()=>{if(generation===this.generation){this.onCaptions(hls.subtitleTracks.length>0||video.textTracks.length>0);this.captions(this.preferCaptions);}});
         hls.loadSource(offer.url);hls.attachMedia(video);
       }else if(video.canPlayType('application/vnd.apple.mpegurl'))video.src=offer.url;
       else throw Error('This browser does not support this stream. Try a current browser or the publisher’s website.');
     }else video.src=offer.url;
   }
-  captions(enabled){this.preferCaptions=enabled;if(this.hls){this.hls.subtitleDisplay=enabled;this.hls.subtitleTrack=enabled&&this.hls.subtitleTracks.length?0:-1;}let selected=false;if(this.video)for(const track of this.video.textTracks){track.mode=enabled&&!selected?'showing':'disabled';if(enabled&&!selected)selected=true;}}
+  captions(enabled){
+    this.preferCaptions=enabled;
+    if(this.hls){this.hls.subtitleDisplay=enabled;this.hls.subtitleTrack=enabled&&this.hls.subtitleTracks.length?0:-1;}
+    if(this.video){
+      const tracks=[...this.video.textTracks].filter(track=>['subtitles','captions'].includes(track.kind));
+      const chosen=tracks.find(track=>track.kind==='subtitles'&&(/^en\b|^eng$/i.test(track.language)||/english/i.test(track.label)))??tracks.find(track=>track.cues?.length)??tracks[0];
+      for(const track of tracks)track.mode=enabled&&track===chosen?'showing':'disabled';
+    }
+  }
   async fullscreen(){const video=this.video;if(this.container.requestFullscreen)await this.container.requestFullscreen();else if(video?.webkitEnterFullscreen)video.webkitEnterFullscreen();}
   async pictureInPicture(){if(!this.video||!document.pictureInPictureEnabled)return false;if(document.pictureInPictureElement)await document.exitPictureInPicture();else await this.video.requestPictureInPicture();return true;}
 }

@@ -10,7 +10,7 @@
 
 </div>
 
-**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The Android-style Home now includes Live TV Complete, Live TV Simple, On Demand, Web Cams and an interactive country-selecting globe. Includes seven live channels, 7,040 videos, 3,915 webcam directory entries, search, favorites and supported resume. PBS KIDS uses publisher-approved embeds; other integrated sources include NASA+, NFB, licensed Archive selections and 30A. Remaining providers open official websites. Android remains 1.9.0 stable. Publisher availability and region rules apply.
+**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Xumo adds454 live channels; NewsON adds210 advertised live stations and269 fresh-resolving latest-newscast entries. The snapshot now has671 live listings and7,309 on-demand entries, plus3,915 webcam references. Includes the Android-style Home, interactive globe with bold webcam outlines, search, favorites, captions and supported resume. Publisher advertising and region/access rules remain in force. Remaining providers open official websites; Android remains1.9.0 stable.
 
 **Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
 
