@@ -19,6 +19,30 @@ const EARTH_FRAGMENT = `
 precision mediump float;varying vec2 vUV;varying vec3 vNormal;uniform sampler2D uTexture;
 void main(){float light=.68+.32*max(0.0,dot(normalize(vNormal),normalize(vec3(.35,.5,1.2))));gl_FragColor=vec4(texture2D(uTexture,vUV).rgb*light,1.0);}`;
 const LINE_FRAGMENT = `precision mediump float;uniform vec4 uColor;void main(){gl_FragColor=uColor;}`;
+// Expand each border segment in screen space: WebGL implementations commonly
+// limit native GL.LINES to one device pixel, regardless of lineWidth().
+const STROKE_VERTEX = `
+attribute vec3 aPosition;attribute vec3 aOther;attribute float aSide;
+uniform vec2 uRotation;uniform float uDistance;uniform float uAspect;uniform float uRadius;
+uniform vec2 uViewport;uniform float uWidth;
+varying float vFacing;
+vec3 rotate(vec3 p){
+  float a=uRotation.x,b=uRotation.y;p*=uRadius;
+  p=vec3(cos(a)*p.x-sin(a)*p.z,p.y,sin(a)*p.x+cos(a)*p.z);
+  return vec3(p.x,cos(b)*p.y-sin(b)*p.z,sin(b)*p.y+cos(b)*p.z);
+}
+vec4 project(vec3 p){
+  float z=p.z-uDistance;float near=.015;float far=20.0;
+  return vec4(2.605089/uAspect*p.x,2.605089*p.y,(far+near)/(near-far)*z+2.0*far*near/(near-far),-z);
+}
+void main(){
+  vec3 position=rotate(aPosition);vec4 p=project(position),q=project(rotate(aOther));
+  vFacing=uDistance*position.z-uRadius*uRadius;
+  vec2 delta=(q.xy/q.w-p.xy/p.w)*uViewport;
+  vec2 normal=vec2(-delta.y,delta.x)/max(length(delta),.00001);
+  p.xy+=normal*aSide*uWidth/uViewport*p.w;gl_Position=p;
+}`;
+const STROKE_FRAGMENT = `precision mediump float;uniform vec4 uColor;varying float vFacing;void main(){if(vFacing<0.0)discard;gl_FragColor=uColor;}`;
 const ATMOSPHERE_FRAGMENT = `precision mediump float;varying vec3 vNormal;void main(){float rim=pow(1.0-abs(normalize(vNormal).z),3.0);gl_FragColor=vec4(.2,.55,1.0,rim*.45);}`;
 
 function program(gl, vertex, fragment) {
@@ -32,6 +56,7 @@ function program(gl, vertex, fragment) {
   gl.linkProgram(p); for (const shader of shaders) gl.deleteShader(shader);
   if (!gl.getProgramParameter(p, gl.LINK_STATUS)) { gl.deleteProgram(p); throw Error('Globe graphics are unavailable.'); }
   return {handle:p, position:gl.getAttribLocation(p,'aPosition'), uv:gl.getAttribLocation(p,'aUV'),
+    other:gl.getAttribLocation(p,'aOther'), side:gl.getAttribLocation(p,'aSide'), viewport:gl.getUniformLocation(p,'uViewport'), width:gl.getUniformLocation(p,'uWidth'),
     rotation:gl.getUniformLocation(p,'uRotation'), distance:gl.getUniformLocation(p,'uDistance'), aspect:gl.getUniformLocation(p,'uAspect'),
     radius:gl.getUniformLocation(p,'uRadius'), color:gl.getUniformLocation(p,'uColor'), texture:gl.getUniformLocation(p,'uTexture')};
 }
@@ -57,6 +82,16 @@ function outlineVertices(countries) {
   }
   return new Float32Array(points);
 }
+function strokeVertices(countries) {
+  const points=outlineVertices(countries),vertices=new Float32Array(points.length*7);
+  const corners=[0,3,-1,0,3,1,3,0,1,3,0,1,0,3,1,3,0,-1];let offset=0;
+  for(let i=0;i<points.length;i+=6)for(let corner=0;corner<corners.length;corner+=3){
+    for(let axis=0;axis<3;axis++)vertices[offset++]=points[i+corners[corner]+axis];
+    for(let axis=0;axis<3;axis++)vertices[offset++]=points[i+corners[corner+1]+axis];
+    vertices[offset++]=corners[corner+2];
+  }
+  return vertices;
+}
 
 /** Positive zoom(delta) moves closer. Programmatic select never calls onSelect. */
 export function mountGlobe(container, {countries, webcamCountries=[], onSelect=()=>{}, onHover=()=>{}, selected='', signal}={}) {
@@ -67,7 +102,7 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
   canvas.setAttribute('aria-keyshortcuts','ArrowLeft ArrowRight ArrowUp ArrowDown Enter + -');
   container.replaceChildren(canvas);container.dataset.globeReady='false';
   let gl, dead=false, frame=0, observer, image;
-  let lon=-35,lat=18,distance=3.3,targetLon=lon,targetLat=lat,targetDistance=distance,aspect=1;
+  let lon=-35,lat=18,distance=3.3,targetLon=lon,targetLat=lat,targetDistance=distance,aspect=1,pixelRatio=1;
   let selection='',selectedCount=0,hoverCode='',dragged=false,pinched=false,startX=0,startY=0,pinchStart=0,pinchDistance=0;
   const controls=new AbortController();const pointers=new Map();const buffers=[],programs=[];
   const listen=(target,type,fn,options={})=>target.addEventListener(type,fn,{...options,signal:controls.signal});
@@ -87,25 +122,25 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
     container.dataset.globeReady='false';pointers.clear();
   }
   const api={select,zoom,reset,destroy};
-  let sphere,earth,line,atmosphere,vertexBuffer,indexBuffer,borderBuffer,webcamBuffer,selectedBuffer,markerBuffer,texture;
+  let sphere,earth,line,stroke,atmosphere,vertexBuffer,indexBuffer,borderBuffer,webcamBuffer,selectedBuffer,markerBuffer,texture;
   let borderCount=0,webcamCount=0,indexCount=0;
   function buffer(data,target){const b=gl.createBuffer();buffers.push(b);gl.bindBuffer(target,b);gl.bufferData(target,data,gl.STATIC_DRAW);return b;}
   function select(code){
     const country=byCode.get(code);if(!country)return;
     selection=code;targetLon=country.lon;targetLat=clamp(country.lat,-85,85);targetDistance=countryDistance(country,aspect);
     canvas.setAttribute('aria-label',`${country.name} selected. Interactive world globe. Drag or use arrow keys to rotate; press Enter to choose the centre country.`);
-    if(gl&&selectedBuffer){const points=outlineVertices([country]);selectedCount=points.length/3;gl.bindBuffer(gl.ARRAY_BUFFER,selectedBuffer);gl.bufferData(gl.ARRAY_BUFFER,points,gl.DYNAMIC_DRAW);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(spherePoint(country.lon,country.lat)),gl.DYNAMIC_DRAW);}
+    if(gl&&selectedBuffer){const points=strokeVertices([country]);selectedCount=points.length/7;gl.bindBuffer(gl.ARRAY_BUFFER,selectedBuffer);gl.bufferData(gl.ARRAY_BUFFER,points,gl.DYNAMIC_DRAW);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(spherePoint(country.lon,country.lat)),gl.DYNAMIC_DRAW);}
     container.dataset.selectedCountry=code;schedule();
   }
   if(signal?.aborted){destroy();return api;}signal?.addEventListener('abort',destroy,{once:true});
   try{
     gl=canvas.getContext('webgl',{alpha:false,antialias:true,powerPreference:'low-power'});
     if(!gl)throw Error('WebGL unavailable');
-    earth=program(gl,VERTEX,EARTH_FRAGMENT);line=program(gl,VERTEX,LINE_FRAGMENT);atmosphere=program(gl,VERTEX,ATMOSPHERE_FRAGMENT);programs.push(earth,line,atmosphere);
+    earth=program(gl,VERTEX,EARTH_FRAGMENT);line=program(gl,VERTEX,LINE_FRAGMENT);stroke=program(gl,STROKE_VERTEX,STROKE_FRAGMENT);atmosphere=program(gl,VERTEX,ATMOSPHERE_FRAGMENT);programs.push(earth,line,stroke,atmosphere);
     sphere=sphereMesh();vertexBuffer=buffer(sphere.vertices,gl.ARRAY_BUFFER);indexBuffer=buffer(sphere.indices,gl.ELEMENT_ARRAY_BUFFER);indexCount=sphere.indices.length;
     const borders=outlineVertices(rows);borderBuffer=buffer(borders,gl.ARRAY_BUFFER);borderCount=borders.length/3;
-    const webcamBorders=outlineVertices(rows.filter(country=>withWebcams.has(country.code)));
-    webcamBuffer=buffer(webcamBorders,gl.ARRAY_BUFFER);webcamCount=webcamBorders.length/3;
+    const webcamBorders=strokeVertices(rows.filter(country=>withWebcams.has(country.code)));
+    webcamBuffer=buffer(webcamBorders,gl.ARRAY_BUFFER);webcamCount=webcamBorders.length/7;
     selectedBuffer=buffer(new Float32Array(),gl.ARRAY_BUFFER);markerBuffer=buffer(new Float32Array(),gl.ARRAY_BUFFER);
     texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([25,65,102]));
     gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
@@ -124,6 +159,15 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
     if(p.uv>=0){gl.enableVertexAttribArray(p.uv);gl.vertexAttribPointer(p.uv,2,gl.FLOAT,false,20,12);}
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,indexBuffer);
   }
+  function drawBorder(buffer,count,width,color) {
+    use(stroke,1.001);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
+    gl.enableVertexAttribArray(stroke.position);gl.vertexAttribPointer(stroke.position,3,gl.FLOAT,false,28,0);
+    gl.enableVertexAttribArray(stroke.other);gl.vertexAttribPointer(stroke.other,3,gl.FLOAT,false,28,12);
+    gl.enableVertexAttribArray(stroke.side);gl.vertexAttribPointer(stroke.side,1,gl.FLOAT,false,28,24);
+    gl.uniform2f(stroke.viewport,canvas.width,canvas.height);gl.uniform1f(stroke.width,width*pixelRatio);
+    gl.uniform4f(stroke.color,...color);gl.drawArrays(gl.TRIANGLES,0,count);
+    gl.disableVertexAttribArray(stroke.position);gl.disableVertexAttribArray(stroke.other);gl.disableVertexAttribArray(stroke.side);
+  }
   function draw(){
     frame=0;if(dead||gl.isContextLost())return;
     const dLon=longitude(targetLon-lon),dLat=targetLat-lat,dDistance=targetDistance-distance;
@@ -136,15 +180,19 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
     use(earth);bindSphere(earth);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.uniform1i(earth.texture,0);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
     if(earth.uv>=0)gl.disableVertexAttribArray(earth.uv);
     use(line,1.001);gl.bindBuffer(gl.ARRAY_BUFFER,borderBuffer);gl.enableVertexAttribArray(line.position);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,.63,.67,.72,1);gl.drawArrays(gl.LINES,0,borderCount);
-    if(webcamCount){gl.bindBuffer(gl.ARRAY_BUFFER,webcamBuffer);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,.37,.92,.83,1);gl.drawArrays(gl.LINES,0,webcamCount);}
-    if(selection&&selectedCount){gl.bindBuffer(gl.ARRAY_BUFFER,selectedBuffer);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,1,.85,.08,1);gl.drawArrays(gl.LINES,0,selectedCount);}
-    if(selection){use(line,1.003);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,1,.85,.08,1);gl.drawArrays(gl.POINTS,0,1);}
+    // Facing clips the far side; drawing above terrain keeps the full stroke
+    // width visible instead of hiding its inland half beneath the sphere.
+    gl.disable(gl.DEPTH_TEST);
+    if(webcamCount){drawBorder(webcamBuffer,webcamCount,4.2,[.015,.025,.04,1]);drawBorder(webcamBuffer,webcamCount,2.6,[.125,1,.933,1]);}
+    if(selection&&selectedCount){drawBorder(selectedBuffer,selectedCount,4.8,[.015,.025,.04,1]);drawBorder(selectedBuffer,selectedCount,3,[1,.85,.08,1]);}
+    gl.enable(gl.DEPTH_TEST);
+    if(selection){use(line,1.003);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.enableVertexAttribArray(line.position);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,1,.85,.08,1);gl.drawArrays(gl.POINTS,0,1);}
     container.dataset.longitude=lon.toFixed(3);container.dataset.latitude=lat.toFixed(3);container.dataset.distance=distance.toFixed(3);
     if(moving)schedule();
   }
   function resize(){
     if(dead)return;const box=container.getBoundingClientRect();const width=Math.max(1,box.width),height=Math.max(1,box.height);aspect=width/height;
-    const ratio=Math.min(devicePixelRatio||1,2);canvas.width=Math.min(4096,Math.round(width*ratio));canvas.height=Math.min(4096,Math.round(height*ratio));
+    const ratio=Math.min(devicePixelRatio||1,2);canvas.width=Math.min(4096,Math.round(width*ratio));canvas.height=Math.min(4096,Math.round(height*ratio));pixelRatio=canvas.width/width;
     if(byCode.has(selection))targetDistance=countryDistance(byCode.get(selection),aspect);schedule();
   }
   function picked(x,y){const box=canvas.getBoundingClientRect();return countryAt(rows,globePointAt(2*(x-box.left)/box.width-1,1-2*(y-box.top)/box.height,{lon,lat,distance,aspect}));}

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "89970bd4d5de",
+  "revision": "91714264c96e",
   "catalogGeneratedAt": "2026-11-17T03:44:37.732Z",
   "titles": 7040,
   "live": 7,
@@ -75,7 +75,7 @@
     },
     {
       "path": "src/globe.mjs",
-      "sha256": "a0a2fc8bd9ef197c2dd493e473a5c36a2e8172fff0adcf9162f05631fde73315"
+      "sha256": "d3eb03ac7f604d04be79cc17b5d350fc8600660e0cf093dc9c150107771522b2"
     },
     {
       "path": "src/player.mjs",
@@ -111,7 +111,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "b84926775f48c430c0da25bf9cdc33703375331e78a9479f763f19fd487e3847"
+      "sha256": "f24b7c5986b477d1d29d24de703838734bc40ce114e6f22bf14d7bf6544c6548"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
@@ -127,7 +127,7 @@
     },
     {
       "path": "world.css",
-      "sha256": "64f854f9883b21aec58df98716cb77aae4f737b84634797cf7c265a5a35e6d89"
+      "sha256": "3a27861b3149991657c1b8cc81fcc7111476cb2584319036d2b9ba4f8290aceb"
     }
   ]
 }
