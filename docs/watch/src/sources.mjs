@@ -8,6 +8,7 @@ import {resolveWorldTv} from './worldtv.mjs';
 import {resolveRedBull} from './redbull.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
 import {resolveRoku} from './roku.mjs';
+import {resolvePublisherLink} from './publisher-links.mjs';
 import {mergeRokuLibrary,isRokuSeriesReference,parseRokuEpisodeFile,parseRokuEpisodeIndex} from './roku-library.mjs';
 export async function fetchJson(url,{signal,timeout=25000,maxLength=12_000_000}={}) {
   const controller=new AbortController();const abort=()=>controller.abort();
@@ -72,6 +73,7 @@ export function availableArchiveFiles(data){
   return (data.files??[]).map(archiveFile).filter(Boolean).sort((a,b)=>a.rank-b.rank);
 }
 export async function resolvePlayback(item,catalog,{signal}={}) {
+  if(item.mode==='publisher-link')return resolvePublisherLink(item,{signal});
   if(['newson-live','newson-latest'].includes(item.mode))return resolveNewsOn(item,{signal});
   if(item.mode==='xumo-live')return resolveXumo(item,{signal});
   if(item.mode==='cw-live')return resolveCw(item,{signal});

@@ -10,7 +10,7 @@
 
 </div>
 
-**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Now includes 3,308 free Roku movies and 2,953 free show cards, alongside 4,404 Filmzie movies and 12 selected full Red Bull films. Watch on Roku opens the official player or show episode picker in a new tab. The Roku snapshot covers the supported browse graph; it is not a verified whole-service total. Snapshot: 1,046 live listings, 17,986 on-demand entries and 3,915 webcam references. Includes the Android-style Home, country-selecting globe, search, filters, favorites, captions and supported resume. Publisher access and advertising remain authoritative. Android remains 1.9.0 stable.
+**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Now includes 159 verified Philo free live channels and 160 films in Fawesome’s current weekly selection, alongside 3,308 free Roku movies and 2,953 shows, 4,404 Filmzie movies and 12 selected full Red Bull films. Philo, Fawesome and Roku open their official players in a new tab, with instructions to return to the SheepBox tab. Philo VOD/paid plans and Fawesome’s whole library are not included; Roku covers its supported browse graph. Snapshot: 1,205 live listings, 18,146 on-demand entries and 3,915 webcams. Includes search, filters, favorites, World View and supported captions/resume. Publisher access and advertising remain authoritative. Android remains 1.9.0 stable.
 
 **Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
 

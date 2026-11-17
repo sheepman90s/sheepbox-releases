@@ -1,9 +1,13 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "72e338dc69e3",
-  "catalogGeneratedAt": "2026-11-17T17:35:58.496Z",
-  "titles": 17986,
-  "live": 1046,
+  "revision": "9eb244365387",
+  "catalogGeneratedAt": "2026-11-17T22:11:27.953Z",
+  "titles": 18146,
+  "live": 1205,
+  "publisherLinks": {
+    "fawesomeMovies": 160,
+    "philoChannels": 159
+  },
   "roku": {
     "films": 3308,
     "shows": 2953,
@@ -41,15 +45,19 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "de3a9f5289357fbd956dd71b260366b534171e2d9b57b32fd78515a3a4b14f55"
+      "sha256": "756b6e29d2402fafcab5acc903d9435497a83457ac97fff5c86ad9d5f02ecb54"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "7bc3107af833a42bd8f2e86249821a825607b860b9c34e81a232dd0887fbbac5"
+      "sha256": "9e8a9b265b46ca84b9c490c907e213fb9b383dfd07febd1d926375f735112931"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
       "sha256": "dfc34af32be9a99fab09f7f6ab40bcb0bf0fef561fd2276b3e4b981755e46a1c"
+    },
+    {
+      "path": "data/publisher-links.json",
+      "sha256": "583afbea7428fb477be8cd0bad095a9c4accc4b29f8b718657d161d361b1f5f6"
     },
     {
       "path": "data/roku/catalog.json",
@@ -1109,7 +1117,7 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "0ed18d4715be7e94dda10eba8d3507d2fba4d32f348136ec8257645f110f8319"
+      "sha256": "79c5098838ae8341766590a405e44b9c1ef57bb2a2ea7d2cfc8345c3f26a1b82"
     },
     {
       "path": "src/core.mjs",
@@ -1137,7 +1145,11 @@
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "da74009eb51995434a0aca1913e287aed15ff3ca61eb6f0d93f8167f78fbb1bd"
+      "sha256": "85bdcb4455d8382ad0bc56f209d873ac6f2eb89ecc9eb6210af549d1cd14d5dd"
+    },
+    {
+      "path": "src/publisher-links.mjs",
+      "sha256": "97dc4ddfcd9336f102649c5a25ae755b6d7d9d60e95cbbfc1936b79f87500dec"
     },
     {
       "path": "src/publishers.mjs",
@@ -1169,7 +1181,7 @@
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "0b6654c385a8db93bc39c9eb8b927de7f7f7bae254333df30e70d3ea3f6e7383"
+      "sha256": "a5ff1ae0391e92ac7efaa0be277e92d88607999c18baa5b1e81051801f48d564"
     },
     {
       "path": "src/storage.mjs",
@@ -1205,11 +1217,11 @@
     },
     {
       "path": "styles.css",
-      "sha256": "16c33437efeb03218798825095551dc697527c9dc9b6796941ee3546a835dd2c"
+      "sha256": "94942b60ed84c8bf59db7010d986b531b49a28a2f4cc59d65a0d19662a638e43"
     },
     {
       "path": "sw.js",
-      "sha256": "b1baf9964f323a703859fc16f5f417d8aa4c07ca496885d5ba706affdee54823"
+      "sha256": "92a61fbf414c1dd27681d2768daa5aca94b4b03ea7ee784058f24cdceb034540"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
