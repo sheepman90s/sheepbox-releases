@@ -7,6 +7,8 @@ export function publisherEmbedUrl(value) {
   if(u.hostname==='player.pbs.org'&&/^\/viralplayer\/[1-9]\d{5,11}\/$/.test(u.pathname))return url;
   if(u.hostname==='www.youtube-nocookie.com'&&/^\/embed\/[A-Za-z0-9_-]{11}$/.test(u.pathname))return url;
   if(u.hostname==='embed.france24.com'&&u.pathname==='/en/live')return url;
+  if(u.hostname==='www.euronews.com'&&u.pathname==='/embed/live')return url;
+  if(u.hostname==='www.redbull.tv'&&/^\/en(?:_US)?\/embed\/rrn:content:films:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/.test(u.pathname))return url;
   return '';
 }
 

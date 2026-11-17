@@ -1,4 +1,5 @@
 import {safeUrl} from './core.mjs';
+import {EXTRA_WORLD_TV_KEYS,resolveExtraWorldTv,loadExtraWorldTvSelection} from './worldtv-extra.mjs';
 
 const SOURCES = Object.freeze([
   {key: 'france24-en', title: 'France 24 English', sourceName: 'France 24', country: 'fr',
@@ -58,6 +59,7 @@ export function parseWorldTvMetadata(key, html, {checkedAt = new Date().toISOStr
 
 /** The France24 alias is stable. Al Jazeera uses the last publisher-checked embed ID. */
 export function resolveWorldTv(item) {
+  if(EXTRA_WORLD_TV_KEYS.includes(item?.worldSource))return resolveExtraWorldTv(item);
   const source = sourceFor(item?.worldSource);
   if (!source || item?.provider !== 'worldtv' || item?.mode !== 'worldtv' || item.country !== source.country) {
     throw Error('Unsupported World TV broadcaster.');
@@ -70,7 +72,7 @@ export function resolveWorldTv(item) {
   return {kind: 'embed', url: `https://www.youtube-nocookie.com/embed/${item.sourceId}`, live: true};
 }
 
-export async function loadWorldTvSelection({fetcher = fetch, signal} = {}) {
+export async function loadWorldTvSelection({fetcher = fetch, signal, extraLoader = loadExtraWorldTvSelection} = {}) {
   const checkedAt = new Date().toISOString();
   const live = [];
   for (const source of SOURCES) {
@@ -89,11 +91,13 @@ export async function loadWorldTvSelection({fetcher = fetch, signal} = {}) {
       clearTimeout(timeout); signal?.removeEventListener('abort', abort);
     }
   }
+  const extra=await extraLoader({fetcher,signal});
+  live.push(...extra.live);
   return {live, source: {name: 'World TV — official broadcasters', checkedAt, complete: false,
-    scope: 'Curated selection of two official broadcaster live players; not a complete country or IPTV-org lineup.',
+    scope: `Curated selection of ${live.length} official broadcaster live players; not a complete country or IPTV-org lineup.`,
     countryBasis: 'Broadcaster headquarters or national identity from the linked primary source; not viewer IP, language or programme location.',
-    refresh: 'Maintainer-only metadata refresh. Al Jazeera’s stored live embed ID may change; no real-time freshness is claimed.',
+    refresh: 'Maintainer-only metadata refresh. Al Jazeera’s stored live embed ID may change; no real-time freshness is claimed. '+extra.source.refresh,
     broadcasters: SOURCES.map(source => ({name: source.sourceName, key: source.key, country: source.country,
-      official: source.official, countrySource: source.countrySource})),
+      official: source.official, countrySource: source.countrySource})).concat(extra.source.broadcasters),
   }};
 }

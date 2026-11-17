@@ -4,7 +4,7 @@ const rows=[
  ['nfb','NFB','https://www.nfb.ca/','Films and animation in the National Film Board’s own embedded player.','Films & documentaries','vod','embed'],
  ['30a','30A TV','https://30a-tv.com/','Independent television, music and coastal living.','Entertainment','live','native'],
  ['pluto','Pluto TV','https://pluto.tv/','Live channels, films and familiar favorites.','Entertainment','both','website'],
- ['roku','The Roku Channel','https://therokuchannel.roku.com/','Free television, films and series.','Films & shows','both','website'],
+ ['roku','The Roku Channel','https://app.roku.com/','Browse a selection of free movies here, then watch in Roku’s official player in a new tab.','Films & shows','vod','publisher'],
  ['tubi','Tubi','https://tubitv.com/','Films, series and live channels.','Films & shows','both','website'],
  ['samsung','Samsung TV Plus','https://www.samsungtvplus.com/','News, entertainment and free live television.','Entertainment','live','website'],
  ['lg','LG Channels','https://www.lg.com/us/lg-channels','Free streaming channels from LG.','Entertainment','live','website'],
@@ -27,13 +27,13 @@ const rows=[
  ['newson','NewsON','https://www.newson.us/','US local live stations and each station’s latest available guest newscast.','News & local','both','native'],
  ['retrocrush','RetroCrush','https://www.retrocrush.tv/','Classic anime films and series.','Animation','vod','website'],
  ['canela','Canela.TV','https://www.canela.tv/','Spanish-language channels, films and series.','International','both','website'],
- ['redbull','Red Bull TV','https://www.redbull.com/int-en/discover','Adventure, sport, films and live events.','Sports & adventure','both','website'],
+ ['redbull','Red Bull TV','https://www.redbull.com/us-en/collections/films','A selected collection of full films in Red Bull TV’s official player, with publisher advertising and access rules.','Sports & adventure','vod','embed'],
  ['asiancrush','AsianCrush','https://www.asiancrush.com/','Asian films, television and anime.','Films & shows','vod','website'],
  ['midnightpulp','Midnight Pulp','https://www.midnightpulp.com/','Cult films, thrillers and offbeat television.','Films & shows','vod','website'],
  ['haystack','Haystack News','https://www.haystack.tv/','Current news clips and publisher channels.','News & local','vod','website'],
  ['cw','The CW','https://www.cwtv.com/channels/','Free guest live channels with the publisher’s original programming and advertising.','Entertainment','live','native'],
  ['fls','Free Live Sports','https://www.freelivesports.tv/','Live sports, replays and sports films.','Sports & adventure','both','website'],
- ['filmzie','Filmzie','https://filmzie.com/','Independent films and series.','Films & shows','vod','website'],
+ ['filmzie','Filmzie','https://filmzie.com/','Free ad-supported movies, with current guest eligibility and the publisher’s full advertising schedule.','Films & shows','vod','native'],
  ['docplus','DOCUMENTARY+','https://docplus.com/','Documentary films, series and channels.','Films & documentaries','both','website'],
  ['flixhouse','FlixHouse','https://flixhouse.com/','Independent films, series and live channels.','Films & shows','both','website'],
  ['webcams','Web Cams','https://famelack.com/','Explore webcams by country on the same Earth map as the Android app.','Places & webcams','live','embed'],
@@ -42,3 +42,4 @@ const rows=[
 ];
 export const providers=rows.map(([id,name,url,description,category,content,playback],index)=>({id,name,url,description,category,content,playback,palette:index%8}));
 export const providerById=id=>providers.find(p=>p.id===id);
+export const playsInPage=provider=>['native','embed'].includes(provider?.playback);

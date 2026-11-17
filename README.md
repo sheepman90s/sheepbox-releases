@@ -10,7 +10,7 @@
 
 </div>
 
-**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. World View now includes a Live TV / Web Cams switch, country availability highlights and provider/category/search filters. CW adds 75 live channels, YuppTV Free adds 293 free FAST cards, and World TV adds official France 24 and Al Jazeera players. The snapshot has 1,041 live listings, 7,309 on-demand entries and 3,915 webcam references. Includes the Android-style Home, favorites, captions and supported resume. Publisher advertising and region/access rules remain in force; remaining providers open official websites. Android remains 1.9.0 stable.
+**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Adds 4,404 Filmzie movie listings, 12 selected full Red Bull films and 20 free Roku movie picks with explicit Watch on Roku links. Roku opens its official player in a new tab. DW, ABC News Australia, TRT World, NHK WORLD-JAPAN News and Euronews expand World TV. Snapshot: 1,046 live listings, 11,745 on-demand entries and 3,915 webcam references. Includes the Android-style Home, country-selecting globe, search, filters, favorites, captions and supported resume. Publisher access and advertising remain authoritative. Android remains 1.9.0 stable.
 
 **Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
 

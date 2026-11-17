@@ -5,6 +5,9 @@ import {resolveXumo} from './xumo.mjs';
 import {resolveCw} from './cw.mjs';
 import {resolveYupp} from './yupp.mjs';
 import {resolveWorldTv} from './worldtv.mjs';
+import {resolveRedBull} from './redbull.mjs';
+import {resolveFilmzie} from './filmzie.mjs';
+import {resolveRoku} from './roku.mjs';
 export async function fetchJson(url,{signal,timeout=25000}={}) {
   const controller=new AbortController();const abort=()=>controller.abort();
   if(signal?.aborted)controller.abort();signal?.addEventListener('abort',abort,{once:true});
@@ -60,6 +63,9 @@ export async function resolvePlayback(item,catalog,{signal}={}) {
   if(item.mode==='cw-live')return resolveCw(item,{signal});
   if(item.mode==='yupp-live')return resolveYupp(item,{signal});
   if(item.mode==='worldtv')return resolveWorldTv(item);
+  if(item.mode==='redbull')return resolveRedBull(item,{signal});
+  if(item.mode==='filmzie-movie')return resolveFilmzie(item,{signal});
+  if(item.mode==='roku-link')return resolveRoku(item,{signal});
   if(['pbs','youtube'].includes(item.mode)) {
     let url='';
     if(item.mode==='pbs'&&item.embedAllowed===true)url=`https://player.pbs.org/viralplayer/${item.sourceId}/`;

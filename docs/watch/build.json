@@ -1,9 +1,9 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "70c5da91394f",
-  "catalogGeneratedAt": "2026-11-17T11:01:05.256188Z",
-  "titles": 7309,
-  "live": 1041,
+  "revision": "8e7048ad6373",
+  "catalogGeneratedAt": "2026-11-17T11:59:57.373170Z",
+  "titles": 11745,
+  "live": 1046,
   "files": [
     {
       "path": ".nojekyll",
@@ -35,11 +35,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "a4b3d51ba5adc79c985570606884bbf43118751da914e2ff70b1c1175ba97102"
+      "sha256": "6d40d9f0d189f35f21ebaab0674a00cdf12375ed261c275a36e58e8f16ae7aa7"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "652cb4ed12c5d9a0c048da943794d172f347b691eb83a4cc31e95bf88e5888f3"
+      "sha256": "98a89595bbf61a064e4f92d6e94e881ba8b4ca1e557ea38fcad2712738f0e3a7"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -59,7 +59,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "73d86b97cc7b40215ef9800930d6a5b9669270838244efff3cc4ce7f1cd258e8"
+      "sha256": "4af4fe53c904e16341c88190221d6f682c39c762d035c266cf43e2763a15581f"
     },
     {
       "path": "manifest.webmanifest",
@@ -75,7 +75,7 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "93e30fa33b3c7cc4c1b532415e83ffa392036319c13d515c5dfd36d242b2c1c2"
+      "sha256": "76196522f9dcf763990e4f660505ffe4a88d8cadba0cdd25e54a329a80f692c4"
     },
     {
       "path": "src/core.mjs",
@@ -84,6 +84,10 @@
     {
       "path": "src/cw.mjs",
       "sha256": "c49ca3ff42905db11e2de79ce39e8b64f00d70722cdf79e2e348a9edaea73149"
+    },
+    {
+      "path": "src/filmzie.mjs",
+      "sha256": "3210151f59238284c3b9da58adeeeaa26bdd66bd137d9f686077ce4142efe5f3"
     },
     {
       "path": "src/globe.mjs",
@@ -99,15 +103,23 @@
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "d7bc669a56ea65a5506c5bad2df658636ad210495f95c800361f2afa1a3b409d"
+      "sha256": "7fb6f38406498f34f8f632614b1349a55fa7afe4dd146658eb81ce53a98728dc"
     },
     {
       "path": "src/publishers.mjs",
-      "sha256": "b954bfcdcf43d7eaebf41169c0370570836ff4423d0bfeaedda7ee52649530a8"
+      "sha256": "3125c08506e3d88b261f21c2b9c0fb90009f7800160e3240a94a7de1f3407284"
+    },
+    {
+      "path": "src/redbull.mjs",
+      "sha256": "d6161c84a7e87d7d43d4aa74d113e622f7541ac669d04c11371c1ed6119b741d"
+    },
+    {
+      "path": "src/roku.mjs",
+      "sha256": "93e5a2f9422fc0266dcee6063a147fa1c2ec39eaf23ec1e504a9fe8ffba1dc89"
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "1b4f3ae3e921b49d1681767ace5f08f72f74f85499f486f555b4d48c1956c33a"
+      "sha256": "743d7b22ccfec3a687a2481984883962f3e29436dcefd0b814d8b0d3a936e0fa"
     },
     {
       "path": "src/storage.mjs",
@@ -126,8 +138,12 @@
       "sha256": "d071cc8481619a546b10a03fc1af437b62504db1198ea34823fb8e6a0fd8d53c"
     },
     {
+      "path": "src/worldtv-extra.mjs",
+      "sha256": "26e5c94415b65b44d663389797206d4fe3428e1df18f483f904d54ab9ca11255"
+    },
+    {
       "path": "src/worldtv.mjs",
-      "sha256": "ed10ff3087af65065cbc0bbd1b7a546aa41deeb4709b8a19b6b2dc968b6edb33"
+      "sha256": "3dc595528e8e20d3bd10ec9b069e0b714ec5a50cc76952bc97ceef2edf2e466d"
     },
     {
       "path": "src/xumo.mjs",
@@ -139,11 +155,11 @@
     },
     {
       "path": "styles.css",
-      "sha256": "ab87ff135b58891897f017bb8ba1f16b300fdb8d41084b25723ff507d778a85f"
+      "sha256": "16c33437efeb03218798825095551dc697527c9dc9b6796941ee3546a835dd2c"
     },
     {
       "path": "sw.js",
-      "sha256": "27986734dc8fe78202354e0827b068e940df7eefd84b403902502de0f98d9195"
+      "sha256": "4adb68152a46ca81a772a4b204c99fff40f056b46657aee848d24e90b85fdb9b"
     },
     {
       "path": "vendor/APACHE-2.0.txt",

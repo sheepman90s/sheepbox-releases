@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T11:01:05.256188Z",
+  "generatedAt": "2026-11-17T11:59:57.373170Z",
   "sources": {
     "nasaplus": {
       "titles": 607,
@@ -74,11 +74,11 @@
     },
     "worldtv": {
       "name": "World TV — official broadcasters",
-      "checkedAt": "2026-11-17T10:59:03.981Z",
+      "checkedAt": "2026-11-17T11:40:37.135Z",
       "complete": false,
-      "scope": "Curated selection of two official broadcaster live players; not a complete country or IPTV-org lineup.",
+      "scope": "Curated selection of 7 official broadcaster live players; not a complete country or IPTV-org lineup.",
       "countryBasis": "Broadcaster headquarters or national identity from the linked primary source; not viewer IP, language or programme location.",
-      "refresh": "Maintainer-only metadata refresh. Al Jazeera’s stored live embed ID may change; no real-time freshness is claimed.",
+      "refresh": "Maintainer-only metadata refresh. Al Jazeera’s stored live embed ID may change; no real-time freshness is claimed. Euronews uses its stable publisher alias. YouTube oEmbed validates the existing approved reference and owner only; it does not discover a fresh live ID or prove current live availability. Stored video IDs can change and need a maintainer source/browser check.",
       "broadcasters": [
         {
           "name": "France 24",
@@ -93,8 +93,105 @@
           "country": "qa",
           "official": "https://www.aljazeera.com/video/live/",
           "countrySource": "https://www.aljazeera.com/about-us"
+        },
+        {
+          "key": "dw-en",
+          "name": "DW",
+          "country": "de",
+          "official": "https://www.dw.com/en/live-tv/channel-english",
+          "countrySource": "https://www.dw.com/en/live-tv/channel-english",
+          "sourceCheck": "https://www.youtube.com/dwnews/live",
+          "embedSupport": "Publisher-owned live page Share > Embed control",
+          "lastBrowserCheckAt": "2026-11-17T11:31:06.520Z",
+          "lastObserved": "active programme",
+          "activeProgrammeVerified": true
+        },
+        {
+          "key": "abcnews-au",
+          "name": "ABC News (Australia)",
+          "country": "au",
+          "official": "https://www.abc.net.au/news/newschannel",
+          "countrySource": "https://www.abc.net.au/about",
+          "sourceCheck": "https://www.youtube.com/@abcnewsaustralia/live",
+          "embedSupport": "Publisher-owned live page Share > Embed control",
+          "lastBrowserCheckAt": "2026-11-17T11:29:41.373Z",
+          "lastObserved": "active programme",
+          "activeProgrammeVerified": true
+        },
+        {
+          "key": "trtworld",
+          "name": "TRT World",
+          "country": "tr",
+          "official": "https://www.trtworld.com/",
+          "countrySource": "https://www.trtworld.com/contact",
+          "sourceCheck": "https://www.youtube.com/@TRTWorld/live",
+          "embedSupport": "Publisher-owned live page Share > Embed control",
+          "lastBrowserCheckAt": "2026-11-17T11:31:25.974Z",
+          "lastObserved": "active programme",
+          "activeProgrammeVerified": true
+        },
+        {
+          "key": "nhkworld",
+          "name": "NHK WORLD-JAPAN",
+          "country": "jp",
+          "official": "https://www3.nhk.or.jp/nhkworld/en/live_tv/",
+          "countrySource": "https://www3.nhk.or.jp/nhkworld/en/about/",
+          "sourceCheck": "https://www.youtube.com/@NHKWORLDJAPAN/live",
+          "embedSupport": "Publisher-owned live page Share > Embed control",
+          "lastBrowserCheckAt": "2026-11-17T11:31:25.976Z",
+          "lastObserved": "publisher standby between scheduled news bulletins",
+          "activeProgrammeVerified": false
+        },
+        {
+          "key": "euronews-en",
+          "name": "Euronews",
+          "country": "fr",
+          "official": "https://www.euronews.com/live",
+          "countrySource": "https://www.euronews.com/contact",
+          "sourceCheck": "https://www.euronews.com/live",
+          "embedSupport": "https://www.euronews.com/widgets",
+          "lastBrowserCheckAt": "2026-11-17T11:30:24.303Z",
+          "lastObserved": "active programme",
+          "activeProgrammeVerified": true
         }
       ]
+    },
+    "filmzie": {
+      "source": "Filmzie current public MOVIE API directory",
+      "complete": true,
+      "movieDirectoryComplete": true,
+      "publisherRows": 4404,
+      "rowsRead": 4404,
+      "pages": 45,
+      "movies": 4404,
+      "excludedRows": 0,
+      "seriesIncluded": false,
+      "allPlaybackOffersChecked": false,
+      "countrySource": "No catalogue country is supplied; real publisher guest offers determine current availability without country overrides.",
+      "advertising": "Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted."
+    },
+    "redbull": {
+      "source": "https://www.redbull.com/us-en/collections/films",
+      "label": "Official film selection",
+      "complete": false,
+      "selectionComplete": true,
+      "discovered": 12,
+      "films": 12,
+      "excluded": [],
+      "scope": "Current films linked by the publisher editorial Films collection; not the entire Red Bull TV library.",
+      "playback": "Per-title VideoObject.embedUrl. The original publisher iframe controls fresh offers, advertising, regional availability, captions and consent."
+    },
+    "roku": {
+      "source": "https://app.roku.com/api/v2/homescreen/v2/home?limit=6",
+      "label": "Free movie selection · Watch on Roku",
+      "complete": false,
+      "films": 20,
+      "scope": "First 20 distinct enabled free rokuavod movies on the current guest home shelves; no complete-library or series claim.",
+      "metadataEnriched": 20,
+      "metadataFailures": [],
+      "excluded": [],
+      "playback": "Explicit official watch-page links. Roku owns the external player, ads, sign-in, DRM, captions, availability and viewing history.",
+      "browserLimit": "Roku guest bootstrap/catalogue APIs do not allow browser CORS from SheepBox, and Roku sends X-Frame-Options:SAMEORIGIN. Metadata refresh runs outside the visitor browser."
     }
   }
 }
