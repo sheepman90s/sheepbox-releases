@@ -35,13 +35,13 @@ export class WebPlayer {
     video.addEventListener('waiting',()=>{if(!this.ads?.blocking)this.onStatus('Buffering…');});
     video.addEventListener('playing',()=>{if(!this.ads?.blocking)this.onStatus(offer.live?'Live now':'Playing');});
     video.addEventListener('pause',()=>{if(!this.ads?.blocking&&!video.ended&&video.readyState)this.onStatus('Paused');});
-    video.textTracks.addEventListener('addtrack',()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(video.textTracks.length>0||!!this.hls?.subtitleTracks.length);}});
+    video.textTracks.addEventListener('addtrack',()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(this.hasCaptions());}});
     video.addEventListener('loadedmetadata',()=>{
       const offset=Number(offer.offset)||position;
       if(offset>0&&Number.isFinite(video.duration))video.currentTime=Math.min(offset,Math.max(0,video.duration-1));
       if(!this.ads?.started)this.onStatus('Ready — press Play to watch.');
       this.captions(this.preferCaptions);
-      this.onCaptions(video.textTracks.length>0);
+      this.onCaptions(this.hasCaptions());
     });
     let stamp=0;
     video.addEventListener('timeupdate',()=>{if(!this.ads?.blocking&&Date.now()-stamp>5000){stamp=Date.now();this.onProgress(video.currentTime,video.duration);}});
@@ -69,12 +69,13 @@ export class WebPlayer {
       if(Hls?.isSupported()){
         const hls=new Hls({maxBufferLength:30,backBufferLength:30,enableWorker:true});this.hls=hls;
         hls.on(Hls.Events.ERROR,(_,data)=>{if(data.fatal)failure();});
-        hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED,()=>{if(generation===this.generation){this.onCaptions(hls.subtitleTracks.length>0||video.textTracks.length>0);this.captions(this.preferCaptions);}});
+        hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED,()=>{if(generation===this.generation){this.onCaptions(this.hasCaptions());this.captions(this.preferCaptions);}});
         hls.loadSource(offer.url);hls.attachMedia(video);
       }else if(video.canPlayType('application/vnd.apple.mpegurl'))video.src=offer.url;
       else throw Error('This browser does not support this stream. Try a current browser or the publisher’s website.');
     }else video.src=offer.url;
   }
+  hasCaptions(){return !!this.hls?.subtitleTracks.length||!!this.video&&[...this.video.textTracks].some(track=>['subtitles','captions'].includes(track.kind));}
   captions(enabled){
     this.preferCaptions=enabled;
     if(this.hls){this.hls.subtitleDisplay=enabled;this.hls.subtitleTrack=enabled&&this.hls.subtitleTracks.length?0:-1;}

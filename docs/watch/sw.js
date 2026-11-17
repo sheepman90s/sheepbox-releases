@@ -1,4 +1,4 @@
-const CACHE='sheepbox-web-39a922c42fdc';
+const CACHE='sheepbox-web-0ada606ded3b';
 const SHELL=['./','./index.html','./styles.css','./app-home.css','./world.css','./player-ads.css','./manifest.webmanifest','./src/app.mjs','./src/core.mjs','./src/storage.mjs','./src/providers.mjs','./src/sources.mjs','./src/player.mjs','./src/ads.mjs','./src/newson.mjs','./src/xumo.mjs','./src/publishers.mjs','./src/world-view.mjs','./src/globe.mjs','./src/world-geometry.mjs','./data/catalog.json','./data/webcams.json','./assets/icon.png','./assets/mascot.png','./assets/home.png','./assets/browse.jpg','./vendor/hls-1.7.4.min.js'];
 const WORLD=['./data/world-countries.json','./assets/world-earth.jpg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));

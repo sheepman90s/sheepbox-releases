@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "39a922c42fdc",
+  "revision": "0ada606ded3b",
   "catalogGeneratedAt": "2026-11-17T09:50:51.542Z",
   "titles": 7309,
   "live": 671,
@@ -91,7 +91,7 @@
     },
     {
       "path": "src/player.mjs",
-      "sha256": "44f07f00537867d636445e4653900c7877773262a61b29d9c4c567365454b27b"
+      "sha256": "ce6c0404649adc4b2a8ed386e7786645cc0bd864d93f407f5b405198f6393cb5"
     },
     {
       "path": "src/providers.mjs",
@@ -127,7 +127,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "a7f596c5c7424e5251b69ccf37d770fc14df6a9debbd06146bb0c9cd72ef4100"
+      "sha256": "6980537ec467ea886343e011f9518e5a55de1e2b6cec311873435207df905028"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
