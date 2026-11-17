@@ -2,6 +2,9 @@ import {safeUrl,archiveLicense,parseNasaVideo,archiveSchedule} from './core.mjs'
 import {parseWebcams,publisherEmbedUrl} from './publishers.mjs';
 import {resolveNewsOn} from './newson.mjs';
 import {resolveXumo} from './xumo.mjs';
+import {resolveCw} from './cw.mjs';
+import {resolveYupp} from './yupp.mjs';
+import {resolveWorldTv} from './worldtv.mjs';
 export async function fetchJson(url,{signal,timeout=25000}={}) {
   const controller=new AbortController();const abort=()=>controller.abort();
   if(signal?.aborted)controller.abort();signal?.addEventListener('abort',abort,{once:true});
@@ -54,6 +57,9 @@ export function availableArchiveFiles(data){
 export async function resolvePlayback(item,catalog,{signal}={}) {
   if(['newson-live','newson-latest'].includes(item.mode))return resolveNewsOn(item,{signal});
   if(item.mode==='xumo-live')return resolveXumo(item,{signal});
+  if(item.mode==='cw-live')return resolveCw(item,{signal});
+  if(item.mode==='yupp-live')return resolveYupp(item,{signal});
+  if(item.mode==='worldtv')return resolveWorldTv(item);
   if(['pbs','youtube'].includes(item.mode)) {
     let url='';
     if(item.mode==='pbs'&&item.embedAllowed===true)url=`https://player.pbs.org/viralplayer/${item.sourceId}/`;

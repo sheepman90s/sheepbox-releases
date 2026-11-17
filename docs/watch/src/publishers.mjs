@@ -6,6 +6,7 @@ export function publisherEmbedUrl(value) {
   if(u.hostname==='www.nfb.ca'&&/^\/film\/[A-Za-z0-9][A-Za-z0-9_-]{0,199}\/embed\/player\/$/.test(u.pathname))return url;
   if(u.hostname==='player.pbs.org'&&/^\/viralplayer\/[1-9]\d{5,11}\/$/.test(u.pathname))return url;
   if(u.hostname==='www.youtube-nocookie.com'&&/^\/embed\/[A-Za-z0-9_-]{11}$/.test(u.pathname))return url;
+  if(u.hostname==='embed.france24.com'&&u.pathname==='/en/live')return url;
   return '';
 }
 

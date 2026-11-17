@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T09:50:51.542Z",
+  "generatedAt": "2026-11-17T11:01:05.256188Z",
   "sources": {
     "nasaplus": {
       "titles": 607,
@@ -48,6 +48,53 @@
       "live": 454,
       "onDemandIncluded": false,
       "advertising": "Fresh publisher SSAI offers and full ad query parameters retained; no client VMAP or tracking URL is supplied by the current live offer."
+    },
+    "cw": {
+      "source": "The CW current public web live directory",
+      "complete": true,
+      "publisherRows": 75,
+      "live": 75,
+      "unsupportedRows": 0,
+      "onDemandIncluded": false,
+      "country": "us",
+      "countrySource": "The CW US web-service lineup; no per-channel international rights or country override is asserted.",
+      "advertising": "Fresh publisher fast_params and all offered SSAI stream queries retained. Preplay, client preroll, subscriber and protected modes are excluded."
+    },
+    "yupptv": {
+      "source": "YuppTV current public free guest guide",
+      "channelDirectoryComplete": true,
+      "channels": 293,
+      "countryMapped": 4,
+      "countryUnmapped": 289,
+      "countryRule": "Explicit source-mapped channel IDs only; viewer country and language are never used as channel country.",
+      "offersCheckedOnPlay": true,
+      "advertising": "Fresh publisher preUrl/preRollUrl via Google IMA; unsupported required schedules are refused.",
+      "publicRestProtocol": "Authorized public page/content and page/stream endpoints; no encrypted web-envelope configuration is required.",
+      "playbackScope": "Directory availability is checked again on play. Region, access, clear-HLS availability and advertising can change."
+    },
+    "worldtv": {
+      "name": "World TV — official broadcasters",
+      "checkedAt": "2026-11-17T10:59:03.981Z",
+      "complete": false,
+      "scope": "Curated selection of two official broadcaster live players; not a complete country or IPTV-org lineup.",
+      "countryBasis": "Broadcaster headquarters or national identity from the linked primary source; not viewer IP, language or programme location.",
+      "refresh": "Maintainer-only metadata refresh. Al Jazeera’s stored live embed ID may change; no real-time freshness is claimed.",
+      "broadcasters": [
+        {
+          "name": "France 24",
+          "key": "france24-en",
+          "country": "fr",
+          "official": "https://www.france24.com/en/live",
+          "countrySource": "https://www.francemediasmonde.com/en/the-group/organisation/"
+        },
+        {
+          "name": "Al Jazeera",
+          "key": "aljazeera-en",
+          "country": "qa",
+          "official": "https://www.aljazeera.com/video/live/",
+          "countrySource": "https://www.aljazeera.com/about-us"
+        }
+      ]
     }
   }
 }

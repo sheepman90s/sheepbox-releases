@@ -1,9 +1,9 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "0ada606ded3b",
-  "catalogGeneratedAt": "2026-11-17T09:50:51.542Z",
+  "revision": "70c5da91394f",
+  "catalogGeneratedAt": "2026-11-17T11:01:05.256188Z",
   "titles": 7309,
-  "live": 671,
+  "live": 1041,
   "files": [
     {
       "path": ".nojekyll",
@@ -35,11 +35,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "767387871681c3dd6be8e7c171e735a9e53f29af43b7724ff754d18e309573cd"
+      "sha256": "a4b3d51ba5adc79c985570606884bbf43118751da914e2ff70b1c1175ba97102"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "a1716e5edb77359c2903ec62c3edb2ab5d73d8855642efc880f0a3d074aa8985"
+      "sha256": "652cb4ed12c5d9a0c048da943794d172f347b691eb83a4cc31e95bf88e5888f3"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -59,7 +59,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "4d920a456e0bb7706523fb4280e7be324f07e697d98be0e9f1227355f06d89a1"
+      "sha256": "73d86b97cc7b40215ef9800930d6a5b9669270838244efff3cc4ce7f1cd258e8"
     },
     {
       "path": "manifest.webmanifest",
@@ -75,15 +75,19 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "1fa2b4def79e773630484007f6ef7b37d2ebb110670a4377fa6b32e4b0920c4b"
+      "sha256": "93e30fa33b3c7cc4c1b532415e83ffa392036319c13d515c5dfd36d242b2c1c2"
     },
     {
       "path": "src/core.mjs",
       "sha256": "33c0f1692fbcbc0d8932e012f95122b3beaed8450c5107324867f65fb57d6806"
     },
     {
+      "path": "src/cw.mjs",
+      "sha256": "c49ca3ff42905db11e2de79ce39e8b64f00d70722cdf79e2e348a9edaea73149"
+    },
+    {
       "path": "src/globe.mjs",
-      "sha256": "d3eb03ac7f604d04be79cc17b5d350fc8600660e0cf093dc9c150107771522b2"
+      "sha256": "0c1866b41897a75199fedcd15871f9e6a75252a28bda6a4c0044fdcb9dedfe88"
     },
     {
       "path": "src/newson.mjs",
@@ -95,19 +99,23 @@
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "840a3cc8ac7adcfac97c8adf65e3c5903f62662c133e5894804d740096c8c64f"
+      "sha256": "d7bc669a56ea65a5506c5bad2df658636ad210495f95c800361f2afa1a3b409d"
     },
     {
       "path": "src/publishers.mjs",
-      "sha256": "6dcc93b8ff3783672ffe9ec8c24bf1c8cc3a7882e4880bfe905172db3c055f0c"
+      "sha256": "b954bfcdcf43d7eaebf41169c0370570836ff4423d0bfeaedda7ee52649530a8"
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "913ac882606fe56b37f71ba39e373bc75e41112aa1ac824e4e60739bf19605b2"
+      "sha256": "1b4f3ae3e921b49d1681767ace5f08f72f74f85499f486f555b4d48c1956c33a"
     },
     {
       "path": "src/storage.mjs",
       "sha256": "ab1e9fc4a3913322e009d0ae166654881ba424e6aa7df347f931b2e5256cf9a0"
+    },
+    {
+      "path": "src/world-content.mjs",
+      "sha256": "87198d3782406848b7a60e9d853e12e3889538311ade3bb3bec154637690ba29"
     },
     {
       "path": "src/world-geometry.mjs",
@@ -115,11 +123,19 @@
     },
     {
       "path": "src/world-view.mjs",
-      "sha256": "140e6a35e0bc8f1d0302e9327f141300687828c13b5237c08cf1ab824c4a6e6b"
+      "sha256": "d071cc8481619a546b10a03fc1af437b62504db1198ea34823fb8e6a0fd8d53c"
+    },
+    {
+      "path": "src/worldtv.mjs",
+      "sha256": "ed10ff3087af65065cbc0bbd1b7a546aa41deeb4709b8a19b6b2dc968b6edb33"
     },
     {
       "path": "src/xumo.mjs",
       "sha256": "7412f94833822080b37b53cbcc9f740c71fc9efc9141892c98fa4e4751b1c11b"
+    },
+    {
+      "path": "src/yupp.mjs",
+      "sha256": "be730985a34a737c09b0a47928714ec7901e14d114067c906493dd65a069fa3a"
     },
     {
       "path": "styles.css",
@@ -127,7 +143,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "6980537ec467ea886343e011f9518e5a55de1e2b6cec311873435207df905028"
+      "sha256": "27986734dc8fe78202354e0827b068e940df7eefd84b403902502de0f98d9195"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
@@ -140,6 +156,10 @@
     {
       "path": "vendor/HLS-LICENSE.txt",
       "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+    },
+    {
+      "path": "world-live.css",
+      "sha256": "7fe78999116a81619c735370f6b9a8fe0e2d334aeb4ef5ef9357130c7b3be98f"
     },
     {
       "path": "world.css",

@@ -94,9 +94,9 @@ function strokeVertices(countries) {
 }
 
 /** Positive zoom(delta) moves closer. Programmatic select never calls onSelect. */
-export function mountGlobe(container, {countries, webcamCountries=[], onSelect=()=>{}, onHover=()=>{}, selected='', signal}={}) {
+export function mountGlobe(container, {countries, webcamCountries=[], availableCountries=webcamCountries, outlineColor=[.125,1,.933,1], onSelect=()=>{}, onHover=()=>{}, selected='', signal}={}) {
   const rows=prepareCountries(countries); const byCode=new Map(rows.map(country=>[country.code,country]));
-  const withWebcams=new Set(webcamCountries);
+  const available=new Set(availableCountries);let availabilityColor=outlineColor;
   const canvas=document.createElement('canvas');canvas.className='world-globe-canvas';canvas.tabIndex=0;
   canvas.setAttribute('role','application');canvas.setAttribute('aria-label','Interactive world globe. Drag to rotate, use arrow keys to explore, and press Enter to choose the country at the centre. Use plus or minus to zoom.');
   canvas.setAttribute('aria-keyshortcuts','ArrowLeft ArrowRight ArrowUp ArrowDown Enter + -');
@@ -121,16 +121,22 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
     if(gl){for(const buffer of buffers)gl.deleteBuffer(buffer);for(const p of programs)gl.deleteProgram(p.handle);if(texture)gl.deleteTexture(texture);gl.getExtension('WEBGL_lose_context')?.loseContext();}
     container.dataset.globeReady='false';pointers.clear();
   }
-  const api={select,zoom,reset,destroy};
+  const api={select,zoom,reset,destroy,setAvailability};
   let sphere,earth,line,stroke,atmosphere,vertexBuffer,indexBuffer,borderBuffer,webcamBuffer,selectedBuffer,markerBuffer,texture;
   let borderCount=0,webcamCount=0,indexCount=0;
   function buffer(data,target){const b=gl.createBuffer();buffers.push(b);gl.bindBuffer(target,b);gl.bufferData(target,data,gl.STATIC_DRAW);return b;}
   function select(code){
-    const country=byCode.get(code);if(!country)return;
+    const country=byCode.get(code);if(!country){if(!['','all','global'].includes(code))return;selection='';selectedCount=0;delete container.dataset.selectedCountry;canvas.setAttribute('aria-label','Interactive world globe. Drag or use arrows to rotate; press Enter to choose the centre country.');schedule();return;}
     selection=code;targetLon=country.lon;targetLat=clamp(country.lat,-85,85);targetDistance=countryDistance(country,aspect);
     canvas.setAttribute('aria-label',`${country.name} selected. Interactive world globe. Drag or use arrow keys to rotate; press Enter to choose the centre country.`);
     if(gl&&selectedBuffer){const points=strokeVertices([country]);selectedCount=points.length/7;gl.bindBuffer(gl.ARRAY_BUFFER,selectedBuffer);gl.bufferData(gl.ARRAY_BUFFER,points,gl.DYNAMIC_DRAW);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(spherePoint(country.lon,country.lat)),gl.DYNAMIC_DRAW);}
     container.dataset.selectedCountry=code;schedule();
+  }
+  function setAvailability(codes,color=availabilityColor){
+    if(dead)return;available.clear();for(const code of codes)if(byCode.has(code))available.add(code);
+    availabilityColor=color;
+    if(gl&&webcamBuffer){const points=strokeVertices(rows.filter(country=>available.has(country.code)));webcamCount=points.length/7;gl.bindBuffer(gl.ARRAY_BUFFER,webcamBuffer);gl.bufferData(gl.ARRAY_BUFFER,points,gl.STATIC_DRAW);}
+    schedule();
   }
   if(signal?.aborted){destroy();return api;}signal?.addEventListener('abort',destroy,{once:true});
   try{
@@ -139,7 +145,7 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
     earth=program(gl,VERTEX,EARTH_FRAGMENT);line=program(gl,VERTEX,LINE_FRAGMENT);stroke=program(gl,STROKE_VERTEX,STROKE_FRAGMENT);atmosphere=program(gl,VERTEX,ATMOSPHERE_FRAGMENT);programs.push(earth,line,stroke,atmosphere);
     sphere=sphereMesh();vertexBuffer=buffer(sphere.vertices,gl.ARRAY_BUFFER);indexBuffer=buffer(sphere.indices,gl.ELEMENT_ARRAY_BUFFER);indexCount=sphere.indices.length;
     const borders=outlineVertices(rows);borderBuffer=buffer(borders,gl.ARRAY_BUFFER);borderCount=borders.length/3;
-    const webcamBorders=strokeVertices(rows.filter(country=>withWebcams.has(country.code)));
+    const webcamBorders=strokeVertices(rows.filter(country=>available.has(country.code)));
     webcamBuffer=buffer(webcamBorders,gl.ARRAY_BUFFER);webcamCount=webcamBorders.length/7;
     selectedBuffer=buffer(new Float32Array(),gl.ARRAY_BUFFER);markerBuffer=buffer(new Float32Array(),gl.ARRAY_BUFFER);
     texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([25,65,102]));
@@ -183,7 +189,7 @@ export function mountGlobe(container, {countries, webcamCountries=[], onSelect=(
     // Facing clips the far side; drawing above terrain keeps the full stroke
     // width visible instead of hiding its inland half beneath the sphere.
     gl.disable(gl.DEPTH_TEST);
-    if(webcamCount){drawBorder(webcamBuffer,webcamCount,4.2,[.015,.025,.04,1]);drawBorder(webcamBuffer,webcamCount,2.6,[.125,1,.933,1]);}
+    if(webcamCount){drawBorder(webcamBuffer,webcamCount,4.2,[.015,.025,.04,1]);drawBorder(webcamBuffer,webcamCount,2.6,availabilityColor);}
     if(selection&&selectedCount){drawBorder(selectedBuffer,selectedCount,4.8,[.015,.025,.04,1]);drawBorder(selectedBuffer,selectedCount,3,[1,.85,.08,1]);}
     gl.enable(gl.DEPTH_TEST);
     if(selection){use(line,1.003);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.enableVertexAttribArray(line.position);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,1,.85,.08,1);gl.drawArrays(gl.POINTS,0,1);}

@@ -11,7 +11,7 @@ const rows=[
  ['plex','Plex','https://watch.plex.tv/','Live television and an extensive on-demand library.','Films & shows','both','website'],
  ['xumo','Xumo Play','https://play.xumo.com/','Live channels in the browser, with the publisher’s original programming and advertising.','Entertainment','live','native'],
  ['sling','Sling Freestream','https://www.sling.com/freestream','Free channels and on-demand television.','Entertainment','both','website'],
- ['yupptv','YuppTV Free','https://www.yupptv.com/fast/','Free international channels.','International','live','website'],
+ ['yupptv','YuppTV Free','https://www.yupptv.com/fast/','Free international FAST channels with current guest access and original publisher advertising.','International','live','native'],
  ['fawesome','Fawesome','https://fawesome.tv/','Free films and entertainment.','Films & shows','both','website'],
  ['runtime','Runtime','https://www.runtime.tv/','Regional live channels, films and series.','Films & shows','both','website'],
  ['pbskids','PBS KIDS','https://pbskids.org/videos/','Publisher-approved PBS KIDS videos and episodes in the official PBS player.','Family','vod','embed'],
@@ -31,13 +31,14 @@ const rows=[
  ['asiancrush','AsianCrush','https://www.asiancrush.com/','Asian films, television and anime.','Films & shows','vod','website'],
  ['midnightpulp','Midnight Pulp','https://www.midnightpulp.com/','Cult films, thrillers and offbeat television.','Films & shows','vod','website'],
  ['haystack','Haystack News','https://www.haystack.tv/','Current news clips and publisher channels.','News & local','vod','website'],
- ['cw','The CW','https://www.cwtv.com/','Free guest shows, films and live channels.','Films & shows','both','website'],
+ ['cw','The CW','https://www.cwtv.com/channels/','Free guest live channels with the publisher’s original programming and advertising.','Entertainment','live','native'],
  ['fls','Free Live Sports','https://www.freelivesports.tv/','Live sports, replays and sports films.','Sports & adventure','both','website'],
  ['filmzie','Filmzie','https://filmzie.com/','Independent films and series.','Films & shows','vod','website'],
  ['docplus','DOCUMENTARY+','https://docplus.com/','Documentary films, series and channels.','Films & documentaries','both','website'],
  ['flixhouse','FlixHouse','https://flixhouse.com/','Independent films, series and live channels.','Films & shows','both','website'],
  ['webcams','Web Cams','https://famelack.com/','Explore webcams by country on the same Earth map as the Android app.','Places & webcams','live','embed'],
- ['iptv-org','IPTV-org','https://iptv-org.github.io/','Browse the community’s public channel directory.','Channel directory','live','website']
+ ['iptv-org','IPTV-org','https://iptv-org.github.io/','Browse the community’s public channel directory.','Channel directory','live','website'],
+ ['worldtv','World TV — official broadcasters','https://www.france24.com/en/live','A curated selection of official international news players, grouped by broadcaster country.','International','live','embed']
 ];
 export const providers=rows.map(([id,name,url,description,category,content,playback],index)=>({id,name,url,description,category,content,playback,palette:index%8}));
 export const providerById=id=>providers.find(p=>p.id===id);
