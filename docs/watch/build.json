@@ -1,0 +1,85 @@
+{
+  "version": "2.0.0-RC1",
+  "revision": "99f2ab9bcafc",
+  "catalogGeneratedAt": "2026-11-17T02:18:04.247Z",
+  "titles": 6980,
+  "live": 7,
+  "files": [
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/home.png",
+      "sha256": "507b37c95baa2663ea9ec91ac94c14f809ec51fb5997eb364df3bd0c3060babd"
+    },
+    {
+      "path": "assets/icon.png",
+      "sha256": "830c3b848b5425ccf75b60d0d3e80b1d1365ac73fcf1e86c0dd5fea470f3fb2f"
+    },
+    {
+      "path": "assets/mascot.png",
+      "sha256": "2489b468f2d425c1f711827b5aa5cf2ca1fdd4b009c02c85c524655a1bf85e11"
+    },
+    {
+      "path": "data/catalog-report.json",
+      "sha256": "fb4f6af80fc073acc60e83a4db2f756de9135967cc0716670a3ae2eb54ea074d"
+    },
+    {
+      "path": "data/catalog.json",
+      "sha256": "da2bcbb146f09c8b8e71ae295f163c16ac2ce2a706ef9175830f7702cd174e97"
+    },
+    {
+      "path": "index.html",
+      "sha256": "43c940ebc075d3369981e699b074e4fa16d100218b153f34524f4c9e3db06fa7"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "cee92bdae83eedb99d17d1b32c1fd7003f76fe7e09ab1893460064c6d11ad12c"
+    },
+    {
+      "path": "src/app.mjs",
+      "sha256": "c0cbf55fc929ae3bdc2289089fec65092191415907cf89e0f9e9b5dd7f1d689d"
+    },
+    {
+      "path": "src/core.mjs",
+      "sha256": "ecab344358428ad7b2b39259cba840f0b4d4245111289b264813c0ee796a9c14"
+    },
+    {
+      "path": "src/player.mjs",
+      "sha256": "106783f94f55634e7b07569a59052f6facfa7a947abe8f96739b502bdd8d4ac8"
+    },
+    {
+      "path": "src/providers.mjs",
+      "sha256": "6502a3e8789c21b6bbf0d08cc8588d7d1d07c7d53baa80655a6985d5f9e9dfe7"
+    },
+    {
+      "path": "src/sources.mjs",
+      "sha256": "da4f6bb819a87b09e05b65c728d5650e2432097127aa0d6c759ef6df9d32588a"
+    },
+    {
+      "path": "src/storage.mjs",
+      "sha256": "ab1e9fc4a3913322e009d0ae166654881ba424e6aa7df347f931b2e5256cf9a0"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "ab87ff135b58891897f017bb8ba1f16b300fdb8d41084b25723ff507d778a85f"
+    },
+    {
+      "path": "sw.js",
+      "sha256": "2c0dc594f675bb80e0537db2c9cb529ecc56a9439d0f87a806437b1da71541aa"
+    },
+    {
+      "path": "vendor/APACHE-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "vendor/hls-1.7.4.min.js",
+      "sha256": "cfc70cc9e9fc63d071919e087670abc760c8fd1bc889b88588026e4d22193bbe"
+    },
+    {
+      "path": "vendor/HLS-LICENSE.txt",
+      "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+    }
+  ]
+}

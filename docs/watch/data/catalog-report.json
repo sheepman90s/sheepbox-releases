@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-11-17T02:18:04.247Z",
+  "sources": {
+    "nasaplus": {
+      "titles": 607,
+      "complete": true,
+      "pages": 7,
+      "series": 58
+    },
+    "archive": {
+      "titles": 137,
+      "scope": "Current selections from five licensed collections; not the entire Archive.",
+      "browserFormatFilter": true,
+      "filesAndLicensesChecked": true
+    },
+    "nfb": {
+      "titles": 6236,
+      "scope": "Free public film entries at build time; the official embedded player enforces current access and region."
+    }
+  }
+}

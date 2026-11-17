@@ -10,6 +10,8 @@
 
 </div>
 
+**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Includes seven live/continuous channels, NASA+, NFB and licensed Archive selections, search, local favorites and resume where supported. Other providers open their official websites. This first preview is separate from Android 1.9.0 stable; video availability and region rules come from publishers.
+
 **Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
 
 **Current stable release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0), version code 200.** Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
