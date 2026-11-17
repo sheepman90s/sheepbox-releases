@@ -8,22 +8,36 @@ import {resolveWorldTv} from './worldtv.mjs';
 import {resolveRedBull} from './redbull.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
 import {resolveRoku} from './roku.mjs';
-export async function fetchJson(url,{signal,timeout=25000}={}) {
+import {mergeRokuLibrary,isRokuSeriesReference,parseRokuEpisodeFile,parseRokuEpisodeIndex} from './roku-library.mjs';
+export async function fetchJson(url,{signal,timeout=25000,maxLength=12_000_000}={}) {
   const controller=new AbortController();const abort=()=>controller.abort();
   if(signal?.aborted)controller.abort();signal?.addEventListener('abort',abort,{once:true});
   const timer=setTimeout(abort,timeout);
   try {
     const r=await fetch(url,{signal:controller.signal,credentials:'omit'});
     if(!r.ok)throw Error(`The publisher returned HTTP ${r.status}.`);
-    const text=await r.text();if(text.length>12_000_000)throw Error('The publisher response is too large.');
+    const text=await r.text();if(text.length>maxLength)throw Error('The publisher response is too large.');
     return {data:JSON.parse(text),response:r};
   } finally {clearTimeout(timer);signal?.removeEventListener('abort',abort);}
 }
 export async function loadCatalog(signal) {
   const {data}=await fetchJson(new URL('../data/catalog.json',import.meta.url),{signal});
   if(data.schema!==1||!Array.isArray(data.items)||!Array.isArray(data.live))throw Error('The SheepBox library could not be loaded.');
-  const cameras=await fetchJson(new URL('../data/webcams.json',import.meta.url),{signal});
-  return {...data,cameras:parseWebcams(cameras.data)};
+  const requests=[fetchJson(new URL('../data/webcams.json',import.meta.url),{signal})];
+  const roku=data.externalCatalogs?.roku;
+  if(roku){if(roku.path!=='roku/catalog.json')throw Error('The Roku library address is invalid.');requests.push(fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}));}
+  const [cameras,library]=await Promise.all(requests);
+  return {...(library?mergeRokuLibrary(data,library.data):data),cameras:parseWebcams(cameras.data)};
+}
+export async function loadRokuSeriesFile(series,{signal}={}){
+  if(!isRokuSeriesReference(series))throw Error('This series has no saved episode list.');
+  const {data}=await fetchJson(new URL('../data/'+series.episodeFile,import.meta.url),{signal,timeout:45000,maxLength:32_000_000});
+  return parseRokuEpisodeFile(series,data);
+}
+export async function loadRokuEpisodeIndex(id,{signal}={}){
+  if(!/^roku-[a-f0-9]{32}$/.test(id))return new Map();const prefix=id.slice(5,7);
+  const {data}=await fetchJson(new URL(`../data/roku/index/${prefix}.json`,import.meta.url),{signal,maxLength:8_000_000});
+  return parseRokuEpisodeIndex(prefix,data);
 }
 export async function refreshNasa(previous,{signal,onProgress=()=>{}}={}) {
   const terms={};
@@ -65,7 +79,7 @@ export async function resolvePlayback(item,catalog,{signal}={}) {
   if(item.mode==='worldtv')return resolveWorldTv(item);
   if(item.mode==='redbull')return resolveRedBull(item,{signal});
   if(item.mode==='filmzie-movie')return resolveFilmzie(item,{signal});
-  if(item.mode==='roku-link')return resolveRoku(item,{signal});
+  if(item.provider==='roku'&&(item.mode==='roku-link'||item.kind==='series'))return resolveRoku(item,{signal});
   if(['pbs','youtube'].includes(item.mode)) {
     let url='';
     if(item.mode==='pbs'&&item.embedAllowed===true)url=`https://player.pbs.org/viralplayer/${item.sourceId}/`;

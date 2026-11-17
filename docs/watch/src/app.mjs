@@ -1,16 +1,19 @@
-import {VERSION,escapeHtml as e,safeUrl,fold,filterItems,parseRoute,durationLabel,archiveSchedule} from './core.mjs';
+import {VERSION,escapeHtml as e,safeUrl,fold,filterItems,parseRoute,durationLabel,archiveSchedule,catalogEntryCount} from './core.mjs';
 import {providers,providerById,playsInPage} from './providers.mjs';
 import {browserStore} from './storage.mjs';
-import {loadCatalog,resolvePlayback,refreshNasa} from './sources.mjs';
+import {loadCatalog,resolvePlayback,refreshNasa,loadRokuSeriesFile,loadRokuEpisodeIndex} from './sources.mjs';
 import {WebPlayer} from './player.mjs';
 import {providerSeriesCards} from './publishers.mjs';
 import {renderWorldView} from './world-view.mjs';
+import {isRokuSeriesReference,isRokuExternalSeries,rokuEpisodeSeriesIndex,RokuParentCache} from './roku-library.mjs';
 
 const paths={home:'M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z',live:'M4 7h16v13H4z M8 3l4 4 4-4 M8 23h8',play:'m8 5 11 7-11 7Z',star:'m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z',grid:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',settings:'M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1Z M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0',search:'M16 16l5 5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0',arrow:'m9 5 7 7-7 7',back:'m15 5-7 7 7 7',external:'M14 3h7v7 M21 3 10 14 M10 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-6',refresh:'M20 7a9 9 0 1 0 1 9 M20 2v5h-5',cc:'M3 5h18v14H3z M10 9H7v6h3 M17 9h-3v6h3',full:'M8 3H3v5 M16 3h5v5 M21 16v5h-5 M8 21H3v-5',pip:'M3 4h18v16H3z M12 12h7v6h-7z',clock:'M12 7v5l4 2 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0',download:'M12 3v12 m-5-5 5 5 5-5 M4 17v4h16v-4',film:'M3 3h18v18H3z M7 3v18 M17 3v18 M3 8h4 M3 16h4 M17 8h4 M17 16h4',close:'M5 5l14 14 M19 5 5 19'};
 Object.assign(paths,{globe:'M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0 M2 12h20 M12 2c6 5 6 15 0 20 M12 2c-6 5-6 15 0 20',camera:'M3 5h15v12H3z M18 8l4-2v10l-4-2 M7 9a3 3 0 1 0 6 0 3 3 0 0 0-6 0 M10 17v5 M6 22h8',tv:'M3 4h18v14H3z M12 18v4 M7 22h10',complete:'M3 4h18v14H3z M7 8h10 M7 11h10 M7 14h10 M12 18v4 M7 22h10'});
 const icon=(name)=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${paths[name]??paths.play}"/></svg>`;
 const $=id=>document.getElementById(id);
 const store=browserStore();
+let rokuParentStorage;try{rokuParentStorage=localStorage;}catch{}
+const rokuParents=new RokuParentCache(rokuParentStorage),rokuSeriesLoaded=new Set(),rokuSeriesPending=new Map(),rokuIndexes=new Map();
 const state={catalog:null,all:[],byId:new Map(),route:parseRoute(location.hash),limit:36,filter:{},player:null,controller:null,refreshing:false};
 let toastTimer,installPrompt,previousBrowse='#ondemand';
 
@@ -30,14 +33,43 @@ function indexCatalog(catalog){
   for(const item of catalog.items.filter(x=>x.provider==='nasaplus'))for(const id of new Set((item.series??[]).map(root).filter(Boolean))){if(!groups.has(id))groups.set(id,[]);groups.get(id).push(item);}
   const series=[...groups].filter(([id])=>terms.has(id)).map(([id,episodes])=>({id:`nasa-series-${id}`,provider:'nasaplus',providerName:'NASA+',kind:'series',title:terms.get(id).title,description:terms.get(id).description,
     categories:['Series'],image:episodes.find(x=>x.image)?.image??'',official:'https://plus.nasa.gov/',mode:'series',episodes:episodes.map(x=>x.id)}));
-  state.catalog=catalog;state.all=[...catalog.live,...catalog.items,...series,...providerSeriesCards(catalog),...(catalog.cameras??[])];state.byId=new Map(state.all.map(item=>[item.id,item]));
+  state.catalog=catalog;state.all=[...catalog.live,...catalog.items,...series,...providerSeriesCards(catalog),...(catalog.cameras??[])];state.byId=new Map(state.all.map(item=>[item.id,item]));state.rokuEpisodeParents=rokuEpisodeSeriesIndex(catalog);
 }
+function rokuDetailsLoading(){return '<div class="initial-loading"><h1>Loading episodes…</h1><p>Opening the complete saved episode list.</p><progress aria-label="Loading episode details"></progress></div>';}
+async function ensureRokuSeries(id,signal){
+  const series=state.byId.get(id);if(!isRokuSeriesReference(series)||rokuSeriesLoaded.has(id))return;
+  const pending=rokuSeriesPending.get(id);if(pending?.signal===signal)return pending.promise;
+  const entry={signal};entry.promise=(async()=>{
+    const episodes=await loadRokuSeriesFile(series,{signal});signal?.throwIfAborted();
+    const metadata=state.catalog.providerSeries.find(row=>row.id===id);metadata.episodes=episodes.map(item=>item.id);
+    const items=new Map(state.catalog.items.map(item=>[item.id,item]));for(const episode of episodes)items.set(episode.id,episode);
+    indexCatalog({...state.catalog,items:[...items.values()]});rokuSeriesLoaded.add(id);
+  })().finally(()=>{if(rokuSeriesPending.get(id)===entry)rokuSeriesPending.delete(id);});
+  rokuSeriesPending.set(id,entry);return entry.promise;
+}
+async function ensureRokuEpisode(id,signal){
+  if(state.byId.has(id)||!state.catalog.externalCatalogs?.roku||!/^roku-[a-f0-9]{32}$/.test(id))return;
+  let parent=state.rokuEpisodeParents.get(id)??rokuParents.get(id);
+  if(!parent||!state.byId.has(parent)){
+    const prefix=id.slice(5,7);let index=rokuIndexes.get(prefix);
+    if(!index){index=await loadRokuEpisodeIndex(id,{signal});signal?.throwIfAborted();rokuIndexes.set(prefix,index);}
+    parent=index.get(id);
+  }
+  if(parent&&isRokuSeriesReference(state.byId.get(parent))){await ensureRokuSeries(parent,signal);signal?.throwIfAborted();rokuParents.remember(id,parent);}
+}
+async function ensureSavedRoku(ids,signal){
+  const pending=ids.filter(id=>/^roku-[a-f0-9]{32}$/.test(id)&&!state.byId.has(id));
+  if(!pending.length||!state.catalog.externalCatalogs?.roku)return false;
+  $('main').innerHTML=rokuDetailsLoading();const results=await Promise.allSettled(pending.map(id=>ensureRokuEpisode(id,signal)));signal?.throwIfAborted();
+  return results.some(result=>result.status==='rejected');
+}
+const savedEpisodeNotice='<div class="publisher-note">Some saved episode details could not load. Connect and retry to show them here. <button class="button ghost small" data-action="retry-player">Retry</button></div>';
 function interleave(items){const groups=new Map();for(const item of items){if(!groups.has(item.provider))groups.set(item.provider,[]);groups.get(item.provider).push(item);}const arrays=[...groups.values()];const result=[];let offset=0;while(arrays.some(rows=>offset<rows.length)){for(const rows of arrays)if(rows[offset])result.push(rows[offset]);offset++;}return result;}
 function card(item){
   const live=item.kind==='live';const href=item.kind==='series'?`#series/${encodeURIComponent(item.id)}`:`#watch/${encodeURIComponent(item.id)}`;
   const saved=store.isFavorite(item.id);const position=store.resume(item.id);const history=store.data.history[item.id];
   const schedule=item.mode==='archive-linear'?archiveSchedule(state.catalog.items,item.lineupCategory):null;
-  const subtitle=schedule?`Now: ${schedule.item.title}`:item.kind==='series'?`${item.episodes.length} episodes · ${item.providerName}`:item.providerName;
+  const subtitle=schedule?`Now: ${schedule.item.title}`:item.kind==='series'?(isRokuExternalSeries(item)?'Episodes on Roku · '+item.providerName:`${(item.episodeCount??item.episodes.length).toLocaleString()} episodes · ${item.providerName}`):item.kind==='episode'?[Number.isFinite(item.seasonNumber)?`Season ${item.seasonNumber}`:'',Number.isFinite(item.episodeNumber)?`Episode ${item.episodeNumber}`:'',item.providerName].filter(Boolean).join(' · '):item.providerName;
   return `<article class="media-card${live?' live-card':''}" data-item-id="${e(item.id)}"><a class="card-art" href="${href}" aria-label="${item.kind==='series'?'Browse episodes of':'Watch'} ${e(item.title)}"><span class="art-placeholder">${icon(live?'live':'film')}<strong>${e(item.providerName)}</strong><small>${live?'LIVE TELEVISION':'ON DEMAND'}</small></span>${safeUrl(item.image)?`<img src="${e(item.image)}" alt="" loading="lazy" decoding="async">`:''}${live?'<span class="live-tag">LIVE</span>':''}<span class="play-circle">${icon(item.kind==='series'?'grid':'play')}</span>${!live&&durationLabel(item.duration)?`<span class="duration-tag">${durationLabel(item.duration)}</span>`:''}${position&&history?.duration?`<span class="mini-progress"><progress max="${Math.max(1,history.duration)}" value="${position}" aria-label="Saved viewing progress"></progress></span>`:''}</a><div class="card-info"><a href="${href}" class="card-title">${e(item.title)}</a><p class="card-subtitle">${e(subtitle)}</p><button class="favorite-button${saved?' saved':''}" data-favorite="${e(item.id)}" aria-label="${saved?'Remove':'Save'} ${e(item.title)} ${saved?'from':'to'} favorites" aria-pressed="${saved}">${icon('star')}</button></div></article>`;
 }
 function cards(items,compact=false){return `<div class="content-grid${compact?' compact':''}">${items.map(card).join('')}</div>`;}
@@ -51,7 +83,7 @@ const section=(title,subtitle,href,label='See all')=>`<div class="section-headin
 function resumeItems(){return Object.entries(store.data.history).sort((a,b)=>b[1].at-a[1].at).filter(([id])=>store.resume(id)>0&&state.byId.has(id)).map(([id])=>state.byId.get(id));}
 function renderHome(){
   const choices=[['live','Live TV Complete','complete'],['simple','Live TV Simple','tv'],['ondemand','On Demand','play'],['webcams','Web Cams','camera'],['world','World View','globe']];
-  $('main').innerHTML=`<section class="app-home" aria-labelledby="home-title"><header class="app-home-header"><h1 id="home-title">SheepBox TV and VOD</h1><div class="app-home-tools"><a class="icon-button" href="#favorites" aria-label="Favorites">${icon('star')}</a><a class="icon-button" href="#search/" aria-label="Search all channels and titles">${icon('search')}</a><a class="icon-button" href="#settings" aria-label="Settings and about">${icon('settings')}</a><time class="app-clock" id="app-clock"></time></div></header><div class="app-home-menu"><h2>Choose what to watch</h2><div class="app-home-choices">${choices.map(([route,label,symbol])=>`<a class="app-home-choice" href="#${route}"><span class="choice-icon">${icon(symbol)}</span><span>${label}</span></a>`).join('')}</div></div><p class="app-home-note">${state.catalog.live.length} live channels · ${state.catalog.items.length.toLocaleString()} on-demand entries · ${(state.catalog.cameras??[]).length.toLocaleString()} webcams<br>${VERSION} web preview</p></section>`;
+  $('main').innerHTML=`<section class="app-home" aria-labelledby="home-title"><header class="app-home-header"><h1 id="home-title">SheepBox TV and VOD</h1><div class="app-home-tools"><a class="icon-button" href="#favorites" aria-label="Favorites">${icon('star')}</a><a class="icon-button" href="#search/" aria-label="Search all channels and titles">${icon('search')}</a><a class="icon-button" href="#settings" aria-label="Settings and about">${icon('settings')}</a><time class="app-clock" id="app-clock"></time></div></header><div class="app-home-menu"><h2>Choose what to watch</h2><div class="app-home-choices">${choices.map(([route,label,symbol])=>`<a class="app-home-choice" href="#${route}"><span class="choice-icon">${icon(symbol)}</span><span>${label}</span></a>`).join('')}</div></div><p class="app-home-note">${state.catalog.live.length} live channels · ${catalogEntryCount(state.catalog).toLocaleString()} on-demand entries · ${(state.catalog.cameras??[]).length.toLocaleString()} webcams<br>${VERSION} web preview</p></section>`;
   updateClock();requestAnimationFrame(()=>document.querySelector('.app-home-choice')?.focus({preventScroll:true}));
 }
 function updateClock(){const clock=$('app-clock');if(clock){clock.dateTime=new Date().toISOString();clock.textContent=new Intl.DateTimeFormat(undefined,{hour:'numeric',minute:'2-digit'}).format(new Date());}}
@@ -63,10 +95,10 @@ function currentLibrary(){
   const {name,id}=state.route;
   if(name==='live'||name==='simple')return state.catalog.live;
   if(name==='series')return (state.byId.get(id)?.episodes??[]).map(key=>state.byId.get(key)).filter(Boolean);
-  if(name==='provider')return state.all.filter(item=>item.provider===id);
+  if(name==='provider')return state.all.filter(item=>item.provider===id&&!(item.provider==='roku'&&item.kind==='episode'));
   if(name==='favorites')return state.all.filter(item=>store.isFavorite(item.id));
   if(name==='search')return state.all;
-  return state.all.filter(item=>item.kind!=='live'&&item.kind!=='camera');
+  return state.all.filter(item=>item.kind!=='live'&&item.kind!=='camera'&&!(item.provider==='roku'&&item.kind==='episode'));
 }
 function filterMarkup({provider=true,kind=true}={}){
   const available=[...new Set(currentLibrary().map(x=>x.provider))].map(providerById).filter(Boolean);
@@ -87,18 +119,38 @@ function renderLibrary(){
 function renderProvider(p){
   if(!p){$('main').innerHTML=empty('Provider not found.','Choose a provider from the directory.','<a class="button secondary" href="#providers">All providers</a>');return;}
   const items=currentLibrary();const count=items.filter(x=>x.kind!=='series').length;
-  $('main').innerHTML=`<a href="#providers" class="back-link">${icon('back')} All providers</a><div class="provider-banner palette-${p.palette}"><span class="provider-logo">${e(p.name==='Internet Archive'?'IA':p.name.slice(0,2))}</span><div><div class="eyebrow">${p.playback==='website'?'PUBLISHER WEBSITE':'IN YOUR SHEEPBOX LIBRARY'}</div><h1>${e(p.name)}</h1><p>${e(p.description)}</p></div><a class="button secondary" href="${p.url}" target="_blank" rel="noopener noreferrer" data-open-provider="${p.id}">Open website ${icon('external')}</a></div>${p.playback==='website'?`<div class="publisher-note">This provider’s player isn’t integrated into the web preview yet. Use its official website to browse and watch; its content is also available through the supported Android TV integration.</div><div class="button-row"><button class="button ghost" data-favorite="provider:${p.id}">${icon('star')} ${store.isFavorite(`provider:${p.id}`)?'Remove favorite':'Save provider'}</button><a class="button secondary" href="https://github.com/sheepman90s/sheepbox-releases/releases/latest" target="_blank" rel="noopener noreferrer">Get the Android TV app ${icon('external')}</a></div>`:`<p class="result-note">${p.id==='roku'?'A selection of free Roku movie listings. Watch on Roku opens the official publisher player in a new tab; favorites stay in SheepBox.':p.id==='newson'?'Live station availability and the latest guest newscast are checked fresh when you play. Latest newscasts start from the beginning so yesterday’s programme position is not applied to today’s news.':p.id==='xumo'?'The current public US live lineup. Xumo checks your current region and supplies a fresh stream with its original advertising.':p.id==='pbskids'?'The current PBS KIDS homepage selection, limited to videos explicitly approved by PBS for embedding. Its official player checks current access and region.':p.id==='webcams'?'The same country-based webcam directory as the Android app. The original YouTube player checks availability and embedding permissions.':p.id==='nfb'?'Free public film metadata from the catalogue snapshot. NFB’s embedded player checks current access and regional availability.':p.id==='archive'?'Only entries with a published Creative Commons or public-domain license are listed. Licensing is checked again when you play.':`${count.toLocaleString()} videos and channels in this catalogue.`}</p>${p.id==='nasaplus'?`<div class="button-row"><button class="button ghost small" data-action="refresh-nasa" ${state.refreshing?'disabled':''}>${icon('refresh')} Refresh NASA+ catalogue</button><span id="refresh-status" class="caption-message"></span></div>`:''}${filterMarkup({provider:false,kind:p.content!=='live'})}<div id="results"></div>`}`;
+  $('main').innerHTML=`<a href="#providers" class="back-link">${icon('back')} All providers</a><div class="provider-banner palette-${p.palette}"><span class="provider-logo">${e(p.name==='Internet Archive'?'IA':p.name.slice(0,2))}</span><div><div class="eyebrow">${p.playback==='website'?'PUBLISHER WEBSITE':'IN YOUR SHEEPBOX LIBRARY'}</div><h1>${e(p.name)}</h1><p>${e(p.description)}</p></div><a class="button secondary" href="${p.url}" target="_blank" rel="noopener noreferrer" data-open-provider="${p.id}">Open website ${icon('external')}</a></div>${p.playback==='website'?`<div class="publisher-note">This provider’s player isn’t integrated into the web preview yet. Use its official website to browse and watch; its content is also available through the supported Android TV integration.</div><div class="button-row"><button class="button ghost" data-favorite="provider:${p.id}">${icon('star')} ${store.isFavorite(`provider:${p.id}`)?'Remove favorite':'Save provider'}</button><a class="button secondary" href="https://github.com/sheepman90s/sheepbox-releases/releases/latest" target="_blank" rel="noopener noreferrer">Get the Android TV app ${icon('external')}</a></div>`:`<p class="result-note">${p.id==='roku'?'Browse free Roku movies and shows. Open a show for available episode choices. Watch on Roku opens the official publisher player, which checks current access; favorites stay in SheepBox.':p.id==='newson'?'Live station availability and the latest guest newscast are checked fresh when you play. Latest newscasts start from the beginning so yesterday’s programme position is not applied to today’s news.':p.id==='xumo'?'The current public US live lineup. Xumo checks your current region and supplies a fresh stream with its original advertising.':p.id==='pbskids'?'The current PBS KIDS homepage selection, limited to videos explicitly approved by PBS for embedding. Its official player checks current access and region.':p.id==='webcams'?'The same country-based webcam directory as the Android app. The original YouTube player checks availability and embedding permissions.':p.id==='nfb'?'Free public film metadata from the catalogue snapshot. NFB’s embedded player checks current access and regional availability.':p.id==='archive'?'Only entries with a published Creative Commons or public-domain license are listed. Licensing is checked again when you play.':`${count.toLocaleString()} videos and channels in this catalogue.`}</p>${p.id==='nasaplus'?`<div class="button-row"><button class="button ghost small" data-action="refresh-nasa" ${state.refreshing?'disabled':''}>${icon('refresh')} Refresh NASA+ catalogue</button><span id="refresh-status" class="caption-message"></span></div>`:''}${filterMarkup({provider:false,kind:p.content!=='live'})}<div id="results"></div>`}`;
   if(p.playback!=='website')renderResults();
 }
-function renderSeries(item){
+function renderExternalRokuSeries(item){
+  const image=safeUrl(item.image)?'<img src="'+e(item.image)+'" alt="">':'';
+  const url='https://app.roku.com/details/'+item.sourceId;
+  $('main').innerHTML='<a href="#provider/roku" class="back-link">'+icon('back')+' Roku</a>'+
+    '<div class="publisher-handoff roku-show-details">'+image+'<div><div class="eyebrow">SERIES · ROKU</div>'+
+    '<h1>'+e(item.title)+'</h1><p>'+e(item.description||'Choose from the episodes currently available in Roku\u2019s official player.')+'</p>'+
+    '<a class="button" href="'+e(url)+'" target="_blank" rel="noopener noreferrer" data-publisher-watch="roku">Watch on Roku '+icon('external')+'</a></div></div>'+
+    '<div class="button-row"><button class="button ghost" data-favorite="'+e(item.id)+'" aria-pressed="'+store.isFavorite(item.id)+'">'+
+    icon('star')+(store.isFavorite(item.id)?' Saved':' Save series')+'</button></div>'+
+    '<p class="result-note">Roku provides episode selection, playback, captions and advertising. Episode availability can vary by region.</p>';
+}
+async function renderSeries(item){
+  if(isRokuExternalSeries(item)){renderExternalRokuSeries(item);return;}
+  const controller=state.controller;
+  if(isRokuSeriesReference(item)&&!rokuSeriesLoaded.has(item.id)){
+    $('main').innerHTML=rokuDetailsLoading();
+    try{await ensureRokuSeries(item.id,controller.signal);if(controller.signal.aborted)return;item=state.byId.get(item.id);}
+    catch(error){if(!controller.signal.aborted)$('main').innerHTML=empty('The episodes couldn’t load.','Retry to load the episode list, or open the show on Roku.',`<button class="button secondary" data-action="retry-player">Retry</button> <a class="button ghost" href="${e(item.official)}" target="_blank" rel="noopener noreferrer">Open Roku</a>`);return;}
+  }
   if(!item?.episodes){$('main').innerHTML=empty('Series not found.','The current catalogue no longer includes this series.');return;}
   const p=providerById(item.provider);
-  $('main').innerHTML=`<a href="#provider/${e(item.provider)}" class="back-link">${icon('back')} ${e(p?.name??item.providerName)}</a>${heading(item.title,item.description||`${item.episodes.length} videos in this series.`)}<div class="button-row"><button class="button ghost" data-favorite="${item.id}">${icon('star')} ${store.isFavorite(item.id)?'Remove favorite':'Save series'}</button><a class="button secondary" href="${e(item.official||p?.url)}" target="_blank" rel="noopener noreferrer">Publisher website ${icon('external')}</a></div><h2 class="series-list-heading">Episodes & videos · ${item.episodes.length}</h2>${filterMarkup({provider:false,kind:false})}<div id="results"></div>`;renderResults();
+  $('main').innerHTML=`<a href="#provider/${e(item.provider)}" class="back-link">${icon('back')} ${e(p?.name??item.providerName)}</a>${heading(item.title,item.description||`${item.episodes.length} videos in this series.`)}<div class="button-row"><button class="button ghost" data-favorite="${item.id}">${icon('star')} ${store.isFavorite(item.id)?'Remove favorite':'Save series'}</button><a class="button secondary" href="${e(item.official||p?.url)}" target="_blank" rel="noopener noreferrer">Publisher website ${icon('external')}</a></div>${item.provider==='roku'?'<p class="result-note">Only available free episodes are listed. Roku checks current access in its player.</p>':''}<h2 class="series-list-heading">Episodes & videos · ${item.episodes.length}</h2>${filterMarkup({provider:false,kind:false})}<div id="results"></div>`;renderResults();
 }
-function renderFavorites(){
+async function renderFavorites(){
+  const controller=state.controller;let missing=false;try{missing=await ensureSavedRoku(store.data.favorites,controller.signal);}catch{if(controller.signal.aborted)return;missing=true;}if(controller.signal.aborted)return;
   const savedProviders=providers.filter(p=>store.isFavorite(`provider:${p.id}`));const savedItems=currentLibrary();
   $('main').innerHTML=`${heading('Your favorites','The channels, titles and providers you’ve saved on this browser.')}<div class="tabs"><a class="tab active" href="#favorites">${store.data.favorites.length} saved favorites</a><a class="tab" href="#history">Watch history</a></div>${!savedItems.length&&!savedProviders.length?empty('Make this place yours.','Tap the star beside a title, channel or provider to save it here.','<a class="button" href="#ondemand">Find something to watch</a>'):''}${savedProviders.length?`${section('Saved providers','','')}<div class="provider-grid">${savedProviders.map(providerCard).join('')}</div>`:''}${savedItems.length?`${section('Saved titles & channels','','')}${filterMarkup()}<div id="results"></div>`:''}`;
   if(savedItems.length)renderResults();
+  if(missing)$('main').insertAdjacentHTML('beforeend',savedEpisodeNotice);
 }
 function renderProviders(){
   $('main').innerHTML=`${heading('All your places to watch','Some providers play here; others open their official website. No SheepBox account is needed.')}<div class="filters"><label class="sr-only" for="provider-query">Find a provider</label><input class="filter-input" id="provider-query" type="search" placeholder="Find a provider…"><label class="sr-only" for="provider-playback">Playback availability</label><select id="provider-playback"><option value="">All providers</option><option value="here">Plays in SheepBox</option><option value="website">Publisher websites</option></select><span class="result-count" id="provider-count" role="status"></span></div><div id="provider-results"></div>`;renderProviderResults();
@@ -109,20 +161,28 @@ function renderSearch(){
   const matchedProviders=providers.filter(p=>fold(`${p.name} ${p.category}`).includes(fold(state.route.id))).slice(0,8);
   $('main').innerHTML=`${heading(state.route.id?`Results for “${state.route.id}”`:'Find your next favorite','Search the web catalogue, live channels and provider directory.')}<div>${matchedProviders.length?`${section('Providers','','')}<div class="provider-grid">${matchedProviders.map(providerCard).join('')}</div><div class="section-divider"></div>`:''}</div>${filterMarkup()}<div id="results"></div>`;renderResults();
 }
-function renderHistory(){
+async function renderHistory(){
+  const controller=state.controller;let missing=false;try{missing=await ensureSavedRoku(Object.keys(store.data.history),controller.signal);}catch{if(controller.signal.aborted)return;missing=true;}if(controller.signal.aborted)return;
   const rows=Object.entries(store.data.history).sort((a,b)=>b[1].at-a[1].at).filter(([id])=>state.byId.has(id)||id.startsWith('provider:')&&providerById(id.slice(9)));
-  $('main').innerHTML=`${heading('Your watch history','Saved on this browser. Publisher players keep their own playback progress.')}<div class="tabs"><a class="tab" href="#favorites">Favorites</a><a class="tab active" href="#history">Watch history</a></div>${rows.length?rows.slice(0,100).map(([id,h])=>{const p=id.startsWith('provider:')?providerById(id.slice(9)):null;const item=state.byId.get(id);return `<div class="history-row"><a href="${p?`#provider/${p.id}`:`#watch/${e(id)}`}">${e(p?.name??item.title)}<small>${e(new Date(h.at).toLocaleDateString())}${store.resume(id)?` · Resume at ${durationLabel(h.position)}`:''}</small></a><button data-remove-history="${e(id)}" aria-label="Remove ${e(p?.name??item.title)} from history">Remove</button></div>`;}).join(''):empty('Your next watch starts here.','When you open a video or channel, it will appear here.','<a class="button" href="#ondemand">Explore the library</a>')}`;
+  $('main').innerHTML=`${heading('Your watch history','Saved on this browser. Publisher players keep their own playback progress.')}<div class="tabs"><a class="tab" href="#favorites">Favorites</a><a class="tab active" href="#history">Watch history</a></div>${rows.length?rows.slice(0,100).map(([id,h])=>{const p=id.startsWith('provider:')?providerById(id.slice(9)):null;const item=state.byId.get(id);return `<div class="history-row"><a href="${p?`#provider/${p.id}`:item.kind==='series'?`#series/${e(id)}`:`#watch/${e(id)}`}">${e(p?.name??item.title)}<small>${e(new Date(h.at).toLocaleDateString())}${store.resume(id)?` · Resume at ${durationLabel(h.position)}`:''}</small></a><button data-remove-history="${e(id)}" aria-label="Remove ${e(p?.name??item.title)} from history">Remove</button></div>`;}).join(''):empty('Your next watch starts here.','When you open a video or channel, it will appear here.','<a class="button" href="#ondemand">Explore the library</a>')}`;
+  if(missing)$('main').insertAdjacentHTML('beforeend',savedEpisodeNotice);
 }
 function renderSettings(){
   const generated=new Date(state.catalog.generatedAt).toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
   $('main').innerHTML=`${heading('Make yourself at home','Your library, playback preferences and a little about SheepBox.')}<div class="settings-grid"><section class="settings-card"><h2>Your library</h2><p>Favorites and viewing progress are saved on this browser. They don’t automatically sync with another browser or the Android TV app.</p><div class="library-summary"><span><strong>${store.data.favorites.length}</strong>favorites</span><span><strong>${Object.keys(store.data.history).length}</strong>history entries</span></div>${!store.persistent?'<p class="info-line">Browser storage isn’t available. Export a backup before closing this page to keep your library.</p>':''}<div class="button-row"><button class="button secondary" data-action="export">${icon('download')} Export backup</button><label class="button ghost" for="import-backup">Import backup<input id="import-backup" type="file" accept="application/json,.json" class="sr-only"></label></div><small>Import merges saved entries with your existing library.</small><button class="subtle-action" data-action="clear-library">Clear favorites & history</button></section><section class="settings-card"><h2>Playback</h2><label><input id="prefer-captions" type="checkbox"${store.data.settings.captions?' checked':''}> Prefer captions when available</label><p>Caption tracks come from the video’s publisher. Embedded players use their own controls and preferences.</p><p>Use the video controls for play, pause, seeking, volume and captions. Full screen and picture-in-picture depend on your browser.</p><p>Keyboard: <b>/</b> searches, arrow keys move focus, and <b>Esc</b> goes back from playback.</p></section><section class="settings-card"><h2>SheepBox Web <span class="eyebrow">${VERSION} PREVIEW</span></h2><p>Free live television, films and your favorite providers in one place. This is the first browser release, with an expanding set of in-page integrations.</p><p>NASA+ and licensed Archive selections use the browser player. NFB and other integrated providers use their official embedded players. Web Cams and World View reuse the Android app’s directory, Earth imagery and country map. Other provider cards open official websites.</p><p>Catalogue snapshot: <b>${e(generated)}</b>. Listings can change. The publisher decides what’s available in your region.</p><div class="button-row"><a class="button secondary" href="https://github.com/sheepman90s/sheepbox-releases/releases/latest" target="_blank" rel="noopener noreferrer">Android TV app ${icon('external')}</a><button class="button ghost" data-action="refresh-nasa" ${state.refreshing?'disabled':''}>${icon('refresh')} Refresh NASA+</button></div><p id="refresh-status"></p></section><section class="settings-card"><h2>Privacy & publishers</h2><p>No SheepBox account, advertising tracker or analytics is used. Your favorites and history stay in this browser unless you export a backup.</p><p>When you watch, your browser connects to the publisher’s video service. Embedded players and publisher websites have their own privacy policies, cookies and advertising.</p><p>SheepBox is independent and is not endorsed by NASA, NFB or the other publishers. Videos remain with their owners; publisher access rules and advertising are retained.</p><p>Internet Archive licenses and source links appear beside the player. NFB’s player is used under its <a href="https://help.nfb.ca/terms/" target="_blank" rel="noopener noreferrer">embedding terms</a>.</p></section></div>`;
 }
 async function renderWatch(item){
+  const controller=state.controller;
+  if(!item&&/^roku-[a-f0-9]{32}$/.test(state.route.id)){
+    $('main').innerHTML=rokuDetailsLoading();
+    try{await ensureRokuEpisode(state.route.id,controller.signal);if(controller.signal.aborted)return;item=state.byId.get(state.route.id);}
+    catch(error){if(!controller.signal.aborted)$('main').innerHTML=empty('The episode details couldn’t load.','Check your connection and retry. Your saved titles are still here.','<button class="button secondary" data-action="retry-player">Retry</button>');return;}
+  }
   if(!item){$('main').innerHTML=empty('This title isn’t in the current library.','It may no longer be available. Browse the library or try its publisher.');return;}
-  const p=providerById(item.provider);const controller=state.controller;
+  const p=providerById(item.provider);if(item.provider==='roku'&&item.kind==='episode')rokuParents.remember(item.id,item.seriesId);
   const back=playbackBack(item);
   $('main').innerHTML=`<div class="player-layout"><a href="${back}" class="back-link">${icon('back')} Back to browsing</a><div id="player-surface" class="player-surface"><div class="player-loader"><progress aria-label="Loading video"></progress><p>Connecting to ${e(item.providerName)}…</p></div></div><div class="player-info"><div><div class="eyebrow">${item.kind==='live'?'LIVE TV':item.kind==='film'?'FILM':'ON DEMAND'} · ${e(item.providerName)}</div><h1>${e(item.title)}</h1><p id="now-playing">${item.kind==='live'?'Live programming from the original source.':[item.year,durationLabel(item.duration)].filter(Boolean).join(' · ')}</p></div><div class="button-row"><button class="button ghost" data-favorite="${e(item.id)}" aria-pressed="${store.isFavorite(item.id)}">${icon('star')} ${store.isFavorite(item.id)?'Saved':'Save favorite'}</button><a class="button secondary" href="${e(item.official||p?.url||'https://archive.org/')}" target="_blank" rel="noopener noreferrer">Publisher website ${icon('external')}</a></div></div><div class="player-state" id="player-state" role="status">Loading the publisher’s video…</div><div class="player-tools" id="player-tools"><button class="button secondary small" data-action="fullscreen">${icon('full')} Full screen</button><button class="button ghost small" id="captions-toggle" data-action="captions" aria-pressed="${store.data.settings.captions}" disabled>${icon('cc')} Captions</button><button class="button ghost small" id="pip-button" data-action="pip" hidden>${icon('pip')} Picture-in-picture</button><span class="caption-message" id="caption-message">Checking available caption tracks.</span></div><p class="player-description">${e(item.description)}</p><p class="publisher-credit">Source: <a href="${e(item.official||p?.url)}" target="_blank" rel="noopener noreferrer">${e(p?.name??item.providerName)}</a><span id="license-credit"></span></p>${['nfb','pbs','youtube','worldtv','redbull'].includes(item.mode)?'<div class="publisher-note">The original publisher player manages playback, captions, advertising and regional access. SheepBox saves this visit in history; playback position stays with the embedded player.</div>':''}</div>`;
-  const resumable=item.kind!=='live'&&!['newson-latest','roku-link'].includes(item.mode);
+  const resumable=item.kind!=='live'&&item.provider!=='roku'&&!['newson-latest','roku-link'].includes(item.mode);
   const hadPosition=resumable?(store.data.history[item.id]?.position??0):0;const hadDuration=store.data.history[item.id]?.duration??0;store.record(item.id,hadPosition,hadDuration);
   const status=(message,kind)=>{if(controller.signal.aborted||!$('player-state'))return;$('player-state').classList.toggle('error',kind==='error');$('player-state').textContent=message;if(kind==='error'){$('player-state').insertAdjacentHTML('beforeend','<button class="button ghost small" data-action="retry-player">Retry</button>');}};
   try {
@@ -177,6 +237,7 @@ document.addEventListener('change',async event=>{
   }
 });
 function toggleFavorite(id){
+  const episode=state.byId.get(id);if(episode?.provider==='roku'&&episode.kind==='episode')rokuParents.remember(id,episode.seriesId);
   const saved=store.toggleFavorite(id);
   for(const button of document.querySelectorAll('[data-favorite]'))if(button.dataset.favorite===id){button.classList.toggle('saved',saved);button.setAttribute('aria-pressed',String(saved));const title=state.byId.get(id)?.title??providerById(id.slice(9))?.name??'item';button.setAttribute('aria-label',`${saved?'Remove':'Save'} ${title} ${saved?'from':'to'} favorites`);if(button.classList.contains('button'))button.innerHTML=icon('star')+(saved?' Saved':' Save favorite');}
   renderNavigation();toast(saved?'Saved to your favorites.':'Removed from favorites.');
@@ -194,6 +255,10 @@ async function refreshCatalogue(){
 }
 document.addEventListener('click',async event=>{
   const favorite=event.target.closest('[data-favorite]');if(favorite){event.preventDefault();toggleFavorite(favorite.dataset.favorite);return;}
+  const publisher=event.target.closest('[data-publisher-watch="roku"]');
+  if(publisher&&state.route.name==='series'){
+    const series=state.byId.get(state.route.id);if(isRokuExternalSeries(series))store.record(series.id,0,0);
+  }
   const external=event.target.closest('[data-open-provider]');if(external)store.record(`provider:${external.dataset.openProvider}`);
   const history=event.target.closest('[data-remove-history]');if(history){store.removeHistory(history.dataset.removeHistory);renderHistory();toast('Removed from history.');return;}
   const action=event.target.closest('[data-action]')?.dataset.action;if(!action)return;

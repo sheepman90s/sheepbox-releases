@@ -1,9 +1,15 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "8e7048ad6373",
-  "catalogGeneratedAt": "2026-11-17T11:59:57.373170Z",
-  "titles": 11745,
+  "revision": "72e338dc69e3",
+  "catalogGeneratedAt": "2026-11-17T17:35:58.496Z",
+  "titles": 17986,
   "live": 1046,
+  "roku": {
+    "films": 3308,
+    "shows": 2953,
+    "episodeFiles": 0,
+    "scope": "All enabled free movies and parent-free show cards discovered in the supported browse graph. Not a verified whole-service total. Complete episode files are optional; other shows open their publisher page."
+  },
   "files": [
     {
       "path": ".nojekyll",
@@ -35,15 +41,1043 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "6d40d9f0d189f35f21ebaab0674a00cdf12375ed261c275a36e58e8f16ae7aa7"
+      "sha256": "de3a9f5289357fbd956dd71b260366b534171e2d9b57b32fd78515a3a4b14f55"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "98a89595bbf61a064e4f92d6e94e881ba8b4ca1e557ea38fcad2712738f0e3a7"
+      "sha256": "7bc3107af833a42bd8f2e86249821a825607b860b9c34e81a232dd0887fbbac5"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
       "sha256": "dfc34af32be9a99fab09f7f6ab40bcb0bf0fef561fd2276b3e4b981755e46a1c"
+    },
+    {
+      "path": "data/roku/catalog.json",
+      "sha256": "3e42868600d2ce3b927681954f8d095ff66d5b888f3c814671ed6e807d29ffc8"
+    },
+    {
+      "path": "data/roku/index/00.json",
+      "sha256": "86e5c55edb07dc783171c119b4021cc8b7a3364e01d0e0b0a9b361f819675451"
+    },
+    {
+      "path": "data/roku/index/01.json",
+      "sha256": "923659b87462cc49080b7d63e6e24394af70ea8703a253f7293c90e734afca36"
+    },
+    {
+      "path": "data/roku/index/02.json",
+      "sha256": "0aac9f0d7628c96e6d1905e3a3e521b843f954d17f113697c31dc3952ee75108"
+    },
+    {
+      "path": "data/roku/index/03.json",
+      "sha256": "f8dac2661cda15c36b22bcbdc6edb9ff26c5302b93e5dc56261da3c2f2c69366"
+    },
+    {
+      "path": "data/roku/index/04.json",
+      "sha256": "540df4eec100d33d444ef5e7d6f52459e44847487b7e4caf383c6f6624bbe14a"
+    },
+    {
+      "path": "data/roku/index/05.json",
+      "sha256": "cf86cc4a3cfcdc25f78afc282a960aa77a0dc1672baaf5c6997df4e037cff764"
+    },
+    {
+      "path": "data/roku/index/06.json",
+      "sha256": "95c91b8350a804725dc88b80486e590c58e61c25097a9c640147abf476ed7518"
+    },
+    {
+      "path": "data/roku/index/07.json",
+      "sha256": "5e795f00226a81fd2310617c12c0a5dba96773dbdcf0850be1a1794574633820"
+    },
+    {
+      "path": "data/roku/index/08.json",
+      "sha256": "639f60dd07dfa130ad3fb608fbcddc03d8936fb54d7e192f2516c266493913c5"
+    },
+    {
+      "path": "data/roku/index/09.json",
+      "sha256": "f608cbb3d3880e98ae4280a9c8e2a5c593a821b1ac2d9ec0d230a83b84c01dbf"
+    },
+    {
+      "path": "data/roku/index/0a.json",
+      "sha256": "31ace66885e8114f5022a058b3ea4b9b5a9cc31cd9af09f4a085009ed5e1bcaa"
+    },
+    {
+      "path": "data/roku/index/0b.json",
+      "sha256": "011921db5d811acd88b38b0232acf02d04233844068cf4857071c78fc27d0e53"
+    },
+    {
+      "path": "data/roku/index/0c.json",
+      "sha256": "45336c807af7158fb41f3b65959babfd8e65e0326084229386000e364a95431e"
+    },
+    {
+      "path": "data/roku/index/0d.json",
+      "sha256": "d2f850dc187473fab1ffadceeb10933c4b2549b1625cd505b1c8cfed5a92f06c"
+    },
+    {
+      "path": "data/roku/index/0e.json",
+      "sha256": "0d1c1f7df523568da84a2533e85b7836ad1a959c18a07d3fd4610941ba9a10ca"
+    },
+    {
+      "path": "data/roku/index/0f.json",
+      "sha256": "11a31213388128374145d2a4ea641092ec971d2f0ad324feadc91f58d5c4664a"
+    },
+    {
+      "path": "data/roku/index/10.json",
+      "sha256": "249ffb81090d54d8cd5b7b032071e78da271896c87dbdd27697c0319223b3cbf"
+    },
+    {
+      "path": "data/roku/index/11.json",
+      "sha256": "cf82ade798976495cfe73962e15268779bb0fa5b90c03ffbbc26a547e6790e5a"
+    },
+    {
+      "path": "data/roku/index/12.json",
+      "sha256": "167cba8f666d781d25b1a1f952a01780595fe0a71207bfb0e856c464f0ae3dcf"
+    },
+    {
+      "path": "data/roku/index/13.json",
+      "sha256": "15ea48b3cf5d07675c0e561a2167109b93c8b5476e176daa16131583ee6d37c4"
+    },
+    {
+      "path": "data/roku/index/14.json",
+      "sha256": "92f3706bbd69c40686f39bdf563c87fa73caeecf2e4901477e8656e802f1c6ed"
+    },
+    {
+      "path": "data/roku/index/15.json",
+      "sha256": "3efdb8d44ae2790a248133ee0fa37ba9db8fa19b72081a8033092e0d70f4c412"
+    },
+    {
+      "path": "data/roku/index/16.json",
+      "sha256": "c8b526525f8dd1fb077f8c8f030cd576d6021b715df0591e9e7dcc6187660f48"
+    },
+    {
+      "path": "data/roku/index/17.json",
+      "sha256": "105532f0f78bb64c3ae30eee751b4dcdaadb041be751ed2ead0db256204e453f"
+    },
+    {
+      "path": "data/roku/index/18.json",
+      "sha256": "1a55d48c2116eb2758413dcffec8787174a0194ed39b4b11c28fe7ccccb4c8d8"
+    },
+    {
+      "path": "data/roku/index/19.json",
+      "sha256": "972ca5019d1bb145461e7cfff42d34e03ce7493a1529e76766e9ccb8e0b4f42f"
+    },
+    {
+      "path": "data/roku/index/1a.json",
+      "sha256": "a35a79fafd9c59eed6478e7d8d75488576fb88a6c658d338f8cbc4ffb119ed36"
+    },
+    {
+      "path": "data/roku/index/1b.json",
+      "sha256": "41d5b29c2198d1595c043c708135bad31faeacbce52d0436202c76466cbabca8"
+    },
+    {
+      "path": "data/roku/index/1c.json",
+      "sha256": "137bec4965ea6c4bd1223f4bf4dc9095275a6e3532ac16b81405f52ad55ff65e"
+    },
+    {
+      "path": "data/roku/index/1d.json",
+      "sha256": "d76ace9720a30ad90c86c53baca4644ce4ee224e349745d75f8109232f342c92"
+    },
+    {
+      "path": "data/roku/index/1e.json",
+      "sha256": "1ff7aae169e84705d4a0776014103da9f8b74346637403ac7a2f642419f6789b"
+    },
+    {
+      "path": "data/roku/index/1f.json",
+      "sha256": "364e7c6b2aa3ce1453e9846785225c84ba6aec3717c3f4c75e7fd2221dd3eab1"
+    },
+    {
+      "path": "data/roku/index/20.json",
+      "sha256": "51e1a966963809847083e5f2b65aea0d4489bac0cf0cc25385b471cc003ec33c"
+    },
+    {
+      "path": "data/roku/index/21.json",
+      "sha256": "d948ec8d1c1bb26d28030045c5bcfe1b634959e1e5f4ba316860a6b4d956545b"
+    },
+    {
+      "path": "data/roku/index/22.json",
+      "sha256": "f3428bd7cf8b1be5e13627715dd269310d740f1860aaddb37f029d7183a1796a"
+    },
+    {
+      "path": "data/roku/index/23.json",
+      "sha256": "e6a43d2becd1a1c5e7f5e882da9b12179877ab762f265b919813047636fe6660"
+    },
+    {
+      "path": "data/roku/index/24.json",
+      "sha256": "869243b1460760dbaf0c5ad1ce360fafbf64c865084f486c2b2209953e8015fd"
+    },
+    {
+      "path": "data/roku/index/25.json",
+      "sha256": "e16a43e9aabccc5cf5e619d58797bdfd54ad33b760e7b93f8efb28407bcf7ecb"
+    },
+    {
+      "path": "data/roku/index/26.json",
+      "sha256": "2a1698c225a4e075904b99db810582ee3835ea0a414f2172ded867bb820fb486"
+    },
+    {
+      "path": "data/roku/index/27.json",
+      "sha256": "d08d4d719bd94ec326a89777f52f992570c4b27642b5c96fc8e88f770f5747a1"
+    },
+    {
+      "path": "data/roku/index/28.json",
+      "sha256": "25edaed2e540ccd40bd2883f1e63af02e25446b00e76865571c5cbb10d8cb058"
+    },
+    {
+      "path": "data/roku/index/29.json",
+      "sha256": "667a82145b331d5cf099b256bd84f290c0eb8e822bd996e47d1e2e66e310e03a"
+    },
+    {
+      "path": "data/roku/index/2a.json",
+      "sha256": "d24ba5caeb9be92f08b114241d8fb99b397abd25a4708b8fd449214958ea0dbe"
+    },
+    {
+      "path": "data/roku/index/2b.json",
+      "sha256": "c13b42e1162bf967c5bf0cabd56fad001c65fac9095068bbf5a0d0a3488873cf"
+    },
+    {
+      "path": "data/roku/index/2c.json",
+      "sha256": "3b4d9865d2d5a44ba5fbc5f8b167ac51d6b99bafc3417bb5a725a7477d4c7da2"
+    },
+    {
+      "path": "data/roku/index/2d.json",
+      "sha256": "342169962996513c946001442459dc900a480f56db5a7a92abc4976af29555e0"
+    },
+    {
+      "path": "data/roku/index/2e.json",
+      "sha256": "7cf7be7e174ce2cb9515425a52a4fb5b51aaff6ee9b583e89a2c1149c73956b7"
+    },
+    {
+      "path": "data/roku/index/2f.json",
+      "sha256": "32cab2abad7150f4e3cc2cb759e973cc10aebfcd481dc2c98bdab10307752824"
+    },
+    {
+      "path": "data/roku/index/30.json",
+      "sha256": "e72401dcdb29410a5d78f04a62e67c2ca82534d4a21557aa0a27a37016778629"
+    },
+    {
+      "path": "data/roku/index/31.json",
+      "sha256": "33ec69235b8b275625c1b3963a0ae153030159bb853cf4e4f6e97a0e2f7a7b82"
+    },
+    {
+      "path": "data/roku/index/32.json",
+      "sha256": "904c90f690d6421adfd79380b79490aa4accfa0ec575230b863c44a288318495"
+    },
+    {
+      "path": "data/roku/index/33.json",
+      "sha256": "72c6e6b6b1854487672d8de6cf805525e32df215274d04164bfd0476b5deeeea"
+    },
+    {
+      "path": "data/roku/index/34.json",
+      "sha256": "dbf6445df0c3dc4f98e4be1ff167368c2fb84c7968e850bad364d0bfa1a14f95"
+    },
+    {
+      "path": "data/roku/index/35.json",
+      "sha256": "34e89fb253b67c492a6f91578cc2c0584c67e22c6a9dd10951cb30168e8d5010"
+    },
+    {
+      "path": "data/roku/index/36.json",
+      "sha256": "2893c785542442a85bf2131959cc63d2f899249557ff6c4d336e302bad85ffbc"
+    },
+    {
+      "path": "data/roku/index/37.json",
+      "sha256": "f58a07111a40cb5f1957a83c3ab03bfde251a43e8fb382466feaf7cc6807edb5"
+    },
+    {
+      "path": "data/roku/index/38.json",
+      "sha256": "4c2c262aebc0efc805407f9a7ae0abe342c047b9476c36ff26c61543f3a1cb15"
+    },
+    {
+      "path": "data/roku/index/39.json",
+      "sha256": "10dda3c630b851049a644f3e1124293d4b4de4325b13749d4fe22eff4c87c818"
+    },
+    {
+      "path": "data/roku/index/3a.json",
+      "sha256": "c6f8285607acd6778820f034d79b6b8c927f43a4a6177bd6d0a333077c96259c"
+    },
+    {
+      "path": "data/roku/index/3b.json",
+      "sha256": "e4094d0d84f0741f8465cda17bed8c8b43a7acabeb42a6de4bc3eff507d72cc5"
+    },
+    {
+      "path": "data/roku/index/3c.json",
+      "sha256": "4e4b4e61927c53bbab3aa1165e6b21f2f5a7d998747465437d22efb8a58bedd7"
+    },
+    {
+      "path": "data/roku/index/3d.json",
+      "sha256": "0816ae89517026097518a25b5249857907534ec1d7d0e7284492ee82779ba91c"
+    },
+    {
+      "path": "data/roku/index/3e.json",
+      "sha256": "0433f896b91f43ea01b68c6653cb3faef1dee81b8d78f6ae67164431c6d6ae29"
+    },
+    {
+      "path": "data/roku/index/3f.json",
+      "sha256": "0e1bdeb30368b32d7976252ffba636661e5aaecfbde121f42ff71c640e3a4bd1"
+    },
+    {
+      "path": "data/roku/index/40.json",
+      "sha256": "68f9157bb205661a6110038b23bd8beea8448e800462ea6e3d640b3a09206a9d"
+    },
+    {
+      "path": "data/roku/index/41.json",
+      "sha256": "d98ef093b7d1a33620c32b5ddbf32c314b3a5d3d20a52eb7775e8306fe7b1cb2"
+    },
+    {
+      "path": "data/roku/index/42.json",
+      "sha256": "6fe0b82cfb09743c203bacf11d0341b183e0c426136c00ea8850291129cf9d73"
+    },
+    {
+      "path": "data/roku/index/43.json",
+      "sha256": "8d3fa0017e56b6eda691d17c535e5fc13026874a2272ac0a1f8d1a6a6c9954ed"
+    },
+    {
+      "path": "data/roku/index/44.json",
+      "sha256": "1fd03708e15cd844573c74ff1d6fcfe081596777e1c6ea7e1d2227eaf79c9ce5"
+    },
+    {
+      "path": "data/roku/index/45.json",
+      "sha256": "46b44b02119384c35036e814135c6df72c49a1a464cda93742f8eb12e4b91ee9"
+    },
+    {
+      "path": "data/roku/index/46.json",
+      "sha256": "653d150e1bbd6d960efe12272837363a0b22933de8a2e90c22bb82c0c68697f3"
+    },
+    {
+      "path": "data/roku/index/47.json",
+      "sha256": "81684a8a86f5b83cd591f5b16499559e666b3e7c6f5722c7a05fe4f805f1ce18"
+    },
+    {
+      "path": "data/roku/index/48.json",
+      "sha256": "98c1b09d02f3c349d1668b1de6c78c053e2c5e6caff6ec758f207675675fafdb"
+    },
+    {
+      "path": "data/roku/index/49.json",
+      "sha256": "b6ebbeccf14489be8b9a286c1b7bb37893eb02e81465b544de0977fc0b91a052"
+    },
+    {
+      "path": "data/roku/index/4a.json",
+      "sha256": "23535b2a7c643f5e36463df555f81896f008f8634efe2153c30fb0c00c24a92b"
+    },
+    {
+      "path": "data/roku/index/4b.json",
+      "sha256": "ee2454973f8441c15fb8e1cc35b8e5455bef02d730efcf1298e4aac658e1b910"
+    },
+    {
+      "path": "data/roku/index/4c.json",
+      "sha256": "26438bd2bcd0b0f666573b5984ab791b5e88465427127fdce88f7013e2049bd9"
+    },
+    {
+      "path": "data/roku/index/4d.json",
+      "sha256": "d6ad3872010a542a68c146f6cae751c3e2a1382da52f610860a13affb124f0aa"
+    },
+    {
+      "path": "data/roku/index/4e.json",
+      "sha256": "7e92e2737c7d8a8c7e39361bc8b4208460ec710ab24c2c927e166e6edce7e463"
+    },
+    {
+      "path": "data/roku/index/4f.json",
+      "sha256": "bf83b53b38d52c863099bcb4c1ef86287ca6cdd760762e9b9f1ba13e1187b8d0"
+    },
+    {
+      "path": "data/roku/index/50.json",
+      "sha256": "698c520882d6133a9baa3c55896c3a184cdd0238b20e6197774831932aac1b0a"
+    },
+    {
+      "path": "data/roku/index/51.json",
+      "sha256": "fa800f3f731b66f702238bc073fdb0eebab866f475d21fe22c544a97988f5220"
+    },
+    {
+      "path": "data/roku/index/52.json",
+      "sha256": "2a87cb3a1cdc16ee1a28f34216ff08feec54a9b2998675d9e4976d0a7178e25b"
+    },
+    {
+      "path": "data/roku/index/53.json",
+      "sha256": "2cd11d7a7a28e3b13cb94325ad64611009a24ab2677c939a2dc3c5a121b34ff3"
+    },
+    {
+      "path": "data/roku/index/54.json",
+      "sha256": "8d120bd6d2ca359e69680512ba06876903c2ee8b93bf3c4e8dd0e59b5670b485"
+    },
+    {
+      "path": "data/roku/index/55.json",
+      "sha256": "c55b56e61956e56cdbf65ea2640412b738a2dbe2d0a50ed568537d7c1892d17b"
+    },
+    {
+      "path": "data/roku/index/56.json",
+      "sha256": "98f401aa699e59c758ec855caafbcc8d73b8a900b277a87238f279b81f54a381"
+    },
+    {
+      "path": "data/roku/index/57.json",
+      "sha256": "893b049fe43f5d8579b2762f44b53fe7b50e3348201accdf6a4972d874a688ac"
+    },
+    {
+      "path": "data/roku/index/58.json",
+      "sha256": "31f904fe7a391a585108ceadb2e2ab244be66bde2fe0e7961ff0dccf65f88d12"
+    },
+    {
+      "path": "data/roku/index/59.json",
+      "sha256": "7b05462b40acc9f58088af356316bc413e27ca4c7c3affae65893ca900647188"
+    },
+    {
+      "path": "data/roku/index/5a.json",
+      "sha256": "84223a877e650f5da3c0b642ad19f6c4d6000090b8a1b237c26743075577e415"
+    },
+    {
+      "path": "data/roku/index/5b.json",
+      "sha256": "f4ac5e5daec9f2849b2a618cdf717fa639bae8c4c040c55b7ef33e445cbc6a50"
+    },
+    {
+      "path": "data/roku/index/5c.json",
+      "sha256": "bcf3f2ce5a00e07158af299890e12683646fb655afc8104a15b711d39dde3123"
+    },
+    {
+      "path": "data/roku/index/5d.json",
+      "sha256": "5a3303c98da4dce24bbd39ec244d7f0f5fc5d9262a4c28655a5ddc8c75f998ad"
+    },
+    {
+      "path": "data/roku/index/5e.json",
+      "sha256": "03e92e56483e10b9b4bc4a3ca1ca4c4562488bb07d6c57540a18a105e6887e08"
+    },
+    {
+      "path": "data/roku/index/5f.json",
+      "sha256": "48c1c99f6d7fe1b8566d90b7997ba13b9ca8ad8ea8fb9146105c72250dea49dc"
+    },
+    {
+      "path": "data/roku/index/60.json",
+      "sha256": "9a850e83b4cd82522ffc160f73c16b5f064830f6dfc22e2b20ff545a37a75c02"
+    },
+    {
+      "path": "data/roku/index/61.json",
+      "sha256": "1f3bc8620b1cb07c070ca92a0a09ca5b6c7a13447afbf0ad179af8ef15ed45c4"
+    },
+    {
+      "path": "data/roku/index/62.json",
+      "sha256": "3b59e997acb1d83368a8b728ebc3440354318545f0a52c1b3affb6a5732fb21d"
+    },
+    {
+      "path": "data/roku/index/63.json",
+      "sha256": "728298348eb0aeee257a6be23b1d730f98b0a86c33837a66049bf660ec6cd214"
+    },
+    {
+      "path": "data/roku/index/64.json",
+      "sha256": "505ff1f78bdc232baefc2141d1f9452d7daa8888dd5f95ee237f7ef3f3272509"
+    },
+    {
+      "path": "data/roku/index/65.json",
+      "sha256": "928080e3622263a68def7261dfc727f7cac6af661910ba474c5f838c84350299"
+    },
+    {
+      "path": "data/roku/index/66.json",
+      "sha256": "c38d6022f83d5f07195e1e16a232a07199a47b16d4ec686cefa9c9ae690db9ee"
+    },
+    {
+      "path": "data/roku/index/67.json",
+      "sha256": "fc1aa80e4ff1c1c1f56e03a01a826fb3ebc6d86fb56676b0d30380f88b8076c9"
+    },
+    {
+      "path": "data/roku/index/68.json",
+      "sha256": "b0d311f3e3a07877d2c41596b2ae3eb8f73a94cac3cbc039a09fb70b3075b197"
+    },
+    {
+      "path": "data/roku/index/69.json",
+      "sha256": "afde1193e6f318203c7ff6dbe71bf05b3dfa6e0f97397839d2bfcd42a605904b"
+    },
+    {
+      "path": "data/roku/index/6a.json",
+      "sha256": "55ad13fc89cd9f3e8ec829c2617bb51e3166d14df7b9dab583ab103e2aef70fe"
+    },
+    {
+      "path": "data/roku/index/6b.json",
+      "sha256": "89929de496daa6f78c084d4b8f6d697083443af3be74f8d33e474d04a1e62fc8"
+    },
+    {
+      "path": "data/roku/index/6c.json",
+      "sha256": "44c59c1864fdd0cae4f0f28a727455f25024074d831797bcdc855b2d742c1dee"
+    },
+    {
+      "path": "data/roku/index/6d.json",
+      "sha256": "743c38c8ac1010b558deb52e5bbc4d07faf445a838a7d6925e4039ae05fd7adc"
+    },
+    {
+      "path": "data/roku/index/6e.json",
+      "sha256": "690175c55bd12231fd4176129f0e9c37f3315f8f4e631c243cc092e203cd976e"
+    },
+    {
+      "path": "data/roku/index/6f.json",
+      "sha256": "a1bd03e0bc8b9af02c8767e6dc40db9b8dba6961d275cd4618ccb10d4f7585fc"
+    },
+    {
+      "path": "data/roku/index/70.json",
+      "sha256": "37c2ab0d17f10c37dd037f148dd195825e2059d065ebaa2252257a7f0a184db7"
+    },
+    {
+      "path": "data/roku/index/71.json",
+      "sha256": "6d8b0975dfa111e49224e276d8fc07b4ecbf50305c95ffd00e6f3d97cd8e0612"
+    },
+    {
+      "path": "data/roku/index/72.json",
+      "sha256": "cead96a98a9b3bda078e4777c44d67e402a0e71d3ae3fbd8bff0d73166027423"
+    },
+    {
+      "path": "data/roku/index/73.json",
+      "sha256": "3d5f704e2c8d08d2576121fda5178bd0d3e59bb08ac55084999d4fe7067ff817"
+    },
+    {
+      "path": "data/roku/index/74.json",
+      "sha256": "2fbd5f1375a710147c86cc719c098b66dc7f60f68c908cb794853077155aabc5"
+    },
+    {
+      "path": "data/roku/index/75.json",
+      "sha256": "b907807c1edaf798213af85f227fe06fdbcb60607c3a756bfaaa8239fc6f55c6"
+    },
+    {
+      "path": "data/roku/index/76.json",
+      "sha256": "94d4fd03ce54bf4f47339438159ea9e0d1cebaf4d045865af5a6a6eb28687557"
+    },
+    {
+      "path": "data/roku/index/77.json",
+      "sha256": "366f3aab5fcff2397f093d6a256b2b8bcf7765b07967ffabaf845f347309e73b"
+    },
+    {
+      "path": "data/roku/index/78.json",
+      "sha256": "f1f67be0990b791840b2b166e826202ab36351736a0bcd4a2fa13c093d2c9a4f"
+    },
+    {
+      "path": "data/roku/index/79.json",
+      "sha256": "df93261d5ebacbf45bd6eba663eab605ee8ac65c0bffd0efd5320e32b2b46a53"
+    },
+    {
+      "path": "data/roku/index/7a.json",
+      "sha256": "0d76b3948d713b215cb30894d81f5b8a43786700c2d2ecf9b4c52fdf7ae49b36"
+    },
+    {
+      "path": "data/roku/index/7b.json",
+      "sha256": "47edce65b6d5f45bebe6592cb42da0abd238ffdb22c0a45777581e1adec6284e"
+    },
+    {
+      "path": "data/roku/index/7c.json",
+      "sha256": "9003ac58d4e216dc9ce866b260c0f23c63f9f6825f00a2e2f67448fd09781cc3"
+    },
+    {
+      "path": "data/roku/index/7d.json",
+      "sha256": "ff8986f39663fdab5e49114d99235fb6270b207dbd31cc119d43379788e4f491"
+    },
+    {
+      "path": "data/roku/index/7e.json",
+      "sha256": "31e0b12a78f95f3494da7d4cf6adc58ef0fb18d2bba927da3a7c9a4c7415cee2"
+    },
+    {
+      "path": "data/roku/index/7f.json",
+      "sha256": "ec38d0c78237af7105c9369c12343ee8003616218909401556b3e40fc5e7b2f7"
+    },
+    {
+      "path": "data/roku/index/80.json",
+      "sha256": "76fea2b5ee896dde5bf1654a745842a5c0a885d3f3e4cad74d891b2878822ee5"
+    },
+    {
+      "path": "data/roku/index/81.json",
+      "sha256": "2998ad8e728c68845415c1dbad26b2a8bf81b93b4a89ff3dece33731e5ea35a9"
+    },
+    {
+      "path": "data/roku/index/82.json",
+      "sha256": "3cdc56df5aeae20694020885f2ef8a4319aefc0fd051cbee26a381159aa453b4"
+    },
+    {
+      "path": "data/roku/index/83.json",
+      "sha256": "d0155b35240901becd6bf31bc8d0025f072034f703abcfe34d8e1d017365f421"
+    },
+    {
+      "path": "data/roku/index/84.json",
+      "sha256": "c8de2a08584e9fa875bb3a1d4c20e9b0e885400e5eb9e43f767b3a20291ba768"
+    },
+    {
+      "path": "data/roku/index/85.json",
+      "sha256": "5c6b20cc21cc3eff3ed07a416574b07967692c0ac188a9166f365db31331cd75"
+    },
+    {
+      "path": "data/roku/index/86.json",
+      "sha256": "308382278c087a16b47d7f6f892b50bb00e0c30b3c74a064c8492d8f60039619"
+    },
+    {
+      "path": "data/roku/index/87.json",
+      "sha256": "a5dd5751c931047920c0e128bd532c3f7eacd1be69ec69f307fd94e7bdd9b668"
+    },
+    {
+      "path": "data/roku/index/88.json",
+      "sha256": "486a443204501e2540756313711a264712dd840a7d97f319889718cb1de97e6b"
+    },
+    {
+      "path": "data/roku/index/89.json",
+      "sha256": "6624e22c3bab571cd09520bf03becbfb2f80b0b38a8710e875818c1cf29cb245"
+    },
+    {
+      "path": "data/roku/index/8a.json",
+      "sha256": "18d9fd5fdca14c6872f5c23a71429590fec47a84edcdc6ffd6a58d43afe02c22"
+    },
+    {
+      "path": "data/roku/index/8b.json",
+      "sha256": "95c319ecee3c4c255824c31ee98e54a52c31be0a1202da03143acfb17821bcff"
+    },
+    {
+      "path": "data/roku/index/8c.json",
+      "sha256": "7592e863bb11f151543514c44608db4b55429c93e40310ab6a109be96ee11bd1"
+    },
+    {
+      "path": "data/roku/index/8d.json",
+      "sha256": "3ea88a5bf91ec3d98a2b3707fb849b4128463f6e247500854e9ce1ddc1a26edf"
+    },
+    {
+      "path": "data/roku/index/8e.json",
+      "sha256": "4d0317b4d7f5758e8a9b1db2dbda6a0789b1ec4c3ab8c9a83c4e068672181ce3"
+    },
+    {
+      "path": "data/roku/index/8f.json",
+      "sha256": "1aae54d00075aa92c3a7ec5e7c7bb28b816fb2eae5dc5851159d16c40947b6b2"
+    },
+    {
+      "path": "data/roku/index/90.json",
+      "sha256": "cb59c8388599d8272258a32660043028570bafc4e95609056951f05592f499b0"
+    },
+    {
+      "path": "data/roku/index/91.json",
+      "sha256": "22b68bc8c56b89ce4683261d9a67196b3c6eac54ddf51321566841e691aa4b7a"
+    },
+    {
+      "path": "data/roku/index/92.json",
+      "sha256": "bcca061d9c11a7f8b7d822f187fe363f9ebb4c14392cf9e248616e3ae0490e10"
+    },
+    {
+      "path": "data/roku/index/93.json",
+      "sha256": "bcddf416e4ccf571f80ea82ef98d3a0745247e1129db580450bfc752ed2d6ee5"
+    },
+    {
+      "path": "data/roku/index/94.json",
+      "sha256": "0a7b0808af4644bbbd0961baa4a12e7e6b7a796560dd6c4ab5cf640209caca5a"
+    },
+    {
+      "path": "data/roku/index/95.json",
+      "sha256": "aa0eca3754b815df831c287419dd9b04847813f6847b2e477326817681c2e5c0"
+    },
+    {
+      "path": "data/roku/index/96.json",
+      "sha256": "1dba9dda1ab56c7efda1d44d8a37e21303d105e1e61f6735a8464c124e1c2907"
+    },
+    {
+      "path": "data/roku/index/97.json",
+      "sha256": "0e54741c06b9cbc568e2414ffbc8ddf4024f7d86e695703b4147507a7bacf025"
+    },
+    {
+      "path": "data/roku/index/98.json",
+      "sha256": "97ff8f8cd60baac36e56460d9b6ac35a43a1b8cef1fbe312fb697b185e107ab4"
+    },
+    {
+      "path": "data/roku/index/99.json",
+      "sha256": "6518039022fd4d2a0f105626ed81a56b0e3c29776e5a918b40155250e04d7e7b"
+    },
+    {
+      "path": "data/roku/index/9a.json",
+      "sha256": "0ad6a3ae1b8278de9e2f6d19c81b471f1c86b646cfa38cd1c89ddc25e7401a46"
+    },
+    {
+      "path": "data/roku/index/9b.json",
+      "sha256": "39928f771dd9ee2a7c582a280db12f7994c6ff584825ddd1924953a660056862"
+    },
+    {
+      "path": "data/roku/index/9c.json",
+      "sha256": "b473d1c92767dbbe750a98af6d38a1744d36929fc9a5868ac4c88a33de93ea70"
+    },
+    {
+      "path": "data/roku/index/9d.json",
+      "sha256": "b0454afd5c9c859f356a8b58d9acfbcdc70f875e81610523948bcd058a7fdb7d"
+    },
+    {
+      "path": "data/roku/index/9e.json",
+      "sha256": "31b1ee69e089ee352a714622e4f35a621e12046c38645396b75ba1b1f7d28dac"
+    },
+    {
+      "path": "data/roku/index/9f.json",
+      "sha256": "17f11b922211875e62848c478e9e3f843f717ed35a7d1530e4b34c4e87b884a0"
+    },
+    {
+      "path": "data/roku/index/a0.json",
+      "sha256": "8aa453f92e749d934c1326fe27b5f17299208e96411d8afefe4064bc85bc72d9"
+    },
+    {
+      "path": "data/roku/index/a1.json",
+      "sha256": "58135c640b15fad19bb3f2518109b8071a730507ba924ada92c4495829cbc49b"
+    },
+    {
+      "path": "data/roku/index/a2.json",
+      "sha256": "c9b6a8b772ee3e3e4562ad0c64661d11776ff9bad7cf67ec3c3ac49c6b608571"
+    },
+    {
+      "path": "data/roku/index/a3.json",
+      "sha256": "48443a54bbca3dc3d355e58be63d103278cff4351d39f8ea2cc1215108314cd8"
+    },
+    {
+      "path": "data/roku/index/a4.json",
+      "sha256": "c98520e5e10d58fb1f89d8ca99fbb7a1b43d5ede6387c3919386006b7d0f5989"
+    },
+    {
+      "path": "data/roku/index/a5.json",
+      "sha256": "46d6b5b776004cf64cec10d2a5d1459c22a0039c56cfa6534ad6ad8e02f5e0de"
+    },
+    {
+      "path": "data/roku/index/a6.json",
+      "sha256": "3ca282994d7e463fa1d3538c7b9e4eab2a8134b0505ab0dd48b42d68785b8d11"
+    },
+    {
+      "path": "data/roku/index/a7.json",
+      "sha256": "ac9db2abe3e580ff9be9bd1e264767bea9946fd69adc3456356a37ab9c482fc1"
+    },
+    {
+      "path": "data/roku/index/a8.json",
+      "sha256": "9bafeae15d3895c948ac629b4a3f898e8f143de4c7e1a50708a5cf0c9b272d65"
+    },
+    {
+      "path": "data/roku/index/a9.json",
+      "sha256": "b3a11ca3014cbf5cc21a7e7c64067be65cca919ecb4f9581c249120c56de5e75"
+    },
+    {
+      "path": "data/roku/index/aa.json",
+      "sha256": "f1458f4c006a082f0815cf4002bf7571e97a2b1f9e991cdd9143b85b9e3568fc"
+    },
+    {
+      "path": "data/roku/index/ab.json",
+      "sha256": "8714411a66e4f42ed80604796012586e73caf40de6d795608a8dfbbe91d25640"
+    },
+    {
+      "path": "data/roku/index/ac.json",
+      "sha256": "3457cd601f25b52858931c5c216da322570ec23335cf70f9fdfb245992b8f2ef"
+    },
+    {
+      "path": "data/roku/index/ad.json",
+      "sha256": "e0d8518e94377dae77030cf138ae89e3bdd043a43d39d7d2b9c1714b9fb7eba7"
+    },
+    {
+      "path": "data/roku/index/ae.json",
+      "sha256": "9ab4de34f62966dc9b7244f91a9ac598f39c1f09e40b449c4bd93e7801ecc23d"
+    },
+    {
+      "path": "data/roku/index/af.json",
+      "sha256": "faa48bb2468fb32086d53b170b37aa974fb6b93a9c958406ac36af4d9d5b8dec"
+    },
+    {
+      "path": "data/roku/index/b0.json",
+      "sha256": "ad41cf7d68df82f7ec07dacbb031d7b67185d3a4b70a9987f42c05f4b9fa4a84"
+    },
+    {
+      "path": "data/roku/index/b1.json",
+      "sha256": "f586c2cbad7205332349e35b94a07a54f577f6966759557daff4723d6bb9fe56"
+    },
+    {
+      "path": "data/roku/index/b2.json",
+      "sha256": "d6443330ac15e09f064f1f570b2fbfdf4d97f664593b85171433b7680bb7df4c"
+    },
+    {
+      "path": "data/roku/index/b3.json",
+      "sha256": "0275322aac290e1b7cf4e0d152028ca9e2011f92f4a50866baa88c7648024908"
+    },
+    {
+      "path": "data/roku/index/b4.json",
+      "sha256": "89d9d553ab78c347527d9dcb700aa2c1a3c92d7eebb6ce27f190838634444a9d"
+    },
+    {
+      "path": "data/roku/index/b5.json",
+      "sha256": "244f7d32917bb21409daa1f992002b7eaafe6bd274b784e7e981378c033f4bc9"
+    },
+    {
+      "path": "data/roku/index/b6.json",
+      "sha256": "eac95b406a811c3eb91125bc0c14c9e870180dddb42921ec12d74f65b70f4794"
+    },
+    {
+      "path": "data/roku/index/b7.json",
+      "sha256": "378e4ad7b6fc186a6186b924bdb711ef756cf4129d3a8f34e37ea30aee6bf097"
+    },
+    {
+      "path": "data/roku/index/b8.json",
+      "sha256": "f7ab219a68af96380e6334298abcb4a83f0b3a1c3ea69e55a0734d8a689a7ff3"
+    },
+    {
+      "path": "data/roku/index/b9.json",
+      "sha256": "72024ba97f97d28b62ffad965aa154595221ddc2144013f712a1893d6f7c87c6"
+    },
+    {
+      "path": "data/roku/index/ba.json",
+      "sha256": "a998256ef892a42ac1f56b9eb6a97672c0fecdf8250cb3e924b095018422a6b3"
+    },
+    {
+      "path": "data/roku/index/bb.json",
+      "sha256": "0a29b9a68ea9f08480c92b65c24f742ab7a8da4691e55865cfb277f28b322ef2"
+    },
+    {
+      "path": "data/roku/index/bc.json",
+      "sha256": "f1cd5fa03924bb2ff3381da8fca477bb85969c84b5f4fee73824b6294e0fdfaa"
+    },
+    {
+      "path": "data/roku/index/bd.json",
+      "sha256": "e8d167bc6e5254ef679b8a1ad15f8820ea16e7a843380484b72a4adf68511f6f"
+    },
+    {
+      "path": "data/roku/index/be.json",
+      "sha256": "04c820c851c564ac2913c840c789297ddc0674be788fb306ed54c5d4a8c71e45"
+    },
+    {
+      "path": "data/roku/index/bf.json",
+      "sha256": "532f61f543a46e4b12b06eec5beab844264818967c3a3bd5bf950ac40877de45"
+    },
+    {
+      "path": "data/roku/index/c0.json",
+      "sha256": "227f6dc9ef20a665c14c7da0f3d805ac2e5308875a04b3fb41060f1bf5c536a4"
+    },
+    {
+      "path": "data/roku/index/c1.json",
+      "sha256": "7cf44e1ade90f5ef7f9b374e4b5546a6456fd2e4f31e80fdb4a7fe445aef2323"
+    },
+    {
+      "path": "data/roku/index/c2.json",
+      "sha256": "ccaf1e008f772a9d66e794a25c24847c46e079cf052a15cd225ebfe77d822880"
+    },
+    {
+      "path": "data/roku/index/c3.json",
+      "sha256": "a07884d4ee06b8e7acc77d12d6604efa4506b1b5fcd0ca64bdb358e035f7458a"
+    },
+    {
+      "path": "data/roku/index/c4.json",
+      "sha256": "b1a182c655200ec6012d19b4c91feebe1a46d48e4b8f12d1439c2af29fdabc23"
+    },
+    {
+      "path": "data/roku/index/c5.json",
+      "sha256": "1dbf907da79711acc36bf4c60a45e460fc547db236510b4f9879f871b0a1f882"
+    },
+    {
+      "path": "data/roku/index/c6.json",
+      "sha256": "dad05a8ec38891caa6ad7868b30f352bcd1cf06d2b70b857230592dce43941cf"
+    },
+    {
+      "path": "data/roku/index/c7.json",
+      "sha256": "c076b786967dbe01e505a96b9a955deb7b4df021e47d3cd7fc887409c684c9b7"
+    },
+    {
+      "path": "data/roku/index/c8.json",
+      "sha256": "b739139a1ddfd05e11f28b0b06aa352fe4a32681fdd6341672555c55ce06be37"
+    },
+    {
+      "path": "data/roku/index/c9.json",
+      "sha256": "d9243bace7f22148691171957f1a110d0f657a49260c1aa3a7359bcc53228648"
+    },
+    {
+      "path": "data/roku/index/ca.json",
+      "sha256": "128d32eff214f51d6729aafe571874ec526ebeaadbbd0d70acd5e319b1908be4"
+    },
+    {
+      "path": "data/roku/index/cb.json",
+      "sha256": "4472c034b8366c235322b2a0510aa4c953b33633da0c49f827a0b780d26f54b2"
+    },
+    {
+      "path": "data/roku/index/cc.json",
+      "sha256": "1cd97695fd5821c473e83ab4e35c7bdd160bd551492fe244ac7053f347c2b555"
+    },
+    {
+      "path": "data/roku/index/cd.json",
+      "sha256": "3348e597ba9c79002ae87d304ee3927645f89d2919104af3d96a0bf788060a17"
+    },
+    {
+      "path": "data/roku/index/ce.json",
+      "sha256": "c7621e7425be057294f44299053e0c7633bfb864cfe049007e65ebce9695c396"
+    },
+    {
+      "path": "data/roku/index/cf.json",
+      "sha256": "17e8dbfcc6c4173b3cb6550a195ca1fb848a73eff336a7cf20033c38c941e62a"
+    },
+    {
+      "path": "data/roku/index/d0.json",
+      "sha256": "8b86a4af2d20a6cfbb910c4264b68410ead59aee41c17615c4e51cbf20101c4c"
+    },
+    {
+      "path": "data/roku/index/d1.json",
+      "sha256": "16b42df1098e9ec0c9b07851dfd5de726b892920951e2f2b4b42f5b337beef0f"
+    },
+    {
+      "path": "data/roku/index/d2.json",
+      "sha256": "9118884431f72f21ba194cc374f8c925e40f55467b5d32bd8b2bf785c50500fb"
+    },
+    {
+      "path": "data/roku/index/d3.json",
+      "sha256": "132735ea907b72e2c104aec86c4ff6b87f103e87dcd37610e5922e49cc066153"
+    },
+    {
+      "path": "data/roku/index/d4.json",
+      "sha256": "7276de151e45f4780a4527f50d21dd203b632e3ea2d92ad71568053e3e014304"
+    },
+    {
+      "path": "data/roku/index/d5.json",
+      "sha256": "f41d2ebca0b7c3ec78392522f61c6b209abb8718d83b8a55bf83d6e74c90a303"
+    },
+    {
+      "path": "data/roku/index/d6.json",
+      "sha256": "6e9530e5ec8b004265413980f13f23f87c2af13620a006bb2125cc687eb1c5a0"
+    },
+    {
+      "path": "data/roku/index/d7.json",
+      "sha256": "10cfe5914fc95c68215ba38bd46bd4baa714127c40526b5c99199766b39770c1"
+    },
+    {
+      "path": "data/roku/index/d8.json",
+      "sha256": "be5fa56d50789c836cab7736eb08dd654371df264063a64012ae6a2bde70b0c1"
+    },
+    {
+      "path": "data/roku/index/d9.json",
+      "sha256": "18a97b2d9cd1047c976072157a0a277c1a0fe17335b9c98909a27b395874fb54"
+    },
+    {
+      "path": "data/roku/index/da.json",
+      "sha256": "49535bd09370c918797723c3a7b4d7afa8dbb72d13e50c03ab275564344791e6"
+    },
+    {
+      "path": "data/roku/index/db.json",
+      "sha256": "ef0b2f2a400ab138312001f814c4c1fa732ee6cd0197883da999e5d40576c3e2"
+    },
+    {
+      "path": "data/roku/index/dc.json",
+      "sha256": "4a2cbf6412e541f019cdc0b4af4cc48c773218170ff1db280282fbcb84e6e144"
+    },
+    {
+      "path": "data/roku/index/dd.json",
+      "sha256": "b13c52928ce48c852c4d170374ba9469b851036a37c68d14f8c5298e041353a7"
+    },
+    {
+      "path": "data/roku/index/de.json",
+      "sha256": "7bd7649b17aeb89a6c80f541e5880ed5df2f2698464454d1f0d15deefc631802"
+    },
+    {
+      "path": "data/roku/index/df.json",
+      "sha256": "bcadd7c52545a374500be383e1b19a4eefb3a9739387ce6e69676b44a4fe8ee1"
+    },
+    {
+      "path": "data/roku/index/e0.json",
+      "sha256": "75887d07898792476e7bb503aa4143ce7834beae0d570a8253e9a33ea0cc8ed5"
+    },
+    {
+      "path": "data/roku/index/e1.json",
+      "sha256": "b6efa3e82661a5af9f0b5ebe6cc65eff38de643fc6f106b380ec783a09c3431c"
+    },
+    {
+      "path": "data/roku/index/e2.json",
+      "sha256": "f219008543fc221e9a89e5d8a60356a3691a62fdd081e5f5e276d5a1c3f1a17c"
+    },
+    {
+      "path": "data/roku/index/e3.json",
+      "sha256": "4fcd5c0404464f48a275099f6615ce50e2c4303fd1519452b53768d0d0a1be98"
+    },
+    {
+      "path": "data/roku/index/e4.json",
+      "sha256": "b4a135d88b7a6f8f8652d7a4f517c8bab46d76209b9d8f4634a0e2b3fb688b03"
+    },
+    {
+      "path": "data/roku/index/e5.json",
+      "sha256": "233707b9cb306d8f52d867e8f28230b12168faa67c16a07903a351b81b7ddb49"
+    },
+    {
+      "path": "data/roku/index/e6.json",
+      "sha256": "c338fe00adb69afce0f6b991913eaea4d2faddcc2c06d77b82e1039816ff2abb"
+    },
+    {
+      "path": "data/roku/index/e7.json",
+      "sha256": "4c249db66bc35dcb7118226b4c7de7209fa6bc2db29c7885ffb81dadf739cf57"
+    },
+    {
+      "path": "data/roku/index/e8.json",
+      "sha256": "443832b0d85ad4bbc6a50f4a70e5a6d21b165536fb23e2925e43f8b46e9c6ec9"
+    },
+    {
+      "path": "data/roku/index/e9.json",
+      "sha256": "95636ea57879f998404833fb5c8fd36a7eaa9fd15d99195ba3d6404004d78116"
+    },
+    {
+      "path": "data/roku/index/ea.json",
+      "sha256": "564103950f4fe6a924f508241e0b528afa420b3cfde9da41611cdce5656dc69d"
+    },
+    {
+      "path": "data/roku/index/eb.json",
+      "sha256": "eca6672cf4c70557c2e9464baa0da74b653686c1191c7ea642ead9dac182f373"
+    },
+    {
+      "path": "data/roku/index/ec.json",
+      "sha256": "fa63b3b426ad31178a2c9e0aa942e5aa9ccb508a4a049b7f806fb055f45b1428"
+    },
+    {
+      "path": "data/roku/index/ed.json",
+      "sha256": "7ef23103316611ba32dc217a156058f31a9e7cb743c5e22d35c4fe78bf852782"
+    },
+    {
+      "path": "data/roku/index/ee.json",
+      "sha256": "bf58ada0ed16a30221f12e68a392f68c100232636544f9c928b3187782343f22"
+    },
+    {
+      "path": "data/roku/index/ef.json",
+      "sha256": "673b6664ae6b5437d4f2f3859e7e088930b710d3b7096667481c650434bc6f60"
+    },
+    {
+      "path": "data/roku/index/f0.json",
+      "sha256": "f0d2a4a094a7bbd2f484915103bd26c8ed58dcf275b914df64a970b0fea10b40"
+    },
+    {
+      "path": "data/roku/index/f1.json",
+      "sha256": "12b4300803c8e7162617caee947af74d18f988990f746d868349efc138a93752"
+    },
+    {
+      "path": "data/roku/index/f2.json",
+      "sha256": "262282f84f8f75391461771cba1dc623ea72b44fb3d891a4fc69b3872b80c72a"
+    },
+    {
+      "path": "data/roku/index/f3.json",
+      "sha256": "cff736b418910e77fffe1c0016c8e261e30dfbcc6d780749fb4104b01f43b601"
+    },
+    {
+      "path": "data/roku/index/f4.json",
+      "sha256": "57991f3037343cc95f86b03977e85d343837f9da79db13ad8a380de04fcecede"
+    },
+    {
+      "path": "data/roku/index/f5.json",
+      "sha256": "82fbbac50434585435399eb34e796d7bdcfe6170ac964a0f4e729f997059cf24"
+    },
+    {
+      "path": "data/roku/index/f6.json",
+      "sha256": "3ea40fc60872d538ff12950b433483f085f70e8976d261aca8d5bf20b0ebea43"
+    },
+    {
+      "path": "data/roku/index/f7.json",
+      "sha256": "b2d94aa11935c2b289bfe73fa4860a7c126a7bc8df8454173d2ef4214b0bd36c"
+    },
+    {
+      "path": "data/roku/index/f8.json",
+      "sha256": "c9f54c960e745117621db0ecaeece8163d3e7c7a7480396249c6a6e1707fafc2"
+    },
+    {
+      "path": "data/roku/index/f9.json",
+      "sha256": "8f8cda626ed82510b25f9e2ae8ba1b60e8dde4b09efe2d0f08ea1a2f9e31afa9"
+    },
+    {
+      "path": "data/roku/index/fa.json",
+      "sha256": "3e6070198918e4ca93c6a963a4510e5ea0fd65ecc97031c1b7487f2f82ebe13a"
+    },
+    {
+      "path": "data/roku/index/fb.json",
+      "sha256": "9759344d8b2e610fa4be20f65df900918365d934a8ac7b782101a5875ae1dc60"
+    },
+    {
+      "path": "data/roku/index/fc.json",
+      "sha256": "c553f5fb4045c0781640c2910b4204096569b999da54dfba6f2abf52b425bb77"
+    },
+    {
+      "path": "data/roku/index/fd.json",
+      "sha256": "10346c3c09ba69498f48571849ce002b0516877c80133d45f578f043ed3d875d"
+    },
+    {
+      "path": "data/roku/index/fe.json",
+      "sha256": "5f79fee92a4fd589576151ca5222594d2eda534507a648f329b4c84db07de318"
+    },
+    {
+      "path": "data/roku/index/ff.json",
+      "sha256": "994567be829079ee6bb652aef439b690ad633ea99f9fe76d8571785cc3b9839b"
     },
     {
       "path": "data/webcams.json",
@@ -75,11 +1109,11 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "76196522f9dcf763990e4f660505ffe4a88d8cadba0cdd25e54a329a80f692c4"
+      "sha256": "0ed18d4715be7e94dda10eba8d3507d2fba4d32f348136ec8257645f110f8319"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "33c0f1692fbcbc0d8932e012f95122b3beaed8450c5107324867f65fb57d6806"
+      "sha256": "8a0a9e83d54416aaa5de50d947797a25310f14d39fbfecca0bcc25a1d60f1a7b"
     },
     {
       "path": "src/cw.mjs",
@@ -103,23 +1137,39 @@
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "7fb6f38406498f34f8f632614b1349a55fa7afe4dd146658eb81ce53a98728dc"
+      "sha256": "da74009eb51995434a0aca1913e287aed15ff3ca61eb6f0d93f8167f78fbb1bd"
     },
     {
       "path": "src/publishers.mjs",
-      "sha256": "3125c08506e3d88b261f21c2b9c0fb90009f7800160e3240a94a7de1f3407284"
+      "sha256": "faa92562028170ef2288d53e84a1915baf49f3fb04f41dfb4fc667b0171c4710"
     },
     {
       "path": "src/redbull.mjs",
       "sha256": "d6161c84a7e87d7d43d4aa74d113e622f7541ac669d04c11371c1ed6119b741d"
     },
     {
+      "path": "src/roku-catalog.mjs",
+      "sha256": "5282c912741fbba2e2592d6eac7904d36dea194aa15e69f83103ed05076058f1"
+    },
+    {
+      "path": "src/roku-library.mjs",
+      "sha256": "863f041d453f57421a20384956dab5a71f2497a84a007d21842dcbe44c6303fd"
+    },
+    {
+      "path": "src/roku-live.mjs",
+      "sha256": "052bab05bf590c7fcce1af19d66dfdbfd8eba1cdc02a0da57b7534c3f75ce06c"
+    },
+    {
+      "path": "src/roku-series.mjs",
+      "sha256": "8d7f3def119d1eb47cea5c66bdad179c36fe906c7247abe52eda1c9e83a67a31"
+    },
+    {
       "path": "src/roku.mjs",
-      "sha256": "93e5a2f9422fc0266dcee6063a147fa1c2ec39eaf23ec1e504a9fe8ffba1dc89"
+      "sha256": "5de3e7627d4b3aa3864353f79d561d8cf7878afec0e1e87f8c838a7e136f8ef2"
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "743d7b22ccfec3a687a2481984883962f3e29436dcefd0b814d8b0d3a936e0fa"
+      "sha256": "0b6654c385a8db93bc39c9eb8b927de7f7f7bae254333df30e70d3ea3f6e7383"
     },
     {
       "path": "src/storage.mjs",
@@ -159,7 +1209,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "4adb68152a46ca81a772a4b204c99fff40f056b46657aee848d24e90b85fdb9b"
+      "sha256": "b1baf9964f323a703859fc16f5f417d8aa4c07ca496885d5ba706affdee54823"
     },
     {
       "path": "vendor/APACHE-2.0.txt",

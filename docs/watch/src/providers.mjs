@@ -4,7 +4,7 @@ const rows=[
  ['nfb','NFB','https://www.nfb.ca/','Films and animation in the National Film Board’s own embedded player.','Films & documentaries','vod','embed'],
  ['30a','30A TV','https://30a-tv.com/','Independent television, music and coastal living.','Entertainment','live','native'],
  ['pluto','Pluto TV','https://pluto.tv/','Live channels, films and familiar favorites.','Entertainment','both','website'],
- ['roku','The Roku Channel','https://app.roku.com/','Browse a selection of free movies here, then watch in Roku’s official player in a new tab.','Films & shows','vod','publisher'],
+ ['roku','The Roku Channel','https://app.roku.com/','Browse free movies and shows, then watch with Roku’s official player in a new tab.','Films & shows','vod','publisher'],
  ['tubi','Tubi','https://tubitv.com/','Films, series and live channels.','Films & shows','both','website'],
  ['samsung','Samsung TV Plus','https://www.samsungtvplus.com/','News, entertainment and free live television.','Entertainment','live','website'],
  ['lg','LG Channels','https://www.lg.com/us/lg-channels','Free streaming channels from LG.','Entertainment','live','website'],

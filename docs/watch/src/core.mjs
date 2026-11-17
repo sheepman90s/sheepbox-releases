@@ -1,4 +1,9 @@
 export const VERSION = '2.0.0-RC1';
+// Imported Roku episode files do not inflate the top-level catalogue count.
+export function catalogEntryCount(catalog){
+  return catalog.items.filter(item=>!(item.provider==='roku'&&item.kind==='episode')).length+
+    (catalog.providerSeries??[]).filter(item=>item.provider==='roku').length;
+}
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const plainText = value => String(Array.isArray(value) ? value[0] ?? '' : value ?? '')
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<[^>]+>/g,' ')
@@ -33,7 +38,7 @@ export function durationLabel(seconds) {
 }
 export function filterItems(items,{query='',provider='',category='',kind=''}={}) {
   const words=fold(query).split(/\s+/).filter(Boolean);
-  return items.filter(item=>(!provider||item.provider===provider)&&(!category||item.categories?.includes(category))&&(!kind||item.kind===kind)&&
+  return items.filter(item=>(!provider||item.provider===provider)&&(!category||item.categories?.includes(category))&&(!kind||(kind==='video'?['video','episode'].includes(item.kind):item.kind===kind))&&
     words.every(word=>fold([item.title,item.description,item.providerName,...(item.categories??[])].join(' ')).includes(word)));
 }
 export function parseRoute(hash) {

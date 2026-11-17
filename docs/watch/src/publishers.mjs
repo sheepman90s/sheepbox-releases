@@ -1,4 +1,5 @@
 import {safeUrl,plainText} from './core.mjs';
+import {isRokuSeriesReference,isRokuExternalSeries} from './roku-library.mjs';
 
 export function publisherEmbedUrl(value) {
   const url=safeUrl(value);if(!url)return '';
@@ -37,9 +38,12 @@ export function providerSeriesCards(catalog) {
   const items=new Map(catalog.items.map(item=>[item.id,item]));const seen=new Set(items.keys());const result=[];
   for(const row of catalog.providerSeries??[]) {
     if(!/^[A-Za-z0-9][A-Za-z0-9:._-]{0,239}$/.test(row.id??'')||seen.has(row.id)||!row.title)continue;
-    const episodes=[...new Set(row.episodes??[])].filter(id=>items.get(id)?.provider===row.provider);
-    if(!episodes.length)continue;const first=items.get(episodes[0]);seen.add(row.id);
-    result.push({...first,id:row.id,title:plainText(row.title),description:plainText(row.description??''),kind:'series',mode:'series',categories:['Series'],episodes,image:safeUrl(row.image)||first.image,official:safeUrl(row.official)||first.official});
+    const remote=isRokuSeriesReference(row),external=isRokuExternalSeries(row);
+    const episodes=[...new Set(row.episodes??[])].filter(id=>remote||items.get(id)?.provider===row.provider);
+    if(!episodes.length&&!remote&&!external)continue;const first=items.get(episodes[0])??{};seen.add(row.id);
+    result.push({...first,id:row.id,provider:row.provider,providerName:row.providerName??first.providerName??'Roku',title:plainText(row.title),description:plainText(row.description??''),kind:'series',mode:'series',categories:[...new Set(['Series',...(row.categories??[]).map(plainText).filter(Boolean)])],episodes,image:safeUrl(row.image)||first.image,official:safeUrl(row.official)||first.official,
+      ...(remote?{sourceId:row.sourceId,episodeCount:row.episodeCount,episodeFile:row.episodeFile,freeGuestVerified:row.freeGuestVerified===true}:{}),
+      ...(external?{sourceId:row.sourceId,externalOnly:true,freeGuestVerified:true,parentFreeOptionVerified:true}:{} )});
   }
   return result;
 }
