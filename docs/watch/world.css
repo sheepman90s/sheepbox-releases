@@ -30,6 +30,11 @@
   text-align:center;
   line-height:1.6;
 }
+.world-legend{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin:12px 0;color:#d8c9e5;font-size:12px}
+.world-legend span{display:inline-flex;align-items:center;gap:8px}
+.world-legend-key{display:inline-block;width:22px;height:12px;border:2px solid #5eebd4;border-radius:3px}
+.world-legend-key.selected{border-color:#ffd914}
+.world-country.has-webcams>span:before{content:'';display:inline-block;width:6px;height:6px;border:1px solid #5eebd4;border-radius:50%;background:#5eebd4;margin-right:7px;vertical-align:middle}
 @media(max-width:700px) {
   .world-globe {height:360px;border-radius:16px;}
 }

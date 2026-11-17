@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "9fae97a25eb7",
+  "revision": "89970bd4d5de",
   "catalogGeneratedAt": "2026-11-17T03:44:37.732Z",
   "titles": 7040,
   "live": 7,
@@ -75,7 +75,7 @@
     },
     {
       "path": "src/globe.mjs",
-      "sha256": "53b22d36c0472851c4e47a0e392ccf390ef8f68dd526c283e8a393b6e8fff6be"
+      "sha256": "a0a2fc8bd9ef197c2dd493e473a5c36a2e8172fff0adcf9162f05631fde73315"
     },
     {
       "path": "src/player.mjs",
@@ -103,7 +103,7 @@
     },
     {
       "path": "src/world-view.mjs",
-      "sha256": "3e61019c3276de513abfc8912b5d2d9333ecb91d4b0b10e298a966147dc19dbb"
+      "sha256": "140e6a35e0bc8f1d0302e9327f141300687828c13b5237c08cf1ab824c4a6e6b"
     },
     {
       "path": "styles.css",
@@ -111,7 +111,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "f0ab3c665ca3ae43790a88526f7f24db1538e6d2018d86d86ba095ac8169c9c6"
+      "sha256": "b84926775f48c430c0da25bf9cdc33703375331e78a9479f763f19fd487e3847"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
@@ -127,7 +127,7 @@
     },
     {
       "path": "world.css",
-      "sha256": "fef3e3e2cf49f692baaac04bbe825037007d5478a9f951e070c71eebe4ea7271"
+      "sha256": "64f854f9883b21aec58df98716cb77aae4f737b84634797cf7c265a5a35e6d89"
     }
   ]
 }

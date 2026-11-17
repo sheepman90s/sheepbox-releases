@@ -59,8 +59,9 @@ function outlineVertices(countries) {
 }
 
 /** Positive zoom(delta) moves closer. Programmatic select never calls onSelect. */
-export function mountGlobe(container, {countries, onSelect=()=>{}, onHover=()=>{}, selected='', signal}={}) {
+export function mountGlobe(container, {countries, webcamCountries=[], onSelect=()=>{}, onHover=()=>{}, selected='', signal}={}) {
   const rows=prepareCountries(countries); const byCode=new Map(rows.map(country=>[country.code,country]));
+  const withWebcams=new Set(webcamCountries);
   const canvas=document.createElement('canvas');canvas.className='world-globe-canvas';canvas.tabIndex=0;
   canvas.setAttribute('role','application');canvas.setAttribute('aria-label','Interactive world globe. Drag to rotate, use arrow keys to explore, and press Enter to choose the country at the centre. Use plus or minus to zoom.');
   canvas.setAttribute('aria-keyshortcuts','ArrowLeft ArrowRight ArrowUp ArrowDown Enter + -');
@@ -86,8 +87,8 @@ export function mountGlobe(container, {countries, onSelect=()=>{}, onHover=()=>{
     container.dataset.globeReady='false';pointers.clear();
   }
   const api={select,zoom,reset,destroy};
-  let sphere,earth,line,atmosphere,vertexBuffer,indexBuffer,borderBuffer,selectedBuffer,markerBuffer,texture;
-  let borderCount=0,indexCount=0;
+  let sphere,earth,line,atmosphere,vertexBuffer,indexBuffer,borderBuffer,webcamBuffer,selectedBuffer,markerBuffer,texture;
+  let borderCount=0,webcamCount=0,indexCount=0;
   function buffer(data,target){const b=gl.createBuffer();buffers.push(b);gl.bindBuffer(target,b);gl.bufferData(target,data,gl.STATIC_DRAW);return b;}
   function select(code){
     const country=byCode.get(code);if(!country)return;
@@ -103,6 +104,8 @@ export function mountGlobe(container, {countries, onSelect=()=>{}, onHover=()=>{
     earth=program(gl,VERTEX,EARTH_FRAGMENT);line=program(gl,VERTEX,LINE_FRAGMENT);atmosphere=program(gl,VERTEX,ATMOSPHERE_FRAGMENT);programs.push(earth,line,atmosphere);
     sphere=sphereMesh();vertexBuffer=buffer(sphere.vertices,gl.ARRAY_BUFFER);indexBuffer=buffer(sphere.indices,gl.ELEMENT_ARRAY_BUFFER);indexCount=sphere.indices.length;
     const borders=outlineVertices(rows);borderBuffer=buffer(borders,gl.ARRAY_BUFFER);borderCount=borders.length/3;
+    const webcamBorders=outlineVertices(rows.filter(country=>withWebcams.has(country.code)));
+    webcamBuffer=buffer(webcamBorders,gl.ARRAY_BUFFER);webcamCount=webcamBorders.length/3;
     selectedBuffer=buffer(new Float32Array(),gl.ARRAY_BUFFER);markerBuffer=buffer(new Float32Array(),gl.ARRAY_BUFFER);
     texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([25,65,102]));
     gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
@@ -133,6 +136,7 @@ export function mountGlobe(container, {countries, onSelect=()=>{}, onHover=()=>{
     use(earth);bindSphere(earth);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.uniform1i(earth.texture,0);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
     if(earth.uv>=0)gl.disableVertexAttribArray(earth.uv);
     use(line,1.001);gl.bindBuffer(gl.ARRAY_BUFFER,borderBuffer);gl.enableVertexAttribArray(line.position);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,.63,.67,.72,1);gl.drawArrays(gl.LINES,0,borderCount);
+    if(webcamCount){gl.bindBuffer(gl.ARRAY_BUFFER,webcamBuffer);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,.37,.92,.83,1);gl.drawArrays(gl.LINES,0,webcamCount);}
     if(selection&&selectedCount){gl.bindBuffer(gl.ARRAY_BUFFER,selectedBuffer);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,1,.85,.08,1);gl.drawArrays(gl.LINES,0,selectedCount);}
     if(selection){use(line,1.003);gl.bindBuffer(gl.ARRAY_BUFFER,markerBuffer);gl.vertexAttribPointer(line.position,3,gl.FLOAT,false,12,0);gl.uniform4f(line.color,1,.85,.08,1);gl.drawArrays(gl.POINTS,0,1);}
     container.dataset.longitude=lon.toFixed(3);container.dataset.latitude=lat.toFixed(3);container.dataset.distance=distance.toFixed(3);
