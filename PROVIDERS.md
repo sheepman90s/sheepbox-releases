@@ -1,5 +1,7 @@
 # Supported providers
 
+**Android test release [2.0.0-RC1 / code201](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC1)** adds **159 Philo Free Channels** to Live TV, channel search and favorites. Philo's official player runs inside SheepBox with a Chrome-compatible profile; Philo retains access, ads, consent, DRM and available captions. The complete dated list is bundled and refresh preserves a saved list on failure. Philo's own Guide is available in its player; Philo VOD, a native guide, recording and Simple automatic fallback are excluded. Enable **Include test versions** in App updates to receive RC1. The provider table below describes **1.9.0 stable**, which remains Latest.
+
 **Current stable release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0), version code 200.** Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
 
 | Provider | Live TV | On Demand |
