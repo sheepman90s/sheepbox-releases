@@ -8,6 +8,14 @@ Planned work after stable [1.9.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 2.0.0-RC2 (Android test release)
+
+- Native Philo live/free VOD: 159 verified live listings, 500 movies, 145 shows and 2,602 free episodes in the checked selection, with categories, search/favorites and shared seasons.
+- FreeTV Live TV Complete and On Demand: complete first-load caching, categories, artwork, favorites/search, free seasons, guide data and native playback/history/resume/auto-next. The checked US selection has 677 movies, 366 shows and 12 live channels, primarily Spanish; regional availability applies.
+- TV playback rejects audio-only offers, advances to another source and remembers success after a rendered video frame. Intentional radio remains supported.
+- 794 unit tests, zero-error lint, independent upgrades from stable and RC1, and 12 production device cases passed on the exact signed release on API37. Physical TV, minimum-SDK and full midroll/long-duration acceptance remain open. Native Philo guide/history/resume, new-provider recording and Simple fallback remain excluded.
+- Enable Include test versions for [RC2/code202](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC2). **1.9.0 remains Latest stable.** SheepBox Web remains build `9eb244365387`.
+
 ## Delivered in 1.9.0 stable
 
 Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches.
