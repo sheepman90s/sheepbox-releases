@@ -5,6 +5,7 @@ Planned work after stable [1.9.0](https://github.com/sheepman90s/sheepbox-releas
 | Feature | Status | Scope |
 |---|---|---|
 | Closed Captioning | Planned | Consistent caption controls across Live TV and On Demand, language/track selection, and saved preferences where providers supply supported captions. Existing provider subtitle support will be extended into a consistent experience. |
+| Record by name | Planned | Search for a show by name, then choose **Record** directly from a matching search result, using existing recording support where available. |
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 

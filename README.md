@@ -88,6 +88,7 @@ FilmRise, Filmzie, NFB and RetroCrush are **VOD-only**. All providers listed abo
 ## Roadmap
 
 - **Closed Captioning:** consistent controls, track/language selection and saved preferences where supported.
+- **Record by name:** search for a show, then choose Record directly from a matching search result where recording is supported.
 - **Split Screen:** multiple supported streams, remote-friendly pane selection and audio controls.
 - **Additional Providers:** continued research and integrations for free, account-free Live TV and VOD.
 
