@@ -1,83 +1,78 @@
 # Supported providers
 
-**Android test release [2.0.0-RC6 / code 206](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6)** adds BYUtv On Demand: 150 show groups and 145 movie/standalone entries covering 8,581 videos in the complete checked US/English guest selection. It also adds Revry's 161 movies, 76 shows, 593 episodes, five clips and two live channels with a guide. Both use native playback with publisher access rules, protection, advertising and available captions; browsing, search/favorites, seasons, history/resume and auto-next use the regular screens. BYUtv live TV, account-gated/future-only offers and BYUradio are excluded. Globe Reset/zoom controls are reachable below Select on globe; RC5's full Philo free library, PBS and startup/device fixes remain included. Enable **Include test versions** for RC6. The provider table below describes **1.9.0 stable**, which remains Latest; the web player is unchanged.
+The first table describes **[1.9.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0)**. **[2.0.0-RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6)** includes those providers and the additions in the second table. Enable **Settings > App updates > Include test versions** for RC6.
 
-**Current stable release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0), version code 200.** Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
+Availability depends on region, device and the publisher's current free offer. A supported provider does not guarantee every channel, title or playback feature.
+
+## Android stable
 
 | Provider | Live TV | On Demand |
 |---|---|---|
-| IPTV-org | Free-to-air channel lists by country and genre | — |
+| IPTV-org | Free-to-air lists by country and genre | — |
 | Pluto TV | Yes | Movies & shows |
 | Samsung TV Plus | Yes | — |
 | LG Channels | Yes | — |
-| Plex | Yes | Movies & shows in 1.7.0 stable |
+| Plex | Yes | Movies & shows |
 | Roku Channel | Yes | Movies & shows |
 | Tubi | Yes | Movies & shows |
 | Xumo | Yes | Movies & shows |
 | Sling Freestream | Yes | Free movies & shows |
 | YuppTV Free | Free lineup | — |
 | Fawesome | Yes | Movies & shows |
-| AsianCrush | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
-| Midnight Pulp | Not integrated | Free guest Movies & Shows, categories, search/favorites, seasons/episodes, native publisher-ad-supported playback, supplied captions and history/resume/autoplay |
-| Haystack News | Not integrated | Current news clip selections, categories, search and favorites; official player inside SheepBox retains publisher advertising/captions. Not a full archive; no native history/resume/autoplay |
-| Runtime | 13 guest regional channels and provider EPG in 1.9.0 stable | Movies, series/seasons/episodes, cached browsing and native publisher-ad-supported playback; family titles stay in Runtime; provider total mismatch keeps + counts |
-| PBS KIDS | Not implemented | Currently listed full episodes, movies, clips and 57 shows in 1.9.0 stable; native HLS with publisher underwriting requests; browsing opens during download and removed show pages no longer block completion |
-| Popcornflix | No standalone lineup verified | Guest Movies & Shows in 1.9.0 stable: categorized caching, shared seasons/episodes, artwork, search/favorites/history/resume/autoplay, captions and native playback with publisher advertising. Current US website snapshot: 580 movies and 166 shows; 746 catalog images decoded. |
+| AsianCrush | — | Free movies & shows; native playback |
+| Midnight Pulp | — | Free movies & shows; native playback |
+| Haystack News | — | Current clip selections using the official player; not the full archive |
+| Runtime | Guest regional channels and guide | Movies, series and family titles; incomplete counts marked + |
+| PBS KIDS | — | Currently listed episodes, movies, clips and shows |
+| Popcornflix | — | Guest movies & shows |
 | Local Now | Yes | Movies & shows |
 | STIRR | Yes | Movies & shows |
-| Zeam | Guest stations and guide; native Media3/IMA | Hosted show episodes and VOD recordings; categories/counts, Play/Favorite, native playback and resume |
-| Shout! TV | Free guest lineup | Free guest movies and shows; availability varies |
+| Zeam | Guest stations and guide | Featured-publisher hosted episodes and VOD recordings |
+| Shout! TV | Free guest lineup | Free guest movies & shows |
 | TCLtv+ | Free guest lineup and guide | Movies by category |
 | wedotv | Free guest lineup | Movies & shows |
-| Cineverse | All Channels A-Z | Movies & shows |
-| Filmzie | — | Guest movies & shows in 1.7.0 stable |
-| The CW | Guest lineup and guide in 1.7.0 stable | Guest Movies & Shows with native Widevine/IMA in 1.7.0 stable |
-| Free Live Sports | Guest sports lineup and guide in 1.7.0 stable | Guest Movies & Shows with native HLS/IMA in 1.7.0 stable |
-| FilmRise | Not implemented | Movies & shows; added in RC6 |
-| NewsON | Guest live/AlwaysON stations and current programme metadata in 1.8.0 stable | Recent newscasts and clips by state/station in 1.8.0 stable |
-| NFB | No | Free regional Films & Collections, cached genre/language browsing, native HLS/captions, episodes and resume/autoplay in 1.8.0 stable |
-| Canela.TV | Guest regional lineup/guide, native playback and session renewal in 1.8.0 stable | Free Movies & Shows, cached browsing, full episodes, search/favorites, resume/autoplay and provider advertising in 1.8.0 stable |
-| RetroCrush | No | Free guest movies and eligible show episodes, categorized caching, native ad-supported playback and artwork recovery in 1.8.0 stable |
-| FlixHouse | 11 guest live channels and guide in All Channels A–Z in 1.8.0 stable | Current US snapshot: 2,078 guest movies and 14 shows/168 eligible episodes, categorized caching and native ad-supported playback in 1.8.0 stable |
-| DOCUMENTARY+ | Four guest live channels and guide in All Channels A–Z in 1.8.0 stable | Current snapshot: 270 movies, 38 shows/291 free episodes, categorized caching, native ad-supported playback and artwork corrections including Arctic Alchemy. Intermittent upstream HTTP500/504 errors observed |
-| Red Bull TV | Nine continuous sports channels and the actual provider guide in 1.9.0 stable; current live events when offered | Films, replays, clips and series, seasons/Extras, categorized cache, shared search/favorites/resume/autoplay and native publisher-ad-supported playback. Current regional snapshot: 598 videos and 281 series (879 catalog images decoded); nine continuous channels. Skate Tales: six seasons plus Extras, 30 unique episodes with decoded artwork. |
-| NASA+ | Continuous NASA+ channel in 1.9.0 stable; no mapped programme schedule |279 standalone videos and39 series/328 episode posts in the current public catalog; categorized cache, native HLS/captions, history/resume/autoplay. Four upstream source URLs currently return404 |
-| Internet Archive | SheepBox-created 24/7 collection channels | Public-domain / Creative Commons films, classic TV & shorts |
+| Cineverse | All Channels A–Z | Movies & shows |
+| Filmzie | — | Guest movies & shows |
+| The CW | Guest lineup and guide | Guest movies & shows |
+| Free Live Sports | Guest sports lineup and guide | Guest movies & shows |
+| FilmRise | — | Movies & shows; some guest categories remain incomplete |
+| NewsON | Guest live and AlwaysON stations | Recent newscasts and clips by state and station |
+| NFB | — | Free regional films and collections |
+| Canela.TV | Guest regional lineup and guide | Free movies & shows |
+| RetroCrush | — | Free guest movies and eligible show episodes |
+| FlixHouse | Supported guest lineup and guide | Free guest movies and eligible episodes |
+| DOCUMENTARY+ | Supported guest lineup and guide | Free movies and eligible episodes |
+| Red Bull TV | Continuous sports channels and available live events | Regional films, replays, clips and series |
+| NASA+ | Continuous channel; no mapped programme schedule | Standalone videos and series |
+| Internet Archive | SheepBox-created collection channels | Public-domain / Creative Commons films, classic TV and shorts |
 
-“Live TV” describes the lineup available in SheepBox; it does not imply that every provider uses the same integration or supports every channel. Internet Archive 24/7 channels are assembled from its collections, rather than a standalone broadcaster lineup.
+## Android test release additions
 
-On Demand providers use shared title cards, Play/Episodes and Favorite actions, category counts, search and cached browsing. Movies and shows are counted separately, with duplicate titles removed within each count. FilmRise counts with + are lower bounds because its guest service has returned only part of those categories. Catalogs load when opened, rather than at app startup.
+| Provider | Live TV | On Demand |
+|---|---|---|
+| Philo Free | Free channels | Free movies & shows; native playback |
+| FreeTV | Guest regional channels and guide | Free movies & shows; native playback |
+| PBS | — | Free regional episodes, including Popular shows; Passport excluded |
+| Revry | Two guest channels and guide | Free movies, shows, episodes and clips; premium offers excluded |
+| BYUtv | — | Audited US/English guest videos; live, account-gated, future-only and BYUradio offers excluded |
 
-Haystack uses its official web player without native history/resume/autoplay. Nova, Vesper, HappyKids and Very Local remain excluded. Android6 delivered-ad evidence remains unresolved for the newest movie providers.
+RC6 also improves startup update prompts, globe selection and controls, PBS Popular shows, the Philo free library and device settings. BYUtv's dated US/English audit covers 8,581 guest videos in 150 show groups and 145 movie/standalone entries. Catalogues and access can change after an audit.
 
-Plex Movies & Shows use a fresh anonymous guest session, categorized catalog caching, native IMA and standard Android Widevine. Filmzie Movies & Shows use the public guest catalog, native HLS and unchanged IMA schedules; no Filmzie Live TV catalog is integrated. FilmRise is VOD-only; no standalone live lineup has been verified. Account-requiring Google Freeplay and Prime/Freevee are outside the current provider plan.
+## Browsing and playback limitations
 
-FilmRise's 1.2.0 service check verified 4,579 movies, 818 shows and 93 categories, including all 251 True Crime movie titles. Three categories remain provider-limited and use + counts; the overall movie count is a lower bound. Initial-load batches use alternate sort orders to retrieve additional free titles and resume completed work; All New Arrivals returned 3,231 distinct free movies. The app cannot claim a complete FilmRise catalog. Fresh primary movie/episode manifests and ad schedules passed. These are a service snapshot, not guaranteed catalog sizes or proof of physical-TV playback and ad delivery.
-
-FlixHouse counts are a current US guest-catalog snapshot, not its full Premium or advertised live lineup. Movie, episode and shared live playback were verified after actual provider ad completion on an Android emulator; the user reported RC5 checks out good (device/scenarios unspecified). Its first full catalog load can take several minutes; later browsing uses the saved cache.
-
-See the [roadmap](ROADMAP.md) for future work.
-
-## Zeam in 1.4.0
-
-Zeam On Demand opens to an All Videos grid with Play/Favorite cards, search and unique category counts. It loads hosted episodes from show/season collections as well as legacy VOD recordings. Categories come from Zeam's featured-publisher collections, including Comedy, Entertainment, Sports, True Crime and Destinations. Publisher filtering is optional and excludes sources with no supported videos.
-
-The first opening builds a local metadata cache with progress; later visits open from that cache. Reload refreshes the directory and retries failed sources. Repeated featured shows are deduplicated by stable content identity. Broadcasts display their station and air date, and episodes use their own artwork where available. Partial loads retain completed work and mark loaded counts with +.
-
-Native playback supports seeking, resume and watch history. Hosted episodes use provider IMA prerolls and midrolls after eight minutes of watched content; pauses, ads and large seek jumps do not advance that clock. The catalog covers hosted content discovered through the featured publisher directory, not every video format or page on Zeam. Dedicated season navigation, autoplay and saved caption preferences remain future work. Recording remains unavailable.
-
-The [1.4.0 stable release](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.4.0) uses version code 155 and includes the user-confirmed RC6 changes. Catalogs, ads and availability vary by region and device.
+- Catalogues load when opened and use saved metadata caches. Large first loads can take several minutes. Reload refreshes the provider; incomplete counts are marked **+**.
+- FilmRise's guest service limits some categories. Runtime can report different publisher totals. Haystack covers current clip selections, and Zeam covers hosted content discovered through its featured-publisher directory. These are not claims of complete archives.
+- FlixHouse, RetroCrush, Revry and other mixed free/paid services include only supported free offers. Publisher region, access windows, normal protection and advertising remain in force.
+- Haystack uses its official player inside SheepBox and has no native history, resume or autoplay. Zeam has playback resume and history; dedicated season navigation, autoplay, saved caption preferences and recording remain unavailable there.
+- Captions, seeking, resume, autoplay, guide data and recording depend on the source. Protected streams and unsupported ad-managed sources cannot be recorded. Physical-TV behavior and complete ad-break coverage vary; not every title, region or device has been tested.
+- DOCUMENTARY+ can return temporary publisher errors. Some NASA+ videos have unavailable upstream sources. Refresh or retry before reporting a problem.
 
 ## Web Cams and World View
 
-SheepBox 1.3.0 includes country-first Famelack Web Cams and a native World View globe as the fifth Home choice. Native browsing supports local categories and counts, search and favorites; playback uses YouTube's official player inside SheepBox. The investigated directory contains 3,915 cameras across 93 countries, with 20 thematic categories. These are YouTube embeds, not additional IPTV-org TV channels. Cameras may be offline or disallow embedding. Physical-TV testing is still needed. The test build also appends supported HLS backups to existing direct-stream channels using exact original-URL and country matches, preserving primaries and guide mappings. Ambiguous matches and native session providers are excluded. See the [research chart](ROADMAP.md#famelack--tvgarden).
+The Famelack webcam directory supports country browsing, search and favorites. Cameras use YouTube's official player and may be offline or disallow embedding. World View combines country-based camera and live-TV browsing. Required map and directory credits remain with the distributed data.
 
-Roku on-demand in RC3 also uses Roku's new canonical API hostname, fixing playback requests that previously redirected to an HTML response instead of JSON.
+## Web preview
 
-RC4 refines World View with automatic country zoom and highlighted outlines, direct camera lists, vertical webcam country navigation, and square button styling throughout the app, including On Demand. A limited touch-mode focus fix prevents repeated unsolicited playback controls. Roku VOD playback was confirmed working by the user.
+[SheepBox Web](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. Coverage differs from Android and some selections are partial. Philo, Fawesome and Roku open official players in another tab; return to SheepBox to continue browsing. Other sources use supported direct or embedded playback. Browser, account and region requirements are determined by the publisher.
 
-RC5 adds on-demand NASA country-detail terrain with saved fallback and makes the globe display-only. The country picker controls its position, toolbar buttons control zoom, and pill-shaped toolbar buttons have matching yellow focus outlines. Home icons are smaller and closer together. Reported AMC/Bosnia streams were reviewed; no verified replacements were found for the failing upstream sources.
-
-RC6 adds “Loading GIS Data for World View…” as the final startup step, with download progress, persistent terrain files and a Continue option. Saved countries are reused and missing downloads resume next startup. World View pills now use one yellow focus border; the rest of the app keeps its existing buttons while this preview is tested. Mainland outlines and labels are corrected for Australia, Brazil, France and Kazakhstan.
-
-RC7 moves terrain preparation to opening World View, with progress, persistent cache reuse and Continue/Home options. Normal app startup no longer downloads terrain. The approved pill style now covers navigation, catalog actions, dialogs, Home icons and native playback controls, using a single yellow focus border. Web Cams country rows are narrower and retain their alphabetical order and counts.
+Provider additions are paused while we test and improve 2.0. See the [roadmap](ROADMAP.md) or [report a problem](https://github.com/sheepman90s/sheepbox-releases/issues).

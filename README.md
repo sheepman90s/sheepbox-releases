@@ -1,124 +1,64 @@
 <div align="center">
 
-<img src="assets/sheepbox-banner.png?v=1.7.0-rc4" alt="SheepBox pink-accent sheep artwork" width="640" />
+<img src="assets/sheepbox-banner.png" alt="SheepBox popcorn sheep mascot" width="640" />
 
 # SheepBox TV and VOD
 
-**Free live TV and free movies & shows. One app, one remote.**
+**Free live TV, movies and shows. One app, one remote.**
 
-[Website](https://sheepman90s.github.io/sheepbox-releases/) · [Downloads](https://github.com/sheepman90s/sheepbox-releases/releases) · [Supported providers](PROVIDERS.md) · [Roadmap](ROADMAP.md)
+[Website](https://sheepman90s.github.io/sheepbox-releases/) · [Web preview](https://sheepman90s.github.io/sheepbox-releases/watch/) · [Providers](PROVIDERS.md) · [Roadmap](ROADMAP.md) · [Report a problem](https://github.com/sheepman90s/sheepbox-releases/issues)
 
 </div>
 
-**New web preview:** [Try SheepBox Web 2.0.0-RC1](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Now includes 159 verified Philo free live channels and 160 films in Fawesome’s current weekly selection, alongside 3,308 free Roku movies and 2,953 shows, 4,404 Filmzie movies and 12 selected full Red Bull films. Philo, Fawesome and Roku open their official players in a new tab, with instructions to return to the SheepBox tab. Philo VOD/paid plans and Fawesome’s whole library are not included; Roku covers its supported browse graph. Snapshot: 1,205 live listings, 18,146 on-demand entries and 3,915 webcams. Includes search, filters, favorites, World View and supported captions/resume. Publisher access and advertising remain authoritative. Android remains 1.9.0 stable.
+SheepBox brings free streaming services together in an Android TV and Google TV app with shared browsing, search, favorites and remote controls.
 
-**Direct APK download:** [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) — a permanent link to the latest stable version.
+## Download
 
-**Android test release: [2.0.0-RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6), version code 206.** Adds BYUtv's complete checked US guest catalogue of 8,581 videos (150 show groups and 145 movie/standalone entries), with complete first-load caching and internal playback. Revry adds 161 movies, 76 shows, 593 episodes, five clips and two free live channels. World View's Reset and zoom controls are directly below Select on globe and reachable with the remote. Includes RC5's startup update decision, full Philo free library, PBS Popular shows and device settings fixes. Enable **Settings > App updates > Include test versions**, then **Check now > Update now**, or [download the RC6 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC6/sheepbox-tv-vod-2.0.0-RC6-release.apk) and install over the existing app. Publisher access, region, expiry, protection and advertising remain enforced. **1.9.0 remains Latest stable; the web player is unchanged.**
+| Version | Download | Details |
+|---|---|---|
+| **1.9.0 stable** | [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) | Recommended for regular use. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0) |
+| **2.0.0-RC6 test** | [RC6 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC6/sheepbox-tv-vod-2.0.0-RC6-release.apk) | Adds BYUtv, Revry, Philo, FreeTV and PBS, plus startup, globe and device settings improvements. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6) |
 
-**Current stable release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0), version code 200.** Promotes RC14 with NASA+, Red Bull TV, Popcornflix, Runtime and PBS KIDS, AsianCrush, Midnight Pulp and Haystack News; personal backups, private in-app reports, reorganized settings, additional guides, optional vSeeBox playback optimization, and catalogue/artwork recovery. AsianCrush, Midnight Pulp and Haystack finish their first catalogue load before browsing, then reopen from saved caches. Update in **Settings > App updates > Check now > Update now**; test versions do not need to be enabled.
-
-**Release verification:** 766 unit tests and zero-error lint passed for code200. The existing signing certificate and package/version were verified. RC14 provider/device evidence carries forward; online playback checks were not repeated for this promotion.
-
-Red Bull TV availability varies by region. Breaking the Ice currently has no season collections in the official API. Publisher ad requests are retained; actual filled-ad completion remains unverified.
-
-Four NASA-provided video sources currently return404, including in NASA's own player. The continuous channel has no mapped programme schedule.
-
-Older saved RetroCrush and DOCUMENTARY+ artwork refreshes automatically. Earlier artwork/device evidence and provider advertising limitations carry forward.
-
-DOCUMENTARY+ can still return intermittent provider HTTP500/504 errors, as disclosed with [RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0-RC6).
-
-Some provider streams remain unavailable through guest access; partial catalog counts show +. Regional restrictions apply, and full advertising-pod validation remains pending.
-
-<p align="center">
-  <img src="docs/screenshot-first-load-rc14.png" alt="RC14 test build: AsianCrush first-load progress before browsing" width="49%" />
-  <img src="docs/screenshot-catalogue-rc14.png" alt="RC14 test build: completed AsianCrush catalogue" width="49%" />
-</p>
-
-**First-load progress and completed catalogue previews above are from the RC14 test build.**
-
-<p align="center">
-  <img src="assets/screenshot-home.jpg?v=1.1.0-rc4" alt="SheepBox home screen from 1.1.0 RC4" width="49%" />
-  <img src="assets/screenshot-on-demand.jpg?v=1.1.0-rc4" alt="SheepBox On Demand screen from 1.1.0 RC4" width="49%" />
-</p>
-
-Screenshots show **1.1.0 - RC4**; the provider list below includes **1.9.0 stable features**.
-
-## Features
-
-| Feature | What you get |
-|---|---|
-| First-load caching | AsianCrush, Midnight Pulp and Haystack News finish loading before first-time browsing, then use the completed cache; Retry for interrupted first loads |
-| New providers and artwork | AsianCrush and Midnight Pulp free guest Movies & Shows; Haystack News current clips using its own player inside SheepBox; Knight Rider artwork repair and shared image recovery |
-| Kids providers | PBS KIDS under On Demand, family titles within Runtime, and kids live channels with their regular providers; separate Kids section removed |
-| Live TV | Live TV Simple's channel-logo grid with My Stations, News, Local, Entertainment and Sports; Live TV Complete with provider, country and genre menus |
-| TV guide | A six-hour program grid, provider schedules where available, Now / Next and optional international guide sources |
-| On Demand | AsianCrush, Midnight Pulp, Haystack News, Runtime, PBS KIDS, NASA+, Red Bull TV, Popcornflix, NewsON recent newscasts/clips; NFB Films & Collections; Movies & Shows from Canela.TV, RetroCrush, FlixHouse, DOCUMENTARY+, Pluto TV, Roku, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports and the Internet Archive |
-| Consistent browsing | Shared cards, Play/Episodes and Favorite actions, unique title counts beside categories (+ means incomplete), search, A–Z ordering and first-open catalog progress |
-| Seasons & episodes | Shared show screen with descriptions, seasons, episodes and optional autoplay |
-| Recording & DVR | Record supported live streams now or schedule from the guide; manage recordings on the box or a USB drive. Protected streams and unsupported ad-managed sources cannot be recorded |
-| Archive 24/7 | Always-on collection channels assembled from public-domain / Creative Commons films and classic TV |
-| Search & favorites | Global and provider search, favorites, Continue Watching and resume |
-| Hide/report | Hide locally or submit a private playback, missing guide or incorrect guide report; restore hidden items |
-| Settings | Nine sections with separate pages and Back navigation |
-| Additional guides | Verified schedules for five 30A channels and US AFTV; other coverage gaps remain |
-| Personal backups | Save/restore a file or use encrypted seven-day codes; phone QR downloads a permanent file; merge or replace lists |
-| Optional support | Venmo/PayPal QR codes on exit, with Close, Keep watching and Don't show again |
-| TV remote controls | Clear yellow focus, labelled icons, 15-second skip and hold-to-seek |
-| Automatic updates | Startup checks, optional test versions, verified downloads and Android installation confirmation |
-
-VOD catalogs load when opened and use local metadata caches. Reload refreshes them; providers and regions can change what is available. FilmRise uses bounded initial-load batches and alternate sort orders to retrieve more titles, deduplicates stable IDs, and resumes interrupted loads from completed batches. True Crime now has all 251 movie titles. Some largest guest categories remain incomplete and show lower-bound + counts; Reload can retry. FilmRise service checks passed for catalog discovery, movie/episode primary HLS manifests and ad schedules; physical-TV picture, audio, captions, remote navigation and complete ad breaks still need device testing.
-
-## Zeam in 1.4.0
-
-Zeam On Demand opens to an All Videos grid with Play/Favorite cards, search and unique category counts. It loads hosted episodes from show/season collections as well as legacy VOD recordings. Categories come from Zeam's featured-publisher collections, including Comedy, Entertainment, Sports, True Crime and Destinations. Publisher filtering is optional and excludes sources with no supported videos.
-
-The first opening builds a local metadata cache with progress; later visits open from that cache. Reload refreshes the directory and retries failed sources. Repeated featured shows are deduplicated by stable content identity. Broadcasts display their station and air date, and episodes use their own artwork where available. Partial loads retain completed work and mark loaded counts with +.
-
-Native playback, provider ads, seeking, resume and history are included. RC6 was confirmed by the user before promotion to stable. Dedicated season navigation, autoplay and saved caption preferences remain future work.
-
-## Providers
-
-**Live TV:** Runtime, NASA+, Red Bull TV, IPTV-org, Pluto TV, Samsung TV Plus, LG Channels, Plex, Roku Channel, Tubi, Xumo, Sling Freestream, YuppTV Free, Fawesome, Local Now, STIRR, Zeam, Shout! TV, TCLtv+, wedotv, Cineverse, The CW, Free Live Sports, NewsON, Canela.TV, FlixHouse and DOCUMENTARY+.
-
-**On Demand:** AsianCrush, Midnight Pulp, Haystack News, Runtime, PBS KIDS, NASA+, Red Bull TV, Popcornflix, Pluto TV, Roku Channel, Xumo, Tubi, Sling Freestream, Fawesome, Local Now, STIRR, FilmRise, Shout! TV, TCLtv+, wedotv, Cineverse, Plex, Filmzie, The CW, Free Live Sports, the Internet Archive, NewsON, NFB, Canela.TV, RetroCrush, FlixHouse and DOCUMENTARY+.
-
-FilmRise, Filmzie, NFB and RetroCrush are **VOD-only**. All providers listed above are included in stable 1.9.0. Internet Archive also supplies SheepBox-created 24/7 collection channels. See the [full provider matrix and limitations](PROVIDERS.md).
-
-## Roadmap
-
-- **Closed Captioning:** consistent controls, track/language selection and saved preferences where supported.
-- **Record by name:** search for a show, then choose Record directly from a matching search result where recording is supported.
-- **Split Screen:** multiple supported streams, remote-friendly pane selection and audio controls.
-- **Additional Providers:** continued research and integrations for free, account-free Live TV and VOD.
-
-These are planned features, without committed dates. See [ROADMAP.md](ROADMAP.md) for scope and the provider research queue.
+Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
 ## Install and update
 
-1. Allow installs from your chosen downloader or file manager in the TV's Android settings.
-2. Download the APK from [1.8.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.8.0), or browse [all releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+1. Download the [stable APK](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) to your TV or streaming device.
+2. In Android settings, allow your chosen downloader or file manager to install apps.
 3. Open the APK and follow Android's installation prompts.
-4. Start SheepBox. It checks the connection and loads live channels; each On Demand catalog builds when first opened.
+4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For in-app updates: **Settings > App updates > Check now > Update now**. Test versions are optional. Downloads are checked for the same package, a newer version and the established signing key before Android's installer opens. Keep the existing app installed to retain settings and favorites.
+For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC6. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 
-## Free streams and availability
+## Features
 
-SheepBox plays providers' free, ad-supported streams, IPTV-org free-to-air channel lists, and public-domain / Creative Commons collections from the Internet Archive. It hosts no streaming service, does not bypass subscriptions or DRM, and retains provider advertising. Recordings of supported streams can be stored locally.
+- Live TV Simple and Live TV Complete, with provider, country and genre browsing.
+- Programme guide, search, favorites, Continue Watching and supported playback resume.
+- On Demand categories, title artwork, seasons and episodes, with provider-specific caching.
+- Web Cams and World View for country-based browsing.
+- Recording and scheduled DVR for supported streams, with local or USB storage.
+- Personal backups, hidden items, private in-app problem reports and optional device optimization.
+- TV remote navigation and captions where the provider and player support them.
 
-SheepBox is independent and is not affiliated with these providers. Availability varies by region and device; unofficial integrations can change. Report problems through [GitHub issues](https://github.com/sheepman90s/sheepbox-releases/issues).
+<p align="center">
+  <img src="docs/screenshot-home-rc12.png" alt="SheepBox Home with navigation beside the sheep mascot" width="49%" />
+  <img src="docs/screenshot-catalogue-rc14.png" alt="SheepBox On Demand categories and title artwork" width="49%" />
+</p>
+
+Screenshots are from the 1.9.0 release-candidate series. See [supported providers and limitations](PROVIDERS.md) for stable and test-release coverage.
+
+## Web preview
+
+[Open SheepBox Web](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. It includes live listings, On Demand, webcams, World View, search and favorites. Browser support differs from the Android app: some sources use embedded players and Philo, Fawesome and Roku open their official players in a new tab. The web catalogue does not include every Android provider or every provider's whole library. Region, browser and publisher restrictions apply.
+
+## Availability and support
+
+SheepBox is independent and is not affiliated with its listed providers. It hosts no video. Streams come from providers' free offers, free-to-air directories and public-domain or Creative Commons collections. Provider advertising, access restrictions and normal content protection remain in place.
+
+Catalogues change, some services return incomplete results, and a **+** beside a count means the loaded catalogue is incomplete. Captions, recording, resume and autoplay depend on the source. Some streams may be unavailable or temporarily fail; retry or refresh the provider before [reporting a problem](https://github.com/sheepman90s/sheepbox-releases/issues). Include the app version, device model, provider and title, without account details or private playback links.
+
+Provider additions are paused while we test and improve 2.0. See the [roadmap](ROADMAP.md) for planned work.
 
 © 2026 [sheepman90s](https://github.com/sheepman90s)
-
-Roku on-demand in RC3 also uses Roku's new canonical API hostname, fixing playback requests that previously redirected to an HTML response instead of JSON.
-
-RC4 refines World View with automatic country zoom and highlighted outlines, direct camera lists, vertical webcam country navigation, and square button styling throughout the app, including On Demand. A limited touch-mode focus fix prevents repeated unsolicited playback controls. Roku VOD playback was confirmed working by the user.
-
-RC5 adds on-demand NASA country-detail terrain with saved fallback and makes the globe display-only. The country picker controls its position, toolbar buttons control zoom, and pill-shaped toolbar buttons have matching yellow focus outlines. Home icons are smaller and closer together. Reported AMC/Bosnia streams were reviewed; no verified replacements were found for the failing upstream sources.
-
-RC6 adds “Loading GIS Data for World View…” as the final startup step, with download progress, persistent terrain files and a Continue option. Saved countries are reused and missing downloads resume next startup. World View pills now use one yellow focus border; the rest of the app keeps its existing buttons while this preview is tested. Mainland outlines and labels are corrected for Australia, Brazil, France and Kazakhstan.
-
-RC7 moves terrain preparation to opening World View, with progress, persistent cache reuse and Continue/Home options. Normal app startup no longer downloads terrain. The approved pill style now covers navigation, catalog actions, dialogs, Home icons and native playback controls, using a single yellow focus border. Web Cams country rows are narrower and retain their alphabetical order and counts.
