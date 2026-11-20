@@ -9,6 +9,14 @@ Planned work after stable [1.9.0](https://github.com/sheepman90s/sheepbox-releas
 | Split Screen | Planned | Explore watching multiple supported streams at once, with remote-friendly pane selection, layout controls and a choice of which stream supplies audio. Device decoding capacity, provider ads and DRM support need validation. |
 | Additional Providers | Ongoing | Research and integrate more free, account-free Live TV and VOD providers, using the shared browsing, favorites, search and playback experience. |
 
+## Available in 2.0.0-RC6 (Android test release)
+
+- BYUtv's complete checked US/English guest on-demand selection: 150 show groups and 145 movie/standalone entries covering 8,581 videos, with complete first-load caching, internal playback, categories, search/favorites, seasons, captions, history/resume and auto-next. Live/account-gated/future-only offers and BYUradio are excluded.
+- Revry's guest selection: 161 movies, 76 shows, 593 episodes, five clips and two live channels with a guide, normal publisher advertising and protection.
+- World View's Reset and zoom controls sit directly below Select on globe and are reachable with the remote; Back restores entry focus.
+- Includes RC5's immediate startup update decision, full Philo free library, PBS Popular shows and device optimization fixes.
+- Enable Include test versions for [RC6/code 206](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6). Stable remains 1.9.0, and the web player is unchanged. Physical-TV and longer playback feedback remain open.
+
 ## Available in 2.0.0-RC3 (Android test release)
 
 - World View carries the web globe's blue live-TV, turquoise webcam and yellow selected-country outlines. **Select on globe** enables remote arrows/OK and touch picking/drag/pinch. Back exits selection and restores entry focus; normal browsing leaves the globe passive. Playback return and graphics fallback retain list navigation.
