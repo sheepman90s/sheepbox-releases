@@ -1,6 +1,6 @@
 # Supported providers
 
-The first table describes **[1.9.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0)**. **[2.0.0-RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC7)** includes those providers and the additions in the second table. Enable **Settings > App updates > Include test versions** for RC7.
+The first table describes **[1.9.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0)**. **[2.0.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC8)** includes those providers and the additions in the second table. Enable **Settings > App updates > Include test versions** for RC8.
 
 Availability depends on region, device and the publisher's current free offer. A supported provider does not guarantee every channel, title or playback feature.
 
@@ -56,7 +56,7 @@ Availability depends on region, device and the publisher's current free offer. A
 | Revry | Two guest channels and guide | Free movies, shows, episodes and clips; premium offers excluded |
 | BYUtv | — | Audited US/English guest videos; live, account-gated, future-only and BYUradio offers excluded |
 
-RC7 adds cache cleanup, provider connection checks, text-only watch party for BYUtv/NASA+/NFB, screensaver protection and webcam/guide fixes. It retains the startup, World View, PBS, Philo and device improvements from earlier 2.0 test releases. BYUtv's dated US/English audit covers 8,581 guest videos in 150 show groups and 145 movie/standalone entries. Catalogues and access can change after an audit.
+RC8 adds Record by name for loaded guide airings and supported saved On Demand titles, plus a smaller watch-party panel beside the video. On Demand recording uses Pluto, Internet Archive and eligible unprotected Tubi titles through their normal players. Other providers' recording restrictions are unchanged. It retains cache cleanup, provider status, BYUtv/NASA+/NFB text parties, screensaver and webcam/guide fixes, and earlier startup, World View, PBS, Philo and device improvements. BYUtv's dated US/English audit covers 8,581 guest videos in 150 show groups and 145 movie/standalone entries. Catalogues and access can change after an audit.
 
 ## Browsing and playback limitations
 
