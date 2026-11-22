@@ -17,7 +17,7 @@ SheepBox brings free streaming services together in an Android TV and Google TV 
 | Version | Download | Details |
 |---|---|---|
 | **1.9.0 stable** | [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) | Recommended for regular use. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0) |
-| **2.0.0-RC6 test** | [RC6 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC6/sheepbox-tv-vod-2.0.0-RC6-release.apk) | Adds BYUtv, Revry, Philo, FreeTV and PBS, plus startup, globe and device settings improvements. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6) |
+| **2.0.0-RC7 test** | [RC7 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC7/sheepbox-tv-vod-2.0.0-RC7-release.apk) | Adds cache cleanup, provider connection checks, text-only watch party for BYUtv/NASA+/NFB, screensaver protection and webcam/guide fixes. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC7) |
 
 Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
@@ -28,7 +28,7 @@ Requires Android 6.0 or later. Install updates over the existing app to retain s
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC6. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
+For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC7. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 
@@ -41,6 +41,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
 - Recording and scheduled DVR for supported streams, with local or USB storage.
 - Personal backups, hidden items, private in-app problem reports and optional device optimization.
 - TV remote navigation and captions where the provider and player support them.
+- RC7 Android test: cache cleanup, provider status and text-only watch party for BYUtv, NASA+ and NFB on demand.
 
 <p align="center">
   <img src="docs/screenshot-home-rc12.png" alt="SheepBox Home with navigation beside the sheep mascot" width="49%" />
