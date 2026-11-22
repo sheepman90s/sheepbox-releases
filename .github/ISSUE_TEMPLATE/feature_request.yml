@@ -1,0 +1,39 @@
+name: Feature request
+description: Suggest a new feature or an improvement to SheepBox.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check existing issues for similar suggestions first. Requests and comments are public.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Which version would benefit?
+      options:
+        - Android app
+        - Web preview
+        - Both Android and web
+        - Website or project support
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like to do?
+      description: Explain the problem or need behind your request.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested feature or improvement
+      description: Describe how you would like SheepBox to work.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples
+      description: Optional. Share other approaches, examples, or screenshots that explain your idea.

@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a problem with SheepBox playback, browsing, updates, or controls.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check existing issues first. This report will be public. Keep account details, private playback links, and other personal information out of the report and screenshots.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Where does the problem happen?
+      options:
+        - Android TV / Google TV app
+        - Android app on another device
+        - SheepBox web preview
+        - Downloads or app updates
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: SheepBox version
+      placeholder: e.g. 2.0.0-RC7, 1.9.0, or web preview
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device or browser
+      placeholder: Manufacturer and model, Android version, or browser name
+  - type: input
+    id: provider
+    attributes:
+      label: Provider, channel, or title
+      description: Include the affected provider and program name, if applicable.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe what you saw and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. The problem appears ...
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Screenshots or additional details
+      description: Optional. Remove personal information and private links before attaching anything.

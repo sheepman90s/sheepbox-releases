@@ -6,7 +6,7 @@
 
 **Free live TV, movies and shows. One app, one remote.**
 
-[Website](https://sheepman90s.github.io/sheepbox-releases/) · [Web preview](https://sheepman90s.github.io/sheepbox-releases/watch/) · [Providers](PROVIDERS.md) · [Roadmap](ROADMAP.md) · [Report a problem](https://github.com/sheepman90s/sheepbox-releases/issues)
+[Website](https://sheepman90s.github.io/sheepbox-releases/) · [Web preview](https://sheepman90s.github.io/sheepbox-releases/watch/) · [Providers](PROVIDERS.md) · [Roadmap](ROADMAP.md) · [Report a problem](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=bug_report.yml) · [Request a feature](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=feature_request.yml)
 
 </div>
 
@@ -61,5 +61,7 @@ SheepBox is independent and is not affiliated with its listed providers. It host
 Catalogues change, some services return incomplete results, and a **+** beside a count means the loaded catalogue is incomplete. Captions, recording, resume and autoplay depend on the source. Some streams may be unavailable or temporarily fail; retry or refresh the provider before [reporting a problem](https://github.com/sheepman90s/sheepbox-releases/issues). Include the app version, device model, provider and title, without account details or private playback links.
 
 Provider additions are paused while we test and improve 2.0. See the [roadmap](ROADMAP.md) for planned work.
+
+Use [Bug report or Feature request](https://github.com/sheepman90s/sheepbox-releases/issues/new/choose) to submit public feedback. Feature requests receive the **enhancement** label so suggestions can be tracked and discussed separately from bugs. Keep private details in the app's private reporting flow.
 
 © 2026 [sheepman90s](https://github.com/sheepman90s)
