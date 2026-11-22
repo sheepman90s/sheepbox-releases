@@ -1,6 +1,6 @@
 # Supported providers
 
-The first table describes **[1.9.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0)**. **[2.0.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC8)** includes those providers and the additions in the second table. Enable **Settings > App updates > Include test versions** for RC8.
+The first table describes **[1.9.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0)**. **[2.0.0-RC9](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC9)** includes those providers and the additions in the second table. Enable **Settings > App updates > Include test versions** for RC8.
 
 Availability depends on region, device and the publisher's current free offer. A supported provider does not guarantee every channel, title or playback feature.
 

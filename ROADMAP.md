@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Stable Android release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0). Current Android test release: [2.0.0-RC8](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC8).
+Stable Android release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0). Current Android test release: [2.0.0-RC9](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC9).
 
 ## Current focus
 
@@ -18,5 +18,5 @@ These features have no committed release dates.
 ## Available now
 
 - **1.9.0 stable:** Live TV, On Demand, Web Cams, World View, supported DVR, personal backups, in-app reports and device optimization. See the [provider matrix](PROVIDERS.md) and [stable release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0).
-- **2.0.0-RC8 test:** Adds **Record by name** under Recordings and global search, with single-airing/series scheduling and supported saved On Demand titles. Smaller watch-party chat fits beside the video and restores the previous view when closed. Retains cache cleanup, provider status, BYUtv/NASA+/NFB text-only parties, earlier providers and World View fixes. See [RC8 release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC8). Enable Include test versions in App updates.
+- **2.0.0-RC9 test:** Fixes **Record by name** so searches receive listings that finish loading after leaving Home, display guide loading/coverage and preserve remote focus through updates. Includes single-airing/series scheduling, supported saved On Demand recording, smaller watch-party chat, cache cleanup, provider status, BYUtv/NASA+/NFB text-only parties, earlier providers and World View fixes. See [RC9 release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC9). Enable Include test versions in App updates.
 - **Web preview:** Browser-based browsing, live TV, On Demand, webcams and World View. Provider coverage and player behavior differ from Android. [Try it here](https://sheepman90s.github.io/sheepbox-releases/watch/).
