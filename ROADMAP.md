@@ -1,6 +1,6 @@
 # SheepBox roadmap
 
-Stable Android release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0). Current Android test release: [2.0.0-RC6](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6).
+Stable Android release: [1.9.0](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0). Current Android test release: [2.0.0-RC7](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC7).
 
 ## Current focus
 
@@ -19,5 +19,5 @@ These features have no committed release dates.
 ## Available now
 
 - **1.9.0 stable:** Live TV, On Demand, Web Cams, World View, supported DVR, personal backups, in-app reports and device optimization. See the [provider matrix](PROVIDERS.md) and [stable release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0).
-- **2.0.0-RC6 test:** Adds BYUtv and Revry alongside Philo, FreeTV and PBS; improves startup update prompts, globe selection and controls, PBS browsing and device settings. See [RC6 release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC6). Enable Include test versions in App updates.
+- **2.0.0-RC7 test:** Adds safe cache cleanup, provider website checks, and text-only watch party for BYUtv/NASA+/NFB on demand. Includes screensaver, webcam and optional Ukraine-guide fixes, along with the earlier 2.0 providers and World View controls. See [RC7 release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC7). Enable Include test versions in App updates.
 - **Web preview:** Browser-based browsing, live TV, On Demand, webcams and World View. Provider coverage and player behavior differ from Android. [Try it here](https://sheepman90s.github.io/sheepbox-releases/watch/).
