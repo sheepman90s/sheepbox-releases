@@ -56,7 +56,9 @@ Screenshots are from the 1.9.0 release-candidate series. See [supported provider
 
 ## Web preview
 
-[Open SheepBox Web](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. It includes live listings, On Demand, webcams, World View, search and favorites. Browser support differs from the Android app: some sources use embedded players and Philo, Fawesome and Roku open their official players in a new tab. The web catalogue does not include every Android provider or every provider's whole library. Region, browser and publisher restrictions apply.
+[Open SheepBox Web RC2](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. It includes 21,558 top-level On Demand entries, 1,205 live listings and 3,892 webcams, plus search, favorites, history, watched/unwatched controls and browser backups. Complete audited Philo Free VOD and BYUtv metadata includes show and episode browsing. Settings has catalogue cache clearing and provider coverage; Live TV links to the CW programme guide. World View supports explicit globe selection and keyboard zoom.
+
+Browser support differs from Android. Philo, BYUtv, Fawesome and Roku open their official players in a new tab; return to SheepBox to continue browsing. Some other sources use supported direct or embedded playback, and other provider entries are website links only. Certain libraries are selections rather than whole-service catalogues. Offline browsing uses saved metadata; watching needs a connection. Recording/DVR, watch parties and automatic Android library sync are not available on the web. See [web provider coverage](PROVIDERS.md#web-preview) for counts and limits. Region, browser and publisher restrictions apply.
 
 ## Availability and support
 
