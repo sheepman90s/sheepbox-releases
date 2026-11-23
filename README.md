@@ -17,9 +17,9 @@ SheepBox brings free streaming services together in an Android TV and Google TV 
 | Version | Download | Details |
 |---|---|---|
 | **1.9.0 stable** | [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) | Recommended for regular use. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0) |
-| **2.0.0-RC11 test** | [RC11 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC11/sheepbox-tv-vod-2.0.0-RC11-release.apk) | Native CDNLive playback and new EPG sources enabled by default; includes the earlier 2.0 improvements. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC11) |
+| **2.0.0-RC12 test** | [RC12 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC12-code214/sheepbox-tv-vod-2.0.0-RC12-release.apk) | World View Channel Up/Down zoom guidance; retains native CDNLive playback, new EPG defaults and earlier 2.0 improvements. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC12-code214) |
 
-**Release numbering correction:** RC11 replaces the mistakenly numbered RC12 release. If you installed RC12, install the RC11 APK once over it; Android build 213 preserves your data.
+**RC12 build 214:** This new test build includes the World View Channel Up/Down zoom guidance and installs over RC11/build 213. If you still have the withdrawn RC12/build 212, install the new APK directly once; install over the app to keep your data.
 
 Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
@@ -30,7 +30,7 @@ Requires Android 6.0 or later. Install updates over the existing app to retain s
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC11. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
+For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC12. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 
@@ -43,7 +43,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
 - Recording and scheduled DVR for supported streams, with local or USB storage.
 - Personal backups, hidden items, private in-app problem reports and optional device optimization.
 - TV remote navigation and captions where the provider and player support them.
-- RC11 Android test: mark movies, series and episodes watched/unwatched; play CDNLive in the native player and browse Samsung's worldwide lineup. New guide presets enable automatically when a slot is free, with later opt-outs remembered. Includes 30 guide sources and recording keyword searches as listings arrive. LG regional sources may be unavailable; existing US channels are retained.
+- RC12 Android test: World View explains `Channel Up/Down: zoom in/out` before and during globe selection; mark movies, series and episodes watched/unwatched; play CDNLive in the native player and browse Samsung's worldwide lineup. New guide presets enable automatically when a slot is free, with later opt-outs remembered. Includes 30 guide sources and recording keyword searches as listings arrive. LG regional sources may be unavailable; existing US channels are retained.
 - Watch-party chat uses a smaller panel beside the video, restoring the previous video size and focus when closed. Native support remains BYUtv, NASA+ and NFB on demand.
 - Includes cache cleanup, provider status and the earlier 2.0 fixes.
 
