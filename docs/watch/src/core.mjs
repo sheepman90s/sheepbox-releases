@@ -1,8 +1,8 @@
-export const VERSION = '2.0.0-RC1';
+export const VERSION = '2.0.0-RC2';
 // Imported Roku episode files do not inflate the top-level catalogue count.
 export function catalogEntryCount(catalog){
-  return catalog.items.filter(item=>!(item.provider==='roku'&&item.kind==='episode')).length+
-    (catalog.providerSeries??[]).filter(item=>item.provider==='roku').length;
+  return catalog.items.filter(item=>!(item.kind==='episode'&&item.seriesId)).length+
+    (catalog.providerSeries??[]).length;
 }
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const plainText = value => String(Array.isArray(value) ? value[0] ?? '' : value ?? '')
@@ -42,7 +42,7 @@ export function filterItems(items,{query='',provider='',category='',kind=''}={})
     words.every(word=>fold([item.title,item.description,item.providerName,...(item.categories??[])].join(' ')).includes(word)));
 }
 export function parseRoute(hash) {
-  try {const [name='home',...parts]=hash.replace(/^#\/?/,'').split('/');return ['home','live','simple','world','webcams','ondemand','favorites','providers','settings','watch','provider','series','search','history'].includes(name)?{name,id:decodeURIComponent(parts.join('/'))}:{name:'home',id:''};}
+  try {const [name='home',...parts]=hash.replace(/^#\/?/,'').split('/');return ['home','live','simple','world','webcams','ondemand','favorites','providers','settings','watch','provider','series','search','history','status','guide'].includes(name)?{name,id:decodeURIComponent(parts.join('/'))}:{name:'home',id:''};}
   catch {return {name:'home',id:''};}
 }
 export function parseNasaVideo(row,terms={}) {

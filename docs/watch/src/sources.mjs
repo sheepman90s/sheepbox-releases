@@ -8,6 +8,7 @@ import {resolveWorldTv} from './worldtv.mjs';
 import {resolveRedBull} from './redbull.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
 import {resolveRoku} from './roku.mjs';
+import {mergeApkLibrary,apkPublisherUrl} from './apk-library.mjs';
 import {resolvePublisherLink} from './publisher-links.mjs';
 import {mergeRokuLibrary,isRokuSeriesReference,parseRokuEpisodeFile,parseRokuEpisodeIndex} from './roku-library.mjs';
 export async function fetchJson(url,{signal,timeout=25000,maxLength=12_000_000}={}) {
@@ -28,7 +29,8 @@ export async function loadCatalog(signal) {
   const roku=data.externalCatalogs?.roku;
   if(roku){if(roku.path!=='roku/catalog.json')throw Error('The Roku library address is invalid.');requests.push(fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}));}
   const [cameras,library]=await Promise.all(requests);
-  return {...(library?mergeRokuLibrary(data,library.data):data),cameras:parseWebcams(cameras.data)};
+  const {data:apk}=await fetchJson(new URL('../data/apk-library.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000});
+  return {...mergeApkLibrary(library?mergeRokuLibrary(data,library.data):data,apk),cameras:parseWebcams(cameras.data)};
 }
 export async function loadRokuSeriesFile(series,{signal}={}){
   if(!isRokuSeriesReference(series))throw Error('This series has no saved episode list.');
@@ -73,6 +75,7 @@ export function availableArchiveFiles(data){
   return (data.files??[]).map(archiveFile).filter(Boolean).sort((a,b)=>a.rank-b.rank);
 }
 export async function resolvePlayback(item,catalog,{signal}={}) {
+  if(item.mode==='apk-publisher'){const url=apkPublisherUrl(item);if(!url)throw Error('This title has no verified official publisher player link.');return {kind:'external',url};}
   if(item.mode==='publisher-link')return resolvePublisherLink(item,{signal});
   if(['newson-live','newson-latest'].includes(item.mode))return resolveNewsOn(item,{signal});
   if(item.mode==='xumo-live')return resolveXumo(item,{signal});

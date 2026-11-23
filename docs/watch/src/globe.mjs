@@ -231,7 +231,7 @@ export function mountGlobe(container, {countries, webcamCountries=[], availableC
   listen(canvas,'pointerleave',()=>{if(!pointers.size)hover(null);});
   listen(canvas,'wheel',event=>{event.preventDefault();zoom(-clamp(event.deltaY/100,-3,3));},{passive:false});
   listen(canvas,'keydown',event=>{
-    const actions={ArrowLeft:()=>{targetLon-=8;},ArrowRight:()=>{targetLon+=8;},ArrowUp:()=>{targetLat=clamp(targetLat+8,-85,85);},ArrowDown:()=>{targetLat=clamp(targetLat-8,-85,85);},Enter:()=>commit(countryAt(rows,{lon,lat})), ' ':()=>commit(countryAt(rows,{lon,lat})), '+':()=>zoom(1),'=':()=>zoom(1),'-':()=>zoom(-1),Home:reset};
+    const actions={ArrowLeft:()=>{targetLon-=8;},ArrowRight:()=>{targetLon+=8;},ArrowUp:()=>{targetLat=clamp(targetLat+8,-85,85);},ArrowDown:()=>{targetLat=clamp(targetLat-8,-85,85);},Enter:()=>commit(countryAt(rows,{lon,lat})), ' ':()=>commit(countryAt(rows,{lon,lat})), '+':()=>zoom(1),'=':()=>zoom(1),'-':()=>zoom(-1),PageUp:()=>zoom(1),PageDown:()=>zoom(-1),ChannelUp:()=>zoom(1),ChannelDown:()=>zoom(-1),Home:reset};
     if(actions[event.key]){event.preventDefault();event.stopPropagation();actions[event.key]();schedule();}
   });
   listen(canvas,'webglcontextlost',event=>{event.preventDefault();fallback();});

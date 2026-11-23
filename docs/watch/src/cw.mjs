@@ -83,6 +83,13 @@ function currentProgramme(row) {
   return current ? [plainText(current.title), plainText(current.subtitle)].filter(Boolean).join(' — ') : '';
 }
 
+export function cwGuideRows(rows){
+  return rows.filter(eligible).map(row=>({id:'cw-live-'+row.slug,title:plainText(row.title),programmes:(Array.isArray(row.programs)?row.programs:[]).map(program=>({
+    title:plainText(program.title),description:plainText(program.subtitle),start:Number(program.program_start_ts)*1000,end:Number(program.program_end_ts)*1000
+  })).filter(program=>program.title&&Number.isFinite(program.start)&&Number.isFinite(program.end)&&program.end>program.start).sort((a,b)=>a.start-b.start)}));
+}
+export async function loadCwGuide({signal}={}){return {checkedAt:Date.now(),channels:cwGuideRows(await directory({signal}))};}
+
 /** Resolve the publisher's current clear guest HLS offer and complete web ad parameters. */
 export async function resolveCw(item, {signal} = {}) {
   if (item?.mode !== 'cw-live' || !validSlug(item.sourceId)) throw Error('Invalid CW live channel.');

@@ -76,6 +76,20 @@ The Famelack webcam directory supports country browsing, search and favorites. C
 
 ## Web preview
 
-[SheepBox Web](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. Coverage differs from Android and some selections are partial. Philo, Fawesome and Roku open official players in another tab; return to SheepBox to continue browsing. Other sources use supported direct or embedded playback. Browser, account and region requirements are determined by the publisher.
+[SheepBox Web RC2](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue: 21,558 top-level On Demand entries, 1,205 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
+
+| Provider | Web coverage and playback |
+|---|---|
+| Philo Free | Complete audited free VOD snapshot: 2,202 movies, 897 shows and 11,680 episodes, plus 159 free live channels. Opens official Philo players. Current replays, free access and region can change. |
+| BYUtv | Complete audited free US/English snapshot: 145 standalone entries and 150 shows; 8,581 playable videos including episodes/extras. Opens BYUtv's official player. Live, gated and future-only offers are excluded. |
+| Roku | 3,308 free movies and 2,953 parent-free show cards from the supported browse graph; not a verified whole-service total. Episodes and playback use the official Roku player. |
+| Fawesome | 160 films from its complete saved This Week shelf, not the whole library. Opens official movie pages. |
+| Filmzie / Red Bull / PBS KIDS | 4,404 saved Filmzie movies without series; 12 selected Red Bull films; 60 permitted PBS KIDS homepage videos across 18 shows. These are explicitly scoped selections. |
+| NASA+, NFB, licensed Archive, 30A, Xumo, NewsON, CW, YuppTV and curated World TV | Existing supported direct or official embedded playback. Source availability and browser restrictions apply. |
+| Regular PBS, FreeTV, Revry, CDNLive and other website entries | Official website links; no new integrated browser playback is claimed. |
+
+Philo, BYUtv, Fawesome and Roku open in another tab; return to SheepBox to continue browsing. Publisher pages own advertising, current access and account/region requirements. Other sources use supported direct or permitted embedded players. Saved catalogue counts are dated metadata, not a guarantee that every title is currently playable.
+
+Web RC2 adds watched/unwatched filters, complete loaded-series marks, backup merge, safe catalogue cache clearing and provider status/coverage. Native browser video marks watched at 90% completion; external and embedded players use manual marks. The guide covers current CW listings and clearly labelled SheepBox Classics schedules, not Android's full guide or DVR. Watch parties, recording and automatic browser/Android library sync remain unavailable. Saved libraries can be browsed offline; video needs a connection.
 
 Provider additions are paused while we test and improve 2.0. See the [roadmap](ROADMAP.md) or [report a problem](https://github.com/sheepman90s/sheepbox-releases/issues).
