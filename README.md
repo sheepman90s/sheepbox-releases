@@ -16,10 +16,11 @@ SheepBox brings free streaming services together in an Android TV and Google TV 
 
 | Version | Download | Details |
 |---|---|---|
-| **1.9.0 stable** | [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) | Recommended for regular use. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0) |
-| **2.0.0-RC12 test** | [RC12 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC12-code214/sheepbox-tv-vod-2.0.0-RC12-release.apk) | World View Channel Up/Down zoom guidance; retains native CDNLive playback, new EPG defaults and earlier 2.0 improvements. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC12-code214) |
+| **2.0.0 stable** | [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) | Recommended for regular use. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0) |
 
-**RC12 build 214:** This new test build includes the World View Channel Up/Down zoom guidance and installs over RC11/build 213. If you still have the withdrawn RC12/build 212, install the new APK directly once; install over the app to keep your data.
+[Versioned 2.0.0 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0/sheepbox-tv-vod-2.0.0-release.apk) / [SHA256](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0/sheepbox-tv-vod-2.0.0-release.apk.sha256) / [Previous releases](https://github.com/sheepman90s/sheepbox-releases/releases).
+
+**2.0.0 / Android build215** promotes the tested RC12 feature set to stable. Install over 1.9.0 or an existing 2.0 release candidate to retain personal data. Test-version opt-in is not required.
 
 Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
@@ -30,7 +31,7 @@ Requires Android 6.0 or later. Install updates over the existing app to retain s
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC12. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
+For updates, open **Settings > App updates > Check now > Update now**. Stable 2.0.0 is offered without enabling test versions; that setting is only for future prereleases. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 
@@ -43,7 +44,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
 - Recording and scheduled DVR for supported streams, with local or USB storage.
 - Personal backups, hidden items, private in-app problem reports and optional device optimization.
 - TV remote navigation and captions where the provider and player support them.
-- RC12 Android test: World View explains `Channel Up/Down: zoom in/out` before and during globe selection; mark movies, series and episodes watched/unwatched; play CDNLive in the native player and browse Samsung's worldwide lineup. New guide presets enable automatically when a slot is free, with later opt-outs remembered. Includes 30 guide sources and recording keyword searches as listings arrive. LG regional sources may be unavailable; existing US channels are retained.
+- 2.0 stable: World View explains `Channel Up/Down: zoom in/out` before and during globe selection; mark movies, series and episodes watched/unwatched; play CDNLive in the native player and browse Samsung's worldwide lineup. New guide presets enable automatically when a slot is free, with later opt-outs remembered. Includes 30 guide sources and recording keyword searches as listings arrive. LG regional sources may be unavailable; existing US channels are retained.
 - Watch-party chat uses a smaller panel beside the video, restoring the previous video size and focus when closed. Native support remains BYUtv, NASA+ and NFB on demand.
 - Includes cache cleanup, provider status and the earlier 2.0 fixes.
 
@@ -52,7 +53,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
   <img src="docs/screenshot-catalogue-rc14.png" alt="SheepBox On Demand categories and title artwork" width="49%" />
 </p>
 
-Screenshots are from the 1.9.0 release-candidate series. See [supported providers and limitations](PROVIDERS.md) for stable and test-release coverage.
+Screenshots are from the 1.9.0 release-candidate series. See [supported providers and limitations](PROVIDERS.md) for current Android and browser coverage.
 
 ## Web preview
 
@@ -66,7 +67,7 @@ SheepBox is independent and is not affiliated with its listed providers. It host
 
 Catalogues change, some services return incomplete results, and a **+** beside a count means the loaded catalogue is incomplete. Captions, recording, resume and autoplay depend on the source. Some streams may be unavailable or temporarily fail; retry or refresh the provider before [reporting a problem](https://github.com/sheepman90s/sheepbox-releases/issues). Include the app version, device model, provider and title, without account details or private playback links.
 
-Provider additions are paused while we test and improve 2.0. See the [roadmap](ROADMAP.md) for planned work.
+Provider additions are paused while we maintain and improve 2.0. See the [roadmap](ROADMAP.md) for planned work.
 
 Use [Bug report or Feature request](https://github.com/sheepman90s/sheepbox-releases/issues/new/choose) to submit public feedback. Feature requests receive the **enhancement** label so suggestions can be tracked and discussed separately from bugs. Keep private details in the app's private reporting flow.
 
