@@ -1,10 +1,10 @@
 # Supported providers
 
-The first table describes **[1.9.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0)**. **[2.0.0-RC12](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC12-code214)** includes those providers and the additions in the second table. Enable **Settings > App updates > Include test versions** for RC12.
+This table describes **[2.0.0 stable](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0)**, including the providers introduced during 2.0 testing. Install or update normally; test-version opt-in is not required.
 
 Availability depends on region, device and the publisher's current free offer. A supported provider does not guarantee every channel, title or playback feature.
 
-## Android stable
+## Android 2.0 stable
 
 | Provider | Live TV | On Demand |
 |---|---|---|
@@ -45,11 +45,6 @@ Availability depends on region, device and the publisher's current free offer. A
 | Red Bull TV | Continuous sports channels and available live events | Regional films, replays, clips and series |
 | NASA+ | Continuous channel; no mapped programme schedule | Standalone videos and series |
 | Internet Archive | SheepBox-created collection channels | Public-domain / Creative Commons films, classic TV and shorts |
-
-## Android test release additions
-
-| Provider | Live TV | On Demand |
-|---|---|---|
 | CDNLive | Public directory and sports-channel references; native playback with in-stream ads and TV remote controls; browser popup ads omitted; manual external guide mapping; recording unavailable | — |
 | Philo Free | Free channels | Free movies & shows; native playback |
 | FreeTV | Guest regional channels and guide | Free movies & shows; native playback |
@@ -57,9 +52,9 @@ Availability depends on region, device and the publisher's current free offer. A
 | Revry | Two guest channels and guide | Free movies, shows, episodes and clips; premium offers excluded |
 | BYUtv | — | Audited US/English guest videos; live, account-gated, future-only and BYUradio offers excluded |
 
-RC12/build 214 adds the World View `Channel Up/Down: zoom in/out` hint before and during globe selection. It retains native CDNLive playback and enables new EPG presets once when capacity is available, including Ukraine after the old 25-source cap. Later opt-outs and custom-feed priority are retained. It includes watched/unwatched controls for movies, complete series and episodes, and 30 guide slots with clear capacity feedback. Samsung expands to its available worldwide lineup while preserving US identities. LG regional sources may be unreachable; the US cache/fallback is retained and incomplete regions are reported. EPGTalk uses user-entered compressed custom guide links, local caching and a 12-hour refresh limit under its [published conditions](https://github.com/acidjesuz/EPGTalk#disclaimer--terms-of-use).
+2.0 stable includes the World View `Channel Up/Down: zoom in/out` hint before and during globe selection. It retains native CDNLive playback and enables new EPG presets once when capacity is available, including Ukraine after the old 25-source cap. Later opt-outs and custom-feed priority are retained. It includes watched/unwatched controls for movies, complete series and episodes, and 30 guide slots with clear capacity feedback. Samsung expands to its available worldwide lineup while preserving US identities. LG regional sources may be unreachable; the US cache/fallback is retained and incomplete regions are reported. EPGTalk uses user-entered compressed custom guide links, local caching and a 12-hour refresh limit under its [published conditions](https://github.com/acidjesuz/EPGTalk#disclaimer--terms-of-use).
 
-Record by name supports guide title/description keywords and updates as listings arrive. RC8 introduced Record by name for loaded guide airings and supported saved On Demand titles, plus a smaller watch-party panel beside the video. On Demand recording uses Pluto, Internet Archive and eligible unprotected Tubi titles through their normal players. Other providers' recording restrictions are unchanged. It retains cache cleanup, provider status, BYUtv/NASA+/NFB text parties, screensaver and webcam/guide fixes, and earlier startup, World View, PBS, Philo and device improvements. BYUtv's dated US/English audit covers 8,581 guest videos in 150 show groups and 145 movie/standalone entries. Catalogues and access can change after an audit.
+Record by name supports guide title/description keywords and updates as listings arrive. Record by name covers loaded guide airings and supported saved On Demand titles; watch-party chat uses a smaller panel beside the video. On Demand recording uses Pluto, Internet Archive and eligible unprotected Tubi titles through their normal players. Other providers' recording restrictions are unchanged. It retains cache cleanup, provider status, BYUtv/NASA+/NFB text parties, screensaver and webcam/guide fixes, and earlier startup, World View, PBS, Philo and device improvements. BYUtv's dated US/English audit covers 8,581 guest videos in 150 show groups and 145 movie/standalone entries. Catalogues and access can change after an audit.
 
 ## Browsing and playback limitations
 
@@ -92,4 +87,4 @@ Philo, BYUtv, Fawesome and Roku open in another tab; return to SheepBox to conti
 
 Web RC2 adds watched/unwatched filters, complete loaded-series marks, backup merge, safe catalogue cache clearing and provider status/coverage. Native browser video marks watched at 90% completion; external and embedded players use manual marks. The guide covers current CW listings and clearly labelled SheepBox Classics schedules, not Android's full guide or DVR. Watch parties, recording and automatic browser/Android library sync remain unavailable. Saved libraries can be browsed offline; video needs a connection.
 
-Provider additions are paused while we test and improve 2.0. See the [roadmap](ROADMAP.md) or [report a problem](https://github.com/sheepman90s/sheepbox-releases/issues).
+Provider additions are paused while we maintain and improve 2.0. See the [roadmap](ROADMAP.md) or [report a problem](https://github.com/sheepman90s/sheepbox-releases/issues).
