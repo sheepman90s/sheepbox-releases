@@ -17,7 +17,7 @@ SheepBox brings free streaming services together in an Android TV and Google TV 
 | Version | Download | Details |
 |---|---|---|
 | **1.9.0 stable** | [Sheepbox-latest.apk](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) | Recommended for regular use. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v1.9.0) |
-| **2.0.0-RC9 test** | [RC9 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC9/sheepbox-tv-vod-2.0.0-RC9-release.apk) | Fixes Record by name guide updates, shows loading and coverage, and preserves remote focus. Includes earlier 2.0 features. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC9) |
+| **2.0.0-RC10 test** | [RC10 APK](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.0.0-RC10/sheepbox-tv-vod-2.0.0-RC10-release.apk) | Watched/unwatched controls, CDNLive, worldwide Samsung, 30 guide sources and guide/search fixes. [Release notes](https://github.com/sheepman90s/sheepbox-releases/releases/tag/v2.0.0-RC10) |
 
 Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
@@ -28,7 +28,7 @@ Requires Android 6.0 or later. Install updates over the existing app to retain s
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC9. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
+For updates, open **Settings > App updates > Check now > Update now**. Enable **Include test versions** to receive release candidates such as RC10. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 
@@ -41,7 +41,7 @@ Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f57
 - Recording and scheduled DVR for supported streams, with local or USB storage.
 - Personal backups, hidden items, private in-app problem reports and optional device optimization.
 - TV remote navigation and captions where the provider and player support them.
-- RC9 Android test: Record by name updates automatically as guide listings arrive and shows guide loading and coverage. Search the loaded guide and supported saved On Demand catalogues; choose an airing, series or episode to record.
+- RC10 Android test: mark movies, series and episodes watched/unwatched; browse CDNLive through its official in-app player and Samsung's worldwide lineup. Includes 30 guide sources and recording keyword searches as listings arrive. LG regional sources may be unavailable; existing US channels are retained.
 - Watch-party chat uses a smaller panel beside the video, restoring the previous video size and focus when closed. Native support remains BYUtv, NASA+ and NFB on demand.
 - Includes cache cleanup, provider status and the earlier 2.0 fixes.
 

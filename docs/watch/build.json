@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC1",
-  "revision": "9eb244365387",
+  "revision": "988c06fa14e6",
   "catalogGeneratedAt": "2026-11-17T22:11:27.953Z",
   "titles": 18146,
   "live": 1205,
@@ -29,7 +29,7 @@
     },
     {
       "path": "assets/home.png",
-      "sha256": "507b37c95baa2663ea9ec91ac94c14f809ec51fb5997eb364df3bd0c3060babd"
+      "sha256": "52a37dffe50b200670fe4a816a882e323ca7351eb48a8c2fca30d7e5be7db925"
     },
     {
       "path": "assets/icon.png",
@@ -1221,7 +1221,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "92a61fbf414c1dd27681d2768daa5aca94b4b03ea7ee784058f24cdceb034540"
+      "sha256": "bc595f568f680a36a5acd5acda878a448c8b09729e1b1038e8b43cb7e7e2a012"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
