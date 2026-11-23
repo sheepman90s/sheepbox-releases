@@ -1,4 +1,4 @@
-const CACHE='sheepbox-web-9eb244365387';
+const CACHE='sheepbox-web-988c06fa14e6';
 const SHELL=['./','./index.html','./styles.css','./app-home.css','./world.css','./world-live.css','./player-ads.css','./manifest.webmanifest','./src/app.mjs','./src/core.mjs','./src/storage.mjs','./src/providers.mjs','./src/sources.mjs','./src/player.mjs','./src/ads.mjs','./src/newson.mjs','./src/xumo.mjs','./src/cw.mjs','./src/yupp.mjs','./src/worldtv.mjs','./src/worldtv-extra.mjs','./src/redbull.mjs','./src/filmzie.mjs','./src/roku.mjs','./src/publisher-links.mjs','./src/roku-library.mjs','./src/publishers.mjs','./src/world-view.mjs','./src/world-content.mjs','./src/globe.mjs','./src/world-geometry.mjs','./data/catalog.json','./data/roku/catalog.json','./data/webcams.json','./assets/icon.png','./assets/mascot.png','./assets/home.png','./assets/browse.jpg','./vendor/hls-1.7.4.min.js'];
 const WORLD=['./data/world-countries.json','./assets/world-earth.jpg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
