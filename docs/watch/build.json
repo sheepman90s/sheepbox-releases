@@ -1,9 +1,9 @@
 {
-  "version": "2.0.0-RC4",
-  "revision": "491a0a87911c",
+  "version": "2.0.0-RC5",
+  "revision": "5c847914780c",
   "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
-  "titles": 23347,
-  "live": 1219,
+  "titles": 24709,
+  "live": 1248,
   "extraLibraries": {
     "pbs": {
       "videos": 11999,
@@ -14,6 +14,11 @@
       "videos": 8364,
       "shows": 345,
       "live": 12
+    },
+    "runtime": {
+      "videos": 3787,
+      "shows": 87,
+      "live": 29
     }
   },
   "revry": {
@@ -1125,6 +1130,10 @@
       "sha256": "994567be829079ee6bb652aef439b690ad633ea99f9fe76d8571785cc3b9839b"
     },
     {
+      "path": "data/runtime.json",
+      "sha256": "827444c8979ca37bded03c873fafa32d523bc5dab8a81cb708e8cdb71a27a1f0"
+    },
+    {
       "path": "data/webcams.json",
       "sha256": "3b857823e21891cf7748486cf1edf1174ef5ac8c08767b3212341921ea88be7c"
     },
@@ -1138,7 +1147,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "89bcdd14df71848af7de928afc758dbdb2afe64767d43ac465214fdb11389ba0"
+      "sha256": "ade6d3b82366ecffe5d09041b32ef004ee805448fb619941ab7adc1e05984e0d"
     },
     {
       "path": "manifest.webmanifest",
@@ -1158,11 +1167,11 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "0d0bbd8cd3a6ab8a6df7523e6f1850b2b6d06347ae62a3d8ec40f0d826cc1ee3"
+      "sha256": "fbb2cafce7ac10c39d0ec40dfcd5add48b818986e4d191b8bd4f6a9be7a6357f"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "74dcff0a45d00fbda8cca13d8700618d84008470a69e0c32f02643c8c0a5194f"
+      "sha256": "c5880d0c07c1b1de1a3fe46d63bc71935b8db4518601420d6fb3391e8b9f5f06"
     },
     {
       "path": "src/cw.mjs",
@@ -1186,11 +1195,11 @@
     },
     {
       "path": "src/guide.mjs",
-      "sha256": "9cb310c31ea713bf84245c77a0c5ef38e39fbc34fb6a80ff53d97fe6c38c42b0"
+      "sha256": "69aa9950bee44fd8fc9a8589b6f3a6079d17a8f8681d2934ca3e1aeca311fe54"
     },
     {
       "path": "src/maintenance.mjs",
-      "sha256": "e3a3f28a7bdaae66f26756dfa73d5fcbcab6d7f39e425380cc3c99190f3a09ef"
+      "sha256": "b7ddf66ae2965080dd84935b8bfbc3f9f8a47c3c6028561e964034302fd4322e"
     },
     {
       "path": "src/newson.mjs",
@@ -1202,11 +1211,11 @@
     },
     {
       "path": "src/provider-libraries.mjs",
-      "sha256": "f1678844df4b338e3c77e7e0a11b8cf8acf36c4d9b5fc64a2c2d705a30f65017"
+      "sha256": "b5f1d2725578fc8f74701c0573ccab5d90a82dbd3c66e8e4f9b9d6337e454f23"
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "dc711f653617567fdcb87467b3a3d917e431f2420bc8bcf0a7d6384a15d45cd1"
+      "sha256": "2e37fb8f07efdf1ac7dcd49b3dee7ef8a0e1d7425514317745dd3c1618c597d9"
     },
     {
       "path": "src/publisher-links.mjs",
@@ -1245,8 +1254,12 @@
       "sha256": "5de3e7627d4b3aa3864353f79d561d8cf7878afec0e1e87f8c838a7e136f8ef2"
     },
     {
+      "path": "src/runtime.mjs",
+      "sha256": "d0a305a6c8abb5d199959b481f539de0cb861d6e7e5861d6ea06b78a07beefec"
+    },
+    {
       "path": "src/sources.mjs",
-      "sha256": "bb5e7b5e94ab4c3cc291bda2bc5895af3cd6693880ff0a7f94bafa298d4262ee"
+      "sha256": "1d6a88b65904a686b3fe370f7212d7964f8e374fee175dfea5c6881e3b7f68bc"
     },
     {
       "path": "src/storage.mjs",
@@ -1278,7 +1291,7 @@
     },
     {
       "path": "src/xumo.mjs",
-      "sha256": "7412f94833822080b37b53cbcc9f740c71fc9efc9141892c98fa4e4751b1c11b"
+      "sha256": "03d82a92410a3c2f862313456b251b0191070fb49f67b1069322b34f4095b7fe"
     },
     {
       "path": "src/yupp.mjs",
@@ -1286,11 +1299,11 @@
     },
     {
       "path": "styles.css",
-      "sha256": "73ac3addad7d3570dc9606853892cb46d6900e96226fb913a2aaa65a02dfd4af"
+      "sha256": "3a0b160abcff92073571818308c4c9db9088f227b915dbbc173596b45c0a1170"
     },
     {
       "path": "sw.js",
-      "sha256": "4bf12fb581a117af29089fee51176cd8549afc8ab3e4a91e6406d2742a48d756"
+      "sha256": "867a6898eda968900da6455348216d5d9f6d040b3e37de8656e50b1e2f0e9f61"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

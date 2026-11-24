@@ -71,7 +71,7 @@ The Famelack webcam directory supports country browsing, search and favorites. C
 
 ## Web preview
 
-[SheepBox Web RC4](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue: 23,347 top-level On Demand entries, 1,219 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
+[SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. RC5 launch snapshot: 24,709 top-level On Demand entries, 1,248 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
 
 | Provider | Web coverage and playback |
 |---|---|
@@ -83,13 +83,16 @@ The Famelack webcam directory supports country browsing, search and favorites. C
 | Revry | Complete audited supported free guest offer: 162 movies, 76 shows, 594 episodes, five clips and two live channels. Clear HLS and protected DASH/Widevine play here with original advertising and available captions; current free access is checked at playback. |
 | PBS | Complete free full-length snapshot: 11,999 videos across 307 shows. 11,793 use the approved official embed; 206 retain exact official-page handoffs. Passport is excluded, and PBS checks current windows and region. |
 | FreeTV | Complete supported US guest snapshot: 677 films, 345 playable shows, 7,687 episodes (seven standalone) and 12 live channels. Current regional rights, original advertising and normal Widevine are retained. Full publisher guide pagination is supported. |
+| Runtime | Complete supported US free guest snapshot: 955 movies, 87 playable shows, 2,832 episodes (320 independently free leaves) and 29 live channels. Internal HLS playback preserves original VMAP/SSAI advertising and rechecks guest access/region. Complete paged publisher guide. |
 | Red Bull / PBS KIDS | 12 selected Red Bull films; 60 permitted PBS KIDS homepage videos across 18 shows. These are explicitly scoped selections. |
 | NASA+, NFB, licensed Archive, 30A, Xumo, NewsON, CW, YuppTV and curated World TV | Existing supported direct or official embedded playback. Source availability and browser restrictions apply. |
 | CDNLive and other website entries | Official website links; browser playback integration remains pending. |
 
 Philo, BYUtv, Fawesome and Roku open in another tab; return to SheepBox to continue browsing. Publisher pages own advertising, current access and account/region requirements. Other sources use supported direct or permitted embedded players. Saved catalogue counts are dated metadata, not a guarantee that every title is currently playable.
 
-Web RC4 includes watched/unwatched filters, complete loaded-series marks, backup merge, scoped cache clearing, provider status, hide/restore, Continue watching, four color palettes and supported next episodes. Original advertising may require Play. New episodes start unwatched and watch parties keep the current title. The guide covers CW, Revry and FreeTV listings plus labelled SheepBox Classics schedules. Recording/DVR and automatic browser/Android library sync remain unavailable. Saved libraries browse offline; video needs a connection.
+Web RC5 includes watched/unwatched filters, complete loaded-series marks, backup merge, scoped cache clearing, provider status, hide/restore, Continue watching, four color palettes and supported next episodes. Original advertising may require Play. New episodes start unwatched and watch parties keep the current title. The time-grid guide covers CW, Revry, FreeTV, Runtime and Xumo. It includes local times, day/time controls, programme details, list view and search across loaded schedules; Xumo loads every channel page for the displayed window up to seven days ahead. SheepBox Classics remains a separate labelled collection schedule. Recording/DVR and automatic browser/Android library sync remain unavailable. Saved libraries browse offline; video needs a connection.
+
+Daily automated metadata refreshes cover PBS, FreeTV, Runtime, Revry, NASA+, Filmzie, NewsON, Xumo, CW and YuppTV. Complete traversal and ownership/region checks run before publication; failed exports retain the saved library. Other snapshots keep their original dates. Current counts and individual dates appear in the app. See [maintenance scope](maintenance/README.md).
 
 Text watch parties synchronize NASA+ on-demand videos, including matching Android rooms. Start from a NASA+ video or choose Watch party to join. Each viewer plays their own stream; the host can transfer control, hide chat or close the room. Chat is text only, with no microphone. Room credentials stay in memory. BYUtv/NFB browser players do not currently have verified sync controls, so those parties remain Android-only.
 

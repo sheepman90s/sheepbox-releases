@@ -38,6 +38,41 @@ async function configuration({signal} = {}) {
   return config;
 }
 
+export function xumoGuidePage(data){
+  if(!Array.isArray(data?.channels)||!data.assets||typeof data.assets!=='object'||!Number.isSafeInteger(data.totalChannels)||data.totalChannels<0)throw Error('Xumo returned an incomplete guide page.');
+  return data.channels.map(row=>{
+    if(!channelId(row.channelId)||!Array.isArray(row.schedule))throw Error('Xumo changed its programme guide.');
+    return {sourceId:String(row.channelId),programmes:row.schedule.map(program=>{
+      const asset=data.assets[program.assetId],start=Date.parse(program.start),end=Date.parse(program.end);
+      if(!plainText(asset?.title)||!Number.isFinite(start)||!Number.isFinite(end)||end<=start)throw Error('Xumo returned an incomplete programme.');
+      return {title:plainText(asset.title)+(plainText(asset.episodeTitle)?' · '+plainText(asset.episodeTitle):''),description:plainText(asset.descriptions?.medium||asset.descriptions?.small),start,end};
+    })};
+  });
+}
+// The publisher supplies seven days in six-hour UTC windows. Exhaust every
+// channel page for the requested window; never substitute playback offers.
+export async function loadXumoGuide(channels,{signal,start=Date.now(),end=start+10800000}={}){
+  if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start||end-start>86400000)throw Error('Choose a guide window of at most one day.');
+  const config=await configuration({signal}),eligible=new Set((await directory(config,{signal})).map(row=>String(row.guid.value)));
+  const known=new Map(channels.filter(row=>row.provider==='xumo'&&eligible.has(row.sourceId)).map(row=>[row.sourceId,{id:row.id,title:row.title,programmes:[]}]));
+  const slotSize=21600000;
+  for(let cursor=Math.floor(start/slotSize)*slotSize;cursor<end;cursor+=slotSize){
+    const date=new Date(cursor),day=date.toISOString().slice(0,10).replaceAll('-',''),slot=Math.floor(date.getUTCHours()/6);
+    let offset=0,total;const ids=new Set();
+    do{
+      const url=new URL(API_ORIGIN+'/v2/epg/'+config.CHANNEL_LIST_ID+'/'+day+'/'+slot+'.json');
+      url.search=new URLSearchParams([['f','asset.title'],['f','asset.descriptions'],['limit','50'],['offset',String(offset)]]);
+      const data=await request(url,{signal}),rows=xumoGuidePage(data);
+      if(total!==undefined&&data.totalChannels!==total||rows.length>50||!rows.length&&offset<data.totalChannels)throw Error('Xumo’s guide pages did not reconcile.');
+      total=data.totalChannels;
+      for(const row of rows){if(ids.has(row.sourceId))throw Error('Xumo repeated a guide channel.');ids.add(row.sourceId);known.get(row.sourceId)?.programmes.push(...row.programmes);}
+      offset+=rows.length;if(offset>total)throw Error('Xumo’s guide exceeds its channel count.');
+    }while(offset<total);
+    if(ids.size!==total)throw Error('Xumo’s guide is incomplete.');
+  }
+  return [...known.values()].map(row=>({...row,programmes:[...new Map(row.programmes.map(p=>[p.start+'|'+p.end+'|'+p.title,p])).values()].sort((a,b)=>a.start-b.start)}));
+}
+
 async function directory(config, {signal} = {}) {
   const url = new URL(API_ORIGIN + '/v2' + config.CHANNEL_LIST_PATH + '/' + config.CHANNEL_LIST_ID + '.json');
   url.searchParams.set('sort', 'hybrid');
