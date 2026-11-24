@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC3",
-  "revision": "f64731268b5e",
+  "revision": "c33a672f10f6",
   "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
   "titles": 22011,
   "live": 1207,
@@ -1222,7 +1222,7 @@
     },
     {
       "path": "src/watch-party.mjs",
-      "sha256": "981946870c480aea0b3e81674c963701cbbfeccf9ae8d235065ef7f24e099229"
+      "sha256": "e0541dc103ec96b18af28c7e5666813306778594b5b97e48eb542d54ce26f6cd"
     },
     {
       "path": "src/world-content.mjs",
@@ -1258,7 +1258,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "0842a50455a74ca8b9567ce31541575869eac498b42cacc1c09b651e77a88475"
+      "sha256": "c4d6757b79d0fa5438414d5a399e8f3cd5d2aba613c64e357103156a3cd0819d"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
