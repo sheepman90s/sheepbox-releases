@@ -71,7 +71,7 @@ The Famelack webcam directory supports country browsing, search and favorites. C
 
 ## Web preview
 
-[SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. RC5 launch snapshot: 24,709 top-level On Demand entries, 1,248 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
+[SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. RC5 release snapshot: 24,710 top-level On Demand entries, 1,279 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
 
 | Provider | Web coverage and playback |
 |---|---|
@@ -79,10 +79,10 @@ The Famelack webcam directory supports country browsing, search and favorites. C
 | BYUtv | Complete audited free US/English snapshot: 145 standalone entries and 150 shows; 8,581 playable videos including episodes/extras. Opens BYUtv's official player. Live, gated and future-only offers are excluded. |
 | Roku | 3,308 free movies and 2,953 parent-free show cards from the supported browse graph; not a verified whole-service total. Episodes and playback use the official Roku player. |
 | Fawesome | 160 films from its complete saved This Week shelf, not the whole library. Opens official movie pages. |
-| Filmzie | Complete supported public movie/series directories: 4,415 movies, 199 shows, 264 seasons and 2,221 eligible episodes. Fresh free CPM access and original advertising are checked at playback; disabled/unavailable episodes are excluded. |
+| Filmzie | Complete supported public movie/series directories: 4,414 movies, 199 shows, 264 seasons and 2,221 eligible episodes. Fresh free CPM access and original advertising are checked at playback; disabled/unavailable episodes are excluded. |
 | Revry | Complete audited supported free guest offer: 162 movies, 76 shows, 594 episodes, five clips and two live channels. Clear HLS and protected DASH/Widevine play here with original advertising and available captions; current free access is checked at playback. |
 | PBS | Complete free full-length snapshot: 11,999 videos across 307 shows. 11,793 use the approved official embed; 206 retain exact official-page handoffs. Passport is excluded, and PBS checks current windows and region. |
-| FreeTV | Complete supported US guest snapshot: 677 films, 345 playable shows, 7,687 episodes (seven standalone) and 12 live channels. Current regional rights, original advertising and normal Widevine are retained. Full publisher guide pagination is supported. |
+| FreeTV | Complete supported US guest snapshot: 677 films, 345 playable shows, 7,688 episodes (seven standalone) and 12 live channels. Current regional rights, original advertising and normal Widevine are retained. Full publisher guide pagination is supported. |
 | Runtime | Complete supported US free guest snapshot: 955 movies, 87 playable shows, 2,832 episodes (320 independently free leaves) and 29 live channels. Internal HLS playback preserves original VMAP/SSAI advertising and rechecks guest access/region. Complete paged publisher guide. |
 | Red Bull / PBS KIDS | 12 selected Red Bull films; 60 permitted PBS KIDS homepage videos across 18 shows. These are explicitly scoped selections. |
 | NASA+, NFB, licensed Archive, 30A, Xumo, NewsON, CW, YuppTV and curated World TV | Existing supported direct or official embedded playback. Source availability and browser restrictions apply. |

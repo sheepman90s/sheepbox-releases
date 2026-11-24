@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T12:26:01.753Z",
+  "generatedAt": "2026-11-24T12:27:38.284Z",
   "sources": {
     "nasaplus": {
       "complete": true,
@@ -177,7 +177,7 @@
       "allPlaybackOffersChecked": false,
       "countrySource": "No catalogue country is supplied; real publisher guest offers determine current availability without country overrides.",
       "advertising": "Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted.",
-      "generatedAt": "2026-11-24T12:25:27.003Z",
+      "generatedAt": "2026-11-24T12:27:02.096Z",
       "seriesDirectoryComplete": true,
       "providerWideComplete": true,
       "seriesDirectoryRows": 199,

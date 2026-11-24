@@ -57,7 +57,7 @@ Screenshots are from the 1.9.0 release-candidate series. See [supported provider
 
 ## Web preview
 
-[Open SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC5 launch snapshot contains 24,709 top-level On Demand entries, 1,248 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,687 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
+[Open SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC5 release snapshot contains 24,710 top-level On Demand entries, 1,279 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,688 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
 
 Runtime adds 955 free movies, 87 playable shows, 2,832 episodes and 29 live channels with internal HLS playback and original advertising.
 
