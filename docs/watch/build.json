@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC3",
-  "revision": "22a3cd948d09",
+  "revision": "f64731268b5e",
   "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
   "titles": 22011,
   "live": 1207,
@@ -58,11 +58,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "8f82b861d9a7629d8a0466e623f40bf88fe0d49f0bd8cc32c032d663c80cfd29"
+      "sha256": "86835586a487220db7c7bc878f24733c86480c14e6b88bf8b46ddb1b98ed7701"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "efe72b9e817db7a260d6d484c48002b5cccac1ce83e942fb12c0d017bd5f717b"
+      "sha256": "983ac721253c9160e1798d984ccbdba3f4cc14bc700d55b6fa830aa6100e449a"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -1106,7 +1106,7 @@
     },
     {
       "path": "data/webcams.json",
-      "sha256": "8f560a71c71873732a362d9a439bcbb74a07fc824a64a332246d6583325342ee"
+      "sha256": "3b857823e21891cf7748486cf1edf1174ef5ac8c08767b3212341921ea88be7c"
     },
     {
       "path": "data/world-countries.json",
@@ -1118,7 +1118,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "32ca6b2bcbb9e8d95ed9d3d746e996216e55befa3f35fe0dd7d6908bcf89c40a"
+      "sha256": "36ede02a41a7b0374c2f7145f3bc330daf5e901429a060f7ec337b6c9e8ca449"
     },
     {
       "path": "manifest.webmanifest",
@@ -1138,11 +1138,11 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "85db5acee425e52fdb4de0f44307fa9429d9073cac12b760bb6a3692ac2980d6"
+      "sha256": "42c7a47a9c4be26708f15eb4b3a075d1338b8c152309b3ca1baedb979baf5660"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "cfe260e8564656798c5a54ab7d04406247468ba2b4b34a79bfbcb5bebe82c913"
+      "sha256": "4a79e2fd26e22a4a5449c910a947cbabc0bb755a4dd0a0b2c6efd392120a0270"
     },
     {
       "path": "src/cw.mjs",
@@ -1150,7 +1150,7 @@
     },
     {
       "path": "src/filmzie.mjs",
-      "sha256": "d8a1782bc266206071fc59d09ac6faea07f6111e33ace160b37263dc368f6b50"
+      "sha256": "eaf8c2c30a149889ee9efb71c38e2f237e4be565cf1969fe3b901a6fe68aba84"
     },
     {
       "path": "src/globe.mjs",
@@ -1158,7 +1158,7 @@
     },
     {
       "path": "src/guide.mjs",
-      "sha256": "589fbd92eecd9eacc1575f0ef0ccf3ab0e4cd97bb5f580cb280a2f42f712d12f"
+      "sha256": "57032d1805270a07c86f6bdd8c98d98f8dfc774f67a3a0f7bdfc07b1d362f38a"
     },
     {
       "path": "src/maintenance.mjs",
@@ -1174,11 +1174,11 @@
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "0c4f74d5227531740f70a91ef443d386de03237548ec10942fca418747173938"
+      "sha256": "07c462ee2dd3c18d7f1a49b35ba633723addccd2c3c95bf919b9ca0b462a2bee"
     },
     {
       "path": "src/publisher-links.mjs",
-      "sha256": "aece177e3cec7b8b43a0177d5121935c3f99343ea394575c84f1400dc0957ce1"
+      "sha256": "03c01bcd4819ab22853000bd7cb50b9cb2107d7e329078433f9ad27e861af2c7"
     },
     {
       "path": "src/publishers.mjs",
@@ -1190,7 +1190,7 @@
     },
     {
       "path": "src/revry.mjs",
-      "sha256": "f2119d2f24e9f503e9a912ec823eeb2bf0aef7af938137835c7dc8ad152d8ae3"
+      "sha256": "e1e23aeb5e3dbc24a84b1dd5786fbd7f94917edd5e05071ffcd4c96b8a53f49e"
     },
     {
       "path": "src/roku-catalog.mjs",
@@ -1214,15 +1214,15 @@
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "6f5f10016e43050988745b2da161089b70a42c07447ce436299166448a67696c"
+      "sha256": "7a59e412198a1be433d6d0ba12d3806843aaebdf76992e9f9e58df14bf34fb24"
     },
     {
       "path": "src/storage.mjs",
-      "sha256": "9bb1c11b923c762083db73e1a74e87044af556f9ce1799f50fa3f74855223a97"
+      "sha256": "3c970282fda35cb0b7a7800aa1c1ef2c102edcc0150907df9901f1577a54e4d0"
     },
     {
       "path": "src/watch-party.mjs",
-      "sha256": "240c76fd985634f60b50cccc80496cfc0cd87bdb0c94b88d734e0a3760a956a2"
+      "sha256": "981946870c480aea0b3e81674c963701cbbfeccf9ae8d235065ef7f24e099229"
     },
     {
       "path": "src/world-content.mjs",
@@ -1254,11 +1254,11 @@
     },
     {
       "path": "styles.css",
-      "sha256": "f4f66f45aa882f567c9cbef9544593129d6d746c0520132ed05ad3f9160d5e87"
+      "sha256": "34808b0bb95cf80b5d0e891ab7f2e12e5367df9562e7937e604e255f09d6d601"
     },
     {
       "path": "sw.js",
-      "sha256": "b29372318fc4918c4b5b063b9582d62a5e9c8c47c2ac620828a8dfe6d745ef9b"
+      "sha256": "0842a50455a74ca8b9567ce31541575869eac498b42cacc1c09b651e77a88475"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
