@@ -2,8 +2,8 @@ import {escapeHtml as e} from './core.mjs';
 const ENDPOINT='https://sheepbox-parties.aj-2e2.workers.dev';
 export const validRoom=code=>/^[A-HJ-NP-Z2-9]{8}$/.test(code??'');
 // Native and web use the same publisher identity, without the web card prefix.
-export function partyTarget(item){return item?.provider==='nasaplus'&&item.mode==='nasa'&&/^[1-9]\d*$/.test(item.sourceId)?{provider:'nasaplus',id:item.sourceId,name:item.title.slice(0,180),kind:item.kind==='episode'?'episode':'movie'}:null;}
-export function partyItemId(target){return target?.provider==='nasaplus'&&/^[1-9]\d*$/.test(target.id)?'nasa-'+target.id:'';}
+export function partyTarget(item){return item?.provider==='nasaplus'&&item.mode==='nasa'&&/^[1-9]\d*$/.test(item.sourceId)?{provider:'nasaplus',id:'video:'+item.sourceId,name:item.title.slice(0,180),kind:item.kind==='episode'||item.series?.length?'episode':'movie'}:null;}
+export function partyItemId(target){const match=target?.provider==='nasaplus'&&/^(?:video:)?([1-9]\d*)$/.exec(target.id);return match?'nasa-'+match[1]:'';}
 export function partyCorrection({position,duration,ready,inAd,hostPresent,phase,playing,hostPosition,age}){
   if(inAd)return {};
   if(!hostPresent)return {playing:false};
