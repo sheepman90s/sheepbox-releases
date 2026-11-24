@@ -1,9 +1,9 @@
 {
   "version": "2.0.0-RC5",
-  "revision": "1642c030e92f",
-  "catalogGeneratedAt": "2026-11-24T12:04:38.599Z",
-  "titles": 24709,
-  "live": 1248,
+  "revision": "d353a00053e0",
+  "catalogGeneratedAt": "2026-11-24T12:26:01.753Z",
+  "titles": 24710,
+  "live": 1279,
   "extraLibraries": {
     "pbs": {
       "videos": 11999,
@@ -75,11 +75,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "e2cade0876c89101ad68ab59be8ca5381fda209b3723de4d10d251e9dbe73061"
+      "sha256": "783f0d97d7bc8aa8de5eafa822ff67ac301662319f1b20ad74d2c1ad25694e28"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "b66ccb5b9ed1875b7ad86a6f9cde1ccd65fa045b9b470fa20996a84892091893"
+      "sha256": "a2061c04438568c804aff2184026e32ddede9a49644f0159c53396e5b66f0cef"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -1303,7 +1303,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "a1b988a5a499cf2542800cf07384e9182883ea8f22bfb72e0f59267a7f52cd48"
+      "sha256": "b85703fbb229f7e0032f3d6e5e077e3a36c056b260a604dfa1380670636ac140"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

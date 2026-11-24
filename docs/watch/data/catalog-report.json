@@ -1,11 +1,13 @@
 {
-  "generatedAt": "2026-11-24T12:04:38.599Z",
+  "generatedAt": "2026-11-24T12:26:01.753Z",
   "sources": {
     "nasaplus": {
-      "titles": 607,
       "complete": true,
-      "pages": 7,
-      "series": 58
+      "generatedAt": "2026-11-24T12:26:01.747Z",
+      "titles": 609,
+      "series": 58,
+      "publisherRows": 609,
+      "scope": "Complete current public NASA+ videos and series taxonomy. Publisher access is checked when you play."
     },
     "archive": {
       "titles": 137,
@@ -32,22 +34,25 @@
       "country": "us",
       "stationDirectoryComplete": true,
       "stations": 279,
-      "live": 210,
+      "live": 240,
       "latestNewscasts": 269,
       "latestStationsChecked": 279,
       "latestDirectoryComplete": true,
       "withoutNewscast": 10,
       "unsupportedOffers": 0,
       "failedStationIds": [],
-      "selection": "Complete advertised live directory plus fresh-resolving latest-newscast cards only where a current supported guest offer was confirmed. No expiring clip or playback URL is persisted."
+      "selection": "Complete advertised live directory plus fresh-resolving latest-newscast cards only where a current supported guest offer was confirmed. No expiring clip or playback URL is persisted.",
+      "complete": true,
+      "generatedAt": "2026-11-24T12:25:44.875Z"
     },
     "xumo": {
       "source": "Xumo current public website regional live directory",
       "country": "us",
       "complete": true,
-      "live": 454,
+      "live": 456,
       "onDemandIncluded": false,
-      "advertising": "Fresh publisher SSAI offers and full ad query parameters retained; no client VMAP or tracking URL is supplied by the current live offer."
+      "advertising": "Fresh publisher SSAI offers and full ad query parameters retained; no client VMAP or tracking URL is supplied by the current live offer.",
+      "generatedAt": "2026-11-24T12:25:45.309Z"
     },
     "cw": {
       "source": "The CW current public web live directory",
@@ -58,19 +63,22 @@
       "onDemandIncluded": false,
       "country": "us",
       "countrySource": "The CW US web-service lineup; no per-channel international rights or country override is asserted.",
-      "advertising": "Fresh publisher fast_params and all offered SSAI stream queries retained. Preplay, client preroll, subscriber and protected modes are excluded."
+      "advertising": "Fresh publisher fast_params and all offered SSAI stream queries retained. Preplay, client preroll, subscriber and protected modes are excluded.",
+      "generatedAt": "2026-11-24T12:25:45.591Z"
     },
     "yupptv": {
       "source": "YuppTV current public free guest guide",
       "channelDirectoryComplete": true,
-      "channels": 293,
+      "channels": 292,
       "countryMapped": 4,
-      "countryUnmapped": 289,
+      "countryUnmapped": 288,
       "countryRule": "Explicit source-mapped channel IDs only; viewer country and language are never used as channel country.",
       "offersCheckedOnPlay": true,
       "advertising": "Fresh publisher preUrl/preRollUrl via Google IMA; unsupported required schedules are refused.",
       "publicRestProtocol": "Authorized public page/content and page/stream endpoints; no encrypted web-envelope configuration is required.",
-      "playbackScope": "Directory availability is checked again on play. Region, access, clear-HLS availability and advertising can change."
+      "playbackScope": "Directory availability is checked again on play. Region, access, clear-HLS availability and advertising can change.",
+      "complete": true,
+      "generatedAt": "2026-11-24T12:25:49.597Z"
     },
     "worldtv": {
       "name": "World TV — official broadcasters",
@@ -160,16 +168,16 @@
       "source": "Complete Filmzie public MOVIE and TV_SHOW directories with all published seasons reconciled against current episode details",
       "complete": true,
       "movieDirectoryComplete": true,
-      "publisherRows": 4415,
-      "rowsRead": 4415,
+      "publisherRows": 4414,
+      "rowsRead": 4414,
       "pages": 45,
-      "movies": 4415,
+      "movies": 4414,
       "excludedRows": 0,
       "seriesIncluded": true,
       "allPlaybackOffersChecked": false,
       "countrySource": "No catalogue country is supplied; real publisher guest offers determine current availability without country overrides.",
       "advertising": "Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted.",
-      "generatedAt": "2026-11-24T02:45:22.676Z",
+      "generatedAt": "2026-11-24T12:25:27.003Z",
       "seriesDirectoryComplete": true,
       "providerWideComplete": true,
       "seriesDirectoryRows": 199,
