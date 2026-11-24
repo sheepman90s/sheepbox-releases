@@ -1,7 +1,7 @@
 {
   "version": "2.0.0-RC5",
-  "revision": "5c847914780c",
-  "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
+  "revision": "09138277e722",
+  "catalogGeneratedAt": "2026-11-24T12:04:38.599Z",
   "titles": 24709,
   "live": 1248,
   "extraLibraries": {
@@ -75,11 +75,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "86835586a487220db7c7bc878f24733c86480c14e6b88bf8b46ddb1b98ed7701"
+      "sha256": "e2cade0876c89101ad68ab59be8ca5381fda209b3723de4d10d251e9dbe73061"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "983ac721253c9160e1798d984ccbdba3f4cc14bc700d55b6fa830aa6100e449a"
+      "sha256": "b66ccb5b9ed1875b7ad86a6f9cde1ccd65fa045b9b470fa20996a84892091893"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -1131,7 +1131,7 @@
     },
     {
       "path": "data/runtime.json",
-      "sha256": "827444c8979ca37bded03c873fafa32d523bc5dab8a81cb708e8cdb71a27a1f0"
+      "sha256": "45df6d4660b5aa371ab34be609d3996a060623456e22191598ef3de280de0e6f"
     },
     {
       "path": "data/webcams.json",
@@ -1303,7 +1303,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "867a6898eda968900da6455348216d5d9f6d040b3e37de8656e50b1e2f0e9f61"
+      "sha256": "2f097df32c4075252d942a59f4bc7fdc9523babf8c9350ae257bc341141e078b"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
