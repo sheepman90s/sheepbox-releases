@@ -87,20 +87,22 @@ function validateVmap(xml) {
 
 /** Current public guest movie offer; no homepage cookie, account or media cache. */
 export async function resolveFilmzie(item, {signal} = {}) {
-  if (item?.mode !== 'filmzie-movie' || !slug(item.sourceId)) throw Error('Invalid Filmzie movie.');
+  const episode=item?.mode==='filmzie-episode';
+  if (!['filmzie-movie','filmzie-episode'].includes(item?.mode) || !slug(item.sourceId)||episode&&!videoId(item.videoId)) throw Error('Invalid Filmzie movie.');
   const detail = (await request('/content/' + encodeURIComponent(item.sourceId), {signal})).data;
-  if (detail?.type !== 'MOVIE' || detail.sefName !== item.sourceId || flag(detail.comingSoon) || unavailable(detail) ||
+  if (detail?.type !== (episode?'TV_SHOW':'MOVIE') || detail.sefName !== item.sourceId || flag(detail.comingSoon) || unavailable(detail) ||
       (Object.hasOwn(detail, 'status') && detail.status !== 'APPROVED') ||
       ['requiresAuthentication', 'requiresLogin', 'isPremium', 'subscriptionRequired'].some(key => flag(detail[key]))) {
     throw Error('This Filmzie movie is not currently available to guests.');
   }
   if (!Array.isArray(detail.videos) || detail.videos.length > 1000) throw Error('Filmzie did not supply its full movie video.');
-  const feature = detail.videos.find(video => video?.type === 'PAID_CONTENT' && videoId(video.id));
+  const expected=episode?'EPISODE':'PAID_CONTENT';
+  const feature = detail.videos.find(video => video?.type === expected && videoId(video.id)&&(!episode||video.id===item.videoId));
   if (!feature) throw Error('Filmzie did not supply its full movie video.');
   const stream = (await request('/video/stream/' + feature.id, {signal})).data;
   // PAID_CONTENT is the publisher's main-feature type, distinct from TRAILER.
   // CPM is its free advertising-funded license. Other license modes are refused.
-  if (stream?.id !== feature.id || stream.type !== 'PAID_CONTENT' || stream.licenseFee !== 'CPM' || unavailable(stream) ||
+  if (stream?.id !== feature.id || stream.type !== expected || stream.licenseFee !== 'CPM' || unavailable(stream) ||
       ['isPreview', 'preview', 'isTrailer', 'trailer', 'subscriberOnly', 'isSubscriberOnly', 'requiresSubscription', 'subscriptionRequired', 'requiresPurchase', 'requiresPayment', 'requiresAuthentication', 'requiresLogin'].some(key => flag(stream[key])) ||
       ['drm', 'drmInfo', 'licenseUrl', 'license_url'].some(key => active(stream[key])) ||
       ['drm', 'drmInfo', 'licenseUrl'].some(key => active(stream.source?.[key]))) {
@@ -165,4 +167,47 @@ export async function loadFilmzieSelection({signal, onProgress = () => {}} = {})
     countrySource: 'No catalogue country is supplied; real publisher guest offers determine current availability without country overrides.',
     advertising: 'Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted.',
   }};
+}
+
+/** Reconcile every published season against the current playable episode set. */
+export function parseFilmzieShow(row,detail,groups=new Map()){
+  if(row?.type!=='TV_SHOW')return null;
+  const base=movieMetadata({...row,type:'MOVIE'},groups);if(!base)return null;
+  if(detail?.type!=='TV_SHOW'||detail.sefName!==row.sefName||!Array.isArray(detail.videos)||!Array.isArray(row.seasons))throw Error('Filmzie season metadata is incomplete.');
+  if(flag(detail.comingSoon)||unavailable(detail)||['requiresAuthentication','requiresLogin','isPremium','subscriptionRequired'].some(key=>flag(detail[key])))return null;
+  const allowed=new Set(),references=new Set(),items=[];
+  for(const video of detail.videos.filter(video=>video.type==='EPISODE')){if(!videoId(video.id)||allowed.has(video.id))throw Error('Filmzie repeated an episode identity.');allowed.add(video.id);}
+  const show={...base,id:'filmzie-series-'+row.sefName,kind:'series',mode:'series',episodes:[],categories:[...new Set(['Series',...base.categories])],description:plainText(detail.description||row.description)};
+  let excluded=0;
+  for(const season of row.seasons){
+    if(!Number.isInteger(season.seasonNumber)||season.seasonNumber<0||!Array.isArray(season.episodes))throw Error('Filmzie returned an invalid season.');
+    for(const [index,episode] of season.episodes.entries()){
+      const video=episode.videoId;if(!videoId(video)||references.has(video))throw Error('Filmzie repeated or omitted a season video identity.');references.add(video);
+      if(!allowed.has(video)||episode.integrators?.platform?.enabled===false||unavailable(episode)){excluded++;continue;}
+      const item={id:'filmzie-episode-'+video,provider:'filmzie',providerName:'Filmzie',kind:'episode',mode:'filmzie-episode',sourceId:row.sefName,videoId:video,seriesId:show.id,title:plainText(episode.title)||'Episode '+(index+1),description:plainText(episode.description),categories:show.categories,image:image(episode,'featured2')||base.image,official:base.official,seasonNumber:season.seasonNumber,episodeNumber:index+1,duration:Number(episode.duration)||0};
+      items.push(item);show.episodes.push(item.id);
+    }
+  }
+  if([...allowed].some(id=>!references.has(id)))throw Error('Filmzie has playable episodes missing from its season directory. The previous catalogue is retained.');
+  return {show:items.length?show:null,items,excluded,seasons:row.seasons.length};
+}
+export async function loadFilmzieLibrary({signal,onProgress=()=>{}}={}){
+  const movies=await loadFilmzieSelection({signal,onProgress});
+  const categoryData=(await request('/category',{signal})).data;
+  if(!Array.isArray(categoryData))throw Error('Filmzie categories changed.');
+  const groups=new Map(categoryData.map(row=>[row.key,plainText(row.name)]));
+  const rows=[],seen=new Set();let total,pages=0;
+  for(let offset=0;total===undefined||offset<total;offset+=100){
+    const data=(await request('/content?limit=100&offset='+offset+'&type=TV_SHOW',{signal})).data,paging=data?.paging;
+    if(!paging||!Array.isArray(data.data)||paging.limit!==100||paging.offset!==offset||!Number.isInteger(paging.total)||paging.total<0||paging.total>50000||total!==undefined&&total!==paging.total||data.data.length!==Math.min(100,paging.total-offset))throw Error('Filmzie series directory is incomplete or changed.');
+    total=paging.total;pages++;
+    for(const row of data.data){if(!videoId(row.id)||seen.has(row.id))throw Error('Filmzie repeated a series page.');seen.add(row.id);rows.push(row);}
+  }
+  const whole=(await request('/content?limit=1&offset=0',{signal})).data?.paging?.total;
+  if(whole!==movies.report.publisherRows+total)throw Error('Filmzie has additional catalogue types or changed during traversal. The previous catalogue is retained.');
+  const results=new Array(rows.length);let next=0,done=0;
+  await Promise.all(Array.from({length:Math.min(4,rows.length)},async()=>{while(next<rows.length){const index=next++,row=rows[index];if(movieMetadata({...row,type:'MOVIE'},groups)&&row.type==='TV_SHOW'){const detail=(await request('/content/'+encodeURIComponent(row.sefName),{signal})).data;results[index]=parseFilmzieShow(row,detail,groups);}onProgress(++done,rows.length);}}));
+  const series=results.filter(Boolean),episodes=series.flatMap(row=>row.items),providerSeries=series.map(row=>row.show).filter(Boolean);
+  const identities=[...movies.items,...episodes,...providerSeries].map(row=>row.id);if(new Set(identities).size!==identities.length)throw Error('Filmzie episode ownership or catalogue identities conflict.');
+  return {items:[...movies.items,...episodes],live:[],providerSeries,report:{...movies.report,source:'Complete Filmzie public MOVIE and TV_SHOW directories with all published seasons reconciled against current episode details',generatedAt:new Date().toISOString(),seriesDirectoryComplete:true,providerWideComplete:true,seriesIncluded:true,seriesDirectoryRows:total,seriesPages:pages,series:providerSeries.length,episodes:episodes.length,seasons:series.reduce((n,row)=>n+row.seasons,0),excludedSeries:total-providerSeries.length,excludedEpisodes:series.reduce((n,row)=>n+row.excluded,0),scope:'Complete supported public movie and series directories, all published seasons and currently listed guest episode metadata. Current free CPM playback and all publisher advertising/access restrictions are checked again when you watch.'}};
 }

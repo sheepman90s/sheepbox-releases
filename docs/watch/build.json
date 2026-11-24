@@ -1,9 +1,14 @@
 {
-  "version": "2.0.0-RC2",
-  "revision": "7033d2efdd80",
-  "catalogGeneratedAt": "2026-11-17T22:11:27.953Z",
-  "titles": 21558,
-  "live": 1205,
+  "version": "2.0.0-RC3",
+  "revision": "f64731268b5e",
+  "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
+  "titles": 22011,
+  "live": 1207,
+  "revry": {
+    "videos": 761,
+    "shows": 76,
+    "live": 2
+  },
   "apkLibrary": {
     "videos": 22463,
     "shows": 1047
@@ -53,11 +58,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "756b6e29d2402fafcab5acc903d9435497a83457ac97fff5c86ad9d5f02ecb54"
+      "sha256": "86835586a487220db7c7bc878f24733c86480c14e6b88bf8b46ddb1b98ed7701"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "9e8a9b265b46ca84b9c490c907e213fb9b383dfd07febd1d926375f735112931"
+      "sha256": "983ac721253c9160e1798d984ccbdba3f4cc14bc700d55b6fa830aa6100e449a"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -66,6 +71,10 @@
     {
       "path": "data/publisher-links.json",
       "sha256": "583afbea7428fb477be8cd0bad095a9c4accc4b29f8b718657d161d361b1f5f6"
+    },
+    {
+      "path": "data/revry.json",
+      "sha256": "d3074a15cd3975fc2b320be61369286e95cd7aabddffdc1abef2c17f61d866da"
     },
     {
       "path": "data/roku/catalog.json",
@@ -1109,7 +1118,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "907b0e59d409806c6751af1324a4ffd1ff8a5e9393a83b9ae608aa6e2438c1b3"
+      "sha256": "36ede02a41a7b0374c2f7145f3bc330daf5e901429a060f7ec337b6c9e8ca449"
     },
     {
       "path": "manifest.webmanifest",
@@ -1129,11 +1138,11 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "15a03f52f24a7ad175ae32dd875fb028d7969e39401c8e21d13e0a59249a7f01"
+      "sha256": "42c7a47a9c4be26708f15eb4b3a075d1338b8c152309b3ca1baedb979baf5660"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "ad2e6dc666534570b4517796c63979b3e6496bee6f8349c35d4fbcd319c3904b"
+      "sha256": "4a79e2fd26e22a4a5449c910a947cbabc0bb755a4dd0a0b2c6efd392120a0270"
     },
     {
       "path": "src/cw.mjs",
@@ -1141,7 +1150,7 @@
     },
     {
       "path": "src/filmzie.mjs",
-      "sha256": "3210151f59238284c3b9da58adeeeaa26bdd66bd137d9f686077ce4142efe5f3"
+      "sha256": "eaf8c2c30a149889ee9efb71c38e2f237e4be565cf1969fe3b901a6fe68aba84"
     },
     {
       "path": "src/globe.mjs",
@@ -1149,7 +1158,7 @@
     },
     {
       "path": "src/guide.mjs",
-      "sha256": "13fd5d212fa979030280690a7a7c29a0475a1bbc6ac98162497a998e4ce54bcc"
+      "sha256": "57032d1805270a07c86f6bdd8c98d98f8dfc774f67a3a0f7bdfc07b1d362f38a"
     },
     {
       "path": "src/maintenance.mjs",
@@ -1165,11 +1174,11 @@
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "8296b6f85649f0df91625a6d669aedef0284a89c0ef3bf8adef67ffec10acfeb"
+      "sha256": "07c462ee2dd3c18d7f1a49b35ba633723addccd2c3c95bf919b9ca0b462a2bee"
     },
     {
       "path": "src/publisher-links.mjs",
-      "sha256": "55a69d03fb1cf63783a33670cd3bace89961e2c2d364678353200821c999aeb1"
+      "sha256": "03c01bcd4819ab22853000bd7cb50b9cb2107d7e329078433f9ad27e861af2c7"
     },
     {
       "path": "src/publishers.mjs",
@@ -1178,6 +1187,10 @@
     {
       "path": "src/redbull.mjs",
       "sha256": "d6161c84a7e87d7d43d4aa74d113e622f7541ac669d04c11371c1ed6119b741d"
+    },
+    {
+      "path": "src/revry.mjs",
+      "sha256": "e1e23aeb5e3dbc24a84b1dd5786fbd7f94917edd5e05071ffcd4c96b8a53f49e"
     },
     {
       "path": "src/roku-catalog.mjs",
@@ -1201,11 +1214,15 @@
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "09783e5e0d280a3a3ea932f3e02f71ba9ef3c4ef894d62534b8bad821a12750e"
+      "sha256": "7a59e412198a1be433d6d0ba12d3806843aaebdf76992e9f9e58df14bf34fb24"
     },
     {
       "path": "src/storage.mjs",
-      "sha256": "22b2151194acd86eaabfae0ce42b4a59d2deb7843b9fb70baf97cb14518da53f"
+      "sha256": "3c970282fda35cb0b7a7800aa1c1ef2c102edcc0150907df9901f1577a54e4d0"
+    },
+    {
+      "path": "src/watch-party.mjs",
+      "sha256": "981946870c480aea0b3e81674c963701cbbfeccf9ae8d235065ef7f24e099229"
     },
     {
       "path": "src/world-content.mjs",
@@ -1237,11 +1254,11 @@
     },
     {
       "path": "styles.css",
-      "sha256": "6a158c57e0bd7a8b17c0387c0cedb7704834e3555324badcc43f8dfdafcf61a4"
+      "sha256": "34808b0bb95cf80b5d0e891ab7f2e12e5367df9562e7937e604e255f09d6d601"
     },
     {
       "path": "sw.js",
-      "sha256": "4f1ff05fab8e94973782c91de15544f8db25a7db1e4c42b168cbd665bd4c3375"
+      "sha256": "0842a50455a74ca8b9567ce31541575869eac498b42cacc1c09b651e77a88475"
     },
     {
       "path": "vendor/APACHE-2.0.txt",

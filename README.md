@@ -57,9 +57,13 @@ Screenshots are from the 1.9.0 release-candidate series. See [supported provider
 
 ## Web preview
 
-[Open SheepBox Web RC2](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. It includes 21,558 top-level On Demand entries, 1,205 live listings and 3,892 webcams, plus search, favorites, history, watched/unwatched controls and browser backups. Complete audited Philo Free VOD and BYUtv metadata includes show and episode browsing. Settings has catalogue cache clearing and provider coverage; Live TV links to the CW programme guide. World View supports explicit globe selection and keyboard zoom.
+[Open SheepBox Web RC3](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Browse 22,011 top-level On Demand entries, 1,207 live listings and 3,892 webcams. Filmzie now includes 4,415 movies, 199 shows and 2,221 episodes. Revry includes its complete audited free catalogue, with both live channels and compatible videos playing inside SheepBox. Protected Revry titles open its official website.
 
-Browser support differs from Android. Philo, BYUtv, Fawesome and Roku open their official players in a new tab; return to SheepBox to continue browsing. Some other sources use supported direct or embedded playback, and other provider entries are website links only. Certain libraries are selections rather than whole-service catalogues. Offline browsing uses saved metadata; watching needs a connection. Recording/DVR, watch parties and automatic Android library sync are not available on the web. See [web provider coverage](PROVIDERS.md#web-preview) for counts and limits. Region, browser and publisher restrictions apply.
+Use watched/unwatched controls, favorites, Continue watching, browser backups, hide/restore, four color palettes, cache clearing and provider status. Supported episodes can continue to the next episode; Filmzie may require Play to start its original advertising. The guide covers CW, Revry and labelled SheepBox Classics schedules. World View keeps keyboard globe selection and zoom.
+
+Start a text watch party from a NASA+ on-demand video's player, or choose Watch party to join an invitation. The host controls playback, chat sits beside a smaller video, and each viewer streams independently. Matching NASA+ rooms work with the Android app. BYUtv/NFB parties remain Android-only; no microphone or voice chat is used.
+
+Browser support differs from Android. Philo, BYUtv, Fawesome and Roku open official players in a new tab; return to SheepBox to continue browsing. Some other entries are website links or explicitly partial selections. Saved metadata supports offline browsing; watching and parties need a connection. Recording/DVR and automatic Android library sync remain unavailable. See [web provider coverage](PROVIDERS.md#web-preview) for counts and limits. Publisher access, advertising and region restrictions remain in force.
 
 ## Availability and support
 

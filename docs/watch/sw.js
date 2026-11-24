@@ -1,8 +1,20 @@
-const CACHE='sheepbox-web-7033d2efdd80';
-const SHELL=['./','./index.html','./styles.css','./app-home.css','./world.css','./world-live.css','./player-ads.css','./manifest.webmanifest','./src/app.mjs','./src/core.mjs','./src/storage.mjs','./src/maintenance.mjs','./src/guide.mjs','./src/apk-library.mjs','./src/providers.mjs','./src/sources.mjs','./src/player.mjs','./src/ads.mjs','./src/newson.mjs','./src/xumo.mjs','./src/cw.mjs','./src/yupp.mjs','./src/worldtv.mjs','./src/worldtv-extra.mjs','./src/redbull.mjs','./src/filmzie.mjs','./src/roku.mjs','./src/publisher-links.mjs','./src/roku-library.mjs','./src/publishers.mjs','./src/world-view.mjs','./src/world-content.mjs','./src/globe.mjs','./src/world-geometry.mjs','./data/catalog.json','./data/apk-library.json','./data/roku/catalog.json','./data/webcams.json','./assets/icon.png','./assets/mascot.png','./assets/home.png','./assets/browse.jpg','./vendor/hls-1.7.4.min.js'];
+const CACHE='sheepbox-web-f64731268b5e';
+const SHELL=['./','./index.html','./styles.css','./app-home.css','./world.css','./world-live.css','./player-ads.css','./manifest.webmanifest','./src/app.mjs','./src/watch-party.mjs','./src/revry.mjs','./src/core.mjs','./src/storage.mjs','./src/maintenance.mjs','./src/guide.mjs','./src/apk-library.mjs','./src/providers.mjs','./src/sources.mjs','./src/player.mjs','./src/ads.mjs','./src/newson.mjs','./src/xumo.mjs','./src/cw.mjs','./src/yupp.mjs','./src/worldtv.mjs','./src/worldtv-extra.mjs','./src/redbull.mjs','./src/filmzie.mjs','./src/roku.mjs','./src/publisher-links.mjs','./src/roku-library.mjs','./src/publishers.mjs','./src/world-view.mjs','./src/world-content.mjs','./src/globe.mjs','./src/world-geometry.mjs','./data/catalog.json','./data/revry.json','./data/apk-library.json','./data/roku/catalog.json','./data/webcams.json','./assets/icon.png','./assets/mascot.png','./assets/home.png','./assets/browse.jpg','./vendor/hls-1.7.4.min.js'];
 const WORLD=['./data/world-countries.json','./assets/world-earth.jpg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
-self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('sheepbox-web-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{
+ const scope=new URL(self.registration.scope);
+ for(const key of await caches.keys()){
+  if(!key.startsWith('sheepbox-web-')||key===CACHE)continue;
+  const cache=await caches.open(key);
+  for(const request of await cache.keys()){
+   const url=new URL(request.url);
+   if(url.origin===scope.origin&&url.pathname.startsWith(scope.pathname))await cache.delete(request);
+  }
+  if(!(await cache.keys()).length)await caches.delete(key);
+ }
+ await self.clients.claim();
+})()));
 self.addEventListener('message',event=>{if(event.data==='SKIP_WAITING')self.skipWaiting();});
 self.addEventListener('fetch',event=>{
  const url=new URL(event.request.url);const scope=new URL(self.registration.scope);
