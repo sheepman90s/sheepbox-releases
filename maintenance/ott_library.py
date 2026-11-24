@@ -890,6 +890,7 @@ def main():
     client = Client(args.timezone, args.delay)
     try:
         client.bootstrap()
+        print(NAME + " detected metadata region " + client.region, flush=True)
         require(client.region == args.expected_region, "detected region differs from the published catalogue")
         audit = Audit(client, args.workers, output / "INDEX_CHECKPOINT_METADATA.json", args.resume)
         result = audit.run()
