@@ -42,7 +42,7 @@ export class WebPlayer {
     video.addEventListener('loadedmetadata',()=>{
       const offset=Number(offer.offset)||position;
       if(offset>0&&Number.isFinite(video.duration))video.currentTime=Math.min(offset,Math.max(0,video.duration-1));
-      if(!this.ads?.started)this.onStatus('Ready — press Play to watch.');
+      if(!this.ads?.started)this.onStatus(offer.kind==='dash'?'Preparing protected playback…':'Ready — press Play to watch.');
       this.captions(this.preferCaptions);
       this.onCaptions(this.hasCaptions());
     });
@@ -70,7 +70,7 @@ export class WebPlayer {
     }
     if(offer.kind==='dash'){
       const controller=new AbortController();this.drmController=controller;
-      try{await openDash(video,offer,{signal:controller.signal,onPlayer:player=>{if(generation===this.generation)this.dash=player;else retireDash(player);},onError:failure,onTracks:()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(this.hasCaptions());}}});if(failed)throw Error('The publisher’s protected video could not start. Retry, or open its website.');if(generation===this.generation&&startButton){startButton.disabled=false;this.onStatus('Ready — press Play to watch.');}}
+      try{await openDash(video,offer,{signal:controller.signal,onPlayer:player=>{if(generation===this.generation)this.dash=player;else retireDash(player);},onError:failure,onTracks:()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(this.hasCaptions());}}});if(failed)throw Error('The publisher’s protected video could not start. Retry, or open its website.');if(generation===this.generation){if(startButton)startButton.disabled=false;if(video.paused&&!this.ads?.started)this.onStatus('Ready — press Play to watch.');}}
       catch(error){if(generation===this.generation){controller.abort();retireDash(this.dash);this.dash=null;this.onStatus(error.message||'Protected playback is unavailable in this browser. Use the publisher’s website.','error');throw error;}}
     }else if(offer.kind==='hls'){
       const Hls=await loadHls();if(generation!==this.generation)return;

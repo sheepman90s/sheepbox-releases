@@ -1036,6 +1036,19 @@ main {
   margin-left:auto;
   flex-shrink:0
 }
+@media (max-width:600px) {
+  .workspace .provider-banner {
+    display:grid;
+    grid-template-columns:44px minmax(0,1fr);
+    align-items:start
+  }
+  .workspace .provider-banner .provider-logo {width:44px;height:44px}
+  .workspace .provider-banner>.button {
+    grid-column:2;
+    margin-left:0;
+    justify-self:start
+  }
+}
 .series-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));

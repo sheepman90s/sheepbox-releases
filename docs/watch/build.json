@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC4",
-  "revision": "b8919c11614e",
+  "revision": "491a0a87911c",
   "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
   "titles": 23347,
   "live": 1219,
@@ -1170,7 +1170,7 @@
     },
     {
       "path": "src/dash.mjs",
-      "sha256": "35b54ff3d835f900a37ffb4e50e29f8479a3004f4ed3583b573b7b7eca524040"
+      "sha256": "84cf64fd8b29bdce0fa4810ba64ae89107b86d0fb828282c3d83d3d5fc20f259"
     },
     {
       "path": "src/filmzie.mjs",
@@ -1198,7 +1198,7 @@
     },
     {
       "path": "src/player.mjs",
-      "sha256": "5c3788a6406033146b4679e8dcec41548a8a8b9c04970a210b6207fb7672cb42"
+      "sha256": "3527d621aa90fe945305f48d7b476e8cbfb8d7af5a4a527dbd2a1d8444c6316f"
     },
     {
       "path": "src/provider-libraries.mjs",
@@ -1286,11 +1286,11 @@
     },
     {
       "path": "styles.css",
-      "sha256": "34808b0bb95cf80b5d0e891ab7f2e12e5367df9562e7937e604e255f09d6d601"
+      "sha256": "73ac3addad7d3570dc9606853892cb46d6900e96226fb913a2aaa65a02dfd4af"
     },
     {
       "path": "sw.js",
-      "sha256": "e41c5b859775eb8c26f2f48798fd14739404e7ef8c1c8176a60ea11dfbb07ce2"
+      "sha256": "4bf12fb581a117af29089fee51176cd8549afc8ab3e4a91e6406d2742a48d756"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
