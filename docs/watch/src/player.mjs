@@ -1,6 +1,7 @@
 import {safeUrl} from './core.mjs';
 import {publisherEmbedUrl} from './publishers.mjs';
 import {loadAdvertising,PublisherAds} from './ads.mjs';
+import {openDash,retireDash} from './dash.mjs';
 let hlsLibrary;
 async function loadHls(){
   if(globalThis.Hls)return globalThis.Hls;
@@ -13,9 +14,11 @@ export class WebPlayer {
   }
   stop(){
     this.generation++;
+    this.drmController?.abort();this.drmController=null;
+    retireDash(this.dash);this.dash=null;
     this.ads?.destroy();this.ads=null;
     this.trackController?.abort();this.trackController=null;
-    for(const url of this.trackUrls??[])URL.revokeObjectURL(url);this.trackUrls=[];
+    for(const url of this.trackUrls??[])URL.revokeObjectURL(url);this.trackUrls=[];this.externalTracks=[];
     if(this.video){this.onProgress(this.video.currentTime,this.video.duration);this.video.pause();this.video.removeAttribute('src');this.video.load();}
     this.hls?.destroy();this.hls=null;this.video=null;this.container.replaceChildren();
   }
@@ -28,7 +31,7 @@ export class WebPlayer {
       this.container.append(frame);this.onStatus('Use the publisher’s player controls.');return;
     }
     if(!safeUrl(offer.url))throw Error('Unsupported video address.');
-    const video=document.createElement('video');this.video=video;this.preferCaptions=captions;video.controls=!offer.adTag;video.playsInline=true;video.preload='metadata';if(offer.kind==='hls')video.crossOrigin='anonymous';video.setAttribute('aria-label',title);
+    const video=document.createElement('video');this.video=video;this.preferCaptions=captions;video.controls=!offer.adTag;video.playsInline=true;video.preload='metadata';if(['hls','dash'].includes(offer.kind))video.crossOrigin='anonymous';video.setAttribute('aria-label',title);
     this.container.append(video);
     let failed=false;const failure=()=>{if(!failed&&generation===this.generation){failed=true;this.onStatus('This video could not start. Retry, or open the publisher’s website.','error');}};
     video.addEventListener('error',failure);
@@ -39,18 +42,19 @@ export class WebPlayer {
     video.addEventListener('loadedmetadata',()=>{
       const offset=Number(offer.offset)||position;
       if(offset>0&&Number.isFinite(video.duration))video.currentTime=Math.min(offset,Math.max(0,video.duration-1));
-      if(!this.ads?.started)this.onStatus('Ready — press Play to watch.');
+      if(!this.ads?.started)this.onStatus(offer.kind==='dash'?'Preparing protected playback…':'Ready — press Play to watch.');
       this.captions(this.preferCaptions);
       this.onCaptions(this.hasCaptions());
     });
     let stamp=0;
     video.addEventListener('timeupdate',()=>{if(!this.ads?.blocking&&Date.now()-stamp>5000){stamp=Date.now();this.onProgress(video.currentTime,video.duration);}});
     video.addEventListener('ended',()=>{if(this.ads)this.ads.ended();else this.onEnded();});
+    let startButton;
     if(offer.adTag){
       video.disablePictureInPicture=true;video.controlsList?.add('nofullscreen');
       const ima=await loadAdvertising();if(generation!==this.generation)return;
       this.ads=new PublisherAds(ima,{container:this.container,video,adTag:offer.adTag,onStatus:this.onStatus,onComplete:offer.onAdComplete,onEnded:this.onEnded});
-      const play=document.createElement('button');play.type='button';play.className='button publisher-start';play.textContent='▶ Play';play.setAttribute('aria-label','Play video');
+      const play=document.createElement('button');startButton=play;play.type='button';play.className='button publisher-start';play.textContent='▶ Play';play.setAttribute('aria-label','Play video');play.disabled=offer.kind==='dash';
       play.addEventListener('click',()=>{if(generation!==this.generation)return;try{this.ads.start();play.remove();}catch{this.onStatus('The publisher player could not start. Retry, or open its website.','error');}});this.container.append(play);
       video.addEventListener('play',()=>{if(this.ads&&!this.ads.started)video.pause();});
     }
@@ -61,10 +65,14 @@ export class WebPlayer {
         const text=await response.text();if(text.length>1_000_000||!text.trimStart().startsWith('WEBVTT')||generation!==this.generation)return;
         const url=URL.createObjectURL(new Blob([text],{type:'text/vtt'}));(this.trackUrls??=[]).push(url);
         const track=document.createElement('track');track.kind='subtitles';track.label=supplied.label;track.srclang=supplied.language;track.src=url;track.default=this.preferCaptions;
-        track.addEventListener('load',()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(true);}});video.append(track);track.track.mode=this.preferCaptions?'showing':'hidden';
+        track.addEventListener('load',()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(true);}});this.externalTracks.push(track);video.append(track);track.track.mode=this.preferCaptions?'showing':'hidden';
       })).finally(()=>clearTimeout(timer));
     }
-    if(offer.kind==='hls'){
+    if(offer.kind==='dash'){
+      const controller=new AbortController();this.drmController=controller;
+      try{await openDash(video,offer,{signal:controller.signal,onPlayer:player=>{if(generation===this.generation)this.dash=player;else retireDash(player);},onError:failure,onTracks:()=>{if(generation===this.generation){this.captions(this.preferCaptions);this.onCaptions(this.hasCaptions());}}});if(failed)throw Error('The publisher’s protected video could not start. Retry, or open its website.');if(generation===this.generation){if(startButton)startButton.disabled=false;if(video.paused&&!this.ads?.started)this.onStatus('Ready — press Play to watch.');}}
+      catch(error){if(generation===this.generation){controller.abort();retireDash(this.dash);this.dash=null;this.onStatus(error.message||'Protected playback is unavailable in this browser. Use the publisher’s website.','error');throw error;}}
+    }else if(offer.kind==='hls'){
       const Hls=await loadHls();if(generation!==this.generation)return;
       if(Hls?.isSupported()){
         const hls=new Hls({maxBufferLength:30,backBufferLength:30,enableWorker:true});this.hls=hls;
@@ -75,9 +83,10 @@ export class WebPlayer {
       else throw Error('This browser does not support this stream. Try a current browser or the publisher’s website.');
     }else video.src=offer.url;
   }
-  hasCaptions(){return !!this.hls?.subtitleTracks.length||!!this.video&&[...this.video.textTracks].some(track=>['subtitles','captions'].includes(track.kind));}
+  hasCaptions(){return !!this.dash?.getTextTracks().length||!!this.hls?.subtitleTracks.length||!!this.video&&[...this.video.textTracks].some(track=>['subtitles','captions'].includes(track.kind));}
   captions(enabled){
     this.preferCaptions=enabled;
+    if(this.dash){const tracks=this.dash.getTextTracks(),chosen=tracks.find(track=>/^en\b|^eng$/i.test(track.language))??tracks[0];if(enabled&&chosen&&!chosen.active)this.dash.selectTextTrack(chosen);else if(!enabled&&tracks.some(track=>track.active))this.dash.selectTextTrack(null);if(tracks.length){for(const element of this.externalTracks??[])element.track.mode='disabled';return;}}
     if(this.hls){this.hls.subtitleDisplay=enabled;this.hls.subtitleTrack=enabled&&this.hls.subtitleTracks.length?0:-1;}
     if(this.video){
       const tracks=[...this.video.textTracks].filter(track=>['subtitles','captions'].includes(track.kind));

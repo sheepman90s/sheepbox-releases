@@ -1,9 +1,21 @@
 {
-  "version": "2.0.0-RC3",
-  "revision": "c33a672f10f6",
+  "version": "2.0.0-RC4",
+  "revision": "491a0a87911c",
   "catalogGeneratedAt": "2026-11-24T02:45:22.676Z",
-  "titles": 22011,
-  "live": 1207,
+  "titles": 23347,
+  "live": 1219,
+  "extraLibraries": {
+    "pbs": {
+      "videos": 11999,
+      "shows": 307,
+      "live": 0
+    },
+    "freetv": {
+      "videos": 8364,
+      "shows": 345,
+      "live": 12
+    }
+  },
   "revry": {
     "videos": 761,
     "shows": 76,
@@ -67,6 +79,14 @@
     {
       "path": "data/FAMELACK-LICENSE.txt",
       "sha256": "dfc34af32be9a99fab09f7f6ab40bcb0bf0fef561fd2276b3e4b981755e46a1c"
+    },
+    {
+      "path": "data/freetv.json",
+      "sha256": "a2f63bd9c3b821bc4d89d7a76ce4dc95b719db0bba7aeda8f966180f5473a404"
+    },
+    {
+      "path": "data/pbs.json",
+      "sha256": "f8b2770352d54d6f67d77038c01da91c0b818f68d26dfccf655f567ea9973b41"
     },
     {
       "path": "data/publisher-links.json",
@@ -1118,7 +1138,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "36ede02a41a7b0374c2f7145f3bc330daf5e901429a060f7ec337b6c9e8ca449"
+      "sha256": "89bcdd14df71848af7de928afc758dbdb2afe64767d43ac465214fdb11389ba0"
     },
     {
       "path": "manifest.webmanifest",
@@ -1138,19 +1158,27 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "42c7a47a9c4be26708f15eb4b3a075d1338b8c152309b3ca1baedb979baf5660"
+      "sha256": "0d0bbd8cd3a6ab8a6df7523e6f1850b2b6d06347ae62a3d8ec40f0d826cc1ee3"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "4a79e2fd26e22a4a5449c910a947cbabc0bb755a4dd0a0b2c6efd392120a0270"
+      "sha256": "74dcff0a45d00fbda8cca13d8700618d84008470a69e0c32f02643c8c0a5194f"
     },
     {
       "path": "src/cw.mjs",
       "sha256": "8bedc131d217a0d40f2756e03c369ce640837ba1bed56352c29c73b32eafd9b0"
     },
     {
+      "path": "src/dash.mjs",
+      "sha256": "84cf64fd8b29bdce0fa4810ba64ae89107b86d0fb828282c3d83d3d5fc20f259"
+    },
+    {
       "path": "src/filmzie.mjs",
       "sha256": "eaf8c2c30a149889ee9efb71c38e2f237e4be565cf1969fe3b901a6fe68aba84"
+    },
+    {
+      "path": "src/freetv.mjs",
+      "sha256": "dc8f662a3a649a284c42d4748ff6f0a4e7b61c59b7e05dd11d12c0b8eddeb44f"
     },
     {
       "path": "src/globe.mjs",
@@ -1158,7 +1186,7 @@
     },
     {
       "path": "src/guide.mjs",
-      "sha256": "57032d1805270a07c86f6bdd8c98d98f8dfc774f67a3a0f7bdfc07b1d362f38a"
+      "sha256": "9cb310c31ea713bf84245c77a0c5ef38e39fbc34fb6a80ff53d97fe6c38c42b0"
     },
     {
       "path": "src/maintenance.mjs",
@@ -1170,15 +1198,19 @@
     },
     {
       "path": "src/player.mjs",
-      "sha256": "ce6c0404649adc4b2a8ed386e7786645cc0bd864d93f407f5b405198f6393cb5"
+      "sha256": "3527d621aa90fe945305f48d7b476e8cbfb8d7af5a4a527dbd2a1d8444c6316f"
+    },
+    {
+      "path": "src/provider-libraries.mjs",
+      "sha256": "f1678844df4b338e3c77e7e0a11b8cf8acf36c4d9b5fc64a2c2d705a30f65017"
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "07c462ee2dd3c18d7f1a49b35ba633723addccd2c3c95bf919b9ca0b462a2bee"
+      "sha256": "dc711f653617567fdcb87467b3a3d917e431f2420bc8bcf0a7d6384a15d45cd1"
     },
     {
       "path": "src/publisher-links.mjs",
-      "sha256": "03c01bcd4819ab22853000bd7cb50b9cb2107d7e329078433f9ad27e861af2c7"
+      "sha256": "33c528e3b457d608519170c13deb5f9339950c82fccf2301824b130af461d31b"
     },
     {
       "path": "src/publishers.mjs",
@@ -1190,7 +1222,7 @@
     },
     {
       "path": "src/revry.mjs",
-      "sha256": "e1e23aeb5e3dbc24a84b1dd5786fbd7f94917edd5e05071ffcd4c96b8a53f49e"
+      "sha256": "a4cdb8c2582f387c72501ab3956bb3edbe11f3b560b9ab90802d71567588cf9c"
     },
     {
       "path": "src/roku-catalog.mjs",
@@ -1214,7 +1246,7 @@
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "7a59e412198a1be433d6d0ba12d3806843aaebdf76992e9f9e58df14bf34fb24"
+      "sha256": "bb5e7b5e94ab4c3cc291bda2bc5895af3cd6693880ff0a7f94bafa298d4262ee"
     },
     {
       "path": "src/storage.mjs",
@@ -1254,11 +1286,15 @@
     },
     {
       "path": "styles.css",
-      "sha256": "34808b0bb95cf80b5d0e891ab7f2e12e5367df9562e7937e604e255f09d6d601"
+      "sha256": "73ac3addad7d3570dc9606853892cb46d6900e96226fb913a2aaa65a02dfd4af"
     },
     {
       "path": "sw.js",
-      "sha256": "c4d6757b79d0fa5438414d5a399e8f3cd5d2aba613c64e357103156a3cd0819d"
+      "sha256": "4bf12fb581a117af29089fee51176cd8549afc8ab3e4a91e6406d2742a48d756"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "1a881912eaf5aaddb2581ce02368e63edc8d796a82bd0fe238f8564a63672afd"
     },
     {
       "path": "vendor/APACHE-2.0.txt",
@@ -1271,6 +1307,14 @@
     {
       "path": "vendor/HLS-LICENSE.txt",
       "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+    },
+    {
+      "path": "vendor/shaka-player-5.3.4.compiled.js",
+      "sha256": "76e6481647db316c197e13bdd7e344f16dd568871e07b46c8f5f4346c582758c"
+    },
+    {
+      "path": "vendor/shaka-player-LICENSE.txt",
+      "sha256": "20ce2eba547fd0a8c4023511c003eabe510982a335cccd4e270f1f55ffbd2250"
     },
     {
       "path": "world-live.css",

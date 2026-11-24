@@ -1,5 +1,5 @@
 import {safeUrl,plainText} from './core.mjs';
-const API='https://backstage-api.com',SITE='https://revry.com/';
+const API='https://backstage-api.com';
 const device=crypto.randomUUID();
 const validId=id=>typeof id==='string'&&/^[A-Za-z0-9_!'-]{1,180}$/.test(id);
 const free=value=>value==null||typeof value==='number'&&value===0||typeof value==='string'&&value.trim()!==''&&Number(value)===0;
@@ -15,7 +15,7 @@ function clientUrl(raw){
  const url=new URL(safe),ua=globalThis.navigator?.userAgent??'';
  url.searchParams.set('clientData',JSON.stringify({platform:'web',dataPrivacy:{regulation:'',consent:'',dnt:1,lat:1,gppString:'',gppSid:''},device:{id:'',maker:'',model:'',os:/Windows/.test(ua)?'windows':/Android/.test(ua)?'android':/Mac/.test(ua)?'macos':'',osVersion:'',language:'en'},user:{pseudoId:device,sessionId:crypto.randomUUID()},app:{name:'SheepBox',bundle:'',storeUrl:'https://github.com/sheepman90s/sheepbox-releases',language:'en'},player:{width:globalThis.innerWidth??1280,height:globalThis.innerHeight??720,muted:0,playbackId:crypto.randomUUID()},media:{language:'en',adPodMaxDur:null}}));return url.href;
 }
-export async function resolveRevry(item,{signal}={}){
+async function authorizeRevry(item,{signal,editionId}={}){
  const type=item?.sourceType,id=item?.sourceId;
  if(item?.mode!=='revry'||!routes[type]||!validId(id)||item.freeGuestVerified!==true)throw Error('Invalid Revry title.');
  const config=await request(API+'/configurations/application',{signal});
@@ -25,18 +25,24 @@ export async function resolveRevry(item,{signal}={}){
  if(String(detail.id)!==id||detail.type!==type||!revryUnblocked(detail))throw Error('This Revry free title is unavailable in the current region.');
  if(type==='episode'&&detail.series){if(!validId(detail.series)||!revryUnblocked(await request(API+'/media/series/'+encodeURIComponent(detail.series)+'?includeEpisodes=false',{signal})))throw Error('This Revry show is unavailable.');}
  const editions=await request(path+'/editions',{signal});if(!Array.isArray(editions))throw Error('Revry editions changed.');
- const selected=edition(editions);if(!selected)throw Error('Revry did not offer a free full edition.');
- if(!selected.streams.some(stream=>stream.type==='hls'&&stream.drm==='unencrypted'))return {kind:'external',url:SITE,notice:'This free title uses protected playback that is not integrated into SheepBox Web yet. Find it in Revry’s official player; its access checks and advertising still apply.'};
+ const selected=editionId?editions.find(row=>String(row.id)===editionId&&row.editionType==='full'&&revryUnblocked(row)&&free(row.price)&&row.streams?.some(stream=>stream.type==='dash'&&stream.drm==='widevine')):edition(editions);if(!selected)throw Error('Revry did not authorize the same free full edition.');
  if(!validId(String(selected.id)))throw Error('Revry returned an invalid edition.');
- const stream=await request(path+'/stream?'+new URLSearchParams({editionId:selected.id,type:'hls',drm:'unencrypted'}),{signal});
- if(stream.type!=='hls'||stream.drm!=='unencrypted'||stream.data?.licenseUrl)throw Error('Revry did not authorize clear guest playback.');
+ const protectedVideo=!!editionId||!selected.streams.some(stream=>stream.type==='hls'&&stream.drm==='unencrypted');
+ const protocol=protectedVideo?'dash':'hls',encryption=protectedVideo?'widevine':'unencrypted';
+ const stream=await request(path+'/stream?'+new URLSearchParams({editionId:selected.id,type:protocol,drm:encryption}),{signal});
+ if(stream.type!==protocol||stream.drm!==encryption||(!protectedVideo&&stream.data?.licenseUrl))throw Error('Revry did not authorize the expected guest playback.');
+ if(protectedVideo&&(!safeUrl(stream.data?.licenseUrl)||new URL(stream.data.licenseUrl).protocol!=='https:'))throw Error('Revry did not authorize a playback licence.');
+ return {stream,selected,type,protectedVideo};
+}
+export async function resolveRevry(item,{signal}={}){
+ const {stream,selected,type,protectedVideo}=await authorizeRevry(item,{signal});
  let url;
  if(stream.urlSrc){if(stream.urlSrcService!=='parameterManager')throw Error('Revry changed its stream resolver.');url=await request(clientUrl(stream.urlSrc),{signal,json:false,api:false});}else url=stream.url;
  url=safeUrl(url);if(!url)throw Error('Revry did not return a supported stream.');
  const tag=stream.data?.adsUrl||stream.advertisement||'';
  if(!tag&&!['channel','clip'].includes(type))throw Error('Revry’s advertising schedule is unavailable.');
  const tracks=(selected.subtitles??[]).flatMap(track=>{const source=track.sources?.find(source=>source.type==='webvtt'&&safeUrl(source.src));return source?[{url:source.src,language:track.language||'und',label:plainText(track.label||track.language)||'Captions'}]:[];});
- return {kind:'hls',url,adTag:tag?clientUrl(tag):'',live:type==='channel',tracks};
+ return {kind:protectedVideo?'dash':'hls',url,adTag:tag?clientUrl(tag):'',live:type==='channel',tracks,...(protectedVideo?{drm:{licenseUrl:stream.data.licenseUrl,refreshLicense:async({signal}={})=>(await authorizeRevry(item,{signal,editionId:String(selected.id)})).stream.data.licenseUrl}}:{})};
 }
 export function validateRevryLibrary(value){
  if(value?.schema!==1||value.provider!=='revry'||value.report?.completeSupportedPublicGuestDirectories!==true||value.report.searchQueriesExhausted!==36||!Array.isArray(value.items)||!Array.isArray(value.live)||!Array.isArray(value.providerSeries))throw Error('The Revry catalogue is incomplete.');
