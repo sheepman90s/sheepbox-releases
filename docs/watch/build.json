@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-RC5",
-  "revision": "09138277e722",
+  "revision": "1642c030e92f",
   "catalogGeneratedAt": "2026-11-24T12:04:38.599Z",
   "titles": 24709,
   "live": 1248,
@@ -91,7 +91,7 @@
     },
     {
       "path": "data/pbs.json",
-      "sha256": "f8b2770352d54d6f67d77038c01da91c0b818f68d26dfccf655f567ea9973b41"
+      "sha256": "9eab04765d96b365974d12349244166083b5542a00c07ab306d600428a04c7f9"
     },
     {
       "path": "data/publisher-links.json",
@@ -1199,7 +1199,7 @@
     },
     {
       "path": "src/maintenance.mjs",
-      "sha256": "b7ddf66ae2965080dd84935b8bfbc3f9f8a47c3c6028561e964034302fd4322e"
+      "sha256": "9836c786e7360bbc622e405340bb234ba9dacea45514e805dbe15d3e78d851fc"
     },
     {
       "path": "src/newson.mjs",
@@ -1303,7 +1303,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "2f097df32c4075252d942a59f4bc7fdc9523babf8c9350ae257bc341141e078b"
+      "sha256": "a1b988a5a499cf2542800cf07384e9182883ea8f22bfb72e0f59267a7f52cd48"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

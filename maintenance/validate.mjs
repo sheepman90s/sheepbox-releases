@@ -14,6 +14,11 @@ export function validateReplacement(previous,next,provider){
  if(previous.report?.region&&next.report?.region!==previous.report.region)throw Error('Detected region differs from the saved catalogue.');
  const all=[...next.items,...next.live,...next.providerSeries],byId=new Map(next.items.map(row=>[row.id,row]));
  if(!all.length||new Set(all.map(row=>row.id)).size!==all.length||all.some(row=>row.provider!==provider||!row.id||!row.title)||next.providerSeries.some(show=>!show.episodes?.length||new Set(show.episodes).size!==show.episodes.length||show.episodes.some(id=>byId.get(id)?.seriesId!==show.id)))throw Error('Catalogue identities or episode ownership do not reconcile.');
- for(const key of ['items','live','providerSeries'])if(previous[key]?.length&&next[key].length<previous[key].length*0.8)throw Error('Catalogue fell by more than 20%; retain the saved library for maintainer review.');
+ for(const key of ['items','live','providerSeries'])if(previous[key]?.length&&next[key].length<previous[key].length*0.8)throw Error(provider+' '+key+' fell from '+previous[key].length+' to '+next[key].length+'; retain the saved library for maintainer review.');
  return next;
+}
+export function mergeSelection(catalog,provider,value){
+ const previous={items:catalog.items.filter(row=>row.provider===provider),live:catalog.live.filter(row=>row.provider===provider),providerSeries:(catalog.providerSeries??[]).filter(row=>row.provider===provider),report:catalog.sources[provider]};
+ validateReplacement(previous,value,provider);
+ return {...catalog,items:[...catalog.items.filter(row=>row.provider!==provider),...value.items],live:[...catalog.live.filter(row=>row.provider!==provider),...value.live],providerSeries:[...(catalog.providerSeries??[]).filter(row=>row.provider!==provider),...value.providerSeries],sources:{...catalog.sources,[provider]:value.report},...(value.nasaSeries?{nasaSeries:value.nasaSeries}:{})};
 }

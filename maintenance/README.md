@@ -9,7 +9,10 @@ offers, licence URLs, player responses, checkpoints or detailed audit receipts.
 Each run uses an isolated temporary stage. Complete traversal, identities,
 episode ownership, regional scope and the combined library are validated before
 promotion. A drop greater than 20% needs maintainer review rather than automatic
-publication. Failed exports preserve the published library. A competing main
+publication. A failed provider export preserves that provider’s complete saved
+library while other validated providers may refresh. The run lists retained
+providers, and Provider Status explains when the previous snapshot is shown.
+If no provider can refresh, nothing is published. A competing main
 commit aborts promotion; there are no force pushes. Temporary files and logs are
 not uploaded as artifacts.
 
