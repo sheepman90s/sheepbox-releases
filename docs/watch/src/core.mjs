@@ -1,4 +1,4 @@
-export const VERSION = '2.0.0-RC5';
+export const VERSION = '2.0.0-RC6';
 // Imported Roku episode files do not inflate the top-level catalogue count.
 export function catalogEntryCount(catalog){
   return catalog.items.filter(item=>!(item.kind==='episode'&&item.seriesId)).length+

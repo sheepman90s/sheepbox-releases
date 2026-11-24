@@ -1,6 +1,6 @@
 import {plainText,safeUrl} from './core.mjs';
 
-const names={roku:'Roku',fawesome:'Fawesome',philo:'Philo',byutv:'BYUtv',revry:'Revry',pbs:'PBS'};
+const names={roku:'Roku',fawesome:'Fawesome',philo:'Philo',byutv:'BYUtv',revry:'Revry',pbs:'PBS',plex:'Plex',pluto:'Pluto TV'};
 const numeric=/^[1-9][0-9]{0,14}$/;
 const privateFields=['url','video_url','video_hls_url','stream_url','token','headers','cookies','csrf','streams','adTag','license','session','sessionId'];
 export const publisherPlayerName=provider=>names[provider]??'';

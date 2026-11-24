@@ -8,7 +8,7 @@ import {siteRoot,runtime,readJson} from './paths.mjs';
 import {validateReplacement,mergeSelection} from './validate.mjs';
 import {loadNasa} from './nasa.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url));
-const all=['pbs','freetv','runtime','revry','nasaplus','filmzie','newson','xumo','cw','yupptv'];
+const all=['pbs','freetv','runtime','revry','nasaplus','filmzie','newson','xumo','cw','yupptv','plex','pluto'];
 const requested=(process.env.SHEEPBOX_REFRESH_PROVIDERS||'all').split(',');const providers=requested.includes('all')?all:requested;
 if(!providers.length||providers.some(id=>!all.includes(id)))throw Error('Unknown refresh provider.');
 const output=process.env.SHEEPBOX_REFRESH_OUTPUT;if(!output)throw Error('Set SHEEPBOX_REFRESH_OUTPUT to a new staging directory.');
@@ -21,9 +21,11 @@ function runPython(script,folder,args=[]){const result=spawnSync(process.env.PYT
 for(const provider of providers){
  console.log('Refreshing '+provider+' complete supported metadata');
  try{
- if(['pbs','freetv','runtime','revry'].includes(provider)){
+ if(['pbs','freetv','runtime','revry','plex','pluto'].includes(provider)){
   const previous=await readJson('data/'+provider+'.json'),folder=await fs.mkdtemp(path.join(os.tmpdir(),'sheepbox-'+provider+'-'));
   if(provider==='pbs')runPython('pbs_library.py',folder);
+  else if(provider==='plex')runPython('plex_library.py',folder);
+  else if(provider==='pluto')runPython('pluto_library.py',path.join(folder,'pluto.json'));
   else if(provider==='revry')runPython('revry_library.py',folder);
   else runPython('ott_library.py',folder,['--provider',provider,'--expected-region',previous.report.region]);
   const filename=provider==='pbs'?'pbs-web-catalog.json':provider==='revry'?'REVRY_WEB_METADATA.json':provider+'.json';

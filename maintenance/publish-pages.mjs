@@ -10,7 +10,7 @@ function git(args,env={}){const result=spawnSync('git',args,{cwd:repository,env:
 if(git(['remote','get-url','origin']).replace(/\.git$/,'')!=='https://github.com/'+repo||git(['branch','--show-current'])!=='main'||git(['status','--porcelain']))throw Error('Publication requires a clean checkout of public main.');
 const before=await readJson('build.json'),after=JSON.parse(await fs.readFile(path.join(stage,'build.json'),'utf8'));
 if(before.version!==after.version||before.files.length!==after.files.length)throw Error('Metadata refresh cannot change the application version or file set.');
-const allowed=/^(?:data\/(?:pbs|freetv|runtime|revry|catalog|catalog-report)\.json|sw\.js)$/;
+const allowed=/^(?:data\/(?:pbs|freetv|runtime|revry|plex|pluto|catalog|catalog-report)\.json|sw\.js)$/;
 const changes=[];for(const entry of after.files){const old=before.files.find(row=>row.path===entry.path);if(!old)throw Error('Unexpected staged file.');const bytes=await fs.readFile(path.join(stage,entry.path));if(hash(bytes)!==entry.sha256)throw Error('Stage manifest mismatch.');if(entry.sha256!==old.sha256){if(!allowed.test(entry.path))throw Error('Refresh touched a file outside its allowlist.');if(hash(await fs.readFile(path.join(siteRoot,entry.path)))!==old.sha256)throw Error('Published source changed during refresh.');changes.push(entry.path);}}
 if(!changes.length){console.log('No metadata changed.');process.exit(0);}
 const auth={'GIT_CONFIG_COUNT':'1','GIT_CONFIG_KEY_0':'http.https://github.com/.extraheader','GIT_CONFIG_VALUE_0':'AUTHORIZATION: basic '+Buffer.from('x-access-token:'+token).toString('base64')};

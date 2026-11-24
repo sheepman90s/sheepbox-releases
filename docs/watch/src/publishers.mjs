@@ -1,5 +1,7 @@
 import {safeUrl,plainText} from './core.mjs';
 import {isRokuSeriesReference,isRokuExternalSeries} from './roku-library.mjs';
+import {isPlexSeries} from './plex.mjs';
+import {isPlutoExternalSeries} from './pluto.mjs';
 
 export function publisherEmbedUrl(value) {
   const url=safeUrl(value);if(!url)return '';
@@ -38,12 +40,13 @@ export function providerSeriesCards(catalog) {
   const items=new Map(catalog.items.map(item=>[item.id,item]));const seen=new Set(items.keys());const result=[];
   for(const row of catalog.providerSeries??[]) {
     if(!/^[A-Za-z0-9][A-Za-z0-9:._-]{0,239}$/.test(row.id??'')||seen.has(row.id)||!row.title)continue;
-    const remote=isRokuSeriesReference(row),external=isRokuExternalSeries(row);
+    const remote=isRokuSeriesReference(row),external=isRokuExternalSeries(row)||isPlutoExternalSeries(row),plex=isPlexSeries(row);
     const episodes=[...new Set(row.episodes??[])].filter(id=>remote||items.get(id)?.provider===row.provider);
-    if(!episodes.length&&!remote&&!external)continue;const first=items.get(episodes[0])??{};seen.add(row.id);
+    if(!episodes.length&&!remote&&!external&&!plex)continue;const first=items.get(episodes[0])??{};seen.add(row.id);
     result.push({...first,id:row.id,provider:row.provider,providerName:row.providerName??first.providerName??'Roku',title:plainText(row.title),description:plainText(row.description??''),kind:'series',mode:'series',categories:[...new Set(['Series',...(row.categories??[]).map(plainText).filter(Boolean)])],episodes,image:safeUrl(row.image)||first.image,official:safeUrl(row.official)||first.official,
       ...(remote?{sourceId:row.sourceId,episodeCount:row.episodeCount,episodeFile:row.episodeFile,freeGuestVerified:row.freeGuestVerified===true}:{}),
-      ...(external?{sourceId:row.sourceId,externalOnly:true,freeGuestVerified:true,parentFreeOptionVerified:true}:{} )});
+      ...(plex?{sourceId:row.sourceId,sourceType:'show',episodeDiscovery:'plex-api',freeGuestVerified:true,episodeCheckedAt:row.episodeCheckedAt,episodeRetained:row.episodeRetained}:{}),
+      ...(external?{sourceId:row.sourceId,externalOnly:true,freeGuestVerified:true,...(row.provider==='pluto'?{sourceNamespace:row.sourceNamespace,slug:row.slug,canonicalSourceId:row.canonicalSourceId}:{parentFreeOptionVerified:true})}:{} )});
   }
   return result;
 }

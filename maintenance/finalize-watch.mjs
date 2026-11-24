@@ -4,11 +4,13 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {siteRoot,runtime,readJson} from './paths.mjs';
 export async function finalizeWatch(){
- const [{mergeProviderLibrary},{validateRevryLibrary},{mergeApkLibrary},{mergeRokuLibrary,parseRokuEpisodeFile,parseRokuEpisodeIndex,isRokuSeriesReference},{catalogEntryCount,VERSION},{validatePublisherSelection}]=await Promise.all(['provider-libraries','revry','apk-library','roku-library','core','publisher-links'].map(runtime));
+ const [{mergeProviderLibrary},{validateRevryLibrary},{mergeApkLibrary},{mergeRokuLibrary,parseRokuEpisodeFile,parseRokuEpisodeIndex,isRokuSeriesReference},{catalogEntryCount,VERSION},{validatePublisherSelection},{mergePlexLibrary},{mergePlutoLibrary}]=await Promise.all(['provider-libraries','revry','apk-library','roku-library','core','publisher-links','plex','pluto'].map(runtime));
  const catalog=await readJson('data/catalog.json'),roku=await readJson('data/roku/catalog.json'),apk=await readJson('data/apk-library.json'),revry=validateRevryLibrary(await readJson('data/revry.json')),publishers=await readJson('data/publisher-links.json');
  if(catalog.schema!==1||!catalog.items?.length||!catalog.live?.length||roku.report?.graphTraversalComplete!==true)throw Error('The saved catalogue is incomplete.');
  let counted=mergeApkLibrary(mergeRokuLibrary(catalog,roku),apk);counted={...counted,items:[...counted.items,...revry.items],live:[...counted.live,...revry.live],providerSeries:[...counted.providerSeries,...revry.providerSeries]};
  const extraLibraries={};for(const provider of ['pbs','freetv','runtime']){const value=await readJson('data/'+provider+'.json');counted=mergeProviderLibrary(counted,value);extraLibraries[provider]=value.report.counts;}
+ const plex=await readJson('data/plex.json');counted=mergePlexLibrary(counted,plex);extraLibraries.plex=plex.report.counts;
+ const pluto=await readJson('data/pluto.json');counted=mergePlutoLibrary(counted,pluto);extraLibraries.pluto=pluto.report.counts;
  const identities=[...counted.items,...counted.live,...counted.providerSeries].map(row=>row.id);if(new Set(identities).size!==identities.length)throw Error('Provider catalogue identities conflict.');
  for(const show of roku.providerSeries.filter(isRokuSeriesReference))parseRokuEpisodeFile(show,await readJson('data/'+show.episodeFile));
  for(let n=0;n<256;n++){const prefix=n.toString(16).padStart(2,'0');parseRokuEpisodeIndex(prefix,await readJson('data/roku/index/'+prefix+'.json'));}

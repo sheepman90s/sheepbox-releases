@@ -1,9 +1,9 @@
 {
-  "version": "2.0.0-RC5",
-  "revision": "ebcefb37af01",
+  "version": "2.0.0-RC6",
+  "revision": "b15195bbdbe5",
   "catalogGeneratedAt": "2026-11-24T12:27:38.284Z",
-  "titles": 24710,
-  "live": 1279,
+  "titles": 78789,
+  "live": 1724,
   "extraLibraries": {
     "pbs": {
       "videos": 11999,
@@ -19,6 +19,16 @@
       "videos": 3787,
       "shows": 87,
       "live": 29
+    },
+    "plex": {
+      "videos": 30958,
+      "shows": 2840,
+      "live": 0
+    },
+    "pluto": {
+      "videos": 16050,
+      "shows": 4231,
+      "live": 445
     }
   },
   "revry": {
@@ -92,6 +102,14 @@
     {
       "path": "data/pbs.json",
       "sha256": "9eab04765d96b365974d12349244166083b5542a00c07ab306d600428a04c7f9"
+    },
+    {
+      "path": "data/plex.json",
+      "sha256": "49def6b3c5f3c2a7477f13c15d7735843875b6db549ef56b8b0c8e2a200798c3"
+    },
+    {
+      "path": "data/pluto.json",
+      "sha256": "099d01a64f1b85115da9005aca99212a15c9587279b1dacc7f76cd8bbc55be6a"
     },
     {
       "path": "data/publisher-links.json",
@@ -1147,7 +1165,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "ade6d3b82366ecffe5d09041b32ef004ee805448fb619941ab7adc1e05984e0d"
+      "sha256": "8877179e4111beb05c46716cb2bca7986bd65669eec149a8a0516eee2347bd85"
     },
     {
       "path": "manifest.webmanifest",
@@ -1167,11 +1185,11 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "fbb2cafce7ac10c39d0ec40dfcd5add48b818986e4d191b8bd4f6a9be7a6357f"
+      "sha256": "f4c65d2e732fbe1238e5e924937d33588380b8f3e3167ac255cc20f269ef834c"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "c5880d0c07c1b1de1a3fe46d63bc71935b8db4518601420d6fb3391e8b9f5f06"
+      "sha256": "d2d7e5b9fbab9ca65c03f5b015291b748e92945d06428f4dffac96685a5a285d"
     },
     {
       "path": "src/cw.mjs",
@@ -1210,20 +1228,28 @@
       "sha256": "3527d621aa90fe945305f48d7b476e8cbfb8d7af5a4a527dbd2a1d8444c6316f"
     },
     {
+      "path": "src/plex.mjs",
+      "sha256": "b8b0bc5deb0328d9ae2f062f7de0faeffb11b53e913e053a943b05b96a0e228f"
+    },
+    {
+      "path": "src/pluto.mjs",
+      "sha256": "c739c2329d6e4acffc604de996eb1562b3e1cfa327f10ed20be0452d6ec1ff45"
+    },
+    {
       "path": "src/provider-libraries.mjs",
       "sha256": "b5f1d2725578fc8f74701c0573ccab5d90a82dbd3c66e8e4f9b9d6337e454f23"
     },
     {
       "path": "src/providers.mjs",
-      "sha256": "2e37fb8f07efdf1ac7dcd49b3dee7ef8a0e1d7425514317745dd3c1618c597d9"
+      "sha256": "a44d09207d4ff6c514e13b4419c36e5cf60915f153ed6eb1e8715e28acb3aacd"
     },
     {
       "path": "src/publisher-links.mjs",
-      "sha256": "33c528e3b457d608519170c13deb5f9339950c82fccf2301824b130af461d31b"
+      "sha256": "024209f6f1c519b4deaa7b17322572aa5db9411e3fe8a9b241d774b267242d07"
     },
     {
       "path": "src/publishers.mjs",
-      "sha256": "faa92562028170ef2288d53e84a1915baf49f3fb04f41dfb4fc667b0171c4710"
+      "sha256": "c7340c96010c15ccbbc79dd3c33bffbb2fe8090abe663c9406ea8d21ed3323b6"
     },
     {
       "path": "src/redbull.mjs",
@@ -1259,7 +1285,7 @@
     },
     {
       "path": "src/sources.mjs",
-      "sha256": "1d6a88b65904a686b3fe370f7212d7964f8e374fee175dfea5c6881e3b7f68bc"
+      "sha256": "d9e4fe2a596e1b71655c41b02b94b5a160394bbfaa361978400c721322010b44"
     },
     {
       "path": "src/storage.mjs",
@@ -1303,7 +1329,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "10c90bf8960835c70960a2ac3c2292d4fb265fbc932e65b7619ded2b7292bf5a"
+      "sha256": "711ad8a5b571ae27c00b7a16658f7534e00ed29e23e904c5ef60b9c9a21d52a2"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
