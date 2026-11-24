@@ -8,6 +8,8 @@ import {resolveWorldTv} from './worldtv.mjs';
 import {resolveRedBull} from './redbull.mjs';
 import {resolveRevry,validateRevryLibrary} from './revry.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
+import {resolveFreeTv} from './freetv.mjs';
+import {mergeProviderLibrary,resolveRegularPbs} from './provider-libraries.mjs';
 import {resolveRoku} from './roku.mjs';
 import {mergeApkLibrary,apkPublisherUrl} from './apk-library.mjs';
 import {resolvePublisherLink} from './publisher-links.mjs';
@@ -26,13 +28,21 @@ export async function fetchJson(url,{signal,timeout=25000,maxLength=12_000_000}=
 export async function loadCatalog(signal) {
   const {data}=await fetchJson(new URL('../data/catalog.json',import.meta.url),{signal});
   if(data.schema!==1||!Array.isArray(data.items)||!Array.isArray(data.live))throw Error('The SheepBox library could not be loaded.');
-  const requests=[fetchJson(new URL('../data/webcams.json',import.meta.url),{signal})];
   const roku=data.externalCatalogs?.roku;
-  if(roku){if(roku.path!=='roku/catalog.json')throw Error('The Roku library address is invalid.');requests.push(fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}));}
-  const [cameras,library]=await Promise.all(requests);
-  const {data:revry}=await fetchJson(new URL('../data/revry.json',import.meta.url),{signal,maxLength:16000000});validateRevryLibrary(revry);data.items.push(...revry.items);data.live.push(...revry.live);data.providerSeries.push(...revry.providerSeries);data.sources.revry=revry.report;
-  const {data:apk}=await fetchJson(new URL('../data/apk-library.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000});
-  return {...mergeApkLibrary(library?mergeRokuLibrary(data,library.data):data,apk),cameras:parseWebcams(cameras.data)};
+  if(roku&&roku.path!=='roku/catalog.json')throw Error('The Roku library address is invalid.');
+  // All complete snapshots load together; a failed provider leaves startup in
+  // its explicit retry state instead of silently presenting a partial library.
+  const [cameras,library,{data:revry},{data:apk},...additions]=await Promise.all([
+    fetchJson(new URL('../data/webcams.json',import.meta.url),{signal}),
+    roku?fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}):Promise.resolve(null),
+    fetchJson(new URL('../data/revry.json',import.meta.url),{signal,maxLength:16000000}),
+    fetchJson(new URL('../data/apk-library.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}),
+    ...['pbs','freetv'].map(provider=>fetchJson(new URL('../data/'+provider+'.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}))
+  ]);
+  validateRevryLibrary(revry);data.items.push(...revry.items);data.live.push(...revry.live);data.providerSeries.push(...revry.providerSeries);data.sources.revry=revry.report;
+  let result=mergeApkLibrary(library?mergeRokuLibrary(data,library.data):data,apk);
+  for(const addition of additions)result=mergeProviderLibrary(result,addition.data);
+  return {...result,cameras:parseWebcams(cameras.data)};
 }
 export async function loadRokuSeriesFile(series,{signal}={}){
   if(!isRokuSeriesReference(series))throw Error('This series has no saved episode list.');
@@ -77,6 +87,8 @@ export function availableArchiveFiles(data){
   return (data.files??[]).map(archiveFile).filter(Boolean).sort((a,b)=>a.rank-b.rank);
 }
 export async function resolvePlayback(item,catalog,{signal}={}) {
+  if(item.provider==='pbs')return resolveRegularPbs(item);
+  if(item.mode==='freetv')return resolveFreeTv(item,{signal});
   if(item.mode==='apk-publisher'){const url=apkPublisherUrl(item);if(!url)throw Error('This title has no verified official publisher player link.');return {kind:'external',url};}
   if(item.mode==='publisher-link')return resolvePublisherLink(item,{signal});
   if(['newson-live','newson-latest'].includes(item.mode))return resolveNewsOn(item,{signal});
