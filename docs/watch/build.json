@@ -1,7 +1,7 @@
 {
   "version": "2.0.0-RC5",
-  "revision": "d353a00053e0",
-  "catalogGeneratedAt": "2026-11-24T12:26:01.753Z",
+  "revision": "ebcefb37af01",
+  "catalogGeneratedAt": "2026-11-24T12:27:38.284Z",
   "titles": 24710,
   "live": 1279,
   "extraLibraries": {
@@ -11,7 +11,7 @@
       "live": 0
     },
     "freetv": {
-      "videos": 8364,
+      "videos": 8365,
       "shows": 345,
       "live": 12
     },
@@ -75,11 +75,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "783f0d97d7bc8aa8de5eafa822ff67ac301662319f1b20ad74d2c1ad25694e28"
+      "sha256": "e2a324e68fabf7cb620e357b6354220ddc9ddbcf5ff1dd466e438652018425a1"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "a2061c04438568c804aff2184026e32ddede9a49644f0159c53396e5b66f0cef"
+      "sha256": "cc8cc663bcf5024c6f8b4c30939abb0faba8bd00a59c49339bab230db4eea670"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -87,7 +87,7 @@
     },
     {
       "path": "data/freetv.json",
-      "sha256": "a2f63bd9c3b821bc4d89d7a76ce4dc95b719db0bba7aeda8f966180f5473a404"
+      "sha256": "50538f723e3e60017793730984eb972ab427749daeb5fc198442344ffd83ce9b"
     },
     {
       "path": "data/pbs.json",
@@ -1303,7 +1303,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "b85703fbb229f7e0032f3d6e5e077e3a36c056b260a604dfa1380670636ac140"
+      "sha256": "10c90bf8960835c70960a2ac3c2292d4fb265fbc932e65b7619ded2b7292bf5a"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
