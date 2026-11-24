@@ -6,6 +6,7 @@ import {resolveCw} from './cw.mjs';
 import {resolveYupp} from './yupp.mjs';
 import {resolveWorldTv} from './worldtv.mjs';
 import {resolveRedBull} from './redbull.mjs';
+import {resolveRevry,validateRevryLibrary} from './revry.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
 import {resolveRoku} from './roku.mjs';
 import {mergeApkLibrary,apkPublisherUrl} from './apk-library.mjs';
@@ -29,6 +30,7 @@ export async function loadCatalog(signal) {
   const roku=data.externalCatalogs?.roku;
   if(roku){if(roku.path!=='roku/catalog.json')throw Error('The Roku library address is invalid.');requests.push(fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}));}
   const [cameras,library]=await Promise.all(requests);
+  const {data:revry}=await fetchJson(new URL('../data/revry.json',import.meta.url),{signal,maxLength:16000000});validateRevryLibrary(revry);data.items.push(...revry.items);data.live.push(...revry.live);data.providerSeries.push(...revry.providerSeries);data.sources.revry=revry.report;
   const {data:apk}=await fetchJson(new URL('../data/apk-library.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000});
   return {...mergeApkLibrary(library?mergeRokuLibrary(data,library.data):data,apk),cameras:parseWebcams(cameras.data)};
 }
@@ -83,7 +85,8 @@ export async function resolvePlayback(item,catalog,{signal}={}) {
   if(item.mode==='yupp-live')return resolveYupp(item,{signal});
   if(item.mode==='worldtv')return resolveWorldTv(item);
   if(item.mode==='redbull')return resolveRedBull(item,{signal});
-  if(item.mode==='filmzie-movie')return resolveFilmzie(item,{signal});
+  if(item.mode==='revry')return resolveRevry(item,{signal});
+  if(['filmzie-movie','filmzie-episode'].includes(item.mode))return resolveFilmzie(item,{signal});
   if(item.provider==='roku'&&(item.mode==='roku-link'||item.kind==='series'))return resolveRoku(item,{signal});
   if(['pbs','youtube'].includes(item.mode)) {
     let url='';

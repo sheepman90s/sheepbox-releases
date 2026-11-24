@@ -1,4 +1,4 @@
-export const VERSION = '2.0.0-RC2';
+export const VERSION = '2.0.0-RC3';
 // Imported Roku episode files do not inflate the top-level catalogue count.
 export function catalogEntryCount(catalog){
   return catalog.items.filter(item=>!(item.kind==='episode'&&item.seriesId)).length+
@@ -42,7 +42,7 @@ export function filterItems(items,{query='',provider='',category='',kind=''}={})
     words.every(word=>fold([item.title,item.description,item.providerName,...(item.categories??[])].join(' ')).includes(word)));
 }
 export function parseRoute(hash) {
-  try {const [name='home',...parts]=hash.replace(/^#\/?/,'').split('/');return ['home','live','simple','world','webcams','ondemand','favorites','providers','settings','watch','provider','series','search','history','status','guide'].includes(name)?{name,id:decodeURIComponent(parts.join('/'))}:{name:'home',id:''};}
+  try {const [name='home',...parts]=hash.replace(/^#\/?/,'').split('/');return ['home','live','simple','world','webcams','ondemand','favorites','providers','settings','watch','provider','series','search','history','status','guide','party'].includes(name)?{name,id:decodeURIComponent(parts.join('/'))}:{name:'home',id:''};}
   catch {return {name:'home',id:''};}
 }
 export function parseNasaVideo(row,terms={}) {

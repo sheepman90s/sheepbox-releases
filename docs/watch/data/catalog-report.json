@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T22:11:27.953Z",
+  "generatedAt": "2026-11-24T02:45:22.676Z",
   "sources": {
     "nasaplus": {
       "titles": 607,
@@ -157,18 +157,29 @@
       ]
     },
     "filmzie": {
-      "source": "Filmzie current public MOVIE API directory",
+      "source": "Complete Filmzie public MOVIE and TV_SHOW directories with all published seasons reconciled against current episode details",
       "complete": true,
       "movieDirectoryComplete": true,
-      "publisherRows": 4404,
-      "rowsRead": 4404,
+      "publisherRows": 4415,
+      "rowsRead": 4415,
       "pages": 45,
-      "movies": 4404,
+      "movies": 4415,
       "excludedRows": 0,
-      "seriesIncluded": false,
+      "seriesIncluded": true,
       "allPlaybackOffersChecked": false,
       "countrySource": "No catalogue country is supplied; real publisher guest offers determine current availability without country overrides.",
-      "advertising": "Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted."
+      "advertising": "Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted.",
+      "generatedAt": "2026-11-24T02:45:22.676Z",
+      "seriesDirectoryComplete": true,
+      "providerWideComplete": true,
+      "seriesDirectoryRows": 199,
+      "seriesPages": 2,
+      "series": 199,
+      "episodes": 2221,
+      "seasons": 264,
+      "excludedSeries": 0,
+      "excludedEpisodes": 4,
+      "scope": "Complete supported public movie and series directories, all published seasons and currently listed guest episode metadata. Current free CPM playback and all publisher advertising/access restrictions are checked again when you watch."
     },
     "redbull": {
       "source": "https://www.redbull.com/us-en/collections/films",
