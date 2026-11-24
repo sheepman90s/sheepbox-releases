@@ -71,7 +71,7 @@ The Famelack webcam directory supports country browsing, search and favorites. C
 
 ## Web preview
 
-[SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. RC5 launch snapshot: 24,709 top-level On Demand entries, 1,248 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
+[SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) has its own browser-compatible catalogue. RC5 release snapshot: 24,710 top-level On Demand entries, 1,279 live listings, 3,892 webcams and a 46-entry provider directory. On Demand totals include show cards; imported episodes are available inside their shows and through search. A directory entry does not necessarily have an integrated player.
 
 | Provider | Web coverage and playback |
 |---|---|
