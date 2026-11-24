@@ -9,6 +9,8 @@ import {resolveRedBull} from './redbull.mjs';
 import {resolveRevry,validateRevryLibrary} from './revry.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
 import {resolveRuntime} from './runtime.mjs';
+import {mergePlexLibrary,resolvePlex} from './plex.mjs';
+import {mergePlutoLibrary,resolvePluto} from './pluto.mjs';
 import {resolveFreeTv} from './freetv.mjs';
 import {mergeProviderLibrary,resolveRegularPbs} from './provider-libraries.mjs';
 import {resolveRoku} from './roku.mjs';
@@ -33,16 +35,20 @@ export async function loadCatalog(signal) {
   if(roku&&roku.path!=='roku/catalog.json')throw Error('The Roku library address is invalid.');
   // All complete snapshots load together; a failed provider leaves startup in
   // its explicit retry state instead of silently presenting a partial library.
-  const [cameras,library,{data:revry},{data:apk},...additions]=await Promise.all([
+  const [cameras,library,{data:revry},{data:apk},{data:plex},{data:pluto},...additions]=await Promise.all([
     fetchJson(new URL('../data/webcams.json',import.meta.url),{signal}),
     roku?fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}):Promise.resolve(null),
     fetchJson(new URL('../data/revry.json',import.meta.url),{signal,maxLength:16000000}),
     fetchJson(new URL('../data/apk-library.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}),
+    fetchJson(new URL('../data/plex.json',import.meta.url),{signal,timeout:60000,maxLength:64_000_000}),
+    fetchJson(new URL('../data/pluto.json',import.meta.url),{signal,timeout:60000,maxLength:64_000_000}),
     ...['pbs','freetv','runtime'].map(provider=>fetchJson(new URL('../data/'+provider+'.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}))
   ]);
   validateRevryLibrary(revry);data.items.push(...revry.items);data.live.push(...revry.live);data.providerSeries.push(...revry.providerSeries);data.sources.revry=revry.report;
   let result=mergeApkLibrary(library?mergeRokuLibrary(data,library.data):data,apk);
   for(const addition of additions)result=mergeProviderLibrary(result,addition.data);
+  result=mergePlexLibrary(result,plex);
+  result=mergePlutoLibrary(result,pluto);
   return {...result,cameras:parseWebcams(cameras.data)};
 }
 export async function loadRokuSeriesFile(series,{signal}={}){
@@ -88,6 +94,8 @@ export function availableArchiveFiles(data){
   return (data.files??[]).map(archiveFile).filter(Boolean).sort((a,b)=>a.rank-b.rank);
 }
 export async function resolvePlayback(item,catalog,{signal}={}) {
+  if(item.provider==='plex')return resolvePlex(item,{signal});
+  if(item.provider==='pluto')return resolvePluto(item,{signal});
   if(item.provider==='pbs')return resolveRegularPbs(item);
   if(item.mode==='runtime')return resolveRuntime(item,{signal});
   if(item.mode==='freetv')return resolveFreeTv(item,{signal});

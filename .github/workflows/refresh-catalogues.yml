@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       providers:
-        description: 'all, or comma-separated pbs,freetv,runtime,revry,nasaplus,filmzie,newson,xumo,cw,yupptv'
+        description: 'all, or comma-separated pbs,freetv,runtime,revry,nasaplus,filmzie,newson,xumo,cw,yupptv,plex,pluto'
         default: all
         required: true
         type: string

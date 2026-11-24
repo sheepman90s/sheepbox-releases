@@ -1,10 +1,17 @@
 # Web catalogue maintenance
 
 The daily 07:17 UTC workflow refreshes complete supported PBS, FreeTV, Runtime,
-Revry, NASA+, Filmzie, NewsON, Xumo, CW and YuppTV metadata. A manual run can
+Revry, NASA+, Filmzie, NewsON, Xumo, CW, YuppTV, Plex and Pluto metadata. A manual run can
 select any of those providers. Playback always obtains current publisher access
 and the original advertising; the workflow never publishes guest tokens, media
 offers, licence URLs, player responses, checkpoints or detailed audit receipts.
+
+Plex exhausts the supported free movie/show root directories and reconciles all
+genre memberships. Its episodes load completely per show on first visit and are
+cached in the viewer’s browser. Pluto exhausts its supported public US category
+graph, reconciles the current website indexes and verifies free live access.
+Neither traversal proves a whole-service total. Both open official publisher
+players; Pluto owns episode navigation. The exporters refresh metadata only.
 
 Each run uses an isolated temporary stage. Complete traversal, identities,
 episode ownership, regional scope and the combined library are validated before

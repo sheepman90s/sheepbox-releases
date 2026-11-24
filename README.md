@@ -57,17 +57,21 @@ Screenshots are from the 1.9.0 release-candidate series. See [supported provider
 
 ## Web preview
 
-[Open SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC5 release snapshot contains 24,710 top-level On Demand entries, 1,279 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,688 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
+[Open SheepBox Web RC6](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC6 release snapshot contains 78,789 top-level On Demand entries, 1,724 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,688 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
+
+Plex adds 30,958 movies and 2,840 shows from its complete supported free root and genre directories. Opening a show loads all available seasons and free episodes before displaying the list, then caches it. Search covers movie/show titles and episodes from opened shows.
+
+Pluto adds 16,050 movies, 4,231 shows and 445 free live channels from its fully paged supported US categories, current website indexes and live directory. Every discovered movie/show destination was checked; unavailable and locked offers are excluded. These sources do not prove a whole-service total. Pluto provides episode selection in its official player.
 
 Runtime adds 955 free movies, 87 playable shows, 2,832 episodes and 29 live channels with internal HLS playback and original advertising.
 
-Daily automated refreshes cover PBS, FreeTV, Runtime, Revry, NASA+, Filmzie, NewsON, Xumo, CW and YuppTV. Incomplete or inconsistent updates retain the working library. Other snapshots keep their own dates; see Provider Status for checked dates.
+Daily automated refreshes cover PBS, FreeTV, Runtime, Revry, NASA+, Filmzie, NewsON, Xumo, CW, YuppTV, Plex and Pluto. Incomplete or inconsistent updates retain the working library. Other snapshots keep their own dates; see Provider Status for checked dates.
 
 Use watched/unwatched controls, favorites, Continue watching, browser backups, hide/restore, four color palettes, cache clearing and provider status. Supported episodes can continue to the next episode; original advertising may require Play. The time-grid guide covers CW, Revry, FreeTV, Runtime and Xumo, with day/time controls, programme details, list view and search across loaded schedules. SheepBox Classics has separate labelled collection schedules. World View keeps keyboard globe selection and zoom.
 
 Start a text watch party from a NASA+ on-demand video's player, or choose Watch party to join an invitation. The host controls playback, chat sits beside a smaller video, and each viewer streams independently. Matching NASA+ rooms work with the Android app. BYUtv/NFB parties remain Android-only; no microphone or voice chat is used.
 
-Browser support differs from Android. PBS-approved videos use its official embedded player; other free PBS videos open their exact official page. Philo, BYUtv, Fawesome and Roku open official players in a new tab; return to SheepBox to continue browsing. Some other entries are website links or explicitly partial selections. Saved metadata supports offline browsing; watching and parties need a connection. Recording/DVR and automatic Android library sync remain unavailable. See [web provider coverage](PROVIDERS.md#web-preview) for counts and limits. Publisher access, advertising and region restrictions remain in force.
+Browser support differs from Android. PBS-approved videos use its official embedded player; other free PBS videos open their exact official page. Philo, BYUtv, Fawesome, Roku, Plex and Pluto open official players in a new tab; return to SheepBox to continue browsing. Some other entries are website links or explicitly partial selections. Saved metadata supports offline browsing; watching and parties need a connection. Recording/DVR and automatic Android library sync remain unavailable. See [web provider coverage](PROVIDERS.md#web-preview) for counts and limits. Publisher access, advertising and region restrictions remain in force.
 
 ## Availability and support
 
