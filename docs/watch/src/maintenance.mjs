@@ -30,7 +30,7 @@ export function providerStatusMarkup(catalog,statuses={}){
     const report=catalog.sources?.[p.id];
     const scope=typeof report==='object'?report.scope||report.note||report.source:'';
     const checked=report?.checkedAt||report?.completedAt||report?.generatedAt;
-    const dated=checked&&Number.isFinite(Date.parse(checked))?'Snapshot checked '+new Date(checked).toLocaleString()+'.':'Snapshot date unavailable.';
+    const dated=(checked&&Number.isFinite(Date.parse(checked))?'Snapshot checked '+new Date(checked).toLocaleString()+'.':'Snapshot date unavailable.')+(catalog.maintenance?.retained?.includes(p.id)?' The latest refresh could not verify a replacement; showing the previous complete library.':'');
     const count=items.length||live||shows?`${live.toLocaleString()} live · ${items.filter(x=>x.kind!=='episode').length.toLocaleString()} videos · ${shows.toLocaleString()} shows · ${items.filter(x=>x.kind==='episode').length.toLocaleString()} episodes`:'Publisher website; no saved catalogue';
     return `<article class="provider-status-row"><h3><a href="#provider/${p.id}">${e(p.name)}</a></h3><p>${e(count)}</p><p>${playsInPage(p)?'Integrated player; current availability checked at playback.':'Opens the publisher’s official player.'}</p>${scope?`<small>${e(scope)}</small>`:''}${items.length||live||shows?`<p class="caption-message">${e(dated)}</p>`:''}<div class="button-row">${probes[p.id]?`<button class="button ghost small" data-probe-provider="${p.id}">Check metadata</button>`:''}<a class="text-button" href="${e(p.url)}" target="_blank" rel="noopener noreferrer">Publisher website ↗</a></div><p id="provider-probe-${p.id}" role="status">${e(statuses[p.id]??'No live check run in this session.')}</p></article>`;
   }).join('')}</div>`;
