@@ -8,6 +8,7 @@ import {resolveWorldTv} from './worldtv.mjs';
 import {resolveRedBull} from './redbull.mjs';
 import {resolveRevry,validateRevryLibrary} from './revry.mjs';
 import {resolveFilmzie} from './filmzie.mjs';
+import {resolveRuntime} from './runtime.mjs';
 import {resolveFreeTv} from './freetv.mjs';
 import {mergeProviderLibrary,resolveRegularPbs} from './provider-libraries.mjs';
 import {resolveRoku} from './roku.mjs';
@@ -37,7 +38,7 @@ export async function loadCatalog(signal) {
     roku?fetchJson(new URL('../data/'+roku.path,import.meta.url),{signal,timeout:60000,maxLength:64_000_000}):Promise.resolve(null),
     fetchJson(new URL('../data/revry.json',import.meta.url),{signal,maxLength:16000000}),
     fetchJson(new URL('../data/apk-library.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}),
-    ...['pbs','freetv'].map(provider=>fetchJson(new URL('../data/'+provider+'.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}))
+    ...['pbs','freetv','runtime'].map(provider=>fetchJson(new URL('../data/'+provider+'.json',import.meta.url),{signal,timeout:60000,maxLength:40_000_000}))
   ]);
   validateRevryLibrary(revry);data.items.push(...revry.items);data.live.push(...revry.live);data.providerSeries.push(...revry.providerSeries);data.sources.revry=revry.report;
   let result=mergeApkLibrary(library?mergeRokuLibrary(data,library.data):data,apk);
@@ -88,6 +89,7 @@ export function availableArchiveFiles(data){
 }
 export async function resolvePlayback(item,catalog,{signal}={}) {
   if(item.provider==='pbs')return resolveRegularPbs(item);
+  if(item.mode==='runtime')return resolveRuntime(item,{signal});
   if(item.mode==='freetv')return resolveFreeTv(item,{signal});
   if(item.mode==='apk-publisher'){const url=apkPublisherUrl(item);if(!url)throw Error('This title has no verified official publisher player link.');return {kind:'external',url};}
   if(item.mode==='publisher-link')return resolvePublisherLink(item,{signal});

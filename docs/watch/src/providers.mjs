@@ -14,7 +14,7 @@ const rows=[
  ['yupptv','YuppTV Free','https://www.yupptv.com/fast/','Free international FAST channels with current guest access and original publisher advertising.','International','live','native'],
  ['fawesome','Fawesome','https://fawesome.tv/','Browse this week’s free movie selection, then watch with Fawesome’s official player in a new tab.','Films & shows','vod','publisher'],
  ['philo','Philo Free','https://www.philo.com/go/free-channels','Browse the complete audited free on-demand library and free live channels; watch in Philo’s official player.','Entertainment','both','publisher'],
- ['runtime','Runtime','https://www.runtime.tv/','Regional live channels, films and series.','Films & shows','both','website'],
+ ['runtime','Runtime','https://www.runtime.tv/','Complete audited regional free movies, shows, episodes and live channels, with the original publisher advertising.','Films & shows','both','native'],
  ['byutv','BYUtv','https://www.byutv.org/','Browse the complete audited free movies, shows, seasons and extras; watch with BYUtv’s official player.','Family','vod','publisher'],
  ['pbs','PBS','https://www.pbs.org/','Free full-length shows and documentaries, including NOVA and FRONTLINE. Approved videos use PBS’s embedded player; others open their official video page.','Films & documentaries','vod','embed'],
  ['freetv','FreeTV','https://www.freetv.com/','The complete audited regional free library. Live channels, movies and episodes play here with the original ads and normal Widevine protection.','International','both','native'],

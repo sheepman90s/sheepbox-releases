@@ -57,9 +57,13 @@ Screenshots are from the 1.9.0 release-candidate series. See [supported provider
 
 ## Web preview
 
-[Open SheepBox Web RC4](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. Browse 23,347 top-level On Demand entries, 1,219 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,687 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
+[Open SheepBox Web RC5](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC5 launch snapshot contains 24,709 top-level On Demand entries, 1,248 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,687 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
 
-Use watched/unwatched controls, favorites, Continue watching, browser backups, hide/restore, four color palettes, cache clearing and provider status. Supported episodes can continue to the next episode; original advertising may require Play. The guide covers CW, Revry, FreeTV and labelled SheepBox Classics schedules. World View keeps keyboard globe selection and zoom.
+Runtime adds 955 free movies, 87 playable shows, 2,832 episodes and 29 live channels with internal HLS playback and original advertising.
+
+Daily automated refreshes cover PBS, FreeTV, Runtime, Revry, NASA+, Filmzie, NewsON, Xumo, CW and YuppTV. Incomplete or inconsistent updates retain the working library. Other snapshots keep their own dates; see Provider Status for checked dates.
+
+Use watched/unwatched controls, favorites, Continue watching, browser backups, hide/restore, four color palettes, cache clearing and provider status. Supported episodes can continue to the next episode; original advertising may require Play. The time-grid guide covers CW, Revry, FreeTV, Runtime and Xumo, with day/time controls, programme details, list view and search across loaded schedules. SheepBox Classics has separate labelled collection schedules. World View keeps keyboard globe selection and zoom.
 
 Start a text watch party from a NASA+ on-demand video's player, or choose Watch party to join an invitation. The host controls playback, chat sits beside a smaller video, and each viewer streams independently. Matching NASA+ rooms work with the Android app. BYUtv/NFB parties remain Android-only; no microphone or voice chat is used.
 
