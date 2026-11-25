@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-24T12:27:38.284Z",
+  "generatedAt": "2026-11-25T17:37:15.669Z",
   "sources": {
     "nasaplus": {
       "complete": true,
-      "generatedAt": "2026-11-24T12:26:01.747Z",
-      "titles": 609,
+      "generatedAt": "2026-11-25T17:37:15.659Z",
+      "titles": 608,
       "series": 58,
-      "publisherRows": 609,
+      "publisherRows": 608,
       "scope": "Complete current public NASA+ videos and series taxonomy. Publisher access is checked when you play."
     },
     "archive": {
