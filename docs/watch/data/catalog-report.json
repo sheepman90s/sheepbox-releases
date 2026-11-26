@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T18:53:11.403Z",
+  "generatedAt": "2026-11-26T18:42:27.278Z",
   "sources": {
     "nasaplus": {
       "complete": true,
-      "generatedAt": "2026-11-25T18:42:55.960Z",
+      "generatedAt": "2026-11-26T18:32:33.834Z",
       "titles": 608,
       "series": 58,
       "publisherRows": 608,
@@ -34,7 +34,7 @@
       "country": "us",
       "stationDirectoryComplete": true,
       "stations": 279,
-      "live": 203,
+      "live": 202,
       "latestNewscasts": 269,
       "latestStationsChecked": 279,
       "latestDirectoryComplete": true,
@@ -43,16 +43,16 @@
       "failedStationIds": [],
       "selection": "Complete advertised live directory plus fresh-resolving latest-newscast cards only where a current supported guest offer was confirmed. No expiring clip or playback URL is persisted.",
       "complete": true,
-      "generatedAt": "2026-11-25T18:43:26.403Z"
+      "generatedAt": "2026-11-26T18:33:09.714Z"
     },
     "xumo": {
       "source": "Xumo current public website regional live directory",
       "country": "us",
       "complete": true,
-      "live": 454,
+      "live": 457,
       "onDemandIncluded": false,
       "advertising": "Fresh publisher SSAI offers and full ad query parameters retained; no client VMAP or tracking URL is supplied by the current live offer.",
-      "generatedAt": "2026-11-25T18:43:26.791Z"
+      "generatedAt": "2026-11-26T18:33:10.036Z"
     },
     "cw": {
       "source": "The CW current public web live directory",
@@ -64,7 +64,7 @@
       "country": "us",
       "countrySource": "The CW US web-service lineup; no per-channel international rights or country override is asserted.",
       "advertising": "Fresh publisher fast_params and all offered SSAI stream queries retained. Preplay, client preroll, subscriber and protected modes are excluded.",
-      "generatedAt": "2026-11-25T18:43:27.097Z"
+      "generatedAt": "2026-11-26T18:33:11.077Z"
     },
     "yupptv": {
       "source": "YuppTV current public free guest guide",
@@ -78,7 +78,7 @@
       "publicRestProtocol": "Authorized public page/content and page/stream endpoints; no encrypted web-envelope configuration is required.",
       "playbackScope": "Directory availability is checked again on play. Region, access, clear-HLS availability and advertising can change.",
       "complete": true,
-      "generatedAt": "2026-11-25T18:43:28.811Z"
+      "generatedAt": "2026-11-26T18:33:13.200Z"
     },
     "worldtv": {
       "name": "World TV — official broadcasters",
@@ -177,7 +177,7 @@
       "allPlaybackOffersChecked": false,
       "countrySource": "No catalogue country is supplied; real publisher guest offers determine current availability without country overrides.",
       "advertising": "Fresh original public VMAP URL and all returned breaks are passed to Google IMA. Only current CPM main-feature HLS offers are accepted.",
-      "generatedAt": "2026-11-25T18:43:09.175Z",
+      "generatedAt": "2026-11-26T18:32:48.741Z",
       "seriesDirectoryComplete": true,
       "providerWideComplete": true,
       "seriesDirectoryRows": 199,
