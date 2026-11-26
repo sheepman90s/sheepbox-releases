@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0-RC6",
-  "revision": "bb60c5386eb5",
+  "version": "2.0.0-RC7",
+  "revision": "df46ace8ed86",
   "catalogGeneratedAt": "2026-11-26T18:42:27.278Z",
   "titles": 78527,
   "live": 1687,
@@ -114,6 +114,10 @@
     {
       "path": "data/publisher-links.json",
       "sha256": "583afbea7428fb477be8cd0bad095a9c4accc4b29f8b718657d161d361b1f5f6"
+    },
+    {
+      "path": "data/retro-tv.json",
+      "sha256": "731a07e8f76f3116d92fa29bd77e51090ba829910386a85f82275c6c825e733d"
     },
     {
       "path": "data/revry.json",
@@ -1165,7 +1169,7 @@
     },
     {
       "path": "index.html",
-      "sha256": "8877179e4111beb05c46716cb2bca7986bd65669eec149a8a0516eee2347bd85"
+      "sha256": "1bb6200a06c505ed130de17e27148182ed2b45bad2d3e22fad56f57394c2c209"
     },
     {
       "path": "manifest.webmanifest",
@@ -1174,6 +1178,10 @@
     {
       "path": "player-ads.css",
       "sha256": "f77526aea8048e607588d3931ed9dcdd64d5d616bafb66afeb06f691713ffee0"
+    },
+    {
+      "path": "retro.css",
+      "sha256": "162e3e31bf2165370af4de5779410cd06e67147fb37a7278a04e747b90edba2a"
     },
     {
       "path": "src/ads.mjs",
@@ -1185,11 +1193,15 @@
     },
     {
       "path": "src/app.mjs",
-      "sha256": "f4c65d2e732fbe1238e5e924937d33588380b8f3e3167ac255cc20f269ef834c"
+      "sha256": "5e9a3826ca07d7315fc42238c3ac301d971e9891b736005621eba6cd2b86e901"
+    },
+    {
+      "path": "src/channel-requests.mjs",
+      "sha256": "fdb16797b972319aa2a4c7f200146410d7847172e7d8b6cce567e1a4e214903d"
     },
     {
       "path": "src/core.mjs",
-      "sha256": "d2d7e5b9fbab9ca65c03f5b015291b748e92945d06428f4dffac96685a5a285d"
+      "sha256": "28425f38b470eb4bf8a19b8ec8ca1fd2902685cf269c6f053953fe4813d71f35"
     },
     {
       "path": "src/cw.mjs",
@@ -1254,6 +1266,14 @@
     {
       "path": "src/redbull.mjs",
       "sha256": "d6161c84a7e87d7d43d4aa74d113e622f7541ac669d04c11371c1ed6119b741d"
+    },
+    {
+      "path": "src/retro-playback.mjs",
+      "sha256": "22a91efb70aa1e3c861a907275f7858400a9aad72a2feba8b697a82a149c869c"
+    },
+    {
+      "path": "src/retro.mjs",
+      "sha256": "3d1bc9c2c8177c75d509a1d6d1d99e0c712b89eafa14011fcab6a075e402c109"
     },
     {
       "path": "src/revry.mjs",
@@ -1329,7 +1349,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "989014515ac04472b5cb806d6238a263325a522cba1908f569e3e8369029d8af"
+      "sha256": "34843ea0486c3b31f8ced584fe96439fbc1849b834de386612bbe1a47daee094"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

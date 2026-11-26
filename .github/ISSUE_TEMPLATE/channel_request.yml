@@ -1,0 +1,35 @@
+name: Channel request
+description: Suggest a channel or show for SheepBox Retro TV.
+title: "[Channel request]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check existing requests first. This GitHub form and its comments are public. For private feedback without a GitHub account, use Request a channel in Retro TV or Android Settings. Requests are reviewed for availability and supported continuous playback.
+  - type: input
+    id: channel
+    attributes:
+      label: Channel or show name
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Which version?
+      options:
+        - Both Android and web
+        - Android app
+        - Web preview
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source or provider
+      description: Optional. Share an official public page, without private playback links or account details.
+  - type: textarea
+    id: details
+    attributes:
+      label: Country and other details
+      description: Optional. Explain which version of the channel or show you mean.
