@@ -6,7 +6,7 @@
 
 **Free live TV, movies and shows. One app, one remote.**
 
-[Website](https://sheepman90s.github.io/sheepbox-releases/) · [Web preview](https://sheepman90s.github.io/sheepbox-releases/watch/) · [Providers](PROVIDERS.md) · [Roadmap](ROADMAP.md) · [Report a problem](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=bug_report.yml) · [Request a feature](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=feature_request.yml)
+[Website](https://sheepman90s.github.io/sheepbox-releases/) · [Web preview](https://sheepman90s.github.io/sheepbox-releases/watch/) · [Providers](PROVIDERS.md) · [Roadmap](ROADMAP.md) · [Report a problem](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=bug_report.yml) · [Request a channel](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=channel_request.yml) · [Request a feature](https://github.com/sheepman90s/sheepbox-releases/issues/new?template=feature_request.yml)
 
 </div>
 
@@ -24,6 +24,12 @@ SheepBox brings free streaming services together in an Android TV and Google TV 
 
 Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
+## Test release: Android 2.1.0-RC2
+
+[Download RC2/build 217](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.1.0-RC2/sheepbox-tv-vod-2.1.0-RC2-release.apk) / [SHA256](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.1.0-RC2/sheepbox-tv-vod-2.1.0-RC2-release.apk.sha256) / [What is new and testing limits](RELEASE_2_1_0_RC2.md).
+
+RC2 adds **179 continuously scheduled Retro TV channels** and **Request a channel**, alongside My SheepBox profiles, workspaces and encrypted snapshot backups. Install over the existing app to retain personal data; enable **Include test versions** for in-app RC updates. Stable 2.0.0 remains the recommended stable download. Physical TV/phone acceptance remains pending.
+
 ## Install and update
 
 1. Download the [stable APK](https://github.com/sheepman90s/sheepbox-releases/releases/latest/download/Sheepbox-latest.apk) to your TV or streaming device.
@@ -31,7 +37,7 @@ Requires Android 6.0 or later. Install updates over the existing app to retain s
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For updates, open **Settings > App updates > Check now > Update now**. Stable 2.0.0 is offered without enabling test versions; that setting is only for future prereleases. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
+For updates, open **Settings > App updates > Check now > Update now**. Stable 2.0.0 is offered without enabling test versions; enable that setting to receive RC2 and future prereleases. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 
@@ -57,13 +63,15 @@ Screenshots are from the 1.9.0 release-candidate series. See [supported provider
 
 ## Web preview
 
-[Open SheepBox Web RC6](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC6 release snapshot contains 78,789 top-level On Demand entries, 1,724 live listings and 3,892 webcams. PBS adds 11,999 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 677 films, 7,688 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
+Retro TV provides a separate **179-station continuous guide** with channel numbers, categories, full-screen playback and **Request a channel**. [Release notes and limitations](RELEASE_2_1_0_RC2.md).
 
-Plex adds 30,958 movies and 2,840 shows from its complete supported free root and genre directories. Opening a show loads all available seasons and free episodes before displaying the list, then caches it. Search covers movie/show titles and episodes from opened shows.
+[Open SheepBox Web RC7](https://sheepman90s.github.io/sheepbox-releases/watch/) in a desktop or mobile browser. The RC7 release snapshot contains 78,527 top-level On Demand entries, 1,687 live listings and 3,892 webcams. PBS adds 12,012 free full-length videos across 307 shows, including NOVA and FRONTLINE. FreeTV adds 679 films, 7,691 episodes, 345 playable shows and 12 live channels. Revry and FreeTV protected videos play inside SheepBox using normal browser Widevine and the publisher's original advertising. Protected playback needs a compatible browser; the publisher link remains available.
+
+Plex adds 30,965 movies and 2,840 shows from its complete supported free root and genre directories. Opening a show loads all available seasons and free episodes before displaying the list, then caches it. Search covers movie/show titles and episodes from opened shows.
 
 Pluto adds 16,050 movies, 4,231 shows and 445 free live channels from its fully paged supported US categories, current website indexes and live directory. Every discovered movie/show destination was checked; unavailable and locked offers are excluded. These sources do not prove a whole-service total. Pluto provides episode selection in its official player.
 
-Runtime adds 955 free movies, 87 playable shows, 2,832 episodes and 29 live channels with internal HLS playback and original advertising.
+Runtime adds 699 free movies, 72 playable shows, 2,567 episodes and 29 live channels with internal HLS playback and original advertising.
 
 Daily automated refreshes cover PBS, FreeTV, Runtime, Revry, NASA+, Filmzie, NewsON, Xumo, CW, YuppTV, Plex and Pluto. Incomplete or inconsistent updates retain the working library. Other snapshots keep their own dates; see Provider Status for checked dates.
 
