@@ -24,11 +24,11 @@ SheepBox brings free streaming services together in an Android TV and Google TV 
 
 Requires Android 6.0 or later. Install updates over the existing app to retain settings, favorites and history.
 
-## Test release: Android 2.1.0-RC2
+## Test release: Android 2.1.0-RC3
 
-[Download RC2/build 217](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.1.0-RC2/sheepbox-tv-vod-2.1.0-RC2-release.apk) / [SHA256](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.1.0-RC2/sheepbox-tv-vod-2.1.0-RC2-release.apk.sha256) / [What is new and testing limits](RELEASE_2_1_0_RC2.md).
+[Download RC3/build 218](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.1.0-RC3/sheepbox-tv-vod-2.1.0-RC3-release.apk) / [SHA256](https://github.com/sheepman90s/sheepbox-releases/releases/download/v2.1.0-RC3/sheepbox-tv-vod-2.1.0-RC3-release.apk.sha256) / [What is new and testing limits](RELEASE_2_1_0_RC3.md).
 
-RC2 adds **179 continuously scheduled Retro TV channels** and **Request a channel**, alongside My SheepBox profiles, workspaces and encrypted snapshot backups. Install over the existing app to retain personal data; enable **Include test versions** for in-app RC updates. Stable 2.0.0 remains the recommended stable download. Physical TV/phone acceptance remains pending.
+RC3 adds **Knight Rider as Android Retro TV channel 180**, playing full episodes in a shuffled rotation with automatic refill. The original 179 Archive stations retain their shared schedules. Knight Rider starts episodes from the beginning and uses a separate rotation per viewer, with Roku advertising, DRM and access rules. Web RC7 remains at 179 stations. Includes channel requests, My SheepBox profiles, workspaces and encrypted snapshot backups. Install over the existing app to retain personal data; enable **Include test versions** for in-app RC updates. Stable 2.0.0 remains the recommended stable download. Physical TV/phone acceptance remains pending.
 
 ## Install and update
 
@@ -37,7 +37,7 @@ RC2 adds **179 continuously scheduled Retro TV channels** and **Request a channe
 3. Open the APK and follow Android's installation prompts.
 4. Start SheepBox. On Demand catalogues load when first opened and use saved metadata caches on later visits.
 
-For updates, open **Settings > App updates > Check now > Update now**. Stable 2.0.0 is offered without enabling test versions; enable that setting to receive RC2 and future prereleases. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
+For updates, open **Settings > App updates > Check now > Update now**. Stable 2.0.0 is offered without enabling test versions; enable that setting to receive RC3 and future prereleases. Downloads are checked for the expected package, a newer version and the established signing key before Android's installer opens.
 
 Signing certificate SHA-256: `a8ee97fd44e560a1b2921ce87e73a9e76b22a336de1bfc0f5723d846b693acff`
 

@@ -69,6 +69,10 @@ Record by name supports guide title/description keywords and updates as listings
 
 The Famelack webcam directory supports country browsing, search and favorites. Cameras use YouTube's official player and may be offline or disallow embedding. World View combines country-based camera and live-TV browsing. Required map and directory credits remain with the distributed data.
 
+## RC3 Knight Rider channel 180
+
+Android 2.1.0-RC3/build 218 adds Knight Rider full episodes as Retro TV channel 180, with a shuffled rotation and automatic refill. It uses the existing Roku native player, advertising, DRM and current enabled free episodes. A VPN or proxy may prevent Roku playback. The original 179 Archive stations retain their shared schedules. Web RC7 remains 179 because Roku does not currently support embedding its player. [RC3 release details](RELEASE_2_1_0_RC3.md).
+
 ## RC2 Retro TV and channel requests
 
 Android 2.1.0-RC2/build217 adds a separate Retro TV guide with 179 continuously scheduled stations curated from 5,307 Internet Archive file-programs. The same lineup is in Web RC7. This is an incomplete source preview, with 31 unverified records excluded; historical news/weather recordings are labelled. Request a channel in the guide or Android Settings. [Release details and testing limits](RELEASE_2_1_0_RC2.md). The stable provider table above still describes 2.0.0.
