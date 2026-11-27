@@ -1,13 +1,13 @@
 {
   "version": "2.0.0-RC7",
-  "revision": "df46ace8ed86",
-  "catalogGeneratedAt": "2026-11-26T18:42:27.278Z",
-  "titles": 78527,
-  "live": 1687,
+  "revision": "4f15eb9efc67",
+  "catalogGeneratedAt": "2026-11-27T18:23:48.694Z",
+  "titles": 78549,
+  "live": 1689,
   "extraLibraries": {
     "pbs": {
-      "videos": 12012,
-      "shows": 307,
+      "videos": 12010,
+      "shows": 308,
       "live": 0
     },
     "freetv": {
@@ -21,8 +21,8 @@
       "live": 29
     },
     "plex": {
-      "videos": 30965,
-      "shows": 2840,
+      "videos": 30973,
+      "shows": 2838,
       "live": 0
     },
     "pluto": {
@@ -85,11 +85,11 @@
     },
     {
       "path": "data/catalog-report.json",
-      "sha256": "7bf6c57c9109ff6185b8c1abc893ce7dd5e137953f878364b34fdc024857b640"
+      "sha256": "2a5b7258eab46b07ed3ddfcb6f51a07e4430f217195a78b899064d08514c7344"
     },
     {
       "path": "data/catalog.json",
-      "sha256": "0c1ab4155f4258c3aa3ed71e976d72fa504f8df2a91928369584bc4bf42b7845"
+      "sha256": "669ab61adaaf5b444ac9d31ddfcc2c05f03a55d6f136a1b8334424497c721e67"
     },
     {
       "path": "data/FAMELACK-LICENSE.txt",
@@ -97,15 +97,15 @@
     },
     {
       "path": "data/freetv.json",
-      "sha256": "57fa9db407f5e9e3b971b9264f4d8a19ce0a5b6ec5ad2818a34f9ef57425475a"
+      "sha256": "f01feba3b8df82686ab9c059e1ce845c9f3d3b4850c96df47af05c0cc687d84b"
     },
     {
       "path": "data/pbs.json",
-      "sha256": "0b789852c67612ea61465164fe5674e2efd0e842a5f14dc8ecd4a30e1cd73748"
+      "sha256": "e72ea9c174abede11fecb99dfdde853b616f48e180a56026802196ab3ad1946d"
     },
     {
       "path": "data/plex.json",
-      "sha256": "9a2b83c09deb48c1048ee1b684d77c76c4f9542a711b411f522f37e50e224349"
+      "sha256": "aa131045e37f6e522cc6c504fbfb7c817442165b054cac274a1bb977f48e193b"
     },
     {
       "path": "data/pluto.json",
@@ -121,7 +121,7 @@
     },
     {
       "path": "data/revry.json",
-      "sha256": "716f6b6de6fc119b198a20501927e810df2948675052c96adb6e8bed2b619994"
+      "sha256": "fa81521f9d6258d77e6a32751a5f4d51cd43a5d7e3463ce42bf8c090a81067a0"
     },
     {
       "path": "data/roku/catalog.json",
@@ -1153,7 +1153,7 @@
     },
     {
       "path": "data/runtime.json",
-      "sha256": "ca8ab87740e13b700922a156a742e2d81fd4768be50a57e3a06fbc00dfb7be31"
+      "sha256": "af96181d483b1038a90fd2ec6e494227b334f688c490ded04cf8e9b303207781"
     },
     {
       "path": "data/webcams.json",
@@ -1349,7 +1349,7 @@
     },
     {
       "path": "sw.js",
-      "sha256": "34843ea0486c3b31f8ced584fe96439fbc1849b834de386612bbe1a47daee094"
+      "sha256": "b6b571072b78c535d0dd712b5c5a04de81276054d30aac2658b00cd3c3fc5da8"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
