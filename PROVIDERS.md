@@ -69,6 +69,10 @@ Record by name supports guide title/description keywords and updates as listings
 
 The Famelack webcam directory supports country browsing, search and favorites. Cameras use YouTube's official player and may be offline or disallow embedding. World View combines country-based camera and live-TV browsing. Required map and directory credits remain with the distributed data.
 
+## RC5 Retro TV test release
+
+Android 2.1.0-RC5/build 220 includes the reference's179 public media/weather sources with independent SheepBox names and source credits, plus Knight Rider 180. Available source guides and the saved Knight Rider queue cover 12h. Retro TV has loading/error/Retry/Home states and animated SheepBox house bumpers/donation cards. Original programme files, paid spots and publisher advertising remain. Android's16 Pluto music feeds are retained. Turbo Pursuit 45 remains alongside Knight Rider 180. Current source/region/DRM checks still apply; the weather forecast API remains unavailable. [Install and test RC5](RELEASE_2_1_0_RC5.md). The earlier sections below describe their original release snapshots; the published Web RC7 is unchanged by this Android release.
+
 ## RC3 Knight Rider channel 180
 
 Android 2.1.0-RC3/build 218 adds Knight Rider full episodes as Retro TV channel 180, with a shuffled rotation and automatic refill. It uses the existing Roku native player, advertising, DRM and current enabled free episodes. A VPN or proxy may prevent Roku playback. The original 179 Archive stations retain their shared schedules. Web RC7 remains 179 because Roku does not currently support embedding its player. [RC3 release details](RELEASE_2_1_0_RC3.md).
